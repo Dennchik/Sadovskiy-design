@@ -1,0 +1,12 @@
+extends ../layouts/app_layout
+append link 
+	link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
+prepend script 
+	script(defer="defer" type="text/javascript" src="@@webRoot/js/index.min.js")
+block title
+	- var text='Sadovskiy-design/web-design'
+
+block main-content 
+	block services
+		include ../components/services
+		

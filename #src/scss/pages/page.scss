@@ -1,0 +1,33 @@
+.page {
+	// .page__header
+	&__header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 11;
+
+		padding: 2.4rem 10px;
+		border-bottom: 1px solid #d4d4d4;
+		background: #fff;
+
+		@include _screen-1710 {
+			// margin-bottom: 2rem;
+		}
+	}
+
+	// .page__content
+	&__content {
+		position: relative;
+		margin-top: 79px;
+	}
+	// .page__container
+	&__container {
+		position: relative;
+	}
+
+	// .page__services
+	&__services {
+		padding-top: 30px;
+	}
+}

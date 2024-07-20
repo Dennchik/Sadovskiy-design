@@ -1,0 +1,57 @@
+// todo -------------------------- Variables -----------------------------------
+@import 'core/variables';
+@import 'core/variables-icon';
+@import 'core/swiper-vars';
+//todo ----------------------------- Core --------------------------------------
+@import 'core/mixins';
+@import 'core/extend';
+@import 'core/reset';
+// @import 'core/ui';
+//todo ------------------------- Default fonts ---------------------------------
+// &display=swap&subset=cyrillic-ext
+@import url('https://fonts.googleapis.com/css?family=Roboto:regular,500,700,900&display=swap&subset=cyrillic-ext');
+
+// todo --------------------------- Fonts --------------------------------------
+@import 'core/fonts';
+//todo  ------------------------ Icon Fonts ------------------------------------
+@import 'core/iconfonts';
+// todo -------------------------- Plugins -------------------------------------
+// @import 'assets/swiper';
+@import 'assets/swiper-bundle.scss';
+@import 'layouts/slider-layout';
+// todo -------------------------- Classes -------------------------------------
+// #region
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0 auto;
+}
+
+[class*='_container'] {
+	max-width: $maxWidthContainer;
+	box-sizing: content-box;
+	margin: 0 auto;
+	padding: 0 10px;
+	min-height: 100vh;
+}
+
+[class*='icon-'] {
+	cursor: pointer;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+// todo --------------------------- layout -------------------------------------
+@import 'layouts/bem-block';
+@import 'layouts/header';
+@import 'layouts/footer';
+// todo --------------------------- Pages --------------------------------------
+@import 'pages/page';
+// todo --------------------------- Chunk --------------------------------------
+@import 'chunk/sidebar-menu';
+// todo -------------------------- Modules -------------------------------------
+@import 'modules/preloader';
+// todo -------------------------- Sections ------------------------------------
+@import 'components/services';
