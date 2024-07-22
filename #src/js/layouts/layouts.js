@@ -1,329 +1,271 @@
-import ItcCollapse from "../assets/collapse.js";
-//! ---------------------------------- Root ------------------------------------
-const $ = {
-	toggleButton: document.querySelector('.toggle-button'),
-	sidebarMenu: document.querySelector('.sidebar-menu'),
-	submenuParents: document.querySelectorAll('.submenu-parent'),
-	userButtons: document.querySelectorAll('.login-container__user-button'),
-	registrations: document.querySelector('.registrations'),
-	login: document.querySelector('.login'),
-};
-//! -------------------------- Добавить в избранное ---------------------------
-export function addFafouritItems() {
-	let cardFavourites = document.querySelectorAll('.card__favourites');
-	cardFavourites.forEach(cardFavourit => {
-		cardFavourit.addEventListener('click', () => {
-			cardFavourit.classList.toggle('_like');
-		});
-	});
-}
-//! --------------------------------- Main.js ----------------------------------
-//todo запрещаем скроллинг страницы при открытии "Menu-Catalog"
-export function openMenuCatalog() {
-	const toggleButton = document.querySelector('.toggle-catalog');
-	const sidebarMenu = document.querySelector('.categories__side-bar');
-	toggleButton.addEventListener('click', openedMenu);
-	function openedMenu() {
-		sidebarMenu.classList.toggle('_opened-menu');
-		toggleButton.classList.toggle('_opened-menu');
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
+// import { Observer } from 'gsap/Observer';
+// import { SplitText } from 'gsap/SplitText';
+// import { TextPlugin } from 'gsap/TextPlugin';
 
-		if (sidebarMenu.classList.contains('_opened-menu')) {
-			document.body.classList.add('no-scroll');
-		} else {
-			document.body.classList.remove('no-scroll');
-		}
-	};
-}
-//todo запрещаем скроллинг страницы при открытии "Main-Menu"
-export function openMainMenu() {
-	const toggleButton = document.querySelector('.toggle-catalog');
-	const categoriesSidebarMenu = document.querySelector('.categories__side-bar');
-	const toggleMenuButton = document.querySelector('.toggle-button__toggle-menu');
-	$.toggleButton.addEventListener('click', openedMenu);
 
-	function openedMenu() {
-		toggleMenuButton.classList.toggle('_open');
-		$.sidebarMenu.classList.toggle('_opened-menu');
-		if ($.sidebarMenu.classList.contains('_opened-menu')) {
-			document.body.classList.add('no-scroll');
-		} else {
-			document.body.classList.remove('no-scroll');
-		}
-		if (categoriesSidebarMenu) {
-			if (categoriesSidebarMenu.classList.contains('_opened-menu')) {
-				categoriesSidebarMenu.classList.remove('_opened-menu');
-				toggleButton.classList.remove('_opened-menu');
-			}
-		}
+gsap.registerPlugin(ScrollTrigger);
 
-	};
-}
-//todo -----------Событие при нажатии на кнопку "Оформить заказ"----------------
-export function placeOrder() {
-	let orderCollapse = document.querySelector('.send-order');
-	const collapse = new ItcCollapse(orderCollapse.querySelector('._collapse'));
-	const elcheckboxLabelement = document.querySelector('.order-place__checkbox');
-
-	document.querySelector('.order-place__form-button').addEventListener('click', function () {
-		let titleDocument = document.querySelector('.cart-page__title');
-		// let sendOrder = document.querySelector('.order-place__send-order');
-		let sendButton = document.querySelector('.order-place__send-button');
-		let formButton = document.querySelector('.order-place__form-button');
-		titleDocument.innerHTML = 'оформление заказа';
-		collapse.toggle();
-		sendButton.style.display = 'block';
-		formButton.style.display = 'none';
-		elcheckboxLabelement.style.display = 'block';
-	});
-}
-//* ----------------------------------------------------------------------------
-export function showChildSubmenu() {
-	const menuParents = document.querySelectorAll('.menu-parrent');
-	menuParents.forEach(menuParent => {
-		const trigger = menuParent.querySelector('._trigger-submenu');
-		trigger.addEventListener('click', () => {
-			_toggleMenu(menuParent);
-		});
-	});
-	const _toggleMenu = (el) => {
-		const collapse = new ItcCollapse(el.querySelector('._collapse'));
-		const trigger = el.querySelector('._trigger-submenu');
-		if (el.classList.contains('_active')) {
-			el.classList.remove('_active');
-			trigger.classList.remove('_rotate');
-			collapse.toggle();
-		} else {
-			el.classList.add('_active');
-			trigger.classList.add('_rotate');
-			collapse.toggle();
-		}
-	};
-}
-
+// ScrollTrigger.normalizeScroll(true);
+// ScrollTrigger.config({ ignoreMobileResize: true });
 // -----------------------------------------------------------------------------
-export function collapseParentMenu() {
-	const menuParents = document.querySelectorAll('.side-bar__parent-menu');
-	const menuList = document.querySelector('.side-bar__menu-list');
+//todo: Устанавливаем плавную прокрутку страницы
+// export let smoother = ScrollSmoother.create({
+// 	wrapper: "#wrapper",
+// 	content: "#content",
+// 	smooth: 1,
+// 	effects: true,
+// 	normalizeScroll: true
+// });
+// -----------------------------------------------------------------------------
 
-	menuParents.forEach((menuParent) => {
-		const trigger = menuParent.querySelector('._trigger-menu');
+// export function scrollSlide() {
+// 	console.clear();
 
-		trigger.addEventListener('click', () => {
-			const opened_menu = menuList.querySelector('._open');
-			_toggleMenu(menuParent);
-			if (opened_menu && opened_menu !== menuParent) {
-				_toggleMenu(opened_menu);
-			}
-		});
-	});
+// 	const sections = gsap.utils.toArray(".slide");
+// 	const images = gsap.utils.toArray(".image").reverse();
+// 	const slideImages = gsap.utils.toArray(".slide__img");
+// 	const outerWrappers = gsap.utils.toArray(".slide__outer");
+// 	const innerWrappers = gsap.utils.toArray(".slide__inner");
+// 	const count = document.querySelector(".count");
+// 	const wrap = gsap.utils.wrap(0, sections.length);
+// 	let animating;
+// 	let currentIndex = 0;
+// 	let observerEnabled = true; // Флаг для включения/выключения Observer
 
-	const _toggleMenu = (menuParent) => {
-		const collapse = new ItcCollapse(menuParent.querySelector('._collapse'));
-		const trigger = menuParent.querySelector('._trigger-menu');
-		if (menuParent.classList.contains('_open')) {
-			menuParent.classList.remove('_open');
-			trigger.classList.remove('_rotate');
-			collapse.toggle();
+// 	gsap.set(outerWrappers, { xPercent: 100 });
+// 	gsap.set(innerWrappers, { xPercent: -100 });
+// 	gsap.set(".slide:nth-of-type(1) .slide__outer", { xPercent: 0 });
+// 	gsap.set(".slide:nth-of-type(1) .slide__inner", { xPercent: 0 });
+
+// 	function toggleObserver(enable) {
+// 		observerEnabled = enable;
+// 		if (enable) {
+// 			observer.enable();
+// 		} else {
+// 			observer.disable();
+// 		}
+// 	}
+
+// 	function gotoSection(index, direction) {
+// 		animating = true;
+// 		index = wrap(index);
+
+// 		let tl = gsap.timeline({
+// 			defaults: { duration: 1, ease: "expo.inOut" },
+// 			onComplete: () => {
+// 				animating = false;
+// 				// Если достигнут последний или первый слайд, отключаем Observer
+// 				if ((index === sections.length - 1 && direction === 1) || (index === 0 && direction === -1)) {
+// 					toggleObserver(false);
+// 				}
+// 			}
+// 		});
+
+// 		let currentSection = sections[currentIndex];
+// 		let heading = currentSection.querySelector(".slide__heading");
+// 		let nextSection = sections[index];
+// 		let nextHeading = nextSection.querySelector(".slide__heading");
+
+// 		gsap.set([sections, images], { zIndex: 0, autoAlpha: 0 });
+// 		gsap.set([sections[currentIndex], images[index]], { zIndex: 1, autoAlpha: 1 });
+// 		gsap.set([sections[index], images[currentIndex]], { zIndex: 2, autoAlpha: 1 });
+
+// 		tl
+// 			.set(count, { text: index + 1 }, 0.32)
+// 			.fromTo(
+// 				outerWrappers[index],
+// 				{
+// 					xPercent: 100 * direction
+// 				},
+// 				{ xPercent: 0 },
+// 				0
+// 			)
+// 			.fromTo(
+// 				innerWrappers[index],
+// 				{
+// 					xPercent: -100 * direction
+// 				},
+// 				{ xPercent: 0 },
+// 				0
+// 			)
+// 			.to(
+// 				heading,
+// 				{
+// 					"--width": 800,
+// 					xPercent: 30 * direction
+// 				},
+// 				0
+// 			)
+// 			.fromTo(
+// 				nextHeading,
+// 				{
+// 					"--width": 800,
+// 					xPercent: -30 * direction
+// 				},
+// 				{
+// 					"--width": 200,
+// 					xPercent: 0
+// 				},
+// 				0
+// 			)
+// 			.fromTo(
+// 				images[index],
+// 				{
+// 					xPercent: 125 * direction,
+// 					scaleX: 1.5,
+// 					scaleY: 1.3
+// 				},
+// 				{ xPercent: 0, scaleX: 1, scaleY: 1, duration: 1 },
+// 				0
+// 			)
+// 			.fromTo(
+// 				images[currentIndex],
+// 				{ xPercent: 0, scaleX: 1, scaleY: 1 },
+// 				{
+// 					xPercent: -125 * direction,
+// 					scaleX: 1.5,
+// 					scaleY: 1.3
+// 				},
+// 				0
+// 			)
+// 			.fromTo(
+// 				slideImages[index],
+// 				{
+// 					scale: 2
+// 				},
+// 				{ scale: 1 },
+// 				0
+// 			)
+// 			.timeScale(0.8);
+
+// 		currentIndex = index;
+// 	}
+
+// 	const observer = Observer.create({
+// 		type: "wheel,touch,pointer",
+// 		preventDefault: true,
+// 		wheelSpeed: -3,
+// 		onUp: () => {
+// 			if (!observerEnabled || animating) return;
+// 			gotoSection(currentIndex + 1, +1);
+// 		},
+// 		onDown: () => {
+// 			if (!observerEnabled || animating) return;
+// 			gotoSection(currentIndex - 1, -1);
+// 		},
+// 		tolerance: 5
+// 	});
+
+// 	document.addEventListener("keydown", logKey);
+
+// 	function logKey(e) {
+// 		if ((e.code === "ArrowUp" || e.code === "ArrowLeft") && !animating) {
+// 			if (currentIndex === 0) {
+// 				toggleObserver(true); // Включаем Observer при прокрутке вверх с первого слайда
+// 			}
+// 			gotoSection(currentIndex - 1, -1);
+// 		}
+// 		if (
+// 			(e.code === "ArrowDown" || e.code === "ArrowRight" || e.code === "Space" || e.code === "Enter") &&
+// 			!animating
+// 		) {
+// 			if (currentIndex === sections.length - 1) {
+// 				toggleObserver(true); // Включаем Observer при прокрутке вниз с последнего слайда
+// 			}
+// 			gotoSection(currentIndex + 1, 1);
+// 		}
+// 	}
+
+// 	// Включаем Observer при прокрутке вручную, если прокручиваем обратно вверх с последнего слайда или вниз с первого слайда
+// 	ScrollTrigger.create({
+// 		start: 0,
+// 		end: "max",
+// 		onUpdate: (self) => {
+// 			if ((self.direction < 0 && currentIndex === sections.length - 1) || (self.direction > 0 && currentIndex === 0)) {
+// 				toggleObserver(true);
+// 			}
+// 		}
+// 	});
+// }
+// -----------------------------------------------------------------------------
+export function sidebarMenuHendle() {
+	const sidebarMenu = document.querySelector('.sidebar-menu');
+	const buttonItems = document.querySelector('.burger-button__items');
+	buttonItems.addEventListener('click', () => {
+		if (sidebarMenu.classList.contains('_open-menu')) {
+			sidebarMenu.classList.add('_close-menu');
+			buttonItems.classList.remove('_open-menu');
+
+			setTimeout(() => {
+				sidebarMenu.style.transition = 'transform 0.4s ease-in-out';
+				sidebarMenu.addEventListener('transitionend', function transitionEndHandler() {
+					sidebarMenu.style.transition = '';
+					sidebarMenu.removeEventListener('transitionend', transitionEndHandler);
+				}, { once: true });
+				sidebarMenu.classList.remove('_open-menu');
+				sidebarMenu.classList.remove('_close-menu');
+			}, 1300);
 		} else {
-			menuParent.classList.add('_open');
-			trigger.classList.add('_rotate');
-			collapse.toggle();
+			sidebarMenu.classList.add('_open-menu');
+			buttonItems.classList.add('_open-menu');
+
+			sidebarMenu.style.transition = 'transform 0.4s ease-in-out';
+			sidebarMenu.addEventListener('transitionend', function transitionEndHandler() {
+				sidebarMenu.style.transition = '';
+				sidebarMenu.removeEventListener('transitionend', transitionEndHandler);
+			}, { once: true });
+
 		}
-	};
+	});
 }
-//todo ---------------------------Login-container------------------------------
-export function userMenu() {
-	for (let i = 0; i < $.userButtons.length; i++) {
-		const userButton = $.userButtons[i];
+// -----------------------------------------------------------------------------
+export function getRatioHendle() {
 
-		userButton.addEventListener('click', (e) => {
-			let target = e.target;
+	let getRatio = el => window.innerHeight / (window.innerHeight + el.offsetHeight);
 
-			// Открываем скрытое модальноеменю выбора;
-			let loginContent = loginList(target, '.login-container__list');
-			loginContent.classList.toggle('_visible');
+	gsap.utils.toArray("section").forEach((section, i) => {
+		section.bg = section.querySelector(".bg");
 
-			// Закрываем модальное окно "Login";
-			let loginModal = loginList(target, '.login-modal');
-			removeElement(loginModal, '_show');
+		// Give the backgrounds some random images
+		section.bg.style.backgroundImage = `url(https://picsum.photos/1600/800?random=${i})`;
 
-			// Закрываем модальное окно "Регистрация";
-			let registrationModal = loginList(target, '.registrations-modal');
-			removeElement(registrationModal, '_show');
-
-			// Закрываем модальное окно "востановление электронной почты";
-			let recoveryModal = loginList(target, '.recovery-modal');
-			removeElement(recoveryModal, '_show');
-
-			window.addEventListener('click', function (e) {
-				let loginContainer = target.closest('.login-container');
-				if (!loginContainer.contains(e.target)) {
-					removeElement(loginContent, '_visible');
-
-				}
-			});
-		});
-	}
-	//todo ----Добавляем обработчики событий для всех элементов с class="login----
-	const userLogins = document.querySelectorAll('.login');
-
-	userLogins.forEach((userLogin) => {
-		userLogin.addEventListener('click', (e) => {
-			let target = e.target;
-			$.login.classList.toggle('_active');
-			if ($.registrations.classList.contains('_active')) {
-				$.registrations.classList.remove('_active');
+		// the first image (i === 0) should be handled differently because it should start at the very top.
+		// use function-based values in order to keep things responsive
+		gsap.fromTo(section.bg, {
+			backgroundPosition: () => i ? `50% ${-window.innerHeight * getRatio(section)}px` : "50% 0px"
+		}, {
+			backgroundPosition: () => `50% ${window.innerHeight * (1 - getRatio(section))}px`,
+			ease: "none",
+			scrollTrigger: {
+				trigger: section,
+				start: () => i ? "top bottom" : "top top",
+				end: "bottom top",
+				scrub: true,
+				invalidateOnRefresh: true // to make it responsive
 			}
-			//Закрываем ранее открытое модальное окно "User-Content";
-			let loginContent = loginList(target, '.login-container__list');
-			removeElement(loginContent, '_visible');
-
-			let recoveryModal = loginList(target, '.recovery-modal');
-			removeElement(recoveryModal, '_show');
-
-			// Выбираем модальное окно и элементы внутри него;
-			let loginModal = loginList(target, '.login-modal');
-
-			// Закрываем модальное окно "Регистрация";
-			let registrationModal = loginList(target, '.registrations-modal');
-			removeElement(registrationModal, '_show');
-
-			// Показываем модальное окно с плавным появлением;
-			loginModal.classList.toggle('_show');
-
-			// Закрываем модальное окно при нажатии на кнопку закрыть "X";
-			let closeButton = loginModal.querySelector('.login-modal__close');
-			closeModal(closeButton, loginModal);
-
-			window.addEventListener('click', function (e) {
-				let loginContainer = target.closest('.login-container');
-				if (!loginContainer.contains(e.target)) {
-					removeElement(loginModal, '_show');
-					removeElement($.login, '_active');
-				}
-			});
 		});
+
 	});
-	//todo ----Добавляем обработчики событий для всех элементов 'Регистрация'-----
-	const registrations = document.querySelectorAll('.registrations');
-	registrations.forEach(registration => {
-		registration.addEventListener('click', (e) => {
-			let target = e.target;
-			$.registrations.classList.add('_active');
+};
 
-			if ($.login.classList.contains('_active')) {
-				$.login.classList.remove('_active');
-			}
-			// Закрываем модальное окно "User-Content";
-			let loginContent = loginList(target, '.login-container__list');
-			removeElement(loginContent, '_visible');
-
-			// Закрываем ранее открытое модальное окно;
-			let loginModal = loginList(target, '.login-modal');
-			removeElement(loginModal, '_show');
-
-			// Открываем модальное окно "Регистрация";
-			let registrationModal = loginList(target, '.registrations-modal');
-			registrationModal.classList.toggle('_show');
-
-			let recoveryModal = loginList(target, '.recovery-modal');
-			removeElement(recoveryModal, '_show');
-
-			window.addEventListener('click', function (e) {
-				let loginContainer = target.closest('.login-container');
-				if (!loginContainer.contains(e.target)) {
-					removeElement(registrationModal, '_show');
-					removeElement(registration, '_active');
-				}
-			});
-		});
-	});
-	//todo ----Добавляем обработчики событий для элементов востановить пароль-----
-	const loginRecoverys = document.querySelectorAll('.login-modal__recovery');
-	loginRecoverys.forEach(loginRecovery => {
-		loginRecovery.addEventListener('click', (e) => {
-			let target = e.target;
-
-			// Открываем модальное окно "востановление электронной почты";
-			let recoveryModal = loginList(target, '.recovery-modal');
-			recoveryModal.classList.toggle('_show');
-
-			// Закрываем ранее открытое модальное;
-			let loginModal = loginList(target, '.login-modal');
-			removeElement(loginModal, '_show');
-
-			// Закрываем модальное окно при нажатии на кнопку закрыть "X";
-			let closeButton = recoveryModal.querySelector('.recovery-modal__close');
-			closeModal(closeButton, recoveryModal);
-
-			window.addEventListener('click', function (e) {
-				let loginContainer = target.closest('.login-container');
-				if (!loginContainer.contains(e.target)) {
-					removeElement(recoveryModal, '_show');
-				}
-			});
-		});
-	});
-	//* --------------------------------------------------------------------------
-	const buttonPrivatePersons = document.querySelectorAll('.registrations-modal__button-private-person');
-	const registrationsFiz = document.querySelector('.modal-registrations-fiz');
-	buttonPrivatePersons.forEach(buttonPrivatePerson => {
-		buttonPrivatePerson.addEventListener('click', (e) => {
-			let target = e.target;
-
-			// Закрываем ранее открытое модальное окно;
-			let registrationModal = loginList(target, '.registrations-modal');
-			removeElement(registrationModal, '_show');
-
-			// Открываем модальное окно "Регистрация для физ-лиц";
-			registrationsFiz.classList.add('_show');
-			document.body.classList.add('no-scroll');
-
-			let closeButton = registrationsFiz.querySelector('.modal-registrations-fiz__close-btn');
-			closeButton.addEventListener('click', () => {
-				registrationsFiz.classList.remove('_show');
-				document.body.classList.remove('no-scroll');
-			});
-		});
-		//* ------------------------------------------------------------------------
-		const buttonCorporatePersons = document.querySelectorAll('.registrations-modal__button-corporate-person');
-		const registrationsUre = document.querySelector('.modal-registrations-ure');
-		buttonCorporatePersons.forEach(buttonCorporatePerson => {
-			buttonCorporatePerson.addEventListener('click', (e) => {
-				let target = e.target;
-
-				// Закрываем ранее открытое модальное окно;
-				let registrationModal = loginList(target, '.registrations-modal');
-				removeElement(registrationModal, '_show');
-
-				// Открываем модальное окно "Регистрация для юр-лиц";
-				registrationsUre.classList.add('_show');
-				document.body.classList.add('no-scroll');
-
-				let closeButton = registrationsUre.querySelector('.modal-registrations-ure__close-btn');
-				closeButton.addEventListener('click', () => {
-					registrationsUre.classList.remove('_show');
-					document.body.classList.remove('no-scroll');
-				});
-			});
-		});
+export function piningHendle() {
+	gsap.to(".panel:not(:last-child)", {
+		yPercent: -100,
+		ease: "none",
+		stagger: 0.5,
+		scrollTrigger: {
+			trigger: "#container",
+			start: "top top",
+			end: "+=300%",
+			scrub: true,
+			pin: true,
+			// markers: true,
+		}
 	});
 
-	//todo Функция закрытия модального окна;
-	function closeModal(el, modal) {
-		el.addEventListener('click', () => {
-			// Скрываем модальное окно с плавным исчезновением;
-			modal.classList.remove('_show');
-			removeElement($.login, '_active');
-		});
-	}
 
-	//todo Функция выбора элементов внутри контецнера "login-container";
-	function loginList(target, el) {
-		return target.closest('.login-container').querySelector(el);
-	}
-	//todo Функция удалениет классов;
-	function removeElement(el, className) {
-		el.classList.remove(className);
-	}
+	gsap.set(".panel", { zIndex: (i, target, targets) => targets.length - i });
 }

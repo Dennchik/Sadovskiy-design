@@ -29,10 +29,10 @@
 }
 
 [class*='_container'] {
-	max-width: $maxWidthContainer;
+	// max-width: $maxWidthContainer;
 	box-sizing: content-box;
 	margin: 0 auto;
-	padding: 0 10px;
+	// padding: 0 10px;
 	min-height: 100vh;
 }
 
@@ -55,3 +55,5 @@
 @import 'modules/preloader';
 // todo -------------------------- Sections ------------------------------------
 @import 'components/services';
+@import 'components/presentation';
+@import 'components/section';

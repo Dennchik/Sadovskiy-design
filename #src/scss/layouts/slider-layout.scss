@@ -5,11 +5,15 @@
 
 .main-wrapper {
 	height: 100%;
+	width: 100%;
 	display: flex;
 	gap: var(--index);
 	background-size: cover;
 	background-position: center;
 	opacity: 0;
+	display: flex;
+	justify-content: center;
+	background: #e9e9e9;
 }
 
 .slider {

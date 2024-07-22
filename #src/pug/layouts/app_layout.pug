@@ -21,13 +21,13 @@ body
 	include ../includes/mixins
 	div(class="wrapper")
 		block page-content 
-			.page#page
-				._container 
-					block header
-						include ../layouts/header
+			.page#page 
+				block header
+					include ../layouts/header
 					include ../chunk/sidebar-menu 
-					main._content
+				main._container#wrapper 
+					._content#content
 						block main-content 
-					footer._footer
-						//- block footer
-						//- 	include ../layouts/footer 
+				//- footer._footer
+					//- block footer
+					//- 	include ../layouts/footer 
