@@ -7,30 +7,21 @@
 		width: 100%;
 		z-index: 11;
 
-		padding: 2.4rem 10px;
-		background: #e6e6e6;
+		padding: 2.4rem 0;
+		background: #fff;
 
 		@include _screen-1710 {
-			// margin-bottom: 2rem;
+			margin-bottom: 2rem;
 		}
-	}
-
-	//.page__presentation
-	&__presentation {
-		position: fixed;
-		width: 100%;
-		height: 100vh;
-		top: 0;
-		left: 0;
-		overflow: hidden;
 	}
 
 	// .page__content
 	&__content {
 		width: 100%;
-		// position: relative;
-		// margin-top: 79px;
+		position: relative;
+		margin-top: 79px;
 	}
+
 	// .page__container
 	&__container {
 		position: relative;
@@ -40,16 +31,10 @@
 	&__services {
 		position: relative;
 		z-index: 9;
-		transform: translateY(0);
 		height: 100vh;
-		margin-top: 100vh;
 		padding-top: 30px;
 		background: #fff;
 		display: flow-root;
-		overflow: hidden;
-
-		background: #bbbbbb;
-		background: linear-gradient(to right, #28345f, #bbbbbb);
 	}
 }
 

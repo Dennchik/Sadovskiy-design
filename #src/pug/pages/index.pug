@@ -2,16 +2,11 @@ extends ../layouts/app_layout
 append link 
 	link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
 prepend script 
-	script(type="text/javascript" src="@@webRoot/js/swiper-bundle.min.js" defer) 
 	script(type="text/javascript" src="@@webRoot/js/index.min.js" defer)
 block title
 	- var text='Sadovskiy-design' 
 
-block main-content 
-	block presentation
-		include ../components/presentation
+block main-content  
 	block services
-		include ../components/services
-	block section
-		include ../components/section
+		include ../components/services 
 		

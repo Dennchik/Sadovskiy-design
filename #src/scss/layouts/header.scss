@@ -9,7 +9,7 @@
 		grid-template-columns: min-content 1fr min-content;
 		align-items: center;
 		@include _min-1710 {
-			padding: 0 50px;
+			padding: 0 30px;
 		}
 
 		@include _screen-1440 {
