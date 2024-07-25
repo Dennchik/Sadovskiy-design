@@ -1,0 +1,105 @@
+.schedule {
+	// .schedule__body
+	&__body {
+		background: #2b3769;
+		padding: 18.6rem 50px 23.3rem;
+
+		@include _screen-768 {
+			padding: 72px 10px 80px;
+		}
+	}
+
+	// .schedule__items
+	&__items {
+		display: grid;
+		height: 100%;
+		gap: 40px;
+		justify-content: space-between;
+		grid-template-columns: repeat(3, minmax(200px, 520px));
+
+		@include _screen-960 {
+			grid-template-columns: repeat(2, minmax(200px, 520px));
+		}
+
+		@include _screen-690 {
+			grid-template-columns: repeat(1, minmax(200px, 1fr));
+		}
+	}
+
+	// .schedule__item
+	&__item {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+
+		h2 {
+			margin-bottom: 137px;
+			max-width: 270px;
+			color: #ffffff;
+			font-size: 65px;
+			font-weight: 400;
+			line-height: 100%;
+
+			@include _320-1920 {
+				font-size: calc(28px + (65 - 28) * ((100vw - 320px) / (1920 - 320)));
+			}
+
+			@include _screen-320 {
+				font-size: 28px;
+			}
+
+			@include _screen-960 {
+				margin-bottom: 32px;
+				max-width: 100%;
+				text-align: center;
+			}
+		}
+	}
+
+	// .schedule__title
+	&__title {
+		flex: 1 1 auto;
+		height: 100%;
+		margin-bottom: 35px;
+		color: #ffffff;
+		font-size: 35px;
+		font-weight: 400;
+		line-height: 122.857143%; /* 43px/35 */
+
+		@include _320-1920 {
+			font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (1920 - 320)));
+		}
+
+		@include _screen-320 {
+			font-size: 20px;
+		}
+	}
+
+	// .schedule__number
+	&__number {
+		margin-bottom: 10px;
+		padding-bottom: 5px;
+		color: #ffffff;
+		font-size: 96px;
+		font-weight: 400;
+		line-height: 123.958333%; /* 119px/96 */
+		border-bottom: 1px solid #a9a9a9;
+
+		@include _320-1920 {
+			font-size: calc(28px + (65 - 28) * ((100vw - 320px) / (1920 - 320)));
+		}
+
+		@include _screen-320 {
+			font-size: 28px;
+		}
+	}
+
+	// .schedule__text
+	&__text {
+		color: #ffffff;
+		font-family: Averta Demo PE Cutted Demo;
+		font-size: 1.6rem;
+		font-weight: 400;
+		line-height: 125%; /* 20px/16 */
+	}
+}

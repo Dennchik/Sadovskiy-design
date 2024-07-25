@@ -6,7 +6,29 @@ prepend script
 block title
 	- var text='Sadovskiy-design' 
 
-block main-content  
+block main-content 
 	block services
 		include ../components/services 
-		
+	block project 
+		include ../components/project 
+	block about-company 
+		include ../components/about-company 
+	block schedule
+		include ../components/schedule
+	block services-price
+		include ../components/services-price
+	block order-place
+		include ../components/order-place
+	block seo-block
+		include ../components/seo-block
+	block company-team
+		include ../components/company-team
+	block answers
+		include ../components/answers
+	block clients
+		include ../components/clients
+
+
+
+	block footer
+		include ../layouts/footer

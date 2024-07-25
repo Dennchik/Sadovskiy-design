@@ -10,6 +10,7 @@
 //todo ------------------------- Default fonts ---------------------------------
 // &display=swap&subset=cyrillic-ext
 @import url('https://fonts.googleapis.com/css?family=Roboto:regular,500,700,900&display=swap&subset=cyrillic-ext');
+@import url('https://fonts.googleapis.com/css?family=Inter:regular,500,600,700,800,900&display=swap&subset=cyrillic-ext');
 
 // todo --------------------------- Fonts --------------------------------------
 @import 'core/fonts';
@@ -24,16 +25,15 @@
 .wrapper {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
+	min-height: 100%;
 	margin: 0 auto;
 }
 
 [class*='_container'] {
-	// max-width: $maxWidthContainer;
+	max-width: $maxWidthContainer;
 	box-sizing: content-box;
 	margin: 0 auto;
-	// padding: 0 10px;
-	min-height: 100vh;
+	height: 100%;
 }
 
 [class*='icon-'] {
@@ -55,3 +55,11 @@
 @import 'modules/preloader';
 // todo -------------------------- Sections ------------------------------------
 @import 'components/services';
+@import 'components/project';
+@import 'components/about-company';
+@import 'components/schedule';
+@import 'components/services-price';
+@import 'components/seo-block';
+@import 'components/company-team';
+@import 'components/clients';
+@import 'components/answers';

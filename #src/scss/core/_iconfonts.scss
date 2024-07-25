@@ -28,6 +28,12 @@
   //* Better Font Rendering
 }
 
+.icon-coolicon {
+  &:before {
+    content: $icon-coolicon;
+    color: #2e3a59;
+  }
+}
 .icon-vk-draw {
   &:before {
     content: $icon-vk-draw;

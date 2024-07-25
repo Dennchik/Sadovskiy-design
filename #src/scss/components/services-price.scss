@@ -1,0 +1,170 @@
+.services-price {
+	// .services-price__body
+
+	&__body {
+		padding: 12rem 50px 15.9rem;
+
+		@include _screen-768 {
+			padding: 80px 10px 70px;
+		}
+	}
+
+	// .services-price__title
+	&__title {
+		font-size: 70px;
+		font-weight: 400;
+		letter-spacing: 0%;
+		text-align: center;
+		margin-bottom: 58px;
+
+		@include _320-1920 {
+			font-size: calc(28px + (70 - 28) * ((100vw - 320px) / (1920 - 320)));
+		}
+
+		@include _screen-320 {
+			font-size: 28px;
+		}
+	}
+
+	// .services-price__content
+	&__content {
+		display: grid;
+		height: 100%;
+		gap: 39px;
+		justify-content: space-between;
+		grid-template-columns: repeat(3, minmax(200px, 1fr));
+
+		@include _screen-1140 {
+			gap: 20px;
+			grid-template-columns: repeat(2, minmax(200px, 51fr));
+		}
+
+		@include _screen-640 {
+			gap: 34px;
+			grid-template-columns: repeat(1, minmax(200px, 1fr));
+		}
+	}
+
+	// .services-price__column
+	&__column {
+		border-radius: 30px;
+		overflow: hidden;
+
+		@include _screen-768 {
+			border-radius: 10px;
+		}
+	}
+
+	// .services-price__card
+	&__card {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		padding: 20px;
+		background: url('../img/main/card-item-bg.png') center / cover no-repeat;
+	}
+}
+
+.card-price {
+	// .card-price__title
+	&__title {
+		margin-bottom: 14px;
+		font-size: 35px;
+		font-weight: 400;
+		line-height: 43px/35;
+
+		@include _320-1920 {
+			font-size: calc(20px + (35 - 20) * ((100vw - 490px) / (1920 - 490)));
+		}
+
+		@include _screen-490 {
+			font-size: 20px;
+		}
+	}
+
+	// .card-price__content
+	&__content {
+		flex: 1 1 auto;
+	}
+
+	// .card-price__list
+	&__list {
+		margin-bottom: 27px;
+	}
+
+	// .card-price__item
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		&:not(:last-child) {
+			margin-bottom: 14px;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	// .card-price__icon
+	&__icon {
+		margin-right: 11px;
+	}
+
+	// .card-price__text
+	&__text {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 125%; /* 20px/16 */
+	}
+
+	// .card-price__footer
+	&__footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include _screen-1710 {
+			flex-direction: column;
+		}
+	}
+
+	// .card-price__price
+	&__price {
+		margin-bottom: 10px;
+		font-size: 25px;
+		font-weight: 400;
+		line-height: 124%; /* 31px/25 */
+		white-space: nowrap;
+
+		@include _screen-1710 {
+			align-self: start;
+		}
+
+		@include _320-1920 {
+			font-size: calc(20px + (25 - 20) * ((100vw - 320px) / (1920 - 320)));
+		}
+
+		@include _screen-320 {
+			font-size: 20px;
+		}
+	}
+
+	// .card-price__button
+	&__button {
+		span {
+			font-size: 20px;
+			font-weight: 400;
+			line-height: 125%; /* 25px/20 */
+			text-align: center;
+		}
+	}
+
+	// .card-price__icon-btn
+	&__icon-btn {
+		.icon-arrow-right {
+			color: #fff;
+		}
+	}
+}
