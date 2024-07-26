@@ -68,6 +68,8 @@
 	&__menu {
 		width: 100%;
 		display: inline-flex;
+		justify-content: flex-end;
+		padding-right: 3vw;
 
 		@include _screen-768 {
 			display: none;

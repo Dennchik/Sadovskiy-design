@@ -8,8 +8,6 @@
 		grid-template-columns: repeat(3, 1fr);
 		gap: 39px;
 
-		overflow: hidden;
-
 		@include _min-690 {
 			padding: 0 5rem;
 		}
@@ -31,18 +29,13 @@
 	// .services__item
 	&__item {
 		position: relative;
-		overflow: hidden;
-		transition: box-shadow 0.9s ease;
-
-		&:hover {
-			box-shadow: 0px 0px 3px 1px #d4d4d4;
-		}
 
 		&:nth-child(1) {
 			border-radius: 30px;
 			display: flex;
 			padding: 86px 29px;
 			background: #171b1c;
+			overflow: hidden;
 
 			@include _screen-1024 {
 				padding: 86px 0;
@@ -204,11 +197,22 @@
 }
 
 .card {
+	display: block;
+	width: 100%;
+	cursor: pointer;
 	border-radius: 30px;
 	padding: 21px;
 	background: url('../img/main/card-item-bg.png') center / cover no-repeat;
 	display: flex;
 	flex-direction: column;
+	transition: all 0.4s ease-in-out;
+
+	&:hover {
+		box-shadow: 2px 2px 4px #929292;
+		.card__icon {
+			transform: rotate(45deg);
+		}
+	}
 
 	&:not(:last-child) {
 		margin-bottom: 39px;
@@ -257,12 +261,6 @@
 				align-self: flex-start;
 			}
 		}
-
-		&:hover {
-			.card__icon {
-				transform: rotate(45deg);
-			}
-		}
 	}
 
 	// .card__icon
@@ -272,7 +270,7 @@
 		align-items: center;
 		justify-content: center;
 
-		transition: transform 0.3s ease-out;
+		transition: transform 0.4s ease-in-out;
 		._icon {
 			color: #fff;
 			font-size: 2.2rem;
@@ -295,13 +293,15 @@
 		&:not(:last-child) {
 			margin-bottom: 0.4rem;
 		}
+		li {
+			font-size: 1.6rem;
+			font-weight: 400;
+			line-height: 125%; /* 20px/16 */
+		}
 	}
 
 	// .card__link
 	&__link {
-		font-size: 1.6rem;
-		font-weight: 400;
-		line-height: 125%; /* 20px/16 */
 	}
 }
 

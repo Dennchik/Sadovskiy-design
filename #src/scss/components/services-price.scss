@@ -4,6 +4,10 @@
 	&__body {
 		padding: 12rem 50px 15.9rem;
 
+		@include _screen-1440 {
+			padding: 12rem 20px 15.9rem;
+		}
+
 		@include _screen-768 {
 			padding: 80px 10px 70px;
 		}
@@ -153,6 +157,7 @@
 
 	// .card-price__button
 	&__button {
+		align-self: end;
 		span {
 			font-weight: 400;
 			line-height: 125%; /* 25px/20 */
