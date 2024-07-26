@@ -1,13 +1,34 @@
 .seo-block {
+	// .seo-block__content
+	&__content {
+		margin-top: -30px;
+		padding: 0 50px;
+
+		@include _screen-1440 {
+			padding: 0 20px;
+		}
+
+		@include _screen-768 {
+			padding: 0 10px;
+		}
+	}
+
 	// .seo-block__body
 	&__body {
 		background: url('../img/main/s-bg.png') center / cover no-repeat;
 		display: flex;
 		flex-direction: column;
-		padding: 140px 50px;
+		// border-radius: 30px;
+		padding: 140px 10px;
+
+		@include _screen-1440 {
+			padding: 90px 10px;
+			// border-radius: 20px;
+		}
 
 		@include _screen-768 {
 			padding: 70px 10px;
+			// border-radius: 10px;
 		}
 	}
 

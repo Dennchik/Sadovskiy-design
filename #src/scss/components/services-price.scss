@@ -15,18 +15,18 @@
 
 	// .services-price__title
 	&__title {
-		font-size: 70px;
+		font-size: 65px;
 		font-weight: 400;
 		letter-spacing: 0%;
 		text-align: center;
 		margin-bottom: 58px;
 
 		@include _320-1920 {
-			font-size: calc(28px + (70 - 28) * ((100vw - 320px) / (1920 - 320)));
+			font-size: calc(20px + (65 - 20) * ((100vw - 320px) / (1920 - 320)));
 		}
 
 		@include _screen-320 {
-			font-size: 28px;
+			font-size: 20px;
 		}
 	}
 

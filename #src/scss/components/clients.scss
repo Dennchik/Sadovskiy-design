@@ -18,11 +18,11 @@
 		text-align: center;
 
 		@include _320-1920 {
-			font-size: calc(28px + (70 - 28) * ((100vw - 320px) / (1920 - 320)));
+			font-size: calc(20px + (70 - 20) * ((100vw - 320px) / (1920 - 320)));
 		}
 
 		@include _screen-320 {
-			font-size: 28px;
+			font-size: 20px;
 		}
 	}
 
