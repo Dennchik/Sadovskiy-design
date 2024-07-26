@@ -100,6 +100,31 @@ export function tabsHandler() {
 		});
 	});
 }
+// -----------------------------------------------------------------------------
+import ItcCollapse from "../assets/collapse.js";
 
+export function answersHandler() {
+	const listItems = document.querySelectorAll('.answers__content');
+	const menuList = document.querySelector('.answers__list');
+	listItems.forEach(item => {
+		const trigger = item.querySelector('.answers__question');
+		trigger.addEventListener('click', () => {
+			const opened_menu = menuList.querySelector('._open');
+			_toggleMenu(item);
+			if (opened_menu && opened_menu !== item) {
+				_toggleMenu(opened_menu);
+			}
 
-
+		});
+	});
+	const _toggleMenu = (el) => {
+		const collapse = new ItcCollapse(el.querySelector('._collapse'));
+		if (el.classList.contains('_open')) {
+			el.classList.remove('_open');
+			collapse.toggle();
+		} else {
+			el.classList.add('_open');
+			collapse.toggle();
+		}
+	};
+}

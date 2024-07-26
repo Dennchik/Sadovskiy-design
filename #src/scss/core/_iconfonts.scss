@@ -28,6 +28,16 @@
   //* Better Font Rendering
 }
 
+.icon-minus {
+  &:before {
+    content: $icon-minus;
+  }
+}
+.icon-plus {
+  &:before {
+    content: $icon-plus;
+  }
+}
 .icon-coolicon {
   &:before {
     content: $icon-coolicon;

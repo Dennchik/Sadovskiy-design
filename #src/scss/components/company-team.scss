@@ -38,7 +38,7 @@
 			grid-template-columns: repeat(2, 1fr);
 		}
 
-		@include _screen-690 {
+		@include _screen-768 {
 			grid-template-columns: repeat(1, 1fr);
 		}
 	}
@@ -73,7 +73,17 @@
 
 	// .team-card__image
 	&__image {
-		width: 100%;
+		width: 232px;
+		border-radius: 20px;
+		overflow: hidden;
+		img {
+			width: 100%;
+			object-fit: contain;
+			filter: grayscale(1);
+		}
+		@include _screen-768 {
+			border-radius: 10px;
+		}
 	}
 
 	// .team-card__logo

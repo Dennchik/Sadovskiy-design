@@ -22,7 +22,7 @@ html {
 }
 
 body {
-	// overscroll-behavior: none;
+	overscroll-behavior: none;
 	font: {
 		size: 1.6rem;
 		weight: $font-weight-defoult;
@@ -60,6 +60,7 @@ img,
 svg {
 	max-width: 100%;
 	height: auto;
+	pointer-events: none;
 }
 
 a {

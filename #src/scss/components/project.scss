@@ -202,6 +202,10 @@
 			height: 4.8rem;
 			border-radius: 50%;
 			color: #2b3769;
+
+			&::before {
+				font-weight: 600;
+			}
 		}
 
 		@include _screen-960 {

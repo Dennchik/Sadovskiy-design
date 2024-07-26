@@ -1,6 +1,13 @@
 .footer {
+	margin-top: 15rem;
+
+	@include _screen-768 {
+		margin-top: 70px;
+	}
+
 	// .footer__body
 	&__body {
+		letter-spacing: 1px;
 		position: relative;
 		padding: 120px 50px;
 		background: rgb(23, 27, 28);
@@ -225,6 +232,7 @@
 		font-size: 16px;
 		font-weight: 400;
 		line-height: 118.75%; /* 19px/16 */
+		letter-spacing: 1px;
 
 		@include _screen-490 {
 			font-size: 14px;
