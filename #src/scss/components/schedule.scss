@@ -1,12 +1,20 @@
 .schedule {
 	// .schedule__body
 	&__body {
+		position: relative;
 		background: #2b3769;
 		padding: 18.6rem 50px 23.3rem;
+		overflow: hidden;
 
 		@include _screen-768 {
 			padding: 72px 10px 80px;
 		}
+	}
+
+	// .schedule__row
+	&__row {
+		position: relative;
+		z-index: 9;
 	}
 
 	// .schedule__items
@@ -101,5 +109,30 @@
 		font-size: 1.6rem;
 		font-weight: 400;
 		line-height: 125%; /* 20px/16 */
+	}
+}
+
+.elipsis-cont {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+
+	&__elipse-11 {
+		position: absolute;
+		width: 1195px;
+		height: 852px;
+		border-radius: 30%;
+		top: 30%;
+		right: -10%;
+
+		filter: blur(241.65px);
+		background: rgba(172, 186, 189, 0.2);
 	}
 }

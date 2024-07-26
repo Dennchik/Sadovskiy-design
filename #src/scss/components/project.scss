@@ -73,10 +73,6 @@
 
 	&__button {
 		width: 268px;
-
-		span {
-			width: 100%;
-		}
 	}
 
 	&__icon {
@@ -186,13 +182,6 @@
 		span {
 			padding: 1rem 4rem 1rem 6rem;
 			color: #ffffff;
-			width: 100%;
-			font-family: Averta Demo PE Cutted Demo;
-			font-size: 2rem;
-			font-weight: 400;
-			line-height: 125%; /* 25px/20 */
-			letter-spacing: 0%;
-			text-align: center;
 		}
 
 		._icon {

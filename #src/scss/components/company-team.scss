@@ -1,12 +1,20 @@
 .company-team {
 	// .company-team__body
 	&__body {
+		position: relative;
 		background: #2b3769;
 		padding: 12.6rem 50px;
+		overflow: hidden;
 
 		@include _screen-768 {
 			padding: 70px 10px;
 		}
+	}
+
+	// .order-place__row
+	&__row {
+		position: relative;
+		z-index: 9;
 	}
 
 	// .company-team__title
@@ -115,5 +123,29 @@
 		@include _screen-320 {
 			font-size: 20px;
 		}
+	}
+}
+.elipsis-cont {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+
+	&__elipse-10 {
+		position: absolute;
+		width: 1195px;
+		height: 852px;
+		border-radius: 30%;
+		// transform: rotate(-45deg);
+		bottom: 0;
+		right: -10%;
+		filter: blur(241.65px);
+		background: rgba(172, 186, 189, 0.379);
 	}
 }

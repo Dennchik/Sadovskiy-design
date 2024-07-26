@@ -7,50 +7,21 @@
 
 	// .footer__body
 	&__body {
-		letter-spacing: 1px;
 		position: relative;
 		padding: 120px 50px;
+		letter-spacing: 1px;
 		background: rgb(23, 27, 28);
 		overflow: hidden;
 
 		@include _screen-768 {
 			padding: 40px 10px;
 		}
+	}
 
-		.elipse-04 {
-			position: absolute;
-			z-index: 3;
-			margin-top: -5%;
-			margin-left: 10%;
-			transform: rotate(350deg);
-			width: 1258.47px;
-			height: 900.47px;
-			border-radius: 30%;
-
-			filter: blur(300px);
-			background: #2b3769;
-		}
-
-		.elipse-02 {
-			margin-top: 14%;
-			margin-left: 77%;
-			transform: translateY(-20%);
-			filter: blur(300px);
-			opacity: 0.3;
-		}
-
-		.elipse-05 {
-			position: absolute;
-			z-index: 3;
-			margin-top: -20%;
-			margin-left: 10%;
-			width: 2304.27px;
-			height: 2304.27px;
-			border-radius: 30%;
-			transform: rotate(337deg);
-			filter: blur(300px);
-			background: #2b3769;
-		}
+	// .schedule__row
+	&__row {
+		position: relative;
+		z-index: 9;
 	}
 
 	// .footer__header
@@ -237,5 +208,51 @@
 		@include _screen-490 {
 			font-size: 14px;
 		}
+	}
+}
+
+.elipsis-cont {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+
+	&__elipse-12 {
+		position: absolute;
+		width: 2304.27px;
+		height: 2304.27px;
+		top: -30%;
+		left: 12%;
+
+		filter: blur(300px);
+		background: #2b3769;
+	}
+
+	&__elipse-13 {
+		position: absolute;
+		width: 1239.13px;
+		height: 1239.13px;
+		top: 120%;
+		border-radius: 50%;
+		filter: blur(100.53px);
+		background: rgb(172, 186, 189);
+	}
+
+	&__elipse-14 {
+		position: absolute;
+		width: 1415.44px;
+		height: 1415.44px;
+
+		top: calc(99% + (120 - 99) * ((100vw - 320px) / (1920 - 320)));
+		right: -55%;
+		border-radius: 50%;
+		filter: blur(100.53px);
+		background: rgba(172, 186, 189, 0.5);
 	}
 }

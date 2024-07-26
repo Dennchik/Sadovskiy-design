@@ -2,6 +2,7 @@
 	// .about-company__body
 	&__body {
 		padding: 12.8rem 50px;
+		overflow: hidden;
 
 		@include _screen-768 {
 			padding: 79px 10px;
