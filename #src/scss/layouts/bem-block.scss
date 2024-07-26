@@ -64,6 +64,7 @@
 }
 
 .burger-button {
+	border-radius: 5px;
 	position: relative;
 	span {
 		opacity: 1;
@@ -86,13 +87,13 @@
 	}
 
 	&__wrapper {
+		cursor: pointer;
 		padding: 10px 6px;
-		overflow: hidden;
-		background: #e0e0e0;
-		border-radius: 4px;
 		height: 36px;
 		width: 36px;
-		cursor: pointer;
+
+		backdrop-filter: blur(10px);
+		box-shadow: 0 2px 9px #6c8fac;
 	}
 
 	&._open-menu {
