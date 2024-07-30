@@ -72,8 +72,8 @@ export function animateForEachItems(element, endTrigger, start, end) {
 	// Перебираем все элементы, подходящие под селектор 'element'
 	document.querySelectorAll(element).forEach((el) => {
 		gsap.from(el, {
-			y: 100,
-			duration: 0.9,
+			y: 250,
+			duration: 1.3,
 			opacity: 0,
 			scrollTrigger: {
 				trigger: el, // Используем общий триггер

@@ -15,6 +15,7 @@
 
 	// .seo-block__body
 	&__body {
+		overflow: hidden;
 		background: url('../img/main/s-bg.png') center / cover no-repeat;
 		display: flex;
 		flex-direction: column;

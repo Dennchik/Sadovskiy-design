@@ -179,6 +179,7 @@
 	&__button {
 		right: 0;
 		bottom: 0;
+		background: #ffffff;
 
 		&:hover {
 			.icon {
@@ -191,8 +192,6 @@
 				background: #b6c5ff;
 			}
 		}
-
-		background: #ffffff;
 		@include _min-1710 {
 			position: absolute;
 		}
