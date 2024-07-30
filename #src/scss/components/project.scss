@@ -82,6 +82,21 @@
 
 	&__button {
 		width: 268px;
+		background: #ffffff;
+		border: 1px solid transparent;
+
+		&:hover {
+			border: 1px solid #fff;
+			.icon {
+				transform: rotate(-180deg);
+			}
+			span {
+				color: #fff;
+			}
+			&::before {
+				background: $color;
+			}
+		}
 	}
 
 	&__icon {
@@ -182,42 +197,49 @@
 
 	// .tab-content__button
 	&__button {
-		display: flex;
-		align-items: center;
-		gap: 5px;
+		right: 0;
+		bottom: 0;
 		background: #2b3769;
-		padding: 4px;
-		.tab-content__icon {
-			transition: transform 0.4s ease-in-out;
+		border: 1px solid transparent;
+
+		span {
+			color: #fff;
 		}
 
 		&:hover {
-			.tab-content__icon {
+			.icon {
 				transform: rotate(-45deg);
+				background: $color;
+			}
+			._icon {
+				&::before {
+					color: #fff;
+				}
+			}
+			span {
+				color: #000;
+			}
+			&::before {
+				background: #fff;
+				color: #fff;
 			}
 		}
-
-		span {
-			padding: 1rem 4rem 1rem 6rem;
-			color: #ffffff;
+		.icon {
+			background: #fff;
 		}
 
 		._icon {
-			background: #fff;
-			font-size: 2.2rem;
-			width: 4.8rem;
-			height: 4.8rem;
 			border-radius: 50%;
 			color: #2b3769;
-
-			&::before {
-				font-weight: 600;
-			}
 		}
 
 		@include _screen-960 {
 			width: 268px;
 		}
+	}
+
+	&__icon {
+		transition: all 0.3s ease-in-out;
 	}
 }
 

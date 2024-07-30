@@ -142,81 +142,67 @@ export function answersHandler() {
 // -----------------------------------------------------------------------------
 import IMask from 'imask';
 
-export function maskPhone() {
-	const element = document.getElementById('phone');
-	let mask = null;
+export function maskPhone(selector) {
+	const elements = document.querySelectorAll(selector);
+	if (!elements.length) return; // Убедитесь, что элементы существуют
 
-	// Функция для инициализации маски
-	function initializeMask() {
-		mask = IMask(element, {
-			mask: '+7 (000)-000-00-00',
-			lazy: true // Показывать маску только при фокусе
+	elements.forEach(element => {
+		let mask = null;
+
+		// Функция для инициализации маски
+		function initializeMask() {
+			mask = IMask(element, {
+				mask: '+7 (000)-000-00-00',
+				lazy: true // Показывать маску только при фокусе
+			});
+			mask.updateValue(); // Сразу обновляем значение маски
+		}
+
+		// При фокусе на поле ввода, показываем маску
+		element.addEventListener('focus', function () {
+			if (!mask) {
+				initializeMask(); // Инициализируем маску только при первом фокусе
+			}
+			if (element.value === '') {
+				element.value = '+7 '; // Устанавливаем начальное значение
+			}
+			mask.updateValue(); // Обновляем значение маски
 		});
-	}
 
-	// При фокусе на поле ввода, показываем маску
-	element.addEventListener('focus', function () {
-		if (!mask) {
-			initializeMask(); // Инициализируем маску только при первом фокусе
-		}
-		if (element.value === '') {
-			element.value = '+7 '; // Устанавливаем начальное значение
-		}
-		// Обновляем значение маски
-		mask.updateValue();
-	});
-
-	// При потере фокуса, если поле пустое, очищаем его
-	element.addEventListener('blur', function () {
-		if (element.value === '+7 ') {
-			element.value = ''; // Очищаем поле
-			mask.updateValue(''); // Очищаем маску
-		}
+		// При потере фокуса, если поле пустое, очищаем его
+		element.addEventListener('blur', function () {
+			if (element.value.trim() === '+7') {
+				element.value = ''; // Очищаем поле
+				if (mask) {
+					mask.updateValue(''); // Очищаем маску
+				}
+			}
+		});
 	});
 }
 
-
-
-
-
-
-
-
+// Использование: применяем маску ко всем полям с классом "phone"
 
 
 // -----------------------------------------------------------------------------
+export function shadowScroll() {
+	const handleScroll = () => {
+		const header = document.querySelector('.page__header');
+		const pageContainer = document.querySelector('.page__container');
+		const pageContainerTop = pageContainer.getBoundingClientRect().top;
+		if (pageContainerTop < 0) {
+			header.classList.add('with-shadow');
+		} else if (pageContainerTop > 0) {
+			header.classList.remove('with-shadow');
+		}
+	};
 
-
-// export function maskPhone() {
-// 	const element = document.getElementById('phone');
-// 	let mask = null;
-
-// 	// Функция для инициализации маски
-// 	function initializeMask() {
-// 		mask = IMask(element, {
-// 			mask: '+{7} (000)-000-00-00' // Маска для телефона
-// 		});
-// 	}
-
-// 	// При фокусе на поле ввода, показываем маску
-// 	element.addEventListener('focus', function () {
-// 		if (!mask) {
-// 			initializeMask(); // Инициализируем маску только при первом фокусе
-// 		}
-// 		element.classList.remove('masked-input'); // Убираем класс, скрывающий маску
-// 		if (element.value === '') {
-// 			element.value = '+7 (___)-___-__-__ '; // Устанавливаем начальное значение
-// 		}
-// 	});
-
-// 	// При потере фокуса, если поле пустое, очищаем его и возвращаем placeholder
-// 	element.addEventListener('blur', function () {
-// 		if (element.value === '+7 ') {
-// 			element.value = ''; // Очищаем поле
-// 		}
-// 		element.classList.add('masked-input'); // Возвращаем скрытие маски
-// 	});
-// }
+	window.addEventListener('scroll', handleScroll);
+	// Очистка слушателя событий при размонтировании компонента
+	return () => {
+		window.removeEventListener('scroll', handleScroll);
+	};
+}
 
 
 

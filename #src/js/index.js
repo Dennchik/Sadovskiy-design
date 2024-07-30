@@ -1,10 +1,14 @@
-import { tabsHandler, answersHandler, maskPhone } from "./layouts/layouts";
-tabsHandler(); answersHandler();
-import { timeLineServiceItem, animateTitles, animateForEachItems, animateTextLeft, opasityForEachItems, animateTitles1 } from "./animations/layout-anime";
+import { tabsHandler, answersHandler, maskPhone, shadowScroll } from "./layouts/layouts";
+tabsHandler();
+answersHandler();
+shadowScroll();
 document.addEventListener('DOMContentLoaded', () => {
-	maskPhone();
+	maskPhone('.phone');
 	// timeLineServiceItem();
 });
+
+
+// import { timeLineServiceItem, animateTitles, animateForEachItems, animateTextLeft, opasityForEachItems, animateTitles1 } from "./animations/layout-anime";
 // animateTitles('.project__title', '.project', '.project', '=100', '=0');
 // animateTitles('.project__body', '.project__body', '.project__body', '=100', '=0');
 // animateTitles('.answers__title', '.answers', '.answers', '=100', '=0');

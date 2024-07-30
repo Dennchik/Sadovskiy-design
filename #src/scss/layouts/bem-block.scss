@@ -18,13 +18,11 @@
 	padding: 4px;
 	gap: 5px;
 	border-radius: 3rem;
-	background: rgb(255, 255, 255);
 	white-space: nowrap;
 	min-width: 268px;
 	overflow: hidden;
 
 	._icon {
-		z-index: 2;
 		width: 4.8rem;
 		height: 4.8rem;
 		transition:
@@ -123,6 +121,7 @@
 .burger-button {
 	border-radius: 5px;
 	position: relative;
+
 	span {
 		opacity: 1;
 		left: 0;

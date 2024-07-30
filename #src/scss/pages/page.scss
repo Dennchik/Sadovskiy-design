@@ -8,9 +8,13 @@
 		z-index: 11;
 
 		padding: 20px 0;
-		background: #a1a1a14d;
+		background: #ffffffe3;
 		backdrop-filter: blur(10px);
-		box-shadow: 0 2px 9px #6c8fac;
+		transition: box-shadow 0.9s ease-in-out;
+
+		&.with-shadow {
+			box-shadow: 0 2px 9px #6c8fac;
+		}
 
 		@include _screen-1710 {
 			margin-bottom: 2rem;

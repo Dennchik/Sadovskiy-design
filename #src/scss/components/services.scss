@@ -180,25 +180,29 @@
 		right: 0;
 		bottom: 0;
 		background: #ffffff;
+		border: 1px solid transparent;
 
 		&:hover {
+			border: 1px solid #fff;
 			.icon {
 				transform: rotate(-45deg);
 			}
+
 			span {
-				color: #000;
+				color: #fff;
 			}
+
 			&::before {
-				background: #b6c5ff;
+				background: $color;
 			}
 		}
+
 		@include _min-1710 {
 			position: absolute;
 		}
 
 		@include _screen-1710 {
 			margin-top: 50px;
-			position: relative;
 			width: 296px;
 		}
 	}

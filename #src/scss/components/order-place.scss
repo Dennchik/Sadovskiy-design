@@ -171,7 +171,23 @@
 	// .order-form__button
 	&__button {
 		height: 56px;
-		// max-width: 268px;
+		background: #fff;
+		border: 1px solid transparent;
+
+		&:hover {
+			border: 1px solid #fff;
+			.icon {
+				transform: rotate(-45deg);
+			}
+
+			span {
+				color: #fff;
+			}
+
+			&::before {
+				background: $color;
+			}
+		}
 
 		.icon {
 			width: 48px;

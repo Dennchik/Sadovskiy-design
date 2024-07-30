@@ -318,6 +318,11 @@
 		}
 		._icon {
 			font-size: 40px;
+			color: $color;
+
+			&::before {
+				font-weight: 900;
+			}
 		}
 	}
 }
