@@ -43,6 +43,7 @@
 
 	span {
 		user-select: none;
+		pointer-events: none;
 		transition: color 0.5s ease-in-out;
 		padding: 1rem 2rem 1rem 3rem;
 		width: 100%;
