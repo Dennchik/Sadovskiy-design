@@ -1,10 +1,10 @@
 .toggle-button {
+	cursor: pointer;
 	padding: 10px 6px;
 	overflow: hidden;
 	background: $color;
 	height: 36px;
 	width: 36px;
-	cursor: pointer;
 	border-radius: 5px;
 
 	@include _min-768 {

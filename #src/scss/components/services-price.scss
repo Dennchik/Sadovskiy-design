@@ -157,7 +157,19 @@
 
 	// .card-price__button
 	&__button {
+		cursor: pointer;
 		align-self: end;
+
+		&::before {
+			background: #2b3769;
+		}
+
+		&:hover {
+			.icon {
+				transform: rotate(-45deg);
+			}
+		}
+
 		span {
 			font-weight: 400;
 			line-height: 125%; /* 25px/20 */
@@ -168,7 +180,9 @@
 	// .card-price__icon-btn
 	&__icon-btn {
 		.icon-arrow-right {
-			color: #fff;
+			&::before {
+				color: #fff;
+			}
 		}
 	}
 }

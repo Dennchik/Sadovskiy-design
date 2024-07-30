@@ -68,10 +68,7 @@
 		display: flex;
 		gap: 20px;
 		flex-direction: column;
-
-		&:not(:last-child) {
-			padding-bottom: 20px;
-		}
+		padding-bottom: 20px;
 
 		&:nth-child(1) {
 			@include _490-690 {

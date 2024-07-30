@@ -14,13 +14,13 @@ $font-color-defoult: #000;
 $font-color-secondary: #fff;
 //* -------------------------------- [Color] -----------------------------------
 $color: #2b3769;
-$bg-color: #f5000000;
+$bg-color: #fff;
 //* ---------------------------- [Other colors] --------------------------------
 $text-selection: #0054633f;
 $text-color-selection: #9b9999;
 //* ----------------------------------------------------------------------------
 :root {
-	--clip: left bottom;
+	--clip: left center;
 	--size: 0;
 
 	//* ---------------------------- [Scrollbar] ---------------------------------
@@ -28,12 +28,12 @@ $text-color-selection: #9b9999;
 	--background-thumb: #2b3769;
 	--scrollbar-thumb-bgcolor: #757575;
 	//* -------------------------- [Other colors] --------------------------------
-	--pos: center;
-	--size: 0;
-	--inset-top: 0;
-	--inset-right: 100%;
-	--inset-bottom: 100%;
-	--inset-left: 0;
+	// --pos: center;
+	// --size: 0;
+	// --inset-top: 0;
+	// --inset-right: 100%;
+	// --inset-bottom: 100%;
+	// --inset-left: 0;
 	// ---------------------------------------------------------------------------
 	--stripe-width: 10px;
 	--nav-marker-border: #3b8686;
@@ -47,3 +47,9 @@ $text-color-selection: #9b9999;
 
 $snap: cubic-bezier(1, 0.005, 0.24, 1);
 $bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.masked-input {
+	color: transparent; /* Скрыть текст, пока маска не активна */
+}
+.masked-input::placeholder {
+	color: black; /* Цвет плейсхолдера */
+}

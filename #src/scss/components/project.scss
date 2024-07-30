@@ -24,6 +24,7 @@
 		@include _320-1920 {
 			font-size: calc(20px + (65 - 20) * ((100vw - 320px) / (1920 - 320)));
 		}
+
 		@include _screen-320 {
 			font-size: 20px;
 		}
@@ -61,13 +62,14 @@
 
 			border-top-left-radius: 30px;
 			border-top-right-radius: 30px;
-
 			background: #2b3769;
 		}
+
 		@include _screen-768 {
 			border-top-left-radius: 10px;
 			border-top-right-radius: 10px;
 		}
+
 		@include _screen-768 {
 			padding: 0 20px;
 		}
@@ -185,6 +187,15 @@
 		gap: 5px;
 		background: #2b3769;
 		padding: 4px;
+		.tab-content__icon {
+			transition: transform 0.4s ease-in-out;
+		}
+
+		&:hover {
+			.tab-content__icon {
+				transform: rotate(-45deg);
+			}
+		}
 
 		span {
 			padding: 1rem 4rem 1rem 6rem;

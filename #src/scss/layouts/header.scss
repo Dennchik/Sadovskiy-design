@@ -108,6 +108,7 @@
 
 		._icon {
 			font-size: 32px;
+
 			@include _min-490 {
 				display: none;
 			}

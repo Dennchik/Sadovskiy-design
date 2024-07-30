@@ -139,3 +139,89 @@ export function answersHandler() {
 		}
 	};
 }
+// -----------------------------------------------------------------------------
+import IMask from 'imask';
+
+export function maskPhone() {
+	const element = document.getElementById('phone');
+	let mask = null;
+
+	// Функция для инициализации маски
+	function initializeMask() {
+		mask = IMask(element, {
+			mask: '+7 (000)-000-00-00',
+			lazy: true // Показывать маску только при фокусе
+		});
+	}
+
+	// При фокусе на поле ввода, показываем маску
+	element.addEventListener('focus', function () {
+		if (!mask) {
+			initializeMask(); // Инициализируем маску только при первом фокусе
+		}
+		if (element.value === '') {
+			element.value = '+7 '; // Устанавливаем начальное значение
+		}
+		// Обновляем значение маски
+		mask.updateValue();
+	});
+
+	// При потере фокуса, если поле пустое, очищаем его
+	element.addEventListener('blur', function () {
+		if (element.value === '+7 ') {
+			element.value = ''; // Очищаем поле
+			mask.updateValue(''); // Очищаем маску
+		}
+	});
+}
+
+
+
+
+
+
+
+
+
+
+// -----------------------------------------------------------------------------
+
+
+// export function maskPhone() {
+// 	const element = document.getElementById('phone');
+// 	let mask = null;
+
+// 	// Функция для инициализации маски
+// 	function initializeMask() {
+// 		mask = IMask(element, {
+// 			mask: '+{7} (000)-000-00-00' // Маска для телефона
+// 		});
+// 	}
+
+// 	// При фокусе на поле ввода, показываем маску
+// 	element.addEventListener('focus', function () {
+// 		if (!mask) {
+// 			initializeMask(); // Инициализируем маску только при первом фокусе
+// 		}
+// 		element.classList.remove('masked-input'); // Убираем класс, скрывающий маску
+// 		if (element.value === '') {
+// 			element.value = '+7 (___)-___-__-__ '; // Устанавливаем начальное значение
+// 		}
+// 	});
+
+// 	// При потере фокуса, если поле пустое, очищаем его и возвращаем placeholder
+// 	element.addEventListener('blur', function () {
+// 		if (element.value === '+7 ') {
+// 			element.value = ''; // Очищаем поле
+// 		}
+// 		element.classList.add('masked-input'); // Возвращаем скрытие маски
+// 	});
+// }
+
+
+
+
+
+
+
+

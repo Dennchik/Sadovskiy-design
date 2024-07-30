@@ -2,8 +2,16 @@
 .answers__content > ._collapse:not(._show) {
 	display: none;
 }
+
+:root {
+	--clip: left center;
+	--size: 0;
+}
+
 //* ---------------------------- [Burger-button] -------------------------------
 .button {
+	cursor: pointer;
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -13,21 +21,70 @@
 	background: rgb(255, 255, 255);
 	white-space: nowrap;
 	min-width: 268px;
-	// width: 268px;
+	overflow: hidden;
+
+	._icon {
+		z-index: 2;
+		width: 4.8rem;
+		height: 4.8rem;
+		transition:
+			color 0.5s,
+			transform 0.5s ease-in-out;
+
+		&::before {
+			font-size: 2.2rem;
+		}
+	}
+
+	.icon {
+		z-index: 2;
+		transition:
+			background 0.5s,
+			transform 0.5s ease-in-out;
+	}
 
 	span {
+		user-select: none;
+		transition: color 0.5s ease-in-out;
 		padding: 1rem 2rem 1rem 3rem;
 		width: 100%;
 		font-size: 2rem;
-		font-weight: 400;
+		font-weight: 500;
 		line-height: 125%; /* 25px/20 */
 		text-align: center;
+		z-index: 2;
 	}
-	._icon {
-		width: 4.8rem;
-		height: 4.8rem;
-		font-size: 2.2rem;
-		font-weight: 600;
+
+	&::before {
+		content: '';
+		z-index: 1;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+
+		clip-path: circle(var(--size) at var(--clip));
+		transition: 0.5s ease-in-out;
+	}
+
+	&:hover {
+		&:before {
+			--size: 200%;
+		}
+		span {
+			color: #fff;
+		}
+
+		._icon {
+			&::before {
+				font-weight: 600;
+				color: #2b3769;
+			}
+		}
+		.icon {
+			background: #fff;
+		}
 	}
 }
 

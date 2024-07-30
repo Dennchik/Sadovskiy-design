@@ -18,17 +18,14 @@
 		background: url('../img/main/s-bg.png') center / cover no-repeat;
 		display: flex;
 		flex-direction: column;
-		// border-radius: 30px;
 		padding: 140px 10px;
 
 		@include _screen-1440 {
 			padding: 90px 10px;
-			// border-radius: 20px;
 		}
 
 		@include _screen-768 {
 			padding: 70px 10px;
-			// border-radius: 10px;
 		}
 	}
 
@@ -56,6 +53,7 @@
 		font-size: 16px;
 		font-weight: 400;
 		line-height: 125%; /* 20px/16 */
+
 		p {
 			&:not(:last-child) {
 				margin-bottom: 20px;
