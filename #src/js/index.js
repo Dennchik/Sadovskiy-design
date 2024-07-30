@@ -3,7 +3,7 @@ tabsHandler(); answersHandler();
 import { timeLineServiceItem, animateTitles, animateForEachItems, animateTextLeft, opasityForEachItems, animateTitles1 } from "./animations/layout-anime";
 document.addEventListener('DOMContentLoaded', () => {
 	maskPhone();
-	timeLineServiceItem();
+	// timeLineServiceItem();
 });
 // animateTitles('.project__title', '.project', '.project', '=100', '=0');
 // animateTitles('.project__body', '.project__body', '.project__body', '=100', '=0');
