@@ -4,18 +4,10 @@ export function sidebarMenuHendle() {
 	const buttonItems = document.querySelector('.burger-button');
 	buttonItems.addEventListener('click', () => {
 		if (sidebarMenu.classList.contains('_open-menu')) {
-			// document.body.classList.remove('no-scroll');
-		} else {
-			// document.body.classList.add('no-scroll');
-		}
-
-
-		if (sidebarMenu.classList.contains('_open-menu')) {
 			sidebarMenu.classList.add('_close-menu');
 			buttonItems.classList.remove('_open-menu');
 
 			setTimeout(() => {
-
 				document.body.classList.remove('no-scroll');
 				sidebarMenu.style.transition = 'transform 0.4s ease-in-out';
 				sidebarMenu.addEventListener('transitionend', function transitionEndHandler() {
