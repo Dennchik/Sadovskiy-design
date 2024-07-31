@@ -1,15 +1,14 @@
-.clients {
-	// .clients__body
-
+.brands {
+	// .brands__body
 	&__body {
-		padding: 6rem 50px;
-
+		padding: 12rem 50px;
+		overflow: hidden;
 		@include _screen-768 {
 			padding: 6rem 10px;
 		}
 	}
 
-	// .clients__title
+	// .brands__title
 	&__title {
 		margin-bottom: 20px;
 		font-size: 65px;
@@ -26,7 +25,7 @@
 		}
 	}
 
-	// .clients__brand
+	// .brands__brand
 	&__brand {
 	}
 }
@@ -40,6 +39,9 @@
 	// .brand-slide__slide
 
 	&__slide {
+		display: flex;
+		align-items: center;
+		height: 100%;
 	}
 
 	// .brand-slide__image

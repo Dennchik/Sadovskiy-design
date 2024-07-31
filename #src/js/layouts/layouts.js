@@ -33,49 +33,6 @@ export function sidebarMenuHendle() {
 	});
 }
 // -----------------------------------------------------------------------------
-// import { timeLineHeaderItem } from '../modules/anime-js.js';
-// export function tabsHandler() {
-// 	const tablinks = document.querySelectorAll('.tabs-buton__item');
-// 	const tabcontents = document.querySelectorAll('.tab-content');
-// 	for (const i in tablinks) {
-// 		const tablink = tablinks[i];
-// 		const tabcontent = tabcontents[i];
-// 		if (Object.hasOwnProperty.call(tabcontents, i)) {
-// 			tablink.addEventListener('click', () => {
-
-// 				if (tabcontent.classList.contains('active')) {
-// 					// timeLineHeaderItem();
-// 					console.log('el');
-// 				}
-
-
-// 				const view_tablink = document.querySelector('.tabs-buton__item.active');
-// 				const view_content = document.querySelector('.tab-content.active');
-// 				// tabButton.classList.remove('_responsive');
-// 				// tabIcon.classList.remove('_active');
-// 				_toggleLink(view_tablink);
-// 				if (view_tablink && view_tablink !== tabcontent) {
-// 					_toggleLink(tablink);
-// 				}
-// 				_toggleLink(view_content);
-// 				if (view_content && view_content !== tablink) {
-// 					_toggleLink(tabcontent);
-// 				}
-// 			});
-// 		}
-// 	}
-
-// 	const _toggleLink = (el) => {
-// 		if (el.classList.contains('active')) {
-// 			el.classList.remove('active');
-// 		} else {
-// 			el.classList.add('active');
-
-// 		}
-// 	};
-
-// }
-// -----------------------------------------------------------------------------
 import { timeLineHeaderItem, timeLineHeaderItemRevers } from '../modules/anime-js.js';
 
 export function tabsHandler() {
@@ -195,11 +152,4 @@ export function shadowScroll() {
 		window.removeEventListener('scroll', handleScroll);
 	};
 }
-
-
-
-
-
-
-
-
+// -----------------------------------------------------------------------------

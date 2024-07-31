@@ -2,6 +2,9 @@
 import { dinamicAdaptive } from './assets/move-elements.js';
 dinamicAdaptive();
 // -----------------------------------------------------------------------------
+import { brandsSlide } from "./modules/brands-slide.js";
+brandsSlide();
+// -----------------------------------------------------------------------------
 import { tabsHandler, answersHandler, maskPhone, shadowScroll } from "./layouts/layouts";
 tabsHandler();
 answersHandler();

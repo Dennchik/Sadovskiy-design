@@ -87,6 +87,7 @@
 
 	// .header__phone
 	&__phone {
+		position: relative;
 		text-align: right;
 		white-space: nowrap;
 
@@ -99,8 +100,6 @@
 		}
 
 		span {
-			margin-left: 1.5rem;
-
 			@include _screen-490 {
 				display: none;
 			}
