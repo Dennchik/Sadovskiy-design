@@ -21,10 +21,10 @@
 			grid-template-columns: min-content max-content;
 			justify-content: space-between;
 		}
-	}
 
-	@include _screen-490 {
-		padding: 0 10px;
+		@include _screen-490 {
+			padding: 0 10px;
+		}
 	}
 
 	// .header__image

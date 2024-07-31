@@ -4,7 +4,6 @@
 	right: 0;
 	bottom: 0;
 	height: calc(100% - 79px);
-	background: #171b1c;
 	background: #fff;
 	z-index: 10;
 	transform: translateY(-120%);
@@ -58,6 +57,9 @@
 		position: relative;
 		z-index: 15;
 		padding: 30px 15px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 
 		.header__menu {
 			flex-direction: column;
@@ -181,13 +183,13 @@
 		}
 	}
 
-	// .sidebar-menu__networks
+	// .sidebar-menu__row
 	&__row {
 		display: flex;
 		gap: 15px;
 		justify-content: space-between;
 		align-items: flex-end;
-		padding: 40px 0;
+		padding: 40px 0 0;
 		width: 100%;
 
 		@include _screen-490 {

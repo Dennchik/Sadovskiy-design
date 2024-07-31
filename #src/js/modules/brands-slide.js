@@ -14,7 +14,7 @@ export function brandsSlide(
 			spaceBetween: 50,
 			// loop: true,
 			grabCursor: true,
-			autoHeight: true,
+			// autoHeight: true,
 			// mousewheel: true,
 			// centeredSlides: true,
 			slidesPerView: 5,

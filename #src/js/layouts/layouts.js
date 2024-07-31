@@ -130,9 +130,6 @@ export function maskPhone(selector) {
 	});
 }
 
-// Использование: применяем маску ко всем полям с классом "phone"
-
-
 // -----------------------------------------------------------------------------
 export function shadowScroll() {
 	const handleScroll = () => {
