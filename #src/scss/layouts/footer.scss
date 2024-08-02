@@ -28,6 +28,8 @@
 	&__header {
 		border-bottom: 1.54px solid #bcbcbc;
 		padding-bottom: 32px;
+		display: flex;
+		justify-content: space-between;
 
 		span {
 			color: #ffffff;
@@ -43,6 +45,23 @@
 	&__logo {
 		display: flex;
 		align-items: center;
+	}
+
+	// .footer__icon
+	&__icon {
+		display: flex;
+		align-items: center;
+
+		._icon {
+			&::before {
+				color: #fff;
+				font-size: 48px;
+				font-weight: 100;
+			}
+			&:not(:last-child) {
+				margin-right: 20px;
+			}
+		}
 	}
 
 	// .footer__content

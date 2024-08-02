@@ -17,9 +17,7 @@
 		letter-spacing: 0%;
 		text-align: left;
 		max-width: 1273px;
-		margin: 0 auto;
-		padding-bottom: 7rem;
-		border-bottom: 1px solid rgb(169, 169, 169);
+		margin: 0 auto 7rem;
 
 		@include _320-1920 {
 			font-size: calc(20px + (65 - 20) * ((100vw - 320px) / (1920 - 320)));
@@ -47,6 +45,9 @@
 		display: flex;
 		gap: 10px;
 		padding: 20px 0 5rem;
+		&:first-child {
+			border-top: 1px solid rgb(169, 169, 169);
+		}
 
 		&:last-child {
 			padding-bottom: 0;
