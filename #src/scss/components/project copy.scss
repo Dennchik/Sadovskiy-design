@@ -36,21 +36,15 @@
 		z-index: 2;
 		padding: 70px 50px;
 		background: #2b3769;
-
-		border-bottom-right-radius: 30px;
-		border-bottom-left-radius: 30px;
-		@include _min-960 {
-			border-radius: 30px;
-		}
+		border-radius: 30px;
 
 		@include _screen-768 {
 			padding: 70px 10px;
-			border-bottom-right-radius: 10px;
-			border-bottom-left-radius: 10px;
+			border-radius: 10px;
 		}
 
-		@include _screen-768 {
-			padding: 5rem 10px 5rem;
+		@include _screen-690 {
+			padding: 5rem 20px 5rem;
 		}
 	}
 
@@ -60,10 +54,6 @@
 		width: 100%;
 		justify-content: space-between;
 		align-items: center;
-
-		@include _min-960 {
-			margin-bottom: -30px;
-		}
 
 		@include _screen-960 {
 			border-bottom: 1px solid #868686;
@@ -78,7 +68,10 @@
 		@include _screen-768 {
 			border-top-left-radius: 10px;
 			border-top-right-radius: 10px;
-			padding: 0 10px;
+		}
+
+		@include _screen-768 {
+			padding: 0 20px;
 		}
 	}
 
@@ -95,7 +88,7 @@
 		&:hover {
 			border: 1px solid #fff;
 			.icon {
-				transform: rotate(-90deg);
+				transform: rotate(-180deg);
 			}
 			span {
 				color: #fff;
@@ -221,7 +214,6 @@
 			._icon {
 				&::before {
 					color: #fff;
-					font-weight: 400;
 				}
 			}
 			span {
@@ -239,10 +231,6 @@
 		._icon {
 			border-radius: 50%;
 			color: #2b3769;
-
-			&::before {
-				font-weight: 600;
-			}
 		}
 
 		@include _screen-960 {
@@ -258,6 +246,7 @@
 .tabs-buton {
 	// .tabs-buton__item
 	&__wrapper {
+		margin-bottom: -30px;
 		width: 100%;
 		height: 150px;
 		display: flex;
@@ -280,23 +269,30 @@
 	// .tabs-buton__item
 	&__item {
 		cursor: pointer;
-		display: inline-flex;
+		position: relative;
+		z-index: 1;
+		display: flex;
 		align-items: flex-start;
 		justify-content: center;
-		height: 129px;
+		height: 125px;
 		font-family: Inter;
-		font-size: 3.5rem;
+
 		font-weight: 400;
 		line-height: 120%; /* 42px/35 */
 		white-space: nowrap;
 		transition: all 0.5s ease-in-out;
+		padding: 55px 0 50px;
 
 		border-top-left-radius: 30px;
 		border-top-right-radius: 30px;
-		padding: 53px 0 1px;
+
+		span {
+			font-size: 35px;
+			// display: inline;
+		}
 
 		&:not(.active) {
-			padding: 32px 0 37px;
+			padding-top: 30px;
 			background: #f2f2f2;
 		}
 
@@ -304,8 +300,9 @@
 			max-width: 180px;
 			flex: 1 1 100px;
 			background: #f2f2f2;
-			justify-content: flex-start;
-			padding-left: 55px;
+			// justify-content: flex-start;
+			// padding-left: 50px;
+
 			@include _screen-960 {
 				padding-left: 0;
 			}
@@ -313,18 +310,29 @@
 
 		&:nth-child(2) {
 			flex: 0 1 22.8%;
+
+			@include _screen-1440 {
+				flex: 0 1 auto;
+			}
 		}
 
 		&:nth-child(3) {
 			flex: 0 1 31.8%;
 
-			@include _min-960 {
-				flex: 2 1 auto !important;
+			// @include _min-960 {
+			// 	flex: 2 1 auto !important;
+			// }
+
+			@include _screen-1440 {
+				flex: 1.4 1 auto !important;
 			}
 		}
 
 		&:nth-child(4) {
 			flex: 0 1 33.7%;
+			@include _screen-1440 {
+				flex: 0 1 auto;
+			}
 		}
 
 		@include _1440-1920 {
@@ -344,7 +352,6 @@
 			font-size: 16px;
 			flex: 0 1 auto !important;
 			justify-content: flex-start;
-			align-items: center;
 			background: transparent !important;
 			color: #fff;
 			height: 100%;
@@ -363,7 +370,6 @@
 		&.active {
 			color: #fff;
 			box-shadow: none;
-			height: 120px;
 			height: 100%;
 
 			background: #2b3769;

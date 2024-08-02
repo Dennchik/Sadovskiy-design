@@ -134,11 +134,11 @@ export function maskPhone(selector) {
 export function shadowScroll() {
 	const handleScroll = () => {
 		const header = document.querySelector('.page__header');
-		const pageContainer = document.querySelector('.page__container');
+		const pageContainer = document.querySelector('.page__content');
 		const pageContainerTop = pageContainer.getBoundingClientRect().top;
-		if (pageContainerTop < 0) {
+		if (pageContainerTop < -50) {
 			header.classList.add('with-shadow');
-		} else if (pageContainerTop > 0) {
+		} else if (pageContainerTop <= 0) {
 			header.classList.remove('with-shadow');
 		}
 	};

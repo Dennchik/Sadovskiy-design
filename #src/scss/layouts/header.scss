@@ -1,5 +1,28 @@
+.page {
+	// .page__header
+	&__header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 11;
+
+		padding: 20px 0;
+		backdrop-filter: blur(10px);
+		transition: box-shadow 0.9s ease-in-out;
+
+		&.with-shadow {
+			background: #fff;
+			box-shadow: 0 2px 9px #6c8fac;
+		}
+
+		@include _screen-1710 {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
 .header {
-	max-width: $maxWidthContainer;
 	margin: 0 auto;
 
 	// .header__body
@@ -20,10 +43,10 @@
 		@include _screen-768 {
 			grid-template-columns: min-content max-content;
 			justify-content: space-between;
+			padding: 0 10px;
 		}
 
-		@include _screen-490 {
-			padding: 0 10px;
+		@include _screen-690 {
 		}
 	}
 
@@ -69,7 +92,7 @@
 		width: 100%;
 		display: inline-flex;
 		justify-content: flex-end;
-		padding-right: 3vw;
+		padding-right: 40px;
 
 		@include _screen-768 {
 			// display: none;
@@ -140,7 +163,7 @@
 		transition: all 0.4s ease-in-out;
 
 		&:not(:last-child) {
-			margin-right: 4.2rem;
+			margin-right: 41px;
 		}
 		@extend .underline;
 	}

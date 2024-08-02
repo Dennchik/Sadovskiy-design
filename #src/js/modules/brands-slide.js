@@ -11,13 +11,13 @@ export function brandsSlide(
 	if (mainslide) {
 		new Swiper(mainslide, {
 			speed: 800,
-			spaceBetween: 50,
-			// loop: true,
+			spaceBetween: 30,
+			loop: true,
 			grabCursor: true,
 			// autoHeight: true,
 			// mousewheel: true,
 			// centeredSlides: true,
-			slidesPerView: 5,
+			slidesPerView: 6,
 			// navigation: {
 			// 	nextEl: nextEl,
 			// 	prevEl: prevEl,

@@ -25,14 +25,15 @@
 	// .sidebar-menu__column
 	&__column {
 		opacity: 0;
-		&:nth-child(1) {
-			overflow-x: hidden;
-			min-width: 300px;
+		// &:nth-child(1) {
+		width: 100%;
+		overflow-x: hidden;
+		min-width: 300px;
 
-			@include _min-960 {
-				flex: 0 1 40%;
-			}
+		@include _min-960 {
+			flex: 0 1 40%;
 		}
+		// }
 
 		@include _screen-490 {
 			width: 100%;
@@ -53,7 +54,6 @@
 	// .sidebar-menu__menu
 	&__menu {
 		width: 100%;
-		height: 100%;
 		position: relative;
 		z-index: 15;
 		padding: 30px 15px;

@@ -1,51 +1,13 @@
 .page {
-	// .page__header
-	&__header {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: 11;
-
-		padding: 20px 0;
-		background: #ffffffe3;
-		backdrop-filter: blur(10px);
-		transition: box-shadow 0.9s ease-in-out;
-
-		&.with-shadow {
-			box-shadow: 0 2px 9px #6c8fac;
-		}
-
-		@include _screen-1710 {
-			margin-bottom: 2rem;
-		}
-	}
-
 	// .page__content
 	&__content {
 		width: 100%;
 		position: relative;
-		margin-top: 80px;
-		padding-bottom: 10px;
 	}
 
 	// .page__container
 	&__container {
 		position: relative;
-	}
-
-	// .page__services
-	&__services {
-		position: relative;
-		z-index: 9;
-		padding-top: 30px;
-		// background: #fff;
-		display: flow-root;
-		margin-bottom: 130px;
-
-		@include _screen-960 {
-			margin-bottom: 80px;
-		}
 	}
 
 	// .page__about-company

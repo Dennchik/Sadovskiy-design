@@ -6,6 +6,10 @@
 		padding: 18.6rem 50px 23.3rem;
 		overflow: hidden;
 
+		@include _screen-1440 {
+			padding: 72px 20px 80px;
+		}
+
 		@include _screen-768 {
 			padding: 72px 10px 80px;
 		}

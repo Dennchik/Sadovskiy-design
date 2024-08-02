@@ -21,7 +21,8 @@
 			bottom: -2px;
 			width: 0;
 			height: 2px;
-			background-color: $color;
+			background-color: #fff;
+			opacity: 0.8;
 			transition: width 0.4s ease-in-out;
 		}
 		&::after {
@@ -31,7 +32,8 @@
 			bottom: -5px;
 			width: 0;
 			height: 2px;
-			background-color: $color;
+			background-color: #fff;
+			opacity: 0.8;
 			transition: width 0.4s ease-in-out;
 		}
 	}

@@ -22,12 +22,9 @@ body
 	div(class="wrapper")
 		block page-content 
 			.page#page 
-				block header
-					include ../layouts/header
+				block sidebar-menu 
 					include ../chunk/sidebar-menu 
-				main._container#wrapper 
-					._content#content
-						block main-content 
-				//- footer._footer
-					//- block footer
-					//- 	include ../layouts/footer 
+				block header
+					include ../layouts/header 
+				main._content#content
+						block main-content  
