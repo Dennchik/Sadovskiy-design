@@ -76,6 +76,8 @@
 	// .seo-block__column
 	&__column {
 		flex: 0 1 50%;
+		display: flex;
+		flex-direction: column;
 
 		@include _screen-768 {
 			flex: 0 100%;
@@ -84,6 +86,7 @@
 
 	// .seo-block__text
 	&__text {
+		flex: 1 1 auto;
 		align-self: end;
 		font-size: 16px;
 		font-weight: 400;
@@ -92,6 +95,38 @@
 		p {
 			&:not(:last-child) {
 				margin-bottom: 20px;
+			}
+		}
+	}
+
+	// .seo-block__button
+	&__button {
+		cursor: pointer;
+		background: #fff;
+
+		&::before {
+			background: #2b3769;
+		}
+
+		&:hover {
+			.icon {
+				transform: rotate(-90deg);
+			}
+		}
+
+		span {
+			white-space: nowrap;
+			font-weight: 400;
+			line-height: 125%; /* 25px/20 */
+			text-align: center;
+		}
+	}
+
+	// .seo-block__icon-btn
+	&__icon-btn {
+		.icon-arrow-dow {
+			&::before {
+				color: #fff;
 			}
 		}
 	}
