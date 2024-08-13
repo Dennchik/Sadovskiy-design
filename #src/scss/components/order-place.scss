@@ -1,16 +1,19 @@
-.order-place {
-	// .order-place__body
-	&__content {
+.page {
+	// .page__order-place
+	&__order-place {
 		padding: 0 50px;
-
 		@include _screen-1440 {
 			padding: 0 20px;
 		}
 
-		@include _screen-768 {
+		@include _screen-690 {
 			padding: 0 10px;
 		}
 	}
+}
+
+.order-place {
+	// .order-place__body
 
 	// .order-place__row
 	&__row {
@@ -24,16 +27,16 @@
 		grid-template-columns: 1fr;
 		position: relative;
 		border-radius: 30px;
-		padding: 12rem 20px 14rem;
+		padding: 13rem 0 16.9rem;
 		background: #171b1c;
 		overflow: hidden;
 
-		@include _screen-768 {
+		@include _screen-690 {
 			border-radius: 10px;
-			padding: 6rem 25px 7rem;
+			padding: 50px 25px;
 		}
 		@include _screen-375 {
-			padding: 6rem 15px 7rem;
+			padding: 50px 15px;
 		}
 	}
 
@@ -46,20 +49,24 @@
 
 	// .order-place__title
 	&__title {
-		margin-bottom: 40px;
+		margin: 0 auto 40px;
 		color: rgb(255, 255, 255);
-		font-size: 65px;
-		font-weight: 400;
-		line-height: 100%;
-		letter-spacing: 0%;
-		text-align: center;
 
-		@include _320-1920 {
-			font-size: calc(20px + (65 - 20) * ((100vw - 320px) / (1920 - 320)));
-		}
+		max-width: 800px;
 
-		@include _screen-320 {
-			font-size: 20px;
+		h2 {
+			font-size: 65px;
+			font-weight: 400;
+			line-height: 100%;
+			text-align: center;
+
+			@include _320-1920 {
+				font-size: calc(28px + (65 - 28) * ((100vw - 320px) / (1920 - 320)));
+			}
+
+			@include _screen-320 {
+				font-size: 28px;
+			}
 		}
 	}
 
@@ -112,11 +119,11 @@
 		text-align: center;
 
 		@include _320-1920 {
-			font-size: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320)));
+			font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
 		}
 
 		@include _screen-320 {
-			font-size: 28px;
+			font-size: 20px;
 		}
 	}
 }
@@ -127,6 +134,17 @@
 		box-sizing: border-box;
 		border-radius: 30px;
 		overflow: hidden;
+		align-self: center;
+
+		@include _screen-960 {
+			max-width: 268px;
+			width: 100%;
+		}
+
+		@include _screen-490 {
+			max-width: 238px;
+			width: 100%;
+		}
 
 		&:not(:last-child) {
 			border: 1px solid #ffffff;
@@ -205,6 +223,7 @@
 }
 
 .elipsis-cont {
+	pointer-events: none;
 	position: absolute;
 	display: flex;
 	align-items: center;

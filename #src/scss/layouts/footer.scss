@@ -1,5 +1,5 @@
 .footer {
-	margin-top: 15rem;
+	margin-top: 16.2rem;
 
 	@include _screen-768 {
 		margin-top: 70px;
@@ -30,21 +30,26 @@
 		padding-bottom: 32px;
 		display: flex;
 		justify-content: space-between;
-
-		span {
-			color: #ffffff;
-			font-family: Roboto;
-			font-size: 24px;
-			font-weight: 600;
-			line-height: 116.666667%; /* 28px/24 */
-			letter-spacing: 2px;
-		}
 	}
 
 	// .footer__logo
 	&__logo {
 		display: flex;
 		align-items: center;
+
+		span {
+			white-space: nowrap;
+			color: #ffffff;
+			font-family: Roboto;
+			font-size: 24px;
+			font-weight: 600;
+			line-height: 116.666667%; /* 28px/24 */
+			letter-spacing: 2px;
+
+			@include _screen-690 {
+				font-size: 15px;
+			}
+		}
 	}
 
 	// .footer__icon
@@ -55,11 +60,16 @@
 		._icon {
 			&::before {
 				color: #fff;
-				font-size: 48px;
+				font-size: 4.8rem;
 				font-weight: 100;
+
+				@include _screen-690 {
+					font-size: 3.2rem;
+				}
 			}
+
 			&:not(:last-child) {
-				margin-right: 20px;
+				margin-right: 10px;
 			}
 		}
 	}

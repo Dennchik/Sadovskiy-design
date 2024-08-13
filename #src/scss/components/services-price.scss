@@ -2,14 +2,14 @@
 	// .services-price__body
 
 	&__body {
-		padding: 12rem 50px 15.9rem;
+		padding: 13rem 50px 16.3rem;
 
 		@include _screen-1440 {
-			padding: 12rem 20px 15.9rem;
+			padding: 13rem 20px 15.9rem;
 		}
 
-		@include _screen-768 {
-			padding: 80px 10px 70px;
+		@include _screen-690 {
+			padding: 50px 10px;
 		}
 	}
 
@@ -19,14 +19,18 @@
 		font-weight: 400;
 		letter-spacing: 0%;
 		text-align: center;
-		margin-bottom: 58px;
+		margin-bottom: 70px;
+
+		@include _screen-690 {
+			margin-bottom: 40px;
+		}
 
 		@include _320-1920 {
-			font-size: calc(20px + (65 - 20) * ((100vw - 320px) / (1920 - 320)));
+			font-size: calc(24px + (65 - 24) * ((100vw - 320px) / (1920 - 320)));
 		}
 
 		@include _screen-320 {
-			font-size: 20px;
+			font-size: 24px;
 		}
 	}
 

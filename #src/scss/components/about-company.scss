@@ -1,30 +1,44 @@
 .about-company {
 	// .about-company__body
 	&__body {
-		padding: 12.8rem 50px;
+		padding: 13rem 50px 16.3rem;
 		overflow: hidden;
 
-		@include _screen-768 {
-			padding: 79px 10px;
+		@include _screen-1440 {
+			padding: 13rem 20px 16.3rem;
+		}
+
+		@include _screen-690 {
+			padding: 50px 10px;
 		}
 	}
 
 	// .about-company__title
 	&__title {
-		font-size: 65px;
-		font-weight: 400;
-		line-height: 100%;
-		letter-spacing: 0%;
-		text-align: left;
-		max-width: 1273px;
-		margin: 0 auto 7rem;
+		max-width: 843px;
+		margin: 0 auto 69px;
 
-		@include _320-1920 {
-			font-size: calc(20px + (65 - 20) * ((100vw - 320px) / (1920 - 320)));
+		h2 {
+			line-height: 100%;
+			letter-spacing: 0%;
+			text-align: left;
+			font-size: 65px;
+			font-weight: 400;
+			@include _320-1920 {
+				font-size: calc(24px + (65 - 24) * ((100vw - 320px) / (1920 - 320)));
+			}
+
+			@include _screen-320 {
+				font-size: 24px;
+			}
+
+			@include _screen-690 {
+				text-align: center;
+			}
 		}
 
-		@include _screen-320 {
-			font-size: 20px;
+		@include _screen-690 {
+			margin-bottom: 40px;
 		}
 	}
 
@@ -57,7 +71,7 @@
 			flex-direction: column;
 		}
 
-		h2 {
+		h3 {
 			font-size: 35px;
 			font-weight: 400;
 			line-height: 122.857143%; /* 43px/35 */
@@ -67,7 +81,7 @@
 			}
 
 			@include _screen-690 {
-				margin-bottom: 20px;
+				margin-bottom: 10px;
 			}
 
 			@include _screen-320 {

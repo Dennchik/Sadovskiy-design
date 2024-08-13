@@ -11,30 +11,74 @@
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
-		padding: 140px 10px;
+		padding: 13rem 50px;
 
 		@include _screen-1440 {
-			padding: 90px 10px;
+			padding: 13rem 20px;
 		}
 
 		@include _screen-768 {
-			padding: 70px 10px;
+			padding: 50px 10px;
 		}
 	}
 
 	// .seo-block__title
 	&__title {
-		margin-bottom: 58px;
-		font-size: 35px;
+		margin-bottom: 49px;
 		font-weight: 400;
-		line-height: 43px; /* 80px/65 */
 
-		@include _320-1920 {
-			font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (1920 - 320)));
+		@include _screen-690 {
+			margin-bottom: 20px;
 		}
 
-		@include _screen-320 {
-			font-size: 20px;
+		h2 {
+			margin-bottom: 60px;
+			font-size: 65px;
+			line-height: 100%;
+			text-align: center;
+
+			@include _320-1920 {
+				font-size: calc(24px + (65 - 24) * ((100vw - 320px) / (1920 - 320)));
+			}
+
+			@include _screen-690 {
+				margin-bottom: 40px;
+			}
+
+			@include _screen-320 {
+				font-size: 24px;
+			}
+		}
+
+		h3 {
+			font-size: 35px;
+			text-align: center;
+			@include _320-1920 {
+				font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (1920 - 320)));
+			}
+
+			@include _screen-320 {
+				font-size: 20px;
+			}
+		}
+	}
+
+	// .seo-block__row
+	&__row {
+		display: flex;
+		gap: 4rem;
+
+		@include _screen-768 {
+			flex-direction: column;
+		}
+	}
+
+	// .seo-block__column
+	&__column {
+		flex: 0 1 50%;
+
+		@include _screen-768 {
+			flex: 0 100%;
 		}
 	}
 

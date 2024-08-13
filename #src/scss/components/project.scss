@@ -1,4 +1,22 @@
 .project {
+	// .project__title
+	&__title {
+		font-size: 65px;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: 0%;
+		text-align: center;
+		margin-bottom: 53px;
+
+		@include _320-1920 {
+			font-size: calc(24px + (65 - 24) * ((100vw - 320px) / (1920 - 320)));
+		}
+
+		@include _screen-320 {
+			font-size: 24px;
+		}
+	}
+
 	// .project__body
 	&__body {
 		padding: 0 50px;
@@ -7,26 +25,8 @@
 			padding: 0 20px;
 		}
 
-		@include _screen-960 {
+		@include _screen-690 {
 			padding: 0;
-		}
-	}
-
-	// .project__title
-	&__title {
-		font-size: 65px;
-		font-weight: 400;
-		line-height: 100%;
-		letter-spacing: 0%;
-		text-align: center;
-		margin-bottom: 26px;
-
-		@include _320-1920 {
-			font-size: calc(20px + (65 - 20) * ((100vw - 320px) / (1920 - 320)));
-		}
-
-		@include _screen-320 {
-			font-size: 20px;
 		}
 	}
 
@@ -43,14 +43,10 @@
 			border-radius: 30px;
 		}
 
-		@include _screen-768 {
-			padding: 70px 10px;
-			border-bottom-right-radius: 10px;
-			border-bottom-left-radius: 10px;
-		}
-
-		@include _screen-768 {
-			padding: 5rem 10px 5rem;
+		@include _screen-690 {
+			border-bottom-right-radius: 0;
+			border-bottom-left-radius: 0;
+			padding: 50px 10px 50px;
 		}
 	}
 
@@ -76,9 +72,9 @@
 		}
 
 		@include _screen-768 {
-			border-top-left-radius: 10px;
-			border-top-right-radius: 10px;
-			padding: 0 10px;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			padding: 0 30px;
 		}
 	}
 
@@ -258,8 +254,8 @@
 .tabs-buton {
 	// .tabs-buton__item
 	&__wrapper {
-		width: 100%;
 		height: 150px;
+		width: 100%;
 		display: flex;
 		align-items: flex-end;
 		gap: 10px;
@@ -295,6 +291,17 @@
 		border-top-right-radius: 30px;
 		padding: 53px 0 1px;
 
+		@include _screen-960 {
+			padding: 0;
+		}
+
+		span {
+			padding: 0 34px;
+			@include _screen-960 {
+				padding: 0;
+			}
+		}
+
 		&:not(.active) {
 			padding: 32px 0 37px;
 			background: #f2f2f2;
@@ -302,29 +309,28 @@
 
 		&:nth-child(1) {
 			max-width: 180px;
-			flex: 1 1 100px;
+			// flex: 1 1 100px;
 			background: #f2f2f2;
-			justify-content: flex-start;
-			padding-left: 55px;
+
 			@include _screen-960 {
 				padding-left: 0;
 			}
 		}
 
 		&:nth-child(2) {
-			flex: 0 1 22.8%;
+			// flex: 0 1 22.8%;
 		}
 
 		&:nth-child(3) {
-			flex: 0 1 31.8%;
+			// flex: 0 1 31.8%;
 
 			@include _min-960 {
-				flex: 2 1 auto !important;
+				// flex: 2 1 auto !important;
 			}
 		}
 
 		&:nth-child(4) {
-			flex: 0 1 33.7%;
+			// flex: 0 1 33.7%;
 		}
 
 		@include _1440-1920 {

@@ -2,18 +2,22 @@
 	// .answers__body
 	&__body {
 		margin: 0 auto;
-		padding: 12rem 50px 6rem;
+		padding: 13rem 50px 16.2rem;
 		max-width: 1264px;
 
-		@include _screen-768 {
-			padding: 12rem 15px 0;
+		@include _screen-1440 {
+			padding: 13rem 20px 16.2rem;
+		}
+
+		@include _screen-690 {
+			padding: 50px 10px;
 		}
 	}
 
 	// .answers__title
 
 	&__title {
-		padding-bottom: 60px;
+		padding-bottom: 70px;
 		color: rgb(7, 7, 7);
 		font-family: Averta Demo PE Cutted Demo;
 		font-size: 65px;
@@ -24,15 +28,15 @@
 		border-bottom: 1px solid #a9a9a9;
 
 		@include _320-1920 {
-			font-size: calc(20px + (65 - 20) * ((100vw - 320px) / (1920 - 320)));
+			font-size: calc(24px + (65 - 24) * ((100vw - 320px) / (1920 - 320)));
 		}
 
 		@include _screen-320 {
-			font-size: 20px;
+			font-size: 24px;
 		}
 
-		@include _screen-768 {
-			padding-bottom: 20px;
+		@include _screen-690 {
+			padding-bottom: 40px;
 		}
 	}
 
