@@ -6,7 +6,7 @@
 
 	// .seo-block__body
 	&__body {
-		max-width: 1119px;
+		max-width: 1280px;
 		margin: 0 auto;
 		overflow: hidden;
 		display: flex;
@@ -65,8 +65,11 @@
 
 	// .seo-block__row
 	&__row {
-		display: flex;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
 		gap: 4rem;
+		grid-auto-flow: dense;
+		grid-auto-rows: auto;
 
 		@include _screen-768 {
 			flex-direction: column;
@@ -75,12 +78,14 @@
 
 	// .seo-block__column
 	&__column {
-		flex: 0 1 50%;
-		display: flex;
-		flex-direction: column;
+		// grid-auto-flow: column;
 
 		@include _screen-768 {
 			flex: 0 100%;
+		}
+
+		&:nth-child(1) {
+			// grid-row: 1 / -3;
 		}
 	}
 
@@ -101,8 +106,8 @@
 
 	// .seo-block__button
 	&__button {
-		cursor: pointer;
 		background: #fff;
+		align-self: end;
 
 		&::before {
 			background: #2b3769;

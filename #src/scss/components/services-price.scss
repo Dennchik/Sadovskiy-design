@@ -183,7 +183,7 @@
 
 	// .card-price__price
 	&__price {
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 		font-size: 25px;
 		font-weight: 400;
 		line-height: 124%; /* 31px/25 */
@@ -204,7 +204,6 @@
 
 	// .card-price__button
 	&__button {
-		cursor: pointer;
 		align-self: end;
 		background: #fff;
 
