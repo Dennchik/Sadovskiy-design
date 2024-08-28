@@ -212,13 +212,13 @@
 		}
 
 		@include _960-1920 {
-			font-size: calc(26px + (35 - 14) * ((100vw - 1140px) / (1920 - 1140)));
+			font-size: calc(16px + (35 - 16) * ((100vw - 1140px) / (1920 - 1140)));
 		}
 
 		@include _screen-960 {
 			width: 100%;
 			padding: 21px 0;
-			font-size: 14px;
+			font-size: 16px;
 		}
 
 		// @include _screen-960 {
