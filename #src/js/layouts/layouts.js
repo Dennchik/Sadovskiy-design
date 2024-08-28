@@ -1,43 +1,54 @@
+import { timeLineHeaderItem, timeLineHeaderItemRevers } from '../modules/anime-js.js';
+
 // -----------------------------------------------------------------------------
 export function sidebarMenuHendle() {
 	const sidebarMenu = document.querySelector('.sidebar-menu');
-	const buttonItems = document.querySelector('.burger-button');
-	buttonItems.addEventListener('click', () => {
-		if (sidebarMenu.classList.contains('_open-menu')) {
-			sidebarMenu.classList.add('_close-menu');
-			buttonItems.classList.remove('_open-menu');
+	const buttonItems = document.querySelectorAll('.burger-button');
+	const tabsItem = document.querySelector('.tabs-button__wrapper');
 
-			setTimeout(() => {
-				document.body.classList.remove('no-scroll');
-				sidebarMenu.style.transition = 'transform 0.4s ease-in-out';
-				sidebarMenu.addEventListener('transitionend', function transitionEndHandler() {
-					sidebarMenu.style.transition = '';
-					sidebarMenu.removeEventListener('transitionend', transitionEndHandler);
-				}, { once: true });
-				sidebarMenu.classList.remove('_open-menu');
-				sidebarMenu.classList.remove('_close-menu');
-			}, 1300);
-		} else {
-			sidebarMenu.classList.add('_open-menu');
-			buttonItems.classList.add('_open-menu');
-			document.body.classList.add('no-scroll');
+	buttonItems.forEach(buttonItem => {
+		buttonItem.addEventListener('click', (e) => {
+			if (buttonItem.classList.contains('header__button')) {
+				if (sidebarMenu.classList.contains('_open-menu')) {
+					sidebarMenu.classList.add('_close-menu');
+					buttonItem.classList.remove('_open-menu');
+					setTimeout(() => {
+						document.body.classList.remove('no-scroll');
+						sidebarMenu.style.transition = 'transform 0.4s ease-in-out';
+						sidebarMenu.addEventListener('transitionend', function transitionEndHandler() {
+							sidebarMenu.style.transition = '';
+							sidebarMenu.removeEventListener('transitionend', transitionEndHandler);
+						}, { once: true });
+						sidebarMenu.classList.remove('_open-menu');
+						sidebarMenu.classList.remove('_close-menu');
+					}, 1300);
+				} else {
+					sidebarMenu.classList.add('_open-menu');
+					buttonItem.classList.add('_open-menu');
+					document.body.classList.add('no-scroll');
 
-			sidebarMenu.style.transition = 'transform 0.4s ease-in-out';
-			sidebarMenu.addEventListener('transitionend', function transitionEndHandler() {
-				sidebarMenu.style.transition = '';
-				sidebarMenu.removeEventListener('transitionend', transitionEndHandler);
-			}, { once: true });
+					sidebarMenu.style.transition = 'transform 0.4s ease-in-out';
+					sidebarMenu.addEventListener('transitionend', function transitionEndHandler() {
+						sidebarMenu.style.transition = '';
+						sidebarMenu.removeEventListener('transitionend', transitionEndHandler);
+					}, { once: true });
+				}
 
-		}
-
+			} else if (buttonItem.classList.contains('tabs-button__button')) {
+				buttonItem.classList.toggle('_open-menu');
+				tabsItem.classList.toggle('_responsive');
+			}
+		});
 	});
 }
 // -----------------------------------------------------------------------------
-import { timeLineHeaderItem, timeLineHeaderItemRevers } from '../modules/anime-js.js';
+
 
 export function tabsHandler() {
-	const tablinks = document.querySelectorAll('.tabs-buton__item');
-	const tabcontents = document.querySelectorAll('.tab-content__item');
+	const tablinks = document.querySelectorAll('.tabs-button__item');
+	const tabcontents = document.querySelectorAll('.tab-content__items');
+	const tabsItem = document.querySelector('.tabs-button__wrapper');
+	const buttonItems = document.querySelectorAll('.burger-button');
 
 	tablinks.forEach((tablink, i) => {
 		tablink.addEventListener('click', () => {
@@ -50,13 +61,19 @@ export function tabsHandler() {
 			// Добавляем класс active к текущей кнопке и контенту
 			tablink.classList.add('active');
 			tabcontent.classList.add('active');
+			tabsItem.classList.remove('_responsive');
+			buttonItems.forEach(buttonItem => {
+				if (buttonItem.classList.contains('_open-menu')) {
+					buttonItem.classList.remove('_open-menu');
+				}
+			});
 
 			// Применяем анимацию только к активному контенту
 			timeLineHeaderItem(tabcontent);
 
-			if (!tabcontent.classList.contains('.active')) {
-				// timeLineHeaderItemRevers(tabcontent);
-			}
+			// if (!tabcontent.classList.contains('.active')) {
+			// 	timeLineHeaderItemRevers(tabcontent);
+			// }
 		});
 	});
 }

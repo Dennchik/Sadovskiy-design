@@ -13,6 +13,25 @@ document.addEventListener('DOMContentLoaded', () => {
 	maskPhone('.phone');
 	// timeLineServiceItem();
 });
+// -----------------------------------------------------------------------------
+
+
+const contentItems = document.querySelectorAll('.services-price__column');
+
+contentItems.forEach(contentItem => {
+
+	const openButton = contentItem.querySelector('.card-price__open-btn');
+	const closeButton = contentItem.querySelector('.card-price__close-btn');
+
+
+	openButton.addEventListener('click', () => {
+		contentItem.classList.add('_open');
+	});
+	closeButton.addEventListener('click', () => {
+		contentItem.classList.remove('_open');
+	});
+});
+// -----------------------------------------------------------------------------
 
 
 // import { timeLineServiceItem, animateTitles, animateForEachItems, animateTextLeft, opasityForEachItems, animateTitles1 } from "./animations/layout-anime";

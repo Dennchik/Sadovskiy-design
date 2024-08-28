@@ -73,17 +73,18 @@
 	// .order-place__text
 	&__text {
 		color: rgb(255, 255, 255);
-		font-size: 20px;
-		font-weight: 400;
-		line-height: 125%; /* 25px/20 */
 		text-align: center;
+		p {
+			font-size: 20px;
+			font-weight: 400;
+			line-height: 125%; /* 25px/20 */
+			@include _320-1920 {
+				font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
+			}
 
-		@include _320-1920 {
-			font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
-		}
-
-		@include _screen-320 {
-			font-size: 14px;
+			@include _screen-320 {
+				font-size: 12px;
+			}
 		}
 	}
 
@@ -171,7 +172,7 @@
 
 	// .order-form__input
 	&__input {
-		height: 56px;
+		height: 5.6rem;
 
 		input {
 			padding: 0 30px;
@@ -188,7 +189,7 @@
 
 	// .order-form__button
 	&__button {
-		height: 56px;
+		// height: 56px;
 		background: #fff;
 		border: 1px solid transparent;
 
@@ -208,7 +209,7 @@
 		}
 
 		.icon {
-			width: 48px;
+			// width: 48px;
 		}
 
 		.icon-arrow-right {

@@ -3,8 +3,12 @@
 	&__body {
 		position: relative;
 		background: #2b3769;
-		padding: 12.9rem 50px 16.2rem;
+		padding: 13rem 50px 16.2rem;
 		overflow: hidden;
+
+		@include _screen-1440 {
+			padding: 13rem 20px 16.2rem;
+		}
 
 		@include _screen-690 {
 			padding: 50px 10px;
@@ -25,8 +29,8 @@
 		justify-content: space-between;
 		grid-template-columns: repeat(3, minmax(200px, 520px));
 
-		@include _screen-960 {
-			grid-template-columns: repeat(2, minmax(200px, 520px));
+		@include _screen-1440 {
+			grid-template-columns: repeat(2, minmax(200px, 1fr));
 		}
 
 		@include _screen-690 {
@@ -68,12 +72,16 @@
 
 	// .schedule__title
 	&__title {
-		flex: 1 1 auto;
-		height: 100%;
+		margin-bottom: 30px;
+		white-space: nowrap;
 		color: #ffffff;
 		font-size: 35px;
 		font-weight: 400;
 		line-height: 122.857143%; /* 43px/35 */
+
+		@include _screen-768 {
+			white-space: normal;
+		}
 
 		@include _screen-690 {
 			margin-bottom: 25px;

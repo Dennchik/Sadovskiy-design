@@ -15,8 +15,12 @@
 
 	// .about-company__title
 	&__title {
-		max-width: 843px;
+		max-width: 1273px;
 		margin: 0 auto 69px;
+
+		@include _screen-1440 {
+			max-width: 850px;
+		}
 
 		h2 {
 			line-height: 100%;
@@ -24,6 +28,7 @@
 			text-align: left;
 			font-size: 65px;
 			font-weight: 400;
+
 			@include _320-1920 {
 				font-size: calc(24px + (65 - 24) * ((100vw - 320px) / (1920 - 320)));
 			}
@@ -32,7 +37,7 @@
 				font-size: 24px;
 			}
 
-			@include _screen-690 {
+			@include _screen-1440 {
 				text-align: center;
 			}
 		}
@@ -44,13 +49,10 @@
 
 	// .about-company__content
 	&__content {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
 		max-width: 1273px;
 		margin: 0 auto;
-		flex-direction: column;
-
 		display: flex;
+		flex-direction: column;
 	}
 
 	// .about-company__row
@@ -99,7 +101,7 @@
 			}
 
 			@include _screen-320 {
-				font-size: 11px;
+				font-size: 12px;
 			}
 		}
 

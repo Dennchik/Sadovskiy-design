@@ -109,47 +109,52 @@
 	background: #2b3769;
 }
 // -----------------------------------------------------------------------------
-.toggle-wrap {
-	padding: 10px 6px;
-	overflow: hidden;
-	background: #620c77;
-	height: 36px;
-	width: 36px;
-	cursor: pointer;
-}
+// .toggle-wrap {
+// 	padding: 10px 6px;
+// 	overflow: hidden;
+// 	background: #620c77;
+// 	height: 36px;
+// 	width: 36px;
+// 	cursor: pointer;
+// }
 
 .burger-button {
-	border-radius: 5px;
-	position: relative;
-
-	span {
-		opacity: 1;
-		left: 0;
-		display: block;
-		width: 100%;
-		height: 2px;
-		border-radius: 2px;
-		background-color: #171b1c;
-		position: absolute;
-		transform: rotate(0deg);
-		transition: 0.7s ease-in-out;
-
-		&:nth-child(2) {
-			top: 7px;
-		}
-		&:nth-child(3) {
-			top: 14px;
-		}
-	}
-
+	//.burger-button__wrapper
 	&__wrapper {
 		cursor: pointer;
 		padding: 10px 6px;
 		height: 36px;
 		width: 36px;
+		overflow: hidden;
+		pointer-events: none;
 
 		backdrop-filter: blur(10px);
-		box-shadow: 0 2px 9px #6c8fac;
+		// box-shadow: 0 2px 9px #6c8fac;
+	}
+
+	&__items {
+		border-radius: 5px;
+		position: relative;
+
+		span {
+			opacity: 1;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 2px;
+			border-radius: 2px;
+			background-color: #171b1c;
+			position: absolute;
+			transform: rotate(0deg);
+			transition: 0.7s ease-in-out;
+
+			&:nth-child(2) {
+				top: 7px;
+			}
+			&:nth-child(3) {
+				top: 14px;
+			}
+		}
 	}
 
 	&._open-menu {

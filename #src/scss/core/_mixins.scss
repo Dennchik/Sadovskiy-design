@@ -204,7 +204,11 @@
 		@content;
 	}
 }
-
+@mixin _960-1920 {
+	@media (min-width: 960px) and (max-width: 1920px) {
+		@content;
+	}
+}
 @mixin _490-1920 {
 	@media (min-width: 490px) and (max-width: 1920px) {
 		@content;
@@ -215,7 +219,11 @@
 		@content;
 	}
 }
-
+@mixin _320-1140 {
+	@media (min-width: 320px) and (max-width: 1140px) {
+		@content;
+	}
+}
 @mixin _1024 {
 	@container (max-width: 1024px) {
 		@content;

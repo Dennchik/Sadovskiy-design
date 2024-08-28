@@ -21,7 +21,6 @@
 	max-width: $maxWidthContainer;
 	margin: 0 auto;
 	padding: 0 50px;
-	box-sizing: content-box;
 
 	@include _screen-1440 {
 		padding: 0 20px;
@@ -138,7 +137,6 @@
 		margin-left: 2rem;
 		width: 35px;
 		height: 35px;
-		overflow: hidden;
 		display: none;
 		@include _screen-768 {
 			display: flex;

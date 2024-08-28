@@ -91,6 +91,15 @@
 		width: 232px;
 		border-radius: 20px;
 		overflow: hidden;
+
+		@include _320-1920 {
+			width: calc(117px + (232 - 117) * ((100vw - 320px) / (1920 - 320)));
+		}
+
+		@include _screen-320 {
+			width: 117px;
+		}
+
 		img {
 			width: 100%;
 			object-fit: contain;

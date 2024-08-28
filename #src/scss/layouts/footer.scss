@@ -27,9 +27,14 @@
 	// .footer__header
 	&__header {
 		border-bottom: 1.54px solid #bcbcbc;
-		padding-bottom: 32px;
+		padding-bottom: 26px;
 		display: flex;
 		justify-content: space-between;
+		gap: 16px;
+
+		@include _screen-375 {
+			flex-direction: column;
+		}
 	}
 
 	// .footer__logo
@@ -57,15 +62,23 @@
 		display: flex;
 		align-items: center;
 
+		.icon-telegram-fly {
+			background: #039be5;
+		}
+
+		.icon-whatsapp {
+			background: #4caf50;
+		}
+
 		._icon {
+			width: 3.3rem;
+			height: 3.3rem;
+			border-radius: 50%;
+
 			&::before {
 				color: #fff;
-				font-size: 4.8rem;
-				font-weight: 100;
-
-				@include _screen-690 {
-					font-size: 3.2rem;
-				}
+				font-size: 2rem;
+				font-weight: 400;
 			}
 
 			&:not(:last-child) {

@@ -61,6 +61,27 @@
 		@include _screen-768 {
 			border-radius: 10px;
 		}
+
+		&._open {
+			.card-price__content {
+				grid-template-rows: 1fr;
+			}
+
+			.card-price__button {
+				display: flex;
+			}
+
+			.card-price__open-btn {
+				display: none;
+			}
+
+			.card-price__footer {
+				flex-direction: column;
+			}
+			.card-price__close-btn {
+				display: block;
+			}
+		}
 	}
 
 	// .services-price__card
@@ -79,7 +100,10 @@
 		margin-bottom: 14px;
 		font-size: 35px;
 		font-weight: 400;
-		line-height: 43px/35;
+		line-height: 122.857143%; /* 43px/35 */
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 
 		@include _320-1920 {
 			font-size: calc(20px + (35 - 20) * ((100vw - 490px) / (1920 - 490)));
@@ -90,14 +114,29 @@
 		}
 	}
 
+	// .card-price__close-btn
+	&__close-btn {
+		cursor: pointer;
+		display: none;
+		// transform: translateX(40%);
+	}
+
 	// .card-price__content
 	&__content {
 		flex: 1 1 auto;
+
+		@include _screen-490 {
+			display: grid;
+			grid-template-rows: 0fr;
+			transition: grid-template-rows 0.4s ease 0s;
+		}
 	}
 
 	// .card-price__list
 	&__list {
 		margin-bottom: 27px;
+		min-height: 0;
+		overflow: hidden;
 	}
 
 	// .card-price__item
@@ -135,6 +174,10 @@
 
 		@include _screen-1710 {
 			flex-direction: column;
+		}
+
+		@include _screen-490 {
+			flex-direction: row;
 		}
 	}
 
@@ -180,6 +223,10 @@
 			line-height: 125%; /* 25px/20 */
 			text-align: center;
 		}
+
+		@include _screen-490 {
+			display: none;
+		}
 	}
 
 	// .card-price__icon-btn
@@ -188,6 +235,16 @@
 			&::before {
 				color: #fff;
 			}
+		}
+	}
+
+	// .card-price__open-btn
+	&__open-btn {
+		color: #fff;
+		font-size: 18px;
+		display: none;
+		@include _screen-490 {
+			display: block;
 		}
 	}
 }
