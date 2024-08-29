@@ -14,6 +14,10 @@
 		&.with-shadow {
 			box-shadow: 0 2px 9px #6c8fac;
 		}
+
+		@include _screen-690 {
+			padding: 5px 0;
+		}
 	}
 }
 
@@ -37,7 +41,7 @@
 		grid-template-columns: min-content 1fr min-content;
 		align-items: center;
 
-		@include _screen-768 {
+		@include _screen-690 {
 			grid-template-columns: min-content max-content;
 			justify-content: space-between;
 		}
@@ -85,7 +89,7 @@
 		width: 100%;
 		display: inline-flex;
 		justify-content: flex-end;
-		padding-right: 40px;
+		padding-right: 4rem;
 
 		@include _screen-768 {
 			// display: none;
@@ -121,6 +125,10 @@
 			}
 		}
 
+		@include _screen-690 {
+			display: none;
+		}
+
 		._icon {
 			font-size: 32px;
 
@@ -138,7 +146,8 @@
 		width: 35px;
 		height: 35px;
 		display: none;
-		@include _screen-768 {
+
+		@include _screen-690 {
 			display: flex;
 		}
 	}
@@ -155,8 +164,13 @@
 		transition: all 0.4s ease-in-out;
 
 		&:not(:last-child) {
-			margin-right: 41px;
+			margin-right: 4.1rem;
+
+			@include _screen-768 {
+				margin-right: 2.8rem;
+			}
 		}
+
 		@extend .underline;
 	}
 }

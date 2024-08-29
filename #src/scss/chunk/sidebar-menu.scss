@@ -3,13 +3,15 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	height: calc(100% - 79px);
-	background: #fff;
+	height: calc(100% - 50px);
 	z-index: 10;
 	transform: translateY(-120%);
 	will-change: transform;
 	display: flex;
-	background: #2b3769;
+
+	background: #2b3769e3;
+	background: linear-gradient(to right, #2b3769d3 50% #3b4357f1 80%);
+	backdrop-filter: blur(7px);
 
 	&::before {
 		content: '';
@@ -25,7 +27,6 @@
 	// .sidebar-menu__column
 	&__column {
 		opacity: 0;
-		// &:nth-child(1) {
 		width: 100%;
 		overflow-x: hidden;
 		min-width: 300px;
@@ -33,7 +34,6 @@
 		@include _min-960 {
 			flex: 0 1 40%;
 		}
-		// }
 
 		@include _screen-490 {
 			width: 100%;

@@ -13,8 +13,8 @@
 		background: rgb(23, 27, 28);
 		overflow: hidden;
 
-		@include _screen-768 {
-			padding: 40px 10px;
+		@include _screen-690 {
+			padding: 40px 10px 10px;
 		}
 	}
 
