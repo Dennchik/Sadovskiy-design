@@ -53,7 +53,7 @@
 	&__content {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		gap: 4rem;
+		gap: 2rem;
 		grid-auto-flow: dense;
 		grid-auto-rows: auto;
 

@@ -2,17 +2,8 @@
 	// .order-place__body
 
 	&__body {
-		padding: 50px 15px;
-	}
+		padding: 13rem 50px 16.9rem;
 
-	// .order-place__row
-	&__row {
-		position: relative;
-		z-index: 9;
-	}
-
-	// .order-place__body
-	&__body {
 		display: grid;
 		grid-template-columns: 1fr;
 		position: relative;
@@ -21,13 +12,27 @@
 		background: #171b1c;
 		overflow: hidden;
 
+		@include _screen-960 {
+			padding: 13rem 30px 16.9rem;
+		}
+
 		@include _screen-690 {
 			border-radius: 15px;
+			padding: 50px 30px;
+		}
+
+		@include _screen-490 {
+			padding: 50px 10px;
 		}
 	}
 
-	// .order-place__header
+	// .order-place__row
+	&__row {
+		position: relative;
+		z-index: 9;
+	}
 
+	// .order-place__header
 	&__header {
 		margin: 0 auto;
 		max-width: 1013px;
@@ -37,22 +42,19 @@
 	&__title {
 		margin: 0 auto 40px;
 		color: rgb(255, 255, 255);
+		max-width: 893px;
 
-		max-width: 800px;
+		font-size: 76px;
+		font-weight: 400;
+		line-height: 100%;
+		text-align: center;
 
-		h2 {
-			font-size: 65px;
-			font-weight: 400;
-			line-height: 100%;
-			text-align: center;
+		@include _320-1920 {
+			font-size: calc(28px + (76 - 28) * ((100vw - 320px) / (1920 - 320)));
+		}
 
-			@include _320-1920 {
-				font-size: calc(28px + (65 - 28) * ((100vw - 320px) / (1920 - 320)));
-			}
-
-			@include _screen-320 {
-				font-size: 28px;
-			}
+		@include _screen-320 {
+			font-size: 28px;
 		}
 
 		@include _screen-490 {
@@ -64,17 +66,19 @@
 	&__text {
 		color: rgb(255, 255, 255);
 		text-align: center;
-		p {
-			font-size: 20px;
-			font-weight: 400;
-			line-height: 125%; /* 25px/20 */
-			@include _320-1920 {
-				font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
-			}
 
-			@include _screen-320 {
-				font-size: 12px;
-			}
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 125%; /* 25px/20 */
+		max-width: 720px;
+		margin: 0 auto;
+
+		@include _320-1920 {
+			font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
+		}
+
+		@include _screen-320 {
+			font-size: 12px;
 		}
 	}
 

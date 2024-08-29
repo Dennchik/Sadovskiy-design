@@ -1,0 +1,18 @@
+extends ../layouts/app_layout
+append link 
+	link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
+prepend script 
+	script(type="text/javascript" src="@@webRoot/js/index.min.js" defer)
+block title
+	- var text='Sadovskiy-design/Project' 
+
+
+block header 
+	header.page__header-project
+		include ../layouts/header 
+block main-content 
+	block perform 
+
+
+	block footer
+	include ../layouts/footer

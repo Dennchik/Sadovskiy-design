@@ -150,7 +150,7 @@ export function maskPhone(selector) {
 // -----------------------------------------------------------------------------
 export function shadowScroll() {
 	const handleScroll = () => {
-		const header = document.querySelector('.page__header');
+		const header = document.querySelector('.page__header-main');
 		const pageContainer = document.querySelector('.page__content');
 		const pageContainerTop = pageContainer.getBoundingClientRect().top;
 		if (pageContainerTop < -50) {

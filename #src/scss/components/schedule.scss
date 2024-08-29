@@ -113,7 +113,7 @@
 		line-height: 125%; /* 20px/16 */
 
 		@include _320-1920 {
-			font-size: calc(12px + (35 - 12) * ((100vw - 320px) / (1920 - 320)));
+			font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
 		}
 		@include _screen-320 {
 			font-size: 12px;
