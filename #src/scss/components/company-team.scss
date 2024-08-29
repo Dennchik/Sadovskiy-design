@@ -2,17 +2,6 @@
 	// .company-team__body
 	&__body {
 		position: relative;
-		background: #2b3769;
-		padding: 13rem 50px;
-		overflow: hidden;
-
-		@include _screen-1440 {
-			padding: 13rem 20px;
-		}
-
-		@include _screen-690 {
-			padding: 50px 10px;
-		}
 	}
 
 	// .order-place__row

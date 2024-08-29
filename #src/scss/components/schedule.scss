@@ -2,17 +2,6 @@
 	// .schedule__body
 	&__body {
 		position: relative;
-		background: #2b3769;
-		padding: 13rem 50px 16.2rem;
-		overflow: hidden;
-
-		@include _screen-1440 {
-			padding: 13rem 20px 16.2rem;
-		}
-
-		@include _screen-690 {
-			padding: 50px 10px;
-		}
 	}
 
 	// .schedule__row
@@ -118,10 +107,17 @@
 	// .schedule__text
 	&__text {
 		color: #ffffff;
-		font-family: Averta Demo PE Cutted Demo;
-		font-size: 1.6rem;
+		font-family: $font-defoult;
+		font-size: 16px;
 		font-weight: 400;
 		line-height: 125%; /* 20px/16 */
+
+		@include _320-1920 {
+			font-size: calc(12px + (35 - 12) * ((100vw - 320px) / (1920 - 320)));
+		}
+		@include _screen-320 {
+			font-size: 12px;
+		}
 	}
 }
 

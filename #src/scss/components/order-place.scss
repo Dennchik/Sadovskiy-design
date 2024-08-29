@@ -1,19 +1,9 @@
-.page {
-	// .page__order-place
-	&__order-place {
-		padding: 0 50px;
-		@include _screen-1440 {
-			padding: 0 20px;
-		}
-
-		@include _screen-690 {
-			padding: 0 10px;
-		}
-	}
-}
-
 .order-place {
 	// .order-place__body
+
+	&__body {
+		padding: 50px 15px;
+	}
 
 	// .order-place__row
 	&__row {
@@ -27,16 +17,12 @@
 		grid-template-columns: 1fr;
 		position: relative;
 		border-radius: 30px;
-		padding: 13rem 0 16.9rem;
+
 		background: #171b1c;
 		overflow: hidden;
 
 		@include _screen-690 {
-			border-radius: 10px;
-			padding: 50px 25px;
-		}
-		@include _screen-375 {
-			padding: 50px 15px;
+			border-radius: 15px;
 		}
 	}
 
@@ -68,6 +54,10 @@
 				font-size: 28px;
 			}
 		}
+
+		@include _screen-490 {
+			margin-bottom: 20px;
+		}
 	}
 
 	// .order-place__text
@@ -96,8 +86,18 @@
 		margin: 40px auto;
 		max-width: 892px;
 		display: flex;
+
+		.order-form__button {
+			width: 100%;
+		}
+
 		@include _screen-960 {
 			flex-direction: column;
+		}
+
+		@include _screen-490 {
+			gap: 15px;
+			margin: 16px auto;
 		}
 	}
 

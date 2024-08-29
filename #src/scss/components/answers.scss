@@ -2,20 +2,10 @@
 	// .answers__body
 	&__body {
 		margin: 0 auto;
-		padding: 13rem 50px 16.2rem;
 		max-width: 1264px;
-
-		@include _screen-1440 {
-			padding: 13rem 20px 16.2rem;
-		}
-
-		@include _screen-690 {
-			padding: 50px 10px;
-		}
 	}
 
 	// .answers__title
-
 	&__title {
 		padding-bottom: 70px;
 		color: rgb(7, 7, 7);

@@ -8,32 +8,145 @@
 	&__container {
 		position: relative;
 	}
+	// .page__services
+	&__services {
+		padding: 13rem 50px 16.3rem;
+		position: relative;
+		z-index: 9;
+		display: flow-root;
+
+		@include _screen-1440 {
+			padding: 13rem 30px;
+		}
+
+		@include _screen-690 {
+			padding: 60px 30px;
+		}
+
+		@include _screen-490 {
+			padding: 60px 10px;
+		}
+	}
+
+	// .page__progect
+	&__project {
+		padding: 0 50px;
+		@include _screen-1440 {
+			padding: 0 30px;
+		}
+
+		@include _screen-960 {
+			padding: 0;
+		}
+	}
 
 	// .page__about-company
 	&__about-company {
+		padding: 13rem 50px 16.3rem;
+		@include _screen-1440 {
+			padding: 13rem 30px 16.3rem;
+		}
+
+		@include _screen-690 {
+			padding: 60px 30px;
+		}
+
+		@include _screen-490 {
+			padding: 60px 10px;
+		}
 	}
 
 	// .page__schedule
 	&__schedule {
+		padding: 13rem 50px 16.2rem;
+		overflow: hidden;
+		background: #2b3769;
+
+		@include _screen-1440 {
+			padding: 13rem 30px 16.2rem;
+		}
+
+		@include _screen-690 {
+			padding: 60px 30px;
+		}
+
+		@include _screen-490 {
+			padding: 60px 10px;
+		}
 	}
 
 	// .page__services-price
 	&__services-price {
+		padding: 13rem 50px 16.3rem;
+
+		@include _screen-1440 {
+			padding: 13rem 30px 15.9rem;
+		}
+
+		@include _screen-690 {
+			padding: 60px 30px;
+		}
+
+		@include _screen-490 {
+			padding: 60px 10px;
+		}
+	}
+
+	// .page__order-place
+	&__order-place {
+		padding: 13rem 0 16.9rem;
+		@include _screen-1440 {
+			padding: 0 30px;
+		}
+
+		@include _screen-490 {
+			padding: 0 10px;
+		}
 	}
 
 	// .page__seo-block
 	&__seo-block {
+		background: url('../img/main/s-bg.png') center / cover no-repeat;
+		padding: 13rem 50px;
+
+		@include _screen-1440 {
+			padding: 60px 30px;
+		}
+
+		@include _screen-490 {
+			padding: 60px 10px;
+		}
 	}
 
 	// .page__company-team
 	&__company-team {
-	}
+		background: #2b3769;
+		padding: 13rem 50px;
+		overflow: hidden;
 
-	// .page__brands
-	&__brands {
+		@include _screen-1440 {
+			padding: 60px 30px;
+		}
+
+		@include _screen-490 {
+			padding: 60px 10px;
+		}
 	}
 
 	// .page__answers
 	&__answers {
+		padding: 13rem 50px 16.2rem;
+
+		@include _screen-1440 {
+			padding: 50 30px;
+		}
+
+		@include _screen-490 {
+			padding: 50px 10px;
+		}
+	}
+
+	// .page__brands
+	&__brands {
 	}
 }

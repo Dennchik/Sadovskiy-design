@@ -27,11 +27,11 @@
 	padding: 0 50px;
 
 	@include _screen-1440 {
-		padding: 0 20px;
+		padding: 0 30px;
 	}
 
-	@include _screen-690 {
-		padding: 0 10px;
+	@include _screen-490 {
+		padding: 0 5px;
 	}
 
 	// .header__body
@@ -92,7 +92,7 @@
 		padding-right: 4rem;
 
 		@include _screen-768 {
-			// display: none;
+			padding-right: 20px;
 		}
 	}
 
@@ -167,7 +167,7 @@
 			margin-right: 4.1rem;
 
 			@include _screen-768 {
-				margin-right: 2.8rem;
+				margin-right: 15px;
 			}
 		}
 

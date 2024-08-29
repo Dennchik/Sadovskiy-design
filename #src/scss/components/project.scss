@@ -24,15 +24,6 @@
 
 	// .project__body
 	&__body {
-		padding: 0 50px;
-
-		@include _screen-1440 {
-			padding: 0 20px;
-		}
-
-		@include _screen-960 {
-			padding: 0;
-		}
 	}
 
 	// .project__content
@@ -49,6 +40,7 @@
 		@include _screen-1140 {
 			border-top-right-radius: 0;
 			border-top-left-radius: 0;
+			padding: 50px 30px;
 		}
 
 		@include _screen-960 {
@@ -56,6 +48,10 @@
 		}
 
 		@include _screen-690 {
+			padding: 50px 30px;
+		}
+
+		@include _screen-490 {
 			padding: 50px 10px;
 		}
 	}
@@ -69,7 +65,11 @@
 		transition: all 0.9s ease-in-out;
 
 		@include _min-1140 {
-			height: 14.5rem;
+			height: 145px;
+
+			@include _1140-1920 {
+				height: calc(108px + (145 - 108) * ((100vw - 1140px) / (1920 - 1140)));
+			}
 		}
 
 		@include _screen-1140 {
@@ -83,10 +83,10 @@
 		@include _screen-960 {
 			border-top-left-radius: 0;
 			border-top-right-radius: 0;
-			padding: 0 20px;
+			padding: 0 30px;
 		}
 
-		@include _screen-690 {
+		@include _screen-490 {
 			padding: 0 10px;
 		}
 	}
@@ -147,7 +147,8 @@
 		@include _screen-1140 {
 			align-items: center;
 			box-sizing: border-box;
-			justify-content: space-between;
+			justify-content: flex-start;
+			gap: 40px;
 			padding: 0 3.4rem;
 		}
 
@@ -176,6 +177,7 @@
 		span {
 			display: flex;
 			line-height: 100%;
+
 			@include _min-1140 {
 				padding: 0 3.4rem;
 			}
@@ -189,7 +191,11 @@
 			@include _min-1140 {
 				color: #000;
 				background: #f2f2f2;
-				height: 12.8rem;
+				height: 128px;
+			}
+
+			@include _1140-1920 {
+				height: calc(92px + (128 - 92) * ((100vw - 1140px) / (1920 - 1140)));
 			}
 
 			@include _screen-960 {
@@ -204,7 +210,15 @@
 		}
 
 		&:nth-child(1) {
-			max-width: 180px;
+			max-width: 128px;
+
+			@include _min-1140 {
+				min-width: 128px;
+				span {
+					display: block;
+					text-align: center;
+				}
+			}
 
 			@include _screen-960 {
 				max-width: 100%;
@@ -220,20 +234,6 @@
 			padding: 21px 0;
 			font-size: 16px;
 		}
-
-		// @include _screen-960 {
-		// 	flex: 0 1 auto !important;
-		// 	align-items: center;
-		// 	background: transparent !important;
-		// 	color: #fff;
-		// 	height: 100%;
-		// }
-
-		// @include _screen-960 {
-		// 	&:not(.active) {
-		// 		display: none;
-		// 	}
-		// }
 	}
 
 	// .tabs-buton__button
@@ -272,6 +272,7 @@
 
 		@include _screen-1440 {
 			grid-template-columns: repeat(2, 1fr);
+			gap: 30px;
 		}
 
 		@include _screen-690 {
@@ -314,6 +315,10 @@
 			width: 100%;
 			height: 100%;
 			object-fit: contain;
+		}
+
+		@include _min-690 {
+			pointer-events: none;
 		}
 	}
 
@@ -465,6 +470,7 @@
 		transition: all 0.3s ease-in-out;
 	}
 }
+
 .button {
 	&__icon {
 		color: #fff;

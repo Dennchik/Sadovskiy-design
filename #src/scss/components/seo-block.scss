@@ -1,9 +1,4 @@
 .seo-block {
-	// .seo-block__content
-	&__content {
-		background: url('../img/main/s-bg.png') center / cover no-repeat;
-	}
-
 	// .seo-block__body
 	&__body {
 		max-width: 1280px;
@@ -11,15 +6,6 @@
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
-		padding: 13rem 50px;
-
-		@include _screen-1440 {
-			padding: 13rem 20px;
-		}
-
-		@include _screen-768 {
-			padding: 50px 10px 60px;
-		}
 	}
 
 	// .seo-block__title
@@ -63,8 +49,8 @@
 		}
 	}
 
-	// .seo-block__row
-	&__row {
+	// .seo-block__content
+	&__content {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 4rem;
@@ -72,14 +58,13 @@
 		grid-auto-rows: auto;
 
 		@include _screen-768 {
-			flex-direction: column;
+			grid-template-columns: repeat(1, 1fr);
 		}
 	}
 
 	// .seo-block__column
 	&__column {
 		// grid-auto-flow: column;
-
 		@include _screen-768 {
 			flex: 0 100%;
 		}
@@ -91,8 +76,6 @@
 
 	// .seo-block__text
 	&__text {
-		flex: 1 1 auto;
-		align-self: end;
 		font-size: 16px;
 		font-weight: 400;
 		line-height: 19px;
@@ -101,6 +84,14 @@
 			&:not(:last-child) {
 				margin-bottom: 20px;
 			}
+		}
+
+		@include _320-1920 {
+			font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
+		}
+
+		@include _screen-320 {
+			font-size: 12px;
 		}
 	}
 
@@ -122,6 +113,7 @@
 		@include _screen-768 {
 			margin-top: 16px;
 			align-self: center;
+			justify-self: center;
 		}
 
 		span {

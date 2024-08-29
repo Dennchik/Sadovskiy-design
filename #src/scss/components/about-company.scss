@@ -1,16 +1,7 @@
 .about-company {
 	// .about-company__body
 	&__body {
-		padding: 13rem 50px 16.3rem;
 		overflow: hidden;
-
-		@include _screen-1440 {
-			padding: 13rem 20px 16.3rem;
-		}
-
-		@include _screen-690 {
-			padding: 50px 10px;
-		}
 	}
 
 	// .about-company__title
@@ -29,16 +20,16 @@
 			font-size: 65px;
 			font-weight: 400;
 
+			@include _screen-1440 {
+				text-align: center;
+			}
+
 			@include _320-1920 {
 				font-size: calc(24px + (65 - 24) * ((100vw - 320px) / (1920 - 320)));
 			}
 
 			@include _screen-320 {
 				font-size: 24px;
-			}
-
-			@include _screen-1440 {
-				text-align: center;
 			}
 		}
 
@@ -97,7 +88,7 @@
 			line-height: 125%; /* 20px/16 */
 
 			@include _320-1920 {
-				font-size: calc(11px + (35 - 11) * ((100vw - 320px) / (1920 - 320)));
+				font-size: calc(12px + (35 - 12) * ((100vw - 320px) / (1920 - 320)));
 			}
 
 			@include _screen-320 {
