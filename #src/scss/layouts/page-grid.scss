@@ -1,0 +1,57 @@
+.pqge-grid {
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 100%;
+	height: 100vh;
+
+	&__content {
+		margin: 0 auto;
+		padding: 0 50px;
+		height: 100vh;
+		width: 100vw;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 40px;
+		box-sizing: border-box;
+
+		@include _screen-1440 {
+			padding: 0 30px;
+			gap: 30px;
+		}
+
+		@include _screen-960 {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include _screen-690 {
+			grid-template-columns: repeat(1, 1fr);
+		}
+
+		@include _screen-490 {
+			padding: 0 10px;
+			gap: 10px;
+		}
+	}
+
+	&__column {
+		width: 100%;
+		height: 100%;
+		background: #0026ff1a;
+
+		@include _screen-960 {
+			&:nth-child(3) {
+				display: none;
+			}
+		}
+
+		@include _screen-690 {
+			&:nth-child(2),
+			&:nth-child(3) {
+				display: none;
+			}
+		}
+	}
+}

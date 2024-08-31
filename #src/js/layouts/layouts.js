@@ -150,14 +150,25 @@ export function maskPhone(selector) {
 // -----------------------------------------------------------------------------
 export function shadowScroll() {
 	const handleScroll = () => {
-		const header = document.querySelector('.page__header-main');
+		const headerMain = document.querySelector('.page__header-main');
+		const headerProject = document.querySelector('.page__header-project');
 		const pageContainer = document.querySelector('.page__content');
 		const pageContainerTop = pageContainer.getBoundingClientRect().top;
-		if (pageContainerTop < -50) {
-			header.classList.add('with-shadow');
-		} else if (pageContainerTop <= 0) {
-			header.classList.remove('with-shadow');
+
+		if (headerMain) {
+			if (pageContainerTop < -50) {
+				headerMain.classList.add('with-shadow');
+			} else if (pageContainerTop <= 0) {
+				headerMain.classList.remove('with-shadow');
+			}
+		} else if (headerProject) {
+			if (pageContainerTop < -50) {
+				headerProject.classList.add('with-shadow');
+			} else if (pageContainerTop <= 0) {
+				headerProject.classList.remove('with-shadow');
+			}
 		}
+
 	};
 
 	window.addEventListener('scroll', handleScroll);

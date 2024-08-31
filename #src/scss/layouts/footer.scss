@@ -13,8 +13,8 @@
 		background: rgb(23, 27, 28);
 		overflow: hidden;
 
-		@include _screen-690 {
-			padding: 40px 30px 10px;
+		@include _screen-1440 {
+			padding: 40px 30px;
 		}
 
 		@include _screen-490 {
@@ -103,10 +103,15 @@
 		padding-top: 25px;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 15px;
+		gap: 50px;
 		height: 100%;
 
-		@include _screen-690 {
+		@include _screen-1440 {
+			gap: 30px;
+		}
+
+		@include _screen-490 {
+			gap: 10px;
 			grid-template-columns: repeat(2, 1fr);
 		}
 		@include _screen-605 {

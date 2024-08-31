@@ -15,12 +15,16 @@
 	&__body {
 		width: 100%;
 		display: grid;
-		grid-template-columns: min-content 1fr min-content;
+		grid-template-columns: minmax(200px, 1fr) minmax(565px, max-content);
 		align-items: center;
+		justify-content: space-between;
 
-		@include _screen-690 {
+		@include _screen-960 {
 			grid-template-columns: min-content max-content;
-			justify-content: space-between;
+		}
+
+		@include _min-490 {
+			gap: 40px;
 		}
 	}
 
@@ -54,7 +58,7 @@
 	&__logo {
 		display: flex;
 		align-items: center;
-		margin-right: 4.7rem;
+		// margin-right: 4.7rem;
 
 		@include _screen-490 {
 			margin-right: 3rem;
@@ -63,14 +67,10 @@
 
 	// .header__menu
 	&__menu {
-		width: 100%;
-		display: inline-flex;
-		justify-content: flex-end;
-		padding-right: 4rem;
-
-		@include _screen-768 {
-			padding-right: 20px;
-		}
+		white-space: nowrap;
+		display: grid;
+		grid-template-columns: min-content min-content;
+		justify-content: space-between;
 	}
 
 	// .header__contacts
@@ -81,7 +81,6 @@
 		justify-content: flex-end;
 		justify-self: end;
 	}
-
 	// .header__phone
 	&__phone {
 		position: relative;
@@ -91,7 +90,7 @@
 		a {
 			display: flex;
 			align-items: center;
-			justify-content: center;
+			font-size: $font-size;
 			font-weight: 600;
 			line-height: 131.25%; /* 21px/16 */
 		}
@@ -101,9 +100,10 @@
 				display: none;
 			}
 		}
-
-		@include _screen-690 {
-			display: none;
+		.icon-volume-phone {
+			&::before {
+				text-shadow: 1px 1px 4px #000;
+			}
 		}
 
 		._icon {
@@ -123,8 +123,10 @@
 		width: 35px;
 		height: 35px;
 		display: none;
+		background: #b9b9b909;
+		backdrop-filter: blur(50px);
 
-		@include _screen-690 {
+		@include _screen-768 {
 			display: flex;
 		}
 	}
@@ -133,19 +135,16 @@
 .menu-list {
 	// .menu-list__link
 	&__link {
+		margin-right: 4.1rem;
 		position: relative;
-		font-size: 1.6rem;
+		font-size: 16px;
 		white-space: nowrap;
 		font-weight: 600;
 		opacity: 0.6;
 		transition: all 0.4s ease-in-out;
 
-		&:not(:last-child) {
-			margin-right: 4.1rem;
-
-			@include _screen-768 {
-				margin-right: 15px;
-			}
+		@include _screen-960 {
+			margin-right: 20px;
 		}
 
 		@extend .underline;

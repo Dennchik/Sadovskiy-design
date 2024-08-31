@@ -1,18 +1,4 @@
 .brands {
-	// .brands__body
-	&__body {
-		padding: 0 50px 16.2rem;
-		height: 100%;
-
-		@include _screen-1440 {
-			padding: 0 20px 16.2rem;
-		}
-
-		@include _screen-690 {
-			padding: 0 10px 50px;
-		}
-	}
-
 	// .brands__title
 	&__title {
 		margin-bottom: 69px;

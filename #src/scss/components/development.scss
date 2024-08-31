@@ -16,7 +16,7 @@
 		height: 100%;
 		gap: 40px;
 		justify-content: space-between;
-		grid-template-columns: repeat(3, minmax(200px, 1fr));
+		grid-template-columns: repeat(3, minmax(200px, 520px));
 
 		@include _screen-1440 {
 			grid-template-columns: repeat(2, minmax(200px, 1fr));
@@ -62,7 +62,11 @@
 	// .schedule__title
 	&__title {
 		margin-bottom: 30px;
+		white-space: nowrap;
 		color: #ffffff;
+		font-size: 35px;
+		font-weight: 400;
+		line-height: 122.857143%; /* 43px/35 */
 
 		@include _screen-768 {
 			white-space: normal;
@@ -70,6 +74,14 @@
 
 		@include _screen-690 {
 			margin-bottom: 10px;
+		}
+
+		@include _320-1920 {
+			font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (1920 - 320)));
+		}
+
+		@include _screen-320 {
+			font-size: 20px;
 		}
 	}
 

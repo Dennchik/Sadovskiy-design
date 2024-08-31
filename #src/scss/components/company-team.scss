@@ -14,21 +14,10 @@
 	&__title {
 		margin-bottom: 70px;
 		color: #ffffff;
-		font-size: 65px;
-		font-weight: 400;
-		letter-spacing: 0%;
 		text-align: center;
-
-		@include _320-1920 {
-			font-size: calc(24px + (65 - 24) * ((100vw - 320px) / (1920 - 320)));
-		}
 
 		@include _screen-690 {
 			margin-bottom: 40px;
-		}
-
-		@include _screen-320 {
-			font-size: 24px;
 		}
 	}
 
@@ -42,7 +31,7 @@
 			grid-template-columns: repeat(2, 1fr);
 		}
 
-		@include _screen-605 {
+		@include _screen-568 {
 			grid-template-columns: repeat(1, 1fr);
 		}
 

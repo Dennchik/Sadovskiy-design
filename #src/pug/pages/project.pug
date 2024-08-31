@@ -1,6 +1,6 @@
 extends ../layouts/app_layout
 append link 
-	link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
+	link(rel="stylesheet" type="text/css" href="@@webRoot/css/project.min.css")
 prepend script 
 	script(type="text/javascript" src="@@webRoot/js/index.min.js" defer)
 block title
@@ -12,7 +12,34 @@ block header
 		include ../layouts/header 
 block main-content 
 	block perform 
+	block project-page 
+		section.page__project
+			include ../components/project-page 
+	block info-block
+		section.page__info-block
+			include ../components/info-block
+	block request-audit
+		section.page__request-audit
+			include ../components/request-audit
+	block schedule
+		section.page__schedule
+			include ../components/development
+	block project-services-price
+		section.page__services-price
+			include ../components/project-services-price
+	block seo-block
+		section.page__seo-block 
+			include ../components/seo-block
+	block order-place
+		section.page__order-place-project
+			include ../components/order-place
+	block answers-project
+		section.page__answers-project
+			include ../components/answers-project
 
 
 	block footer
 	include ../layouts/footer
+
+
+	

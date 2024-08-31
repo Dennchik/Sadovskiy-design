@@ -13,14 +13,18 @@
 	cursor: pointer;
 	position: relative;
 	display: flex;
-	align-items: center;
 	justify-content: space-between;
-	padding: 4px;
-	border-radius: 3rem;
+	padding: 2px;
+	border-radius: 30px;
 	white-space: nowrap;
+	width: 266px;
 	max-width: 266px;
 	max-height: 65px;
 	overflow: hidden;
+
+	@include _screen-690 {
+		width: 195px;
+	}
 
 	._icon {
 		width: 4.8rem;
@@ -29,8 +33,13 @@
 			color 0.5s,
 			transform 0.5s ease-in-out;
 
+		@include _screen-690 {
+			width: 32px;
+			height: 32px;
+		}
+
 		&::before {
-			font-size: 2.2rem;
+			font-size: 2rem;
 		}
 	}
 
@@ -47,11 +56,23 @@
 		transition: color 0.5s ease-in-out;
 		padding: 0.7rem 2rem 1.3rem 3rem;
 		width: 100%;
-		font-size: 2rem;
+		font-size: 20px;
 		font-weight: 500;
 		line-height: 125%; /* 25px/20 */
 		text-align: center;
 		z-index: 2;
+
+		@include _320-1920 {
+			font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
+		}
+
+		@include _screen-690 {
+			padding: 0.5rem 10px 0.7rem;
+		}
+
+		@include _screen-320 {
+			font-size: 16px;
+		}
 	}
 
 	&::before {
@@ -87,35 +108,19 @@
 	}
 }
 
-//* -------------------------------- [Swiper] ----------------------------------
-
 //* ---------------------------------- [Idj] -----------------------------------
-._ibg {
-	position: relative;
 
-	img {
-		position: absolute;
-		top: 0;
-		right: 0;
-		height: 100%;
-		object-fit: cover;
-	}
-}
 .icon {
 	width: 4.8rem;
 	height: 4.8rem;
 	border-radius: 50%;
 	background: #2b3769;
+
+	@include _screen-690 {
+		width: 32px;
+		height: 32px;
+	}
 }
-// -----------------------------------------------------------------------------
-// .toggle-wrap {
-// 	padding: 10px 6px;
-// 	overflow: hidden;
-// 	background: #620c77;
-// 	height: 36px;
-// 	width: 36px;
-// 	cursor: pointer;
-// }
 
 .burger-button {
 	//.burger-button__wrapper
@@ -169,5 +174,53 @@
 				transform: scale(1.088) translateY(-6px) rotate(-135deg);
 			}
 		}
+	}
+}
+// -----------------------------------------------------------------------------
+.t-h1 {
+	font-size: 76px;
+	line-height: 100%;
+
+	@include _320-1920 {
+		font-size: calc(28px + (76 - 28) * ((100vw - 490px) / (1920 - 490)));
+	}
+	@include _screen-490 {
+		font-size: 28px;
+	}
+}
+
+.t-h2 {
+	font-size: 65px;
+	line-height: 100%;
+	@include _320-1920 {
+		font-size: calc(24px + (65 - 24) * ((100vw - 320px) / (1920 - 320)));
+	}
+
+	@include _screen-320 {
+		font-size: 24px;
+	}
+}
+.t-h3 {
+	font-size: 35px;
+	line-height: 122.857143%; /* 43px/35 */
+	@include _320-1920 {
+		font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (1920 - 320)));
+	}
+
+	@include _screen-320 {
+		font-size: 20px;
+	}
+}
+
+.p-text {
+	font-size: 16px;
+	line-height: 125%;
+
+	@include _320-1920 {
+		font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
+	}
+
+	@include _screen-320 {
+		font-size: 12px;
 	}
 }

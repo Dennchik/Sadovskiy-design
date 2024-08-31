@@ -1,6 +1,17 @@
 .page {
+	width: 100vw;
 	// .page__content
 	&__content {
+		padding-top: 103px;
+		position: relative;
+
+		@include _screen-768 {
+			padding-top: 50px;
+		}
+	}
+
+	// .page__container
+	&__container {
 		position: relative;
 	}
 
@@ -12,16 +23,16 @@
 		width: 100%;
 		z-index: 11;
 
-		padding: 20px 0;
+		padding: 24px 0;
 		background: #fff;
 		transition: box-shadow 0.9s ease-in-out;
 
 		&.with-shadow {
-			box-shadow: 0 2px 9px #6c8fac;
+			box-shadow: 0 1px 3px #535a5f;
 			background: #fff;
 		}
 
-		@include _screen-690 {
+		@include _screen-768 {
 			padding: 5px 0;
 		}
 
@@ -59,45 +70,43 @@
 		}
 	}
 
-	// .page__container
-	&__container {
-		position: relative;
-	}
 	// .page__services
 	&__services {
-		padding: 13rem 50px 16.3rem;
+		padding: 0 50px;
 		position: relative;
 		z-index: 9;
 		display: flow-root;
 
 		@include _screen-1440 {
-			padding: 13rem 30px;
+			padding: 0 30px;
 		}
 
 		@include _screen-690 {
-			padding: 50px 30px;
+			padding: 0 30px;
 		}
 
 		@include _screen-490 {
-			padding: 60px 10px;
+			padding: 0 10px;
 		}
 	}
 
 	// .page__progect
 	&__project {
-		padding: 0 50px;
+		padding: 13rem 50px 0;
+
 		@include _screen-1440 {
-			padding: 0 30px;
+			padding: 13rem 30px 0;
 		}
 
 		@include _screen-960 {
-			padding: 0;
+			padding: 60px 0 0;
 		}
 	}
 
 	// .page__about-company
 	&__about-company {
 		padding: 13rem 50px 16.3rem;
+
 		@include _screen-1440 {
 			padding: 13rem 30px 16.3rem;
 		}
@@ -149,7 +158,7 @@
 
 	// .page__order-place
 	&__order-place {
-		padding: 0 60px;
+		padding: 0 50px;
 		@include _screen-1440 {
 			padding: 0 30px;
 		}
@@ -159,13 +168,42 @@
 		}
 	}
 
+	// .page__request-audit
+	&__request-audit {
+		padding: 0 50px 16.3rem;
+		@include _screen-1440 {
+			padding: 0 30px 13rem;
+		}
+
+		@include _screen-690 {
+			padding: 0 30px;
+		}
+
+		@include _screen-490 {
+			padding: 0 10px;
+		}
+	}
+
+	// .page__order-place-project
+	&__order-place-project {
+		padding: 16.2rem 50px 0;
+
+		@include _screen-1440 {
+			padding: 60px 30px;
+		}
+
+		@include _screen-490 {
+			padding: 60px 10px;
+		}
+	}
+
 	// .page__seo-block
 	&__seo-block {
 		background: url('../img/main/s-bg.png') center / cover no-repeat;
 		padding: 13rem 50px;
 
 		@include _screen-1440 {
-			padding: 60px 30px;
+			padding: 13rem 30px;
 		}
 
 		@include _screen-490 {
@@ -201,7 +239,42 @@
 		}
 	}
 
+	// .page__answers-project
+	&__answers-project {
+		padding: 13rem 50px 0;
+
+		@include _screen-1440 {
+			padding: 50 30px 0;
+		}
+
+		@include _screen-490 {
+			padding: 50px 10px 0;
+		}
+	}
+
 	// .page__brands
 	&__brands {
+		padding: 0 50px 16.2rem;
+		height: 100%;
+
+		@include _screen-1440 {
+			padding: 0 30px 13rem;
+		}
+
+		@include _screen-690 {
+			padding: 0 10px 60px;
+		}
+	}
+
+	// .page__info-block
+	&__info-block {
+		padding: 13rem 50px 16.2rem;
+		@include _screen-1440 {
+			padding: 13rem 30px;
+		}
+
+		@include _screen-690 {
+			padding: 60px 10px 60px;
+		}
 	}
 }

@@ -7,6 +7,8 @@
 @import 'core/extend';
 @import 'core/reset';
 // @import 'core/ui';
+// todo -------------------------- Modules -------------------------------------
+@import 'modules/preloader';
 //todo ------------------------- Default fonts ---------------------------------
 // &display=swap&subset=cyrillic-ext
 @import url('https://fonts.googleapis.com/css?family=Roboto:regular,500,700,900&display=swap&subset=cyrillic-ext');
@@ -42,6 +44,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	transform: translateX(0.5px);
 }
 // todo --------------------------- Pages --------------------------------------
 @import 'pages/page';
@@ -50,3 +53,11 @@
 @import 'layouts/header';
 @import 'layouts/footer';
 @import 'layouts/sidebar-menu';
+// todo -------------------------- Sections ------------------------------------
+@import 'components/order-place';
+@import 'components/services-price';
+@import 'components/schedule';
+@import 'components/seo-block';
+@import 'components/answers';
+// todo ---------------------------- temp --------------------------------------
+@import 'layouts/page-grid';
