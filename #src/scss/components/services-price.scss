@@ -100,7 +100,11 @@
 
 	// .card-price__open-btn
 	&__open-btn {
-		.icon-arrow-dow {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.icon-arrow-down {
 			&::before {
 				font-size: 2rem;
 			}
@@ -235,10 +239,9 @@
 	// .card-price__open-btn
 	&__open-btn {
 		color: #fff;
-		display: none;
 
-		@include _screen-490 {
-			display: block;
+		@include _min-490 {
+			display: none;
 		}
 	}
 }

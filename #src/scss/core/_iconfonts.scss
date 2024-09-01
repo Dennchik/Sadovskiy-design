@@ -28,14 +28,14 @@
   //* Better Font Rendering
 }
 
-.icon-minus {
+.icon-dzen {
   &:before {
-    content: $icon-minus;
+    content: $icon-dzen;
   }
 }
-.icon-plus {
+.icon-group {
   &:before {
-    content: $icon-plus;
+    content: $icon-group;
   }
 }
 .icon-coolicon {
@@ -89,9 +89,19 @@
     content: $icon-telegram-fly;
   }
 }
-.icon-arrow-dow {
+.icon-minus {
   &:before {
-    content: $icon-arrow-dow;
+    content: $icon-minus;
+  }
+}
+.icon-plus {
+  &:before {
+    content: $icon-plus;
+  }
+}
+.icon-arrow-down {
+  &:before {
+    content: $icon-arrow-down;
   }
 }
 .icon-arrow-up {

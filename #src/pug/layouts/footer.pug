@@ -5,44 +5,48 @@ footer.footer(id="contacts")
 				._logo
 					img(src="@@webRoot/img/icons/logo-w.png", alt="logo")
 					span Sadovskiy Design
-				._icon 
-					+iconfont('telegram-fly', '_icon')
-					+iconfont('whatsapp', '_icon')
-					+iconfont('telegram-fly', '_icon')
-					+iconfont('whatsapp', '_icon')
+				._icons
+					a(href="" target="_blank")._link
+						+iconfont('telegram-fly', '_icon')
+					a(href="" target="_blank")._link
+						+iconfont('whatsapp', '_icon')
+					a(href="https://dzen.ru/sadovskiydesign" target="_blank")._link
+						+iconfont('dzen', '_icon')
+					a(href="https://vk.com/wall-166763916_80" target="_blank")._link
+						+iconfont('vk-brand', '_icon')
 			._content
 				._column 
 					._head информация 
-					ul._info 
-						li ИНН 402 571 875 185
-						li ОГРНИП 319 4027 000 61 944
-					._privacy-policy Политика конфиденциальности
+					ul._info
+						li.p-text ИНН 402 571 875 185
+						li.p-text ОГРНИП 319 4027 000 61 944
+					._privacy-policy.p-text Политика конфиденциальности
 				._column 
-					._head меню
+					._head.p-text меню
 					._menu 
 						ul._list 
 							li._item 
-								a(href="")._link О нас
+								a(href="")._link.p-text О нас
 							li._item 
-								a(href="")._link Наши работы
+								a(href="")._link.p-text Наши работы
 							li._item 
-								a(href="")._link Графический дизайн
+								a(href="")._link.p-text Графический дизайн
 						ul._list 
 							li._item 
-								a(href="")._link Веб-дизайн
+								a(href="")._link.p-text Веб-дизайн
 							li._item 
-								a(href="")._link Разработка сайтов
+								a(href="")._link.p-text Разработка сайтов
 							li._item 
-								a(href="")._link Продвижение сайтов
+								a(href="")._link.p-text Продвижение сайтов
 				._column 
 					._head контакты
 					._contacts
-						ul._phone 
-							li 8 (910) 548 77-72; 
-							li &nbsp;&nbsp;8 (953) 332 10-89
-						._mail info@sadovskiy.art 
+						._phone  
+							span.p-text 8 (910) 548 77-72; 
+							span.p-text 8 (953) 332 10-89
+						._mail.p-text info@sadovskiy.art 
 					._head адрес
-					p._address Калужская область, город Обнинск,пр-т Ленина, дом&nbsp;121 офис&nbsp;308 
+					p._address.p-text Калужская область, город Обнинск,пр-т Ленина, дом&nbsp;121 офис&nbsp;308 
 		.elipsis-cont
 			._elipse-12
 			._elipse-13 

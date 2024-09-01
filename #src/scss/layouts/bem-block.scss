@@ -99,7 +99,7 @@
 		._icon {
 			&::before {
 				font-weight: 600;
-				color: #2b3769;
+				color: $color;
 			}
 		}
 		.icon {
@@ -133,7 +133,6 @@
 		pointer-events: none;
 
 		backdrop-filter: blur(10px);
-		// box-shadow: 0 2px 9px #6c8fac;
 	}
 
 	&__items {
