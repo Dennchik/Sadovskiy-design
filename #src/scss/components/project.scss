@@ -317,7 +317,6 @@
 		cursor: pointer;
 		width: 100%;
 		overflow: hidden;
-		margin-bottom: 5px;
 		border-radius: 30px;
 		overflow: hidden;
 
@@ -331,7 +330,8 @@
 			pointer-events: none;
 		}
 
-		@include _screen-690 {
+		@include _screen-768 {
+			margin-bottom: 5px;
 			border-radius: 15px;
 		}
 	}

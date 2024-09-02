@@ -127,7 +127,6 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		border-radius: 30px;
 
 		@include _min-960 {
 			&:hover {
@@ -144,7 +143,6 @@
 		cursor: pointer;
 		width: 100%;
 		overflow: hidden;
-		margin-bottom: 5px;
 		border-radius: 30px;
 		overflow: hidden;
 
@@ -158,7 +156,8 @@
 			pointer-events: none;
 		}
 
-		@include _screen-690 {
+		@include _screen-768 {
+			margin-bottom: 5px;
 			border-radius: 15px;
 		}
 	}
@@ -190,6 +189,7 @@
 		text-align: left;
 		flex: 1 1 auto;
 		display: none;
+		border-radius: 30px;
 
 		@include _screen-1164 {
 			max-width: 100%;

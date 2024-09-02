@@ -55,6 +55,9 @@
 		font-weight: 900;
 		line-height: 126.315789%; /* 24px/19 */
 		white-space: nowrap;
+		a {
+			transition: color 0.5s ease 0s;
+		}
 
 		span {
 			display: block;
@@ -100,6 +103,7 @@
 		position: relative;
 		text-align: right;
 		white-space: nowrap;
+		transition: color 0.5s ease 0s;
 
 		a {
 			display: flex;
@@ -160,6 +164,10 @@
 
 		@include _screen-960 {
 			margin-right: 20px;
+		}
+
+		&:hover {
+			color: $color;
 		}
 
 		@extend .underline;
