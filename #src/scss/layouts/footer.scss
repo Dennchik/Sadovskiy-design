@@ -1,4 +1,5 @@
 .footer {
+	position: relative; //temp
 	margin-top: 16.2rem;
 
 	@include _screen-768 {
@@ -105,9 +106,6 @@
 		}
 
 		.icon-vk-brand {
-			&::before {
-				font-size: 1.8rem !important;
-			}
 			background: #091216;
 
 			background: linear-gradient(
@@ -116,6 +114,10 @@
 				#203a43fa,
 				#091216
 			); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+			&::before {
+				font-size: 1.8rem !important;
+			}
 		}
 
 		.icon-dzen {

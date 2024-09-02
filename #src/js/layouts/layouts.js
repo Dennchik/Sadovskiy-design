@@ -4,7 +4,8 @@ import { timeLineHeaderItem, timeLineHeaderItemRevers } from '../modules/anime-j
 export function sidebarMenuHendle() {
 	const sidebarMenu = document.querySelector('.sidebar-menu');
 	const buttonItems = document.querySelectorAll('.burger-button');
-	const tabsItem = document.querySelector('.tabs-button__wrapper');
+	// const tabsItem = document.querySelector('.tabs-button__wrapper');
+	const tabsItem = document.querySelector('.project__tabs');
 
 	buttonItems.forEach(buttonItem => {
 		buttonItem.addEventListener('click', (e) => {
@@ -47,7 +48,7 @@ export function sidebarMenuHendle() {
 export function tabsHandler() {
 	const tablinks = document.querySelectorAll('.tabs-button__item');
 	const tabcontents = document.querySelectorAll('.tab-content__items');
-	const tabsItem = document.querySelector('.tabs-button__wrapper');
+	const tabsItem = document.querySelector('.project__tabs');
 	const buttonItems = document.querySelectorAll('.burger-button');
 
 	tablinks.forEach((tablink, i) => {

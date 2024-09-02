@@ -27,6 +27,10 @@ body
 					include ../chunk/sidebar-menu 
 				block header
 				main._content._container#content 
-					block main-content  
+					block main-content
+					section._footer
+						block footer 
+							include ../layouts/footer
+							block page-grid-3 
 	block page-grid 
-		include ../chunk/page-grid
+		//- include ../layouts/page-grid-3

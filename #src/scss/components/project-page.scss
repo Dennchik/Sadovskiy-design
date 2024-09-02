@@ -1,37 +1,24 @@
 .project-page {
-	// padding: 50px 0 0;
+	padding: 0 0 16.2rem;
 
 	@include _screen-960 {
-		padding: 0 30px;
+		padding: 0 30px 60px;
 	}
 
 	@include _screen-490 {
-		padding: 0 10px;
+		padding: 0 10px 60px;
 	}
 
 	// .project__title
 	&__title {
-		font-size: 65px;
-		font-weight: 400;
-		line-height: 100%;
-		letter-spacing: 0%;
 		text-align: center;
-		margin-bottom: 4rem;
-
-		@include _960-1920 {
-			font-size: calc(24px + (65 - 24) * ((100vw - 960px) / (1920 - 960)));
-		}
-
-		@include _screen-960 {
-			font-size: 20px;
-		}
+		margin-bottom: 40px;
 	}
 
 	// .project__text
 	&__text {
 		margin: 0 auto;
 		font-family: $font-defoult;
-		font-size: 16px;
 		line-height: 125%; /* 20px/16 */
 		max-width: 975px;
 		text-align: center;
@@ -41,16 +28,8 @@
 			white-space: nowrap;
 		}
 
-		@include _320-1920 {
-			font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
-		}
-
 		@include _screen-690 {
 			margin-bottom: 30px;
-		}
-
-		@include _screen-320 {
-			font-size: 12px;
 		}
 	}
 
@@ -76,163 +55,44 @@
 	}
 
 	&__button {
-		background: #ffffff;
+		background: $color;
 		border: 1px solid transparent;
+		color: #fff;
 
 		&:hover {
-			border: 1px solid #fff;
+			border: 1px solid $color;
 			.icon {
 				transform: rotate(-90deg);
+				background: $color;
+
+				.icon-arrow-down {
+					&::before {
+						color: #fff;
+						font-weight: 500;
+					}
+				}
 			}
+
 			span {
-				color: #fff;
+				color: #000;
 			}
 			&::before {
-				background: $color;
+				background: #fff;
 			}
 		}
 	}
 
 	&__icon {
-		.icon-arrow-dow {
-			color: #fff;
-			font-size: 2.2rem;
-			width: 4.8rem;
-			height: 4.8rem;
-		}
-	}
-}
-
-.tabs-button {
-	@include _min-1140 {
-		margin-bottom: -3rem;
-	}
-
-	// .tabs-buton__item
-	&__wrapper {
-		width: 100%;
-		height: 100%;
-		display: flex;
-		align-items: flex-end;
-		gap: 10px;
-
-		&._responsive {
-			.tabs-button__item {
-				display: block;
+		.icon-arrow-down {
+			&::before {
+				color: $color;
+				font-size: 18px;
+				font-weight: 600;
 			}
 		}
 
-		@include _screen-1140 {
-			align-items: center;
-			box-sizing: border-box;
-			justify-content: flex-start;
-			gap: 40px;
-			padding: 0 3.4rem;
-		}
-
-		@include _screen-960 {
-			align-items: flex-start;
-			flex-direction: column;
-			padding: 0;
-		}
-	}
-
-	// .tabs-buton__item
-	&__item {
-		cursor: pointer;
-		padding: 24px 0 31px;
-		font-family: $font-family-third;
-		font-size: 3.5rem;
-		font-weight: 400;
-		line-height: 120%; /* 42px/35 */
-		white-space: nowrap;
-		color: #fff;
-
-		border-top-left-radius: 30px;
-		border-top-right-radius: 30px;
-		transition: all 0.5s ease-in-out;
-
-		span {
-			display: flex;
-			line-height: 100%;
-
-			@include _min-1140 {
-				padding: 0 3.4rem;
-			}
-		}
-
-		&:hover {
-			box-shadow: 0 -1px 7px #b8b8b8;
-		}
-
-		&:not(.active) {
-			@include _min-1140 {
-				color: #000;
-				background: #f2f2f2;
-				height: 128px;
-			}
-
-			@include _1140-1920 {
-				height: calc(92px + (128 - 92) * ((100vw - 1140px) / (1920 - 1140)));
-			}
-
-			@include _screen-960 {
-				display: none;
-			}
-		}
-
-		&.active {
-			box-shadow: none;
-			height: 100%;
-			background: #2b3769;
-		}
-
-		&:nth-child(1) {
-			max-width: 128px;
-
-			@include _min-1140 {
-				min-width: 128px;
-				span {
-					display: block;
-					text-align: center;
-				}
-			}
-
-			@include _screen-960 {
-				max-width: 100%;
-			}
-		}
-
-		@include _960-1920 {
-			font-size: calc(16px + (35 - 16) * ((100vw - 1140px) / (1920 - 1140)));
-		}
-
-		@include _screen-960 {
-			width: 100%;
-			padding: 21px 0;
-			font-size: 16px;
-		}
-	}
-
-	// .tabs-buton__button
-	&__button {
-		@include _min-960 {
-			display: none;
-		}
-
-		@include _screen-960 {
-			display: block;
-			align-self: start;
-			margin: 10px 0;
-
-			.burger-button__items {
-				span {
-					background: #fff;
-				}
-				&__wrapper {
-					background: transparent;
-				}
-			}
+		&.icon {
+			background: #fff;
 		}
 	}
 }
@@ -243,8 +103,8 @@
 
 	// .tab-content__item
 	&__items {
-		display: none;
-		margin-bottom: 35px;
+		display: grid;
+		margin-bottom: 40px;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 40px;
 
@@ -258,10 +118,6 @@
 		}
 		span {
 			display: inline;
-		}
-
-		&.active {
-			display: grid !important;
 		}
 	}
 
@@ -289,6 +145,8 @@
 		width: 100%;
 		overflow: hidden;
 		margin-bottom: 5px;
+		border-radius: 30px;
+		overflow: hidden;
 
 		img {
 			width: 100%;
@@ -296,8 +154,12 @@
 			object-fit: contain;
 		}
 
-		@include _min-690 {
+		@include _min-768 {
 			pointer-events: none;
+		}
+
+		@include _screen-690 {
+			border-radius: 15px;
 		}
 	}
 
@@ -324,8 +186,6 @@
 	&__text {
 		pointer-events: none;
 		color: #fff;
-		font-size: 16px;
-		font-weight: 400;
 		line-height: 125%; /* 20px/16 */
 		text-align: left;
 		flex: 1 1 auto;
@@ -334,10 +194,6 @@
 		@include _screen-1164 {
 			max-width: 100%;
 			width: 100%;
-		}
-
-		@include _320-1920 {
-			font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
 		}
 
 		@include _min-960 {
@@ -357,22 +213,18 @@
 			transition:
 				opacity 0.4s,
 				scale 0.4s ease 0s;
-			span {
-				margin-bottom: 6rem;
 
-				@include _screen-1024 {
-					margin-bottom: 4rem;
-				}
+			span {
+				height: 100%;
+				display: flex;
+				align-items: center;
 			}
 		}
 
 		@include _screen-960 {
 			display: block;
 			position: relative;
-		}
-
-		@include _screen-320 {
-			font-size: 12px;
+			color: #000;
 		}
 	}
 
@@ -426,11 +278,15 @@
 
 	// .tab-content__icon
 	&__icon {
+		flex: 0 0 4.8rem;
 		pointer-events: all;
 		width: 4.8rem;
 		height: 4.8rem;
 		border-radius: 50%;
 		background: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		transition: all 0.3s ease-in-out;
 
 		@include _screen-960 {
@@ -444,11 +300,5 @@
 				font-weight: 600;
 			}
 		}
-	}
-}
-
-.button {
-	&__icon {
-		color: #fff;
 	}
 }

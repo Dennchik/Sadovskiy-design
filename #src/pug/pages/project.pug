@@ -15,18 +15,31 @@ block main-content
 	block project-page 
 		section.page__project
 			include ../components/project-page 
+			block page-grid-3 
+				include ../layouts/page-grid-3	
+	block dev-info
+		section.page__dev-info
+			include ../components/dev-info
+			block page-grid-2 
+				include ../layouts/page-grid-2
 	block info-block
 		section.page__info-block
 			include ../components/info-block
+			block page-grid-4
+				include ../layouts/page-grid-4
 	block request-audit
 		section.page__request-audit
 			include ../components/request-audit
 	block schedule
 		section.page__schedule
 			include ../components/development
+			block page-grid-3 
+				include ../layouts/page-grid-3
 	block project-services-price
 		section.page__services-price
 			include ../components/project-services-price
+			block page-grid-3 
+				include ../layouts/page-grid-3
 	block seo-block
 		section.page__seo-block 
 			include ../components/seo-block
@@ -38,8 +51,4 @@ block main-content
 			include ../components/answers-project
 
 
-	block footer
-	include ../layouts/footer
 
-
-	

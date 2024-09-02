@@ -11,37 +11,17 @@
 //* ---------------------------- [Burger-button] -------------------------------
 .button {
 	cursor: pointer;
+	white-space: nowrap;
 	position: relative;
 	display: flex;
 	justify-content: space-between;
-	padding: 2px;
+	align-items: center;
+	padding: 4px;
 	border-radius: 30px;
-	white-space: nowrap;
-	width: 266px;
+	width: 260px;
 	max-width: 266px;
-	max-height: 65px;
+	max-height: 58px;
 	overflow: hidden;
-
-	@include _screen-690 {
-		width: 195px;
-	}
-
-	._icon {
-		width: 4.8rem;
-		height: 4.8rem;
-		transition:
-			color 0.5s,
-			transform 0.5s ease-in-out;
-
-		@include _screen-690 {
-			width: 32px;
-			height: 32px;
-		}
-
-		&::before {
-			font-size: 2rem;
-		}
-	}
 
 	.icon {
 		z-index: 2;
@@ -51,28 +31,28 @@
 	}
 
 	span {
+		transform: translateY(-3px);
+		margin: 0 auto;
 		user-select: none;
+		flex: 0 1 auto;
 		pointer-events: none;
 		transition: color 0.5s ease-in-out;
-		padding: 0.7rem 2rem 1.3rem 3rem;
-		width: 100%;
 		font-size: 20px;
-		font-weight: 500;
 		line-height: 125%; /* 25px/20 */
-		text-align: center;
 		z-index: 2;
+		justify-content: center;
 
 		@include _320-1920 {
 			font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
 		}
 
-		@include _screen-690 {
-			padding: 0.5rem 10px 0.7rem;
-		}
-
-		@include _screen-320 {
+		@include _screen-490 {
 			font-size: 16px;
 		}
+	}
+
+	@include _screen-690 {
+		width: 195px;
 	}
 
 	&::before {
@@ -115,10 +95,13 @@
 	height: 4.8rem;
 	border-radius: 50%;
 	background: #2b3769;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	@include _screen-690 {
-		width: 32px;
-		height: 32px;
+		width: 29px;
+		height: 29px;
 	}
 }
 
@@ -216,7 +199,7 @@
 	line-height: 125%;
 
 	@include _320-1920 {
-		font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
+		font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
 	}
 
 	@include _screen-320 {

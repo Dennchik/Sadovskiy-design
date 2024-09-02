@@ -33,7 +33,6 @@
 [class*='_container'] {
 	max-width: $maxWidthContainer;
 	box-sizing: content-box;
-	// padding: 0 50px;
 	margin: 0 auto;
 	height: 100%;
 }
@@ -44,6 +43,16 @@
 	align-items: center;
 	justify-content: center;
 	transform: translateX(0.5px);
+}
+
+[class*='icon-arrow-'] {
+	&::before {
+		font-size: 2rem;
+
+		@include _screen-690 {
+			font-size: 1.8rem;
+		}
+	}
 }
 @keyframes shake {
 	10%,
@@ -77,5 +86,3 @@
 @import 'components/schedule';
 @import 'components/seo-block';
 @import 'components/answers';
-// todo ---------------------------- temp --------------------------------------
-@import 'layouts/page-grid';

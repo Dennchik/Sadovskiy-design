@@ -291,6 +291,9 @@
 		}
 
 		.sidebar-menu__button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			opacity: 1;
 			transition: opacity 0.7s ease-in-out 0.7s;
 			will-change: opacity;

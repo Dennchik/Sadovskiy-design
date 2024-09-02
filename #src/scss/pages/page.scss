@@ -56,12 +56,35 @@
 			color: #fff;
 		}
 
-		&.with-shadow {
-			box-shadow: 0 2px 9px #6c8fac;
-			background: $color;
+		.burger-button__items span {
+			background: #fff;
 		}
 
-		@include _screen-690 {
+		&.with-shadow {
+			box-shadow: 0 2px 9px #6c8fac;
+			background: #fff;
+			color: #000;
+
+			.icon-volume-phone {
+				&::before {
+					color: #000;
+				}
+			}
+
+			.burger-button__items span {
+				background: #000;
+			}
+
+			.header__body {
+				color: #000;
+			}
+
+			.header__image {
+				background: url('../img/icons/logo-b.png') center no-repeat;
+			}
+		}
+
+		@include _screen-768 {
 			padding: 5px 0;
 		}
 
@@ -92,6 +115,7 @@
 
 	// .page__progect
 	&__project {
+		position: relative; //temp
 		padding: 13rem 50px 0;
 
 		@include _screen-1440 {
@@ -122,6 +146,7 @@
 
 	// .page__schedule
 	&__schedule {
+		position: relative; //temp
 		padding: 13rem 50px 16.2rem;
 		overflow: hidden;
 		background: #2b3769;
@@ -141,6 +166,7 @@
 
 	// .page__services-price
 	&__services-price {
+		position: relative; //temp
 		padding: 13rem 50px 16.3rem;
 
 		@include _screen-1440 {
@@ -268,13 +294,25 @@
 
 	// .page__info-block
 	&__info-block {
+		position: relative; //temp
 		padding: 13rem 50px 16.2rem;
+
 		@include _screen-1440 {
-			padding: 13rem 30px;
+			padding: 13rem 30px 60px;
 		}
 
-		@include _screen-690 {
+		@include _screen-490 {
 			padding: 60px 10px 60px;
 		}
+	}
+
+	//page__dev-info
+	&__dev-info {
+		position: relative;
+		background: rgb(0, 0, 0);
+	}
+
+	&__footer {
+		position: relative; //temp
 	}
 }
