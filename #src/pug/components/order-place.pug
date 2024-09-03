@@ -1,11 +1,11 @@
 .order-place
-	._content
+	._content.--order-page
 		._body 
 			._row
-				._header
+				._header.--tcl-order-page
 					h2._title.t-h1 Закажите&nbsp;услуги студии Sadovskiy&nbsp;Design
 					p._text Оставьте&nbsp;свой&nbsp;номер&nbsp;телефона&nbsp;и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;рабочее время. Наша&nbsp;команда&nbsp;проконсультирует&nbsp;и&nbsp;ответит на&nbsp;любые&nbsp;вопросы
-				form(id="order" action="").order-form._form
+				form(id="order" action="").order-form.--tcl-order-page._form
 					._column
 						._line
 							label(for="name")._lebel
@@ -22,7 +22,7 @@
 							span Оставить заявку
 							.project__icon.icon
 								+iconfont('arrow-right', '_icon')
-				._footer
+				._footer.--tcl-order-page
 					p._text Либо напишите нам на&nbsp;почту info@sadovskiy.art или&nbsp;просто позвоните по&nbsp;номеру
 					._phone +7 7097 777 56-76
 			.elipsis-cont 

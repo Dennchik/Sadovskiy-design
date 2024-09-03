@@ -63,7 +63,6 @@
 	// .seo-block__button
 	&__button {
 		background: #fff;
-		align-self: end;
 
 		&::before {
 			background: #2b3769;
@@ -77,7 +76,6 @@
 
 		@include _screen-768 {
 			margin-top: 16px;
-			align-self: center;
 			justify-self: center;
 		}
 

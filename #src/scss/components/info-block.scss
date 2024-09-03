@@ -8,8 +8,11 @@
 
 		@include _screen-960 {
 			margin-bottom: 56px;
-			grid-template-columns: repeat(1, 1fr);
 			column-gapgap: 30px;
+		}
+
+		@include _screen-690 {
+			grid-template-columns: repeat(1, 1fr);
 		}
 
 		@include _screen-490 {
@@ -23,7 +26,7 @@
 			max-width: 130.5rem;
 			margin: 0 auto 70px;
 
-			@include _screen-960 {
+			@include _screen-690 {
 				margin: 0 auto 24px;
 				grid-column: 1/2;
 			}

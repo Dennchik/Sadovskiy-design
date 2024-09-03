@@ -12,6 +12,10 @@
 		text-align: center;
 		border-bottom: 1px solid #a9a9a9;
 
+		@include _screen-690 {
+			padding-bottom: 24px;
+		}
+
 		@include _screen-320 {
 			font-size: 24px;
 		}

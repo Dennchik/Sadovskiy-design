@@ -1,17 +1,11 @@
 .request-audit {
-	// .request-audit__body
-
-	&__body {
+	// .order-place__content
+	&__content {
 		padding: 13rem 50px 16.9rem;
-
-		display: grid;
-		grid-template-columns: 1fr;
-		position: relative;
-		border-radius: 30px;
-
-		background: #171b1c;
 		background: url('../img/fon.png') center / cover no-repeat;
 		overflow: hidden;
+		overflow: hidden;
+		border-radius: 30px;
 
 		@include _screen-960 {
 			padding: 13rem 30px 16.9rem;
@@ -19,12 +13,19 @@
 
 		@include _screen-690 {
 			border-radius: 15px;
-			padding: 60px 30px;
+			padding: 50px 30px;
 		}
 
 		@include _screen-490 {
-			padding: 60px 10px;
+			padding: 50px 10px;
 		}
+	}
+
+	// .request-audit__body
+	&__body {
+		display: grid;
+		grid-template-columns: 1fr;
+		position: relative;
 	}
 
 	// .request-audit__row
@@ -47,14 +48,6 @@
 		line-height: 100%;
 		text-align: center;
 
-		@include _320-1920 {
-			font-size: calc(28px + (76 - 28) * ((100vw - 320px) / (1920 - 320)));
-		}
-
-		@include _screen-320 {
-			font-size: 28px;
-		}
-
 		@include _screen-490 {
 			margin-bottom: 20px;
 		}
@@ -68,14 +61,6 @@
 		line-height: 125%; /* 25px/20 */
 		max-width: 720px;
 		margin: 0 auto;
-
-		@include _320-1920 {
-			font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
-		}
-
-		@include _screen-320 {
-			font-size: 12px;
-		}
 	}
 
 	// .request-audit__form
@@ -96,7 +81,7 @@
 		}
 
 		@include _screen-490 {
-			gap: 15px;
+			gap: 12px;
 			margin: 16px auto;
 		}
 	}
@@ -137,7 +122,7 @@
 		align-self: center;
 
 		@include _screen-960 {
-			max-width: 268px;
+			max-width: 260px;
 			width: 100%;
 		}
 
@@ -147,7 +132,9 @@
 		}
 
 		&:not(:last-child) {
-			border: 1px solid rgba(0, 0, 0, 0.336);
+			border: 1px solid rgba(0, 0, 0, 0.2);
+			border-radius: 30px;
+
 			flex: 1 1 auto;
 		}
 
@@ -176,29 +163,29 @@
 		height: 5.8rem;
 
 		input {
-			padding: 8px 3rem 10px;
+			padding-left: 10px;
 			display: flex;
 			align-items: center;
-			color: #fff;
+			color: #2c2c2c;
 			width: 100%;
 			height: 100%;
-			line-height: 170%;
+			line-height: 156.25%; /* 25px/16 */
 			font-size: 16px;
 
 			@include _screen-490 {
-				padding: 5px 2rem 12px;
+				padding: 7px 2rem 10px;
 			}
 		}
 
-		@include _screen-490 {
-			height: 38px;
+		@include _screen-690 {
+			height: 36px;
 		}
 	}
 
 	// .order-form__button
 	&__button {
 		background: #fff;
-		border: 1px solid rgba(0, 0, 0, 0.336);
+		border: 1px solid rgba(0, 0, 0, 0.2);
 
 		&:hover {
 			border: 1px solid #fff;
