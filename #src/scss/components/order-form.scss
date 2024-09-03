@@ -1,12 +1,13 @@
 .order-place {
 	// .order-place__content
 	&__content {
-		padding: 13rem 50px 16.9rem;
+		position: relative;
+		padding: 13rem 50px 16.2rem;
 		overflow: hidden;
 		border-radius: 30px;
 
-		@include _screen-960 {
-			padding: 13rem 30px 16.9rem;
+		@include _screen-1440 {
+			padding: 13rem 30px;
 		}
 
 		@include _screen-690 {
@@ -31,7 +32,14 @@
 
 	//.order-place__header--tcl-order-page
 	&__header--tcl-order-page {
+		max-width: 1013px;
 		color: #fff;
+	}
+
+	//.order-place__header--tcl-audit-page
+	&__header--tcl-audit-page {
+		max-width: 1171px;
+		color: #000;
 	}
 
 	//.order-place__footer--tcl-order-page
@@ -44,28 +52,18 @@
 		color: #fff;
 	}
 
-	//.order-place__header--tcl-audit-page
-	&__heade--tcl-audit-page {
-		color: #000;
-	}
-
 	// .order-place__body
 	&__body {
+		position: relative;
+		z-index: 9;
 		display: grid;
 		grid-template-columns: 1fr;
 		position: relative;
 	}
 
-	// .order-place__row
-	&__row {
-		position: relative;
-		z-index: 9;
-	}
-
 	// .order-place__header
 	&__header {
 		margin: 0 auto;
-		max-width: 1013px;
 	}
 
 	// .order-place__title
@@ -99,8 +97,10 @@
 		max-width: 892px;
 		display: flex;
 
-		.order-form__button {
-			width: 100%;
+		@include _screen-960 {
+			.order-form__button {
+				width: 100%;
+			}
 		}
 
 		@include _screen-960 {
@@ -109,7 +109,7 @@
 
 		@include _screen-490 {
 			gap: 12px;
-			margin: 16px auto;
+			margin: 0 auto 16px;
 		}
 	}
 
@@ -125,6 +125,7 @@
 
 	// .audit__phone
 	&__phone {
+		padding-top: 5px;
 		font-size: 40px;
 		font-weight: 400;
 		line-height: 100%;
@@ -148,6 +149,99 @@
 		overflow: hidden;
 		align-self: center;
 
+		&._brd-order {
+			&:not(:last-child) {
+				border: 1px solid #ffffff;
+			}
+
+			input {
+				color: #fff;
+			}
+
+			.icon-arrow-right {
+				color: #fff;
+				font-size: 16px;
+
+				&::before {
+					font-weight: 500;
+				}
+			}
+
+			.order-form__button {
+				background: #fff;
+				&:hover {
+					border: 1px solid #fff;
+					.icon {
+						transform: rotate(-45deg);
+					}
+
+					span {
+						color: #fff;
+					}
+
+					&::before {
+						background: $color;
+					}
+				}
+			}
+		}
+
+		&._brd-audit {
+			&:not(:last-child) {
+				border: 1px solid #00000033;
+			}
+
+			input {
+				color: #2c2c2c;
+			}
+
+			.order-form__button {
+				background: $color;
+				border: 1px solid $color;
+
+				.icon-arrow-right {
+					color: $color;
+					font-size: 16px;
+
+					&::before {
+						font-weight: 500;
+					}
+				}
+
+				.icon {
+					background: #fff;
+				}
+
+				span {
+					color: #fff;
+				}
+
+				&:hover {
+					border: 1px solid rgb(209, 209, 209);
+
+					.icon {
+						transform: rotate(-45deg);
+						background: $color;
+					}
+
+					.icon-arrow-right {
+						&::before {
+							color: #fff;
+							// font-weight: 500;
+						}
+					}
+
+					span {
+						color: #000;
+					}
+
+					&::before {
+						background: #fff;
+					}
+				}
+			}
+		}
+
 		@include _screen-960 {
 			max-width: 268px;
 			width: 100%;
@@ -160,7 +254,6 @@
 		}
 
 		&:not(:last-child) {
-			border: 1px solid #ffffff;
 			flex: 1 1 auto;
 		}
 
@@ -210,31 +303,68 @@
 
 	// .order-form__button
 	&__button {
-		background: #fff;
-		border: 1px solid transparent;
+		// transition: all 0.4s ease-in-out;
+		// border: 1px solid transparent;
+	}
+}
 
-		&:hover {
-			border: 1px solid #fff;
-			.icon {
-				transform: rotate(-45deg);
-			}
+.elipsis-cont {
+	pointer-events: none;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
 
-			span {
-				color: #fff;
-			}
+	&__elipse-06 {
+		justify-self: end;
+		position: absolute;
+		width: 1258.47px;
+		height: 1258.47px;
+		border-radius: 50%;
+		top: 70%;
 
-			&::before {
-				background: $color;
-			}
-		}
+		filter: blur(351.53px);
+		background: #2b3769;
+	}
 
-		.icon-arrow-right {
-			color: #fff;
-			font-size: 16px;
+	&__elipse-07 {
+		position: absolute;
+		width: 2304.27px;
+		height: 2304.27px;
+		border-radius: 50%;
+		transform: rotate(-30deg);
+		top: 0;
+		right: -50%;
 
-			&::before {
-				font-weight: 500;
-			}
-		}
+		filter: blur(351.53px);
+		background: #2b3769;
+	}
+
+	&__elipse-08 {
+		position: absolute;
+		width: 700.44px;
+		height: 700.44px;
+		border-radius: 50%;
+		top: 85%;
+		filter: blur(100.53px);
+		background: #acbabd66;
+	}
+
+	&__elipse-09 {
+		position: absolute;
+		width: 700.44px;
+		height: 700.44px;
+		border-radius: 50%;
+		transform: rotate(-45deg);
+		top: 75%;
+		right: -20%;
+		filter: blur(100.53px);
+		background: #acbabd66;
 	}
 }

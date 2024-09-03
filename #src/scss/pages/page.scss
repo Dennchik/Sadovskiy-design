@@ -203,10 +203,6 @@
 	&__order-place-project {
 		padding: 16.2rem 50px 0;
 
-		.order-place__content {
-			background: url('../img/fon.png') center / cover no-repeat;
-		}
-
 		@include _screen-1440 {
 			padding: 13rem 30px;
 		}
@@ -320,18 +316,18 @@
 	// .page__info-block
 	&__info-block {
 		position: relative; //temp
-		padding: 13rem 50px 16.2rem;
+		padding: 13rem 50px 8.2rem;
 
 		@include _screen-1440 {
-			padding: 13rem 30px;
+			padding: 13rem 30px 8.2rem;
 		}
 
 		@include _screen-690 {
-			padding: 50px 30px;
+			padding: 50px 30px 30px;
 		}
 
 		@include _screen-490 {
-			padding: 50px 10px;
+			padding: 50px 10px 30px;
 		}
 	}
 

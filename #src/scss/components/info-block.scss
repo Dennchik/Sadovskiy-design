@@ -80,9 +80,10 @@
 
 	&__column {
 		border-top: 1px solid #a9a9a9;
-		padding: 10px 0 80px;
-
-		padding-bottom: calc(20px + (80 - 20) * ((100vw - 32px) / (1920 - 320)));
+		padding: 10px 0 8rem;
+		@include _320-1920 {
+			padding-bottom: calc(20px + (80 - 20) * ((100vw - 32px) / (1920 - 320)));
+		}
 
 		@include _screen-320 {
 			padding-bottom: 20px;
@@ -92,6 +93,10 @@
 	// .info__title
 	&__title {
 		margin-bottom: 30px;
+
+		@include _screen-690 {
+			margin-bottom: 10px;
+		}
 	}
 
 	// .info__text

@@ -2,22 +2,22 @@
 	._content.--audit-page
 		._body 
 			._row
-				._header
-					h2._title.th-1.--tcl-audit-page Оставьте заявку на&nbsp;бесплатный аудит вашего сайта
+				._header.-tcl-audit-page
+					h2._title.t-h1.--tcl-audit-page Оставьте заявку на&nbsp;бесплатный аудит вашего сайта
 					p._text Расскажем как&nbsp;можно улучшить конверсию, разберем причины почему клиенты не&nbsp;совершают покупки и&nbsp;что&nbsp;мешает продвижению сайта.
-				form(id="order" action="").audit-form._form
-					._column
+				form(id="order" action="").order-form._form._audit-form
+					._column._brd-audit
 						._line
 							label(for="name")._lebel
 							._input
 								input.input(id="name",placeholder="Имя*" autocomplete="off", 
 								type="text", name="name", error="Обязательное поле")
-					._column
+					._column._brd-audit
 						._line
 							label(for="phone")._lebel 
 							._input
 								input.input(type="tel" class="phone" id='phone', placeholder="+7 (___)-___-__-__", autocomplete="off", name="phone", error="Обязательное поле")
-					._column
+					._column._brd-audit
 						button(form="audit" type="submit")._button.button
 							span Оставить заявку
 							.project__icon.icon
