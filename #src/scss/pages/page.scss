@@ -10,6 +10,19 @@
 		}
 	}
 
+	&__project-content {
+		position: relative;
+
+		@include _screen-768 {
+			padding-top: 50px;
+		}
+	}
+
+	// page__performance
+	&__performance {
+		margin-top: -103px;
+	}
+
 	// .page__container
 	&__container {
 		position: relative;
@@ -39,6 +52,19 @@
 		.header__image {
 			background: url('../img/icons/logo-b.png') center no-repeat;
 		}
+
+		.menu-list__link {
+			&:hover {
+				color: $color;
+			}
+			@extend .underline;
+		}
+		.header__title {
+			transition: text-shadow 0.5s ease-in-out;
+			&:hover {
+				text-shadow: 1px 1px 1px #000;
+			}
+		}
 	}
 
 	// .page__header-project
@@ -50,7 +76,7 @@
 		z-index: 11;
 
 		padding: 20px 0;
-		transition: box-shadow 0.9s ease-in-out;
+		transition: all 0.3s ease-in-out;
 
 		.header__body {
 			color: #fff;
@@ -82,6 +108,13 @@
 			.header__image {
 				background: url('../img/icons/logo-b.png') center no-repeat;
 			}
+
+			.menu-list__link {
+				@extend .underline;
+				&:hover {
+					color: $color;
+				}
+			}
 		}
 
 		@include _screen-768 {
@@ -90,6 +123,20 @@
 
 		.header__image {
 			background: url('../img/icons/logo-w.png') center no-repeat;
+		}
+
+		.menu-list__link {
+			@extend .underline-w;
+			&:hover {
+				color: #fff;
+			}
+		}
+
+		.header__title {
+			transition: text-shadow 0.5s ease-in-out;
+			&:hover {
+				text-shadow: 1px 1px 1px #000;
+			}
 		}
 	}
 

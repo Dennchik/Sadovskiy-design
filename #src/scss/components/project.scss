@@ -458,19 +458,42 @@
 		border-radius: 50%;
 		background: #fff;
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		transition: all 0.3s ease-in-out;
+		overflow: hidden;
+		display: grid;
+		grid-template-columns: 1fr;
+
+		&:hover {
+			box-shadow: 1px 1px 7px #000000;
+			animation: shaking 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+			// animation: shaking 0.15s infinite;
+			.icon-arrow-right {
+				transform: translateY(-100%);
+			}
+			.icon-group {
+				transform: translateY(-100%);
+			}
+		}
 
 		@include _screen-960 {
 			display: none;
 		}
 
 		._icon {
+			transition: all 0.5s ease 0s;
+			height: 48px;
 			&::before {
 				color: #2b3769;
-				font-size: 18px;
-				font-weight: 600;
+				font-weight: 900;
+			}
+		}
+
+		.icon-group {
+			&::before {
+				font-size: 14px;
 			}
 		}
 	}
