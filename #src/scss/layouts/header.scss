@@ -10,7 +10,7 @@
 		padding: 0 25px;
 	}
 
-	@include _screen-490 {
+	@include _screen-375 {
 		padding: 0 5px;
 	}
 
@@ -98,6 +98,7 @@
 		justify-content: flex-end;
 		justify-self: end;
 	}
+
 	// .header__phone
 	&__phone {
 		position: relative;
@@ -111,6 +112,11 @@
 			font-size: $font-size;
 			font-weight: 600;
 			line-height: 131.25%; /* 21px/16 */
+			transition: opacity 0.4s ease-in-out;
+
+			&:hover {
+				opacity: 0.6;
+			}
 		}
 
 		span {
@@ -118,21 +124,6 @@
 				display: none;
 			}
 		}
-		.icon-volume-phone {
-			&::before {
-				text-shadow: 1px 1px 4px #000;
-			}
-		}
-
-		._icon {
-			font-size: 32px;
-
-			@include _min-490 {
-				display: none;
-			}
-		}
-
-		@extend .underline;
 	}
 
 	// .header__button

@@ -5,6 +5,9 @@
 		padding: 13rem 50px 16.2rem;
 		overflow: hidden;
 		border-radius: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		@include _screen-1440 {
 			padding: 13rem 30px;
@@ -12,11 +15,11 @@
 
 		@include _screen-690 {
 			border-radius: 15px;
-			padding: 50px 30px;
+			padding: 50px 30px 58px;
 		}
 
-		@include _screen-490 {
-			padding: 50px 10px;
+		@include _screen-320 {
+			padding: 50px 10px 58px;
 		}
 	}
 
@@ -59,6 +62,7 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		position: relative;
+		transform: scaleY(0.8);
 	}
 
 	// .order-place__header
@@ -82,9 +86,17 @@
 		line-height: 125%; /* 25px/20 */
 		max-width: 720px;
 		margin: 0 auto 16px;
+		font-size: 16px;
 
 		@include _screen-490 {
 			margin: 0 auto 20px;
+		}
+		@include _320-490 {
+			font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (490 - 320)));
+		}
+
+		@include _screen-320 {
+			font-size: 12px;
 		}
 	}
 
@@ -108,7 +120,7 @@
 		}
 
 		@include _screen-490 {
-			gap: 12px;
+			gap: 15px;
 			margin: 0 auto 16px;
 		}
 	}
@@ -248,9 +260,13 @@
 		}
 
 		@include _screen-490 {
-			max-width: 195px;
+			max-width: 215px;
 			max-height: 38px;
 			width: 100%;
+		}
+
+		@include _320-490 {
+			// transform: scaleY(0.8);
 		}
 
 		&:not(:last-child) {
@@ -322,38 +338,44 @@
 	width: 100%;
 
 	&__elipse-06 {
-		justify-self: end;
-		position: absolute;
-		width: 1258.47px;
-		height: 1258.47px;
-		border-radius: 50%;
-		top: 70%;
-
-		filter: blur(351.53px);
-		background: #2b3769;
-	}
-
-	&__elipse-07 {
 		position: absolute;
 		width: 2304.27px;
 		height: 2304.27px;
 		border-radius: 50%;
-		transform: rotate(-30deg);
 		top: 0;
-		right: -50%;
+		right: -40%;
 
 		filter: blur(351.53px);
-		background: #2b3769;
+		background: $color;
 	}
 
-	&__elipse-08 {
+	&__elipse-07 {
 		position: absolute;
 		width: 700.44px;
 		height: 700.44px;
 		border-radius: 50%;
 		top: 85%;
 		filter: blur(100.53px);
-		background: #acbabd66;
+		background: #acbabd;
+		opacity: 0.5;
+
+		@include _screen-490 {
+			display: none;
+		}
+	}
+
+	&__elipse-08 {
+		position: absolute;
+		width: 2000px;
+		height: 2000px;
+		border-radius: 50%;
+		top: 0;
+		filter: blur(155px);
+		background: $color;
+
+		// @include _screen-690 {
+		// 	top: calc(85px + (10 - 85) * ((100vw - 320px) / (690 - 320)));
+		// }
 	}
 
 	&__elipse-09 {
@@ -361,10 +383,14 @@
 		width: 700.44px;
 		height: 700.44px;
 		border-radius: 50%;
-		transform: rotate(-45deg);
-		top: 75%;
+		top: 50%;
 		right: -20%;
 		filter: blur(100.53px);
 		background: #acbabd66;
+		opacity: 0.5;
+
+		@include _screen-490 {
+			display: none;
+		}
 	}
 }

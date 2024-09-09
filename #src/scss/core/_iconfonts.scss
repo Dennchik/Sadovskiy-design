@@ -28,9 +28,14 @@
   //* Better Font Rendering
 }
 
-.icon-dzen {
+.icon-youtube-square {
   &:before {
-    content: $icon-dzen;
+    content: $icon-youtube-square;
+  }
+}
+.icon-youtube {
+  &:before {
+    content: $icon-youtube;
   }
 }
 .icon-group {
@@ -87,6 +92,11 @@
 .icon-telegram-fly {
   &:before {
     content: $icon-telegram-fly;
+  }
+}
+.icon-dzen {
+  &:before {
+    content: $icon-dzen;
   }
 }
 .icon-minus {

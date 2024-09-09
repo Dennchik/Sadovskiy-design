@@ -4,7 +4,6 @@ import { timeLineHeaderItem, timeLineHeaderItemRevers } from '../modules/anime-j
 export function sidebarMenuHendle() {
 	const sidebarMenu = document.querySelector('.sidebar-menu');
 	const buttonItems = document.querySelectorAll('.burger-button');
-	// const tabsItem = document.querySelector('.tabs-button__wrapper');
 	const tabsItem = document.querySelector('.project__tabs');
 
 	buttonItems.forEach(buttonItem => {
@@ -179,3 +178,44 @@ export function shadowScroll() {
 	};
 }
 // -----------------------------------------------------------------------------
+export function scalingFunction() {
+
+	// Универсальная функция для масштабирования элементов между разрешениями 320 и 490px
+	function applyScaling(selector, scaleMin, scaleMax, minViewport = 320, maxViewport = 490) {
+		const scaleElements = document.querySelectorAll(selector);
+		const currentViewportWidth = window.innerWidth;
+
+		// Если ширина окна вне диапазона 320-490, ничего не делаем
+		if (currentViewportWidth < minViewport || currentViewportWidth > maxViewport) {
+			scaleElements.forEach(scaleElement => {
+				// Сбросим масштабирование, если за пределами диапазона
+				scaleElement.style.transform = `scaleY(1)`;
+			});
+			return;
+		}
+
+		scaleElements.forEach(scaleElement => {
+			// Ограничим значение ширины окна диапазоном [minViewport, maxViewport]
+			const clampedWidth = Math.min(Math.max(currentViewportWidth, minViewport), maxViewport);
+
+			// Рассчитаем пропорцию для масштабирования
+			const scaleFactor = scaleMin + (scaleMax - scaleMin) * ((clampedWidth - minViewport) / (maxViewport - minViewport));
+
+			// Применим scaleY с динамическим значением
+			scaleElement.style.transform = `scaleY(${scaleFactor})`;
+		});
+	}
+
+	// Добавляем обработчик события 'resize' с вызовом унифицированной функции
+	window.addEventListener('resize', function () {
+		applyScaling('.page__order-place', 1, 1.3); // Для '.page__order-place'
+		applyScaling('.order-place__body', 1, 0.8); // Для '.order-form__column'
+	});
+
+	// Вызовем функции сразу после загрузки страницы, чтобы применить масштабирование сразу
+	document.addEventListener('DOMContentLoaded', function () {
+		applyScaling('.page__order-place', 1, 1.3);
+		applyScaling('.order-place__body', 1, 0.8);
+	});
+
+}
