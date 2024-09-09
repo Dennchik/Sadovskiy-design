@@ -1,6 +1,8 @@
 export function anchorsSmoothScrolling() {
 	document.addEventListener('DOMContentLoaded', function () {
 		const anchorLinks = document.querySelectorAll('.anchor-link');
+		console.log(anchorLinks);
+
 		anchorLinks.forEach(link => {
 			link.addEventListener('click', function (e) {
 				e.preventDefault();
@@ -8,7 +10,7 @@ export function anchorsSmoothScrolling() {
 				const targetElement = document.getElementById(targetId);
 
 				const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-				const offsetPosition = targetPosition - 150; // 150px отступ сверху
+				const offsetPosition = targetPosition; // 150px отступ сверху
 
 				const sidebarMenu = e.target.closest('.sidebar-menu');
 				console.log(sidebarMenu);
