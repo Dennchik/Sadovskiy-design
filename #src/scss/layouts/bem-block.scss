@@ -176,8 +176,11 @@
 .t-h2 {
 	font-size: 65px;
 	line-height: 100%;
+	@include _1440-1920 {
+		font-size: calc(52px + (65 - 52) * ((100vw - 1440px) / (1920 - 1440)));
+	}
 	@include _320-1920 {
-		font-size: calc(24px + (65 - 24) * ((100vw - 320px) / (1920 - 320)));
+		font-size: calc(20px + (52 - 20) * ((100vw - 320px) / (1440 - 320)));
 	}
 
 	@include _screen-320 {

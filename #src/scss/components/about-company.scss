@@ -4,17 +4,25 @@
 		overflow: hidden;
 		max-width: 1273px;
 		margin: 0 auto;
+
+		@include _1440-1920 {
+			max-width: calc(
+				1000px + (1273 - 1000) * ((100vw - 1440px) / (1920 - 1440))
+			);
+		}
+		@include _screen-1440 {
+			max-width: 1000px;
+		}
 	}
 
 	// .about-company__title
 	&__title {
-		max-width: 1270px;
 		margin: 0 auto 69px;
-		text-align: center;
+		// text-align: center;
 
 		@include _screen-1440 {
-			max-width: 850px;
 			text-align: center;
+			max-width: 1000px;
 		}
 
 		@include _screen-690 {

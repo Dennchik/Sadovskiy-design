@@ -1,6 +1,6 @@
 .services {
 	width: 100%;
-	height: 100%;
+	max-height: 100%;
 
 	// .services__body
 	&__body {
@@ -12,25 +12,22 @@
 			grid-template-columns: repeat(2, 1fr);
 		}
 
+		@include _screen-960 {
+			gap: 20px;
+		}
+
 		@include _screen-690 {
 			grid-template-columns: repeat(1, 1fr);
 		}
 
-		@include _screen-690 {
-			gap: 20px;
+		@include _1440-1920 {
+			gap: calc(20px + (40 - 20) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 	}
 
 	// .services__item
 	&__item {
 		position: relative;
-		// &:not(:first-child) {
-		// 	transform: scaleY(0.9);
-		// }
-
-		@include _screen-320 {
-			font-size: 20px;
-		}
 
 		&:nth-child(1) {
 			max-height: 401px;
@@ -38,21 +35,18 @@
 			display: flex;
 			padding: 59px 30px 114px;
 
-			padding: 80px 15px 80px 30px;
+			padding: 80px 15px 80px 20px;
 			overflow: hidden;
 			background: #171b1c;
 
-			@include _screen-1710 {
-				// padding: 74px 30px 74px;
-			}
-
 			@include _screen-1440 {
 				border-radius: 15px;
+				padding: 80px 25px 80px 30px;
 			}
 
-			@include _screen-1024 {
-				padding: 70px 0;
+			@include _screen-960 {
 				max-height: 100%;
+				padding: 50px 0;
 			}
 
 			@include _min-690 {
@@ -61,9 +55,6 @@
 
 			@include _screen-690 {
 				grid-column: 1 / 2;
-			}
-
-			@include _screen-690 {
 				margin: 0 -30px;
 				border-radius: 0px;
 				margin-bottom: 40px;
@@ -71,6 +62,10 @@
 
 			@include _screen-375 {
 				margin: 0 -10px;
+			}
+
+			@include _screen-320 {
+				font-size: 20px;
 			}
 		}
 
@@ -81,9 +76,13 @@
 			align-items: center;
 			justify-content: space-between;
 			gap: 40px;
+			@include _1440-1920 {
+				gap: calc(20px + (40 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+			}
 
 			.card {
 				width: 100%;
+				max-height: 261px;
 				&:nth-child(1) {
 					max-height: 100px;
 					min-height: 100px;
@@ -130,23 +129,23 @@
 	// .services__column
 	&__column {
 		flex: 1 1 auto;
-		display: flex;
-		flex-direction: column;
+		// display: flex;
+		// flex-direction: column;
 		z-index: 3;
 	}
 
 	// .services__title
 	&__title {
 		z-index: 9;
-		position: relative;
-		@include _min-1710 {
+
+		@include _min-960 {
 			position: relative;
 		}
 
-		@include _screen-1710 {
-			// display: flex;
-			// flex-direction: column;
-			// align-items: center;
+		@include _screen-960 {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 		}
 	}
 
@@ -156,23 +155,27 @@
 		line-height: 100%;
 		max-width: 857px;
 
-		@include _screen-1710 {
-			// text-align: center;
+		font-size: 76px;
+		line-height: 100%;
+
+		@include _320-1920 {
+			font-size: calc(28px + (76 - 28) * ((100vw - 320px) / (1920 - 320)));
 		}
 
-		@include _screen-1440 {
-			max-width: 670px;
+		@include _320-1440 {
+			font-size: calc(28px + (76 - 28) * ((100vw - 320px) / (1440 - 320)));
+
+			max-width: calc(320px + (857 - 320) * ((100vw - 320px) / (1440 - 320)));
 		}
 
-		@include _screen-1024 {
-			max-width: 570px;
+		@include _screen-960 {
+			text-align: center;
 		}
-		@include _screen-690 {
-			padding: 0 25px;
+		@include _screen-490 {
+			font-size: 28px;
 		}
 
 		@include _screen-490 {
-			padding: 0 5px;
 			max-width: 397px;
 		}
 	}
@@ -182,19 +185,25 @@
 		display: flex;
 		position: absolute;
 		top: 20px;
-		// transform: translateX(96.3%);
 		transform: translateX(300px);
 
 		@include _1440-1920 {
 			transform: translateX(
-				calc(235px + (300 - 235) * ((100vw - 1440px) / (1920 - 1440)))
+				calc(255px + (300 - 255) * ((100vw - 1440px) / (1920 - 1440)))
 			);
-			top: calc(10px + (20 - 10) * ((100vw - 1440px) / (192 - 1440)));
+			top: calc(10px + (20 - 10) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 
-		@include _screen-1024 {
+		@include _690-1440 {
+			transform: translateX(
+				calc(215px + (325 - 215) * ((100vw - 690px) / (1920 - 690)))
+			);
+			top: calc(10px + (20 - 10) * ((100vw - 690px) / (1920 - 690)));
+		}
+
+		@include _screen-960 {
 			transform: translateX(0);
-			margin-top: 50px;
+			margin-top: 30px;
 			position: relative;
 			left: 0;
 		}
@@ -239,13 +248,10 @@
 			}
 		}
 
-		@include _min-1710 {
-			// position: absolute;
+		@include _screen-960 {
+			position: relative;
+			margin-top: 50px;
 		}
-
-		// @include _screen-1710 {
-		// 	margin-top: 50px;
-		// }
 
 		@include _screen-690 {
 			margin-top: 28px;
@@ -309,19 +315,34 @@
 			margin-bottom: 20px;
 		}
 
+		@include _1440-1920 {
+			margin-bottom: calc(
+				15px + (35 - 15) * ((100vw - 1440px) / (1920 - 1440))
+			);
+		}
+
 		h3 {
 			flex: 1;
 			align-self: center;
+			font-size: 35px;
 			line-height: 122.857143%; /* 43px/35 */
 
 			&:nth-child(2) {
 				align-self: flex-start;
 			}
 
-			font-size: 35px;
-			line-height: 122.857143%; /* 43px/35 */
 			@include _1440-1920 {
-				font-size: calc(20px + (35 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+				font-size: calc(24px + (35 - 24) * ((100vw - 1440px) / (1920 - 1440)));
+			}
+			@include _screen-1440 {
+				font-size: 35px;
+			}
+
+			@include _320-1440 {
+				font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (1440 - 320)));
+			}
+			@include _screen-320 {
+				font-size: 20px;
 			}
 		}
 	}
@@ -395,11 +416,11 @@
 	height: 86.5rem;
 	border-radius: 50%;
 
-	filter: blur(155px);
+	filter: blur(300px);
 	background: #2b3769;
 
 	@include _screen-1024 {
-		margin-top: 40%;
+		// margin-top: 40%;
 	}
 }
 
@@ -407,18 +428,18 @@
 	pointer-events: none;
 	position: absolute;
 	z-index: 2;
-	margin-top: 20%;
+	margin-top: 23%;
 	margin-left: 50%;
 	transform: translateX(-50%);
-	width: 85.1rem;
-	height: 85.1rem;
+	width: 44.1rem;
+	height: 44.1rem;
 	border-radius: 50%;
 
 	filter: blur(100px);
 	background: #acbabd;
-	opacity: 0.5;
+	opacity: 0.8;
 
-	@include _screen-1024 {
+	@include _screen-690 {
 		display: none;
 	}
 }
@@ -427,14 +448,14 @@
 	pointer-events: none;
 	position: absolute;
 	z-index: 2;
-	margin-top: 20%;
-	margin-left: 60%;
+	margin-top: 10%;
+	margin-left: 50%;
 	transform: translateY(-20%);
 	width: 158rem;
 	height: 158rem;
 	border-radius: 50%;
 
-	filter: blur(70px);
+	filter: blur(300px);
 	background: #2b3769;
 }
 
@@ -443,17 +464,17 @@
 	position: absolute;
 	z-index: 2;
 	margin-top: 10%;
-	margin-left: 80%;
+	margin-left: 90%;
 	transform: translateX(-20%);
-	width: 85.1rem;
-	height: 85.1rem;
+	width: 44.1rem;
+	height: 44.1rem;
 	border-radius: 50%;
 
 	filter: blur(100px);
 	background: #acbabd;
-	opacity: 0.5;
+	opacity: 0.8;
 
-	@include _screen-1024 {
+	@include _screen-690 {
 		display: none;
 	}
 }
