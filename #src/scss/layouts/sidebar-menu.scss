@@ -9,6 +9,7 @@
 	will-change: transform;
 	display: flex;
 	backdrop-filter: blur(7px);
+	background: #2b37696e;
 
 	&::before {
 		content: '';
@@ -188,6 +189,7 @@
 
 	// .sidebar-menu__row
 	&__row {
+		color: #fff;
 		display: flex;
 		gap: 15px;
 		justify-content: space-between;
@@ -195,7 +197,6 @@
 		width: 100%;
 
 		@include _screen-375 {
-			color: #fff;
 			align-items: flex-start;
 			flex-direction: column-reverse;
 			gap: 40px;
@@ -216,6 +217,7 @@
 	&._open-menu {
 		transform: translateY(0px);
 		.sidebar-menu__column {
+			background: #171b1c;
 			opacity: 1;
 			transition: opacity 0.7s ease-in-out 0.9s;
 		}
@@ -316,7 +318,7 @@
 
 		span {
 			margin-left: 20px;
-			font-size: 14px;
+			font-size: 16px;
 
 			opacity: 0.9;
 			font-weight: 400;
@@ -384,7 +386,8 @@
 			color: #8d8d8d;
 		}
 		a {
-			font-size: 13px;
+			white-space: nowrap;
+			font-size: 15px;
 			opacity: 0.9;
 			font-weight: 400;
 			&:not(:last-child) {
@@ -407,7 +410,7 @@
 		}
 
 		a {
-			font-size: 13px;
+			font-size: 15px;
 			opacity: 0.9;
 			font-weight: 400;
 		}

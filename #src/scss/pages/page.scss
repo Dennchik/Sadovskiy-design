@@ -2,7 +2,7 @@
 	width: 100vw;
 	// .page__content
 	&__content {
-		padding-top: 103px;
+		padding-top: 115px;
 		position: relative;
 
 		@include _screen-768 {
@@ -20,7 +20,7 @@
 
 	// page__performance
 	&__performance {
-		margin-top: -103px;
+		margin-top: -115px;
 	}
 
 	// .page__container
