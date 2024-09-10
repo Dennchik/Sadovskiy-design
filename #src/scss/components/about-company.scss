@@ -2,13 +2,15 @@
 	// .about-company__body
 	&__body {
 		overflow: hidden;
+		max-width: 1273px;
+		margin: 0 auto;
 	}
 
 	// .about-company__title
 	&__title {
-		max-width: 1273px;
+		max-width: 1270px;
 		margin: 0 auto 69px;
-		text-align: left;
+		text-align: center;
 
 		@include _screen-1440 {
 			max-width: 850px;
@@ -22,7 +24,6 @@
 
 	// .about-company__content
 	&__content {
-		max-width: 1273px;
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;

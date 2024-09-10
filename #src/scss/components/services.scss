@@ -24,17 +24,26 @@
 	// .services__item
 	&__item {
 		position: relative;
+		// &:not(:first-child) {
+		// 	transform: scaleY(0.9);
+		// }
+
+		@include _screen-320 {
+			font-size: 20px;
+		}
 
 		&:nth-child(1) {
 			max-height: 401px;
 			border-radius: 30px;
 			display: flex;
 			padding: 59px 30px 114px;
+
+			padding: 80px 15px 80px 30px;
 			overflow: hidden;
 			background: #171b1c;
 
 			@include _screen-1710 {
-				padding: 74px 30px;
+				// padding: 74px 30px 74px;
 			}
 
 			@include _screen-1440 {
@@ -129,14 +138,15 @@
 	// .services__title
 	&__title {
 		z-index: 9;
+		position: relative;
 		@include _min-1710 {
 			position: relative;
 		}
 
 		@include _screen-1710 {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
+			// display: flex;
+			// flex-direction: column;
+			// align-items: center;
 		}
 	}
 
@@ -147,7 +157,7 @@
 		max-width: 857px;
 
 		@include _screen-1710 {
-			text-align: center;
+			// text-align: center;
 		}
 
 		@include _screen-1440 {
@@ -172,10 +182,14 @@
 		display: flex;
 		position: absolute;
 		top: 20px;
-		transform: translateX(96.3%);
+		// transform: translateX(96.3%);
+		transform: translateX(300px);
 
-		@include _screen-1710 {
-			right: 330px;
+		@include _1440-1920 {
+			transform: translateX(
+				calc(235px + (300 - 235) * ((100vw - 1440px) / (1920 - 1440)))
+			);
+			top: calc(10px + (20 - 10) * ((100vw - 1440px) / (192 - 1440)));
 		}
 
 		@include _screen-1024 {
@@ -208,6 +222,7 @@
 		bottom: 0;
 		background: #ffffff;
 		border: 1px solid transparent;
+		position: absolute;
 
 		&:hover {
 			border: 1px solid #fff;
@@ -225,12 +240,12 @@
 		}
 
 		@include _min-1710 {
-			position: absolute;
+			// position: absolute;
 		}
 
-		@include _screen-1710 {
-			margin-top: 50px;
-		}
+		// @include _screen-1710 {
+		// 	margin-top: 50px;
+		// }
 
 		@include _screen-690 {
 			margin-top: 28px;
@@ -301,6 +316,12 @@
 
 			&:nth-child(2) {
 				align-self: flex-start;
+			}
+
+			font-size: 35px;
+			line-height: 122.857143%; /* 43px/35 */
+			@include _1440-1920 {
+				font-size: calc(20px + (35 - 20) * ((100vw - 1440px) / (1920 - 1440)));
 			}
 		}
 	}

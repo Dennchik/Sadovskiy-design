@@ -28,6 +28,11 @@
   //* Better Font Rendering
 }
 
+.icon-youtube-lg {
+  &:before {
+    content: $icon-youtube-lg;
+  }
+}
 .icon-youtube-square {
   &:before {
     content: $icon-youtube-square;

@@ -113,6 +113,9 @@
 			font-weight: 600;
 			line-height: 131.25%; /* 21px/16 */
 			transition: opacity 0.4s ease-in-out;
+			@include _1440-1920 {
+				font-size: calc(13px + (16 - 13) * ((100vw - 1440px) / (1920 - 1440)));
+			}
 
 			&:hover {
 				opacity: 0.6;
@@ -152,7 +155,11 @@
 		font-weight: 600;
 		opacity: 0.6;
 		transition: all 0.4s ease-in-out;
-
+		@include _1440-1920 {
+			font-size: calc(
+				13.5px + (16 - 13.5) * ((100vw - 1440px) / (1920 - 1440))
+			);
+		}
 		@include _screen-960 {
 			margin-right: 20px;
 		}
