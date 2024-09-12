@@ -209,13 +209,13 @@ export function scalingFunction() {
 	// Добавляем обработчик события 'resize' с вызовом унифицированной функции
 	window.addEventListener('resize', function () {
 		applyScaling('.page__order-place', 1, 1.3); // Для '.page__order-place'
-		applyScaling('.order-place__body', 1, 0.8); // Для '.order-form__column'
+		applyScaling('.order-place__body', 1, 0.7692); // Для '.order-form__column'
 	});
 
 	// Вызовем функции сразу после загрузки страницы, чтобы применить масштабирование сразу
 	document.addEventListener('DOMContentLoaded', function () {
 		applyScaling('.page__order-place', 1, 1.3);
-		applyScaling('.order-place__body', 1, 0.8);
+		applyScaling('.order-place__body', 1, 0.7692);
 	});
 
 }

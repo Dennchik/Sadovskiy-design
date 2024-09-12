@@ -3,7 +3,7 @@
 		._item.el-item-1
 			._column
 				._title
-					h1._text Студия графического&nbsp;дизайна и&nbsp;веб&nbsp;-&nbsp;разработки
+					h1._text.t-h1 Студия графического&nbsp;дизайна и&nbsp;веб&nbsp;-&nbsp;разработки
 					._teammates
 						._image 
 							img(src="@@webRoot/img/teammates/team-1.png", alt="фото")
@@ -17,14 +17,15 @@
 							img(src="@@webRoot/img/teammates/team-5.png", alt="фото")
 						._image 
 							img(src="@@webRoot/img/teammates/team-6.png", alt="фото")
-					._button.button
+					button(form="order" type="submit")._button.button
 						span Оставить заявку
 						._icon.icon 
 							+iconfont('arrow-right', '_icon')
-			.elipse-01
-			.elipse-02
-			.elipse-03
-			.elipse-03a
+
+			//- .elipse-01
+			//- .elipse-02
+			//- .elipse-03
+			//- .elipse-03a
 		._item.el-item
 			.card
 				._header  

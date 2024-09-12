@@ -23,11 +23,6 @@
 		margin-top: -115px;
 	}
 
-	// .page__container
-	&__container {
-		position: relative;
-	}
-
 	// .page__header-main
 	&__header-main {
 		position: fixed;
@@ -166,7 +161,7 @@
 		}
 
 		@include _screen-960 {
-			padding: 60px 0 0;
+			padding: 50px 0 0;
 		}
 	}
 
@@ -179,11 +174,11 @@
 		}
 
 		@include _screen-690 {
-			padding: 60px 30px;
+			padding: 50px 30px;
 		}
 
 		@include _screen-375 {
-			padding: 60px 10px;
+			padding: 50px 10px;
 		}
 	}
 
@@ -229,19 +224,15 @@
 	&__order-place {
 		padding: 0 50px;
 
-		.order-place__content {
-			background: #171b1c;
-		}
-
 		@include _screen-1440 {
 			padding: 0 30px;
 		}
 
 		@include _screen-490 {
-			transform: scaleY(1.3);
+			// transform: scaleY(1.3);
 			padding: 0 10px;
 
-			margin-top: calc(0px + (75 - 0) * ((100vw - 320px) / (490 - 320)));
+			// margin-top: calc(0px + (75 - 0) * ((100vw - 320px) / (490 - 320)));
 		}
 
 		@include _320-490 {
@@ -298,7 +289,7 @@
 			padding: 50px 30px;
 		}
 		@include _screen-490 {
-			margin-top: calc(0px + (75 - 0) * ((100vw - 320px) / (490 - 320)));
+			// margin-top: calc(0px + (75 - 0) * ((100vw - 320px) / (490 - 320)));
 		}
 
 		@include _screen-375 {
@@ -390,7 +381,7 @@
 	//page__dev-info
 	&__dev-info {
 		position: relative;
-		background: rgb(0, 0, 0);
+		background: #000;
 	}
 
 	&__footer {
@@ -398,10 +389,6 @@
 
 		@include _screen-768 {
 			margin-top: 50px;
-		}
-
-		@include _screen-490 {
-			margin-top: calc(50px + (125 - 50) * ((100vw - 320px) / (490 - 320)));
 		}
 	}
 }

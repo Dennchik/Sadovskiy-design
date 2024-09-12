@@ -37,8 +37,44 @@
 
 			padding: 80px 15px 80px 20px;
 			overflow: hidden;
-			background: #171b1c;
+			// background: url('../img/bg-order.png') center / cover no-repeat;
 
+			// @include _screen-690 {
+			// 	background: url('../img/bg-order-s.png') center / cover no-repeat;
+			// }
+			background: #2b3769;
+			background-image: radial-gradient(
+					at 48.80471232833396% 9.30748322820174%,
+					hsla(192, 9.803921568627452%, 10%, 1) 0%,
+					hsla(192, 9.803921568627452%, 10%, 0) 100%
+				),
+				radial-gradient(
+					at 8.85803151489657% 61.07794556735604%,
+					rgba(23, 27, 28, 0.616) 0%,
+					hsla(192, 9.803921568627452%, 10%, 0) 100%
+				),
+				radial-gradient(
+					at 33.65934550218424% 1.0435675415443102%,
+					rgb(43, 55, 105) 0%,
+					#2b37696b 100%
+				),
+				radial-gradient(
+					at 16.53026174283987% 62.392939901251076%,
+					hsla(0, 0.9900990099009866%, 60.3921568627451%, 1) 0%,
+					hsla(0, 0.9900990099009866%, 60.3921568627451%, 0) 100%
+				),
+				radial-gradient(
+					at 93.00587806049488% 33.931783684955086%,
+					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 1)
+						0%,
+					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0)
+						100%
+				),
+				radial-gradient(
+					at 52.99372800916484% 82.22235399737667%,
+					hsla(192, 9.803921568627452%, 10%, 1) 0%,
+					hsla(192, 9.803921568627452%, 10%, 0) 100%
+				);
 			@include _screen-1440 {
 				border-radius: 15px;
 				padding: 80px 25px 80px 30px;
@@ -57,7 +93,6 @@
 				grid-column: 1 / 2;
 				margin: 0 -30px;
 				border-radius: 0px;
-				margin-bottom: 40px;
 			}
 
 			@include _screen-375 {
@@ -129,8 +164,6 @@
 	// .services__column
 	&__column {
 		flex: 1 1 auto;
-		// display: flex;
-		// flex-direction: column;
 		z-index: 3;
 	}
 
@@ -152,27 +185,15 @@
 	// .services__text
 	&__text {
 		color: $font-color-secondary;
-		line-height: 100%;
 		max-width: 857px;
-
-		font-size: 76px;
 		line-height: 100%;
-
-		@include _320-1920 {
-			font-size: calc(28px + (76 - 28) * ((100vw - 320px) / (1920 - 320)));
-		}
 
 		@include _320-1440 {
-			font-size: calc(28px + (76 - 28) * ((100vw - 320px) / (1440 - 320)));
-
 			max-width: calc(320px + (857 - 320) * ((100vw - 320px) / (1440 - 320)));
 		}
 
 		@include _screen-960 {
 			text-align: center;
-		}
-		@include _screen-490 {
-			font-size: 28px;
 		}
 
 		@include _screen-490 {
@@ -232,6 +253,7 @@
 		background: #ffffff;
 		border: 1px solid transparent;
 		position: absolute;
+		transform: translateY(15%);
 
 		&:hover {
 			border: 1px solid #fff;

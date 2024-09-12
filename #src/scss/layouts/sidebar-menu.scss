@@ -9,7 +9,6 @@
 	will-change: transform;
 	display: flex;
 	backdrop-filter: blur(7px);
-	background: #2b37696e;
 
 	&::before {
 		content: '';
@@ -20,6 +19,7 @@
 		height: 0;
 		transform: translateY(-50%);
 		transition: height 0.4s ease-out 0.7s;
+		background: #171b1c;
 	}
 
 	// .sidebar-menu__column
@@ -58,10 +58,6 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-
-		@include _screen-490 {
-			// padding: 15px;
-		}
 
 		.header__menu {
 			flex-direction: column;
@@ -215,13 +211,61 @@
 	&._open-menu {
 		transform: translateY(0px);
 		.sidebar-menu__column {
-			background: #171b1c;
 			opacity: 1;
 			transition: opacity 0.7s ease-in-out 0.9s;
 		}
 		&::before {
 			height: 200%;
-			background: #171b1c;
+			background-image: radial-gradient(
+					at 51.219887531528066% 73.75802524063498%,
+					hwb(228 17% 59%) 0%,
+					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0)
+						100%
+				),
+				radial-gradient(
+					at 82.3747128137153% 47.854555124063424%,
+					hsla(192, 9.803921568627452%, 10%, 1) 0%,
+					hsla(192, 9.803921568627452%, 10%, 0) 100%
+				),
+				radial-gradient(
+					at 7.222668315528513% 65.99692412690541%,
+					hsla(192, 9.803921568627452%, 10%, 1) 0%,
+					hsla(192, 9.803921568627452%, 10%, 0) 100%
+				),
+				radial-gradient(
+					at 28.247189370281145% 40.43717988749253%,
+					hsla(192, 9.803921568627452%, 10%, 1) 0%,
+					hsla(192, 9.803921568627452%, 10%, 0) 100%
+				),
+				radial-gradient(
+					at 54.59975191052144% 0.011447407615872152%,
+					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 1)
+						0%,
+					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0)
+						100%
+				),
+				radial-gradient(
+					at 79.74105101791258% 72.89600397390794%,
+					hsla(192, 9.803921568627452%, 10%, 1) 0%,
+					hsla(192, 9.803921568627452%, 10%, 0) 100%
+				),
+				radial-gradient(
+					at 27.353713288329608% 60.00042076869605%,
+					hsla(192, 9.803921568627452%, 10%, 1) 0%,
+					hsla(192, 9.803921568627452%, 10%, 0) 100%
+				),
+				radial-gradient(
+					at 30.871687014459216% 51.91539250189692%,
+					hsla(192, 9.803921568627452%, 10%, 1) 0%,
+					hsla(192, 9.803921568627452%, 10%, 0) 100%
+				),
+				radial-gradient(
+					at 15.415090896688245% 72.75274820343758%,
+					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 1)
+						0%,
+					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0)
+						100%
+				);
 		}
 
 		.sidebar-menu__order {

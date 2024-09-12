@@ -18,14 +18,18 @@
 			padding: 50px 30px 58px;
 		}
 
-		@include _screen-320 {
+		@include _screen-375 {
 			padding: 50px 10px 58px;
 		}
 	}
 
 	// .order-place__content--bd-orderform
 	&__content--order-page {
-		background: #171b1c;
+		background: url('../img/bg-order.png') center / cover no-repeat;
+
+		@include _screen-490 {
+			background: url('../img/bg-order-s.png') center / cover no-repeat;
+		}
 	}
 
 	// .order-place__content--audit-page
@@ -35,7 +39,6 @@
 
 	//.order-place__header--tcl-order-page
 	&__header--tcl-order-page {
-		max-width: 1013px;
 		color: #fff;
 	}
 
@@ -62,7 +65,11 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		position: relative;
-		transform: scaleY(0.8);
+		max-width: 1013px;
+
+		@include _320-960 {
+			max-width: calc(290px + (1013 - 290) * ((100vw - 375px) / (960 - 375)));
+		}
 	}
 
 	// .order-place__header
@@ -85,12 +92,9 @@
 		text-align: center;
 		line-height: 125%; /* 25px/20 */
 		max-width: 720px;
-		margin: 0 auto 16px;
+		margin: 0 auto;
 		font-size: 16px;
 
-		@include _screen-490 {
-			margin: 0 auto 20px;
-		}
 		@include _320-490 {
 			font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (490 - 320)));
 		}
@@ -106,7 +110,8 @@
 		justify-content: space-between;
 		gap: 25px;
 		margin: 40px auto;
-		max-width: 892px;
+		width: 100%;
+		max-width: 838px;
 		display: flex;
 
 		@include _screen-960 {
@@ -119,9 +124,9 @@
 			flex-direction: column;
 		}
 
-		@include _screen-490 {
+		@include _screen-375 {
 			gap: 15px;
-			margin: 0 auto 16px;
+			margin: 16px auto;
 		}
 	}
 
@@ -298,9 +303,7 @@
 		height: 5.8rem;
 
 		input {
-			padding: 8px 3rem 10px;
-			display: flex;
-			align-items: center;
+			padding: 8px 2rem 10px;
 			color: #fff;
 			width: 100%;
 			height: 100%;
@@ -308,7 +311,7 @@
 			font-size: 16px;
 
 			@include _screen-490 {
-				padding: 5px 2rem 12px;
+				padding: 0 2rem 4px;
 			}
 		}
 
@@ -319,8 +322,10 @@
 
 	// .order-form__button
 	&__button {
-		// transition: all 0.4s ease-in-out;
-		// border: 1px solid transparent;
+		right: 0;
+		bottom: 0;
+		background: #fff;
+		border: 1px solid transparent;
 	}
 }
 
