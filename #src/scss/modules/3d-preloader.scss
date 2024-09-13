@@ -1,0 +1,128 @@
+.preloader {
+	font-size: 24px;
+	background: linear-gradient(
+		#1a1c31 calc(50% + 1.5em),
+		#2b3769 calc(50% + 2.5em) calc(50% + 10.5em),
+		#2b3769
+	);
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	perspective: 800px;
+	transform-style: preserve-3d;
+
+	&.preloader-remove {
+		display: none;
+	}
+
+	&::before {
+		background:
+			linear-gradient(#2b3769, #2b376900),
+			radial-gradient(100% 100% at 50% 50%, #06277900 37.5%, #2b3769 50%),
+			repeating-linear-gradient(0deg, #171b1c00 0 0.95em, #394470 0.95em 1em),
+			repeating-linear-gradient(90deg, #0d112f00 0 0.9em, #394470 0.9em 1em)
+				0.5em 0;
+		content: '';
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) rotateX(90deg) translateZ(-4em);
+		width: 34em;
+		height: 46em;
+		width: 100%;
+	}
+
+	&__sphere {
+		position: absolute;
+		animation-name: moveSphere;
+		background: #6e95f7;
+		box-shadow:
+			0 -0.75em 0.5em #255ff4 inset,
+			0 0 0.5em rgba(85, 131, 246, 0.7);
+		transform: translateZ(10em);
+	}
+
+	&__sphere-shadow {
+		display: block;
+		position: absolute;
+		animation-name: moveSphereShadow;
+		background-image: radial-gradient(
+			100% 100% at center,
+			rgba(0, 0, 0, 0.2) 45%,
+			rgba(0, 0, 0, 0) 50%
+		);
+		transform: translateY(4em) translateZ(10em) rotateX(90deg);
+	}
+
+	&__sphere,
+	&__sphere-shadow {
+		animation-duration: 2s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: infinite;
+		border-radius: 50%;
+		top: calc(50% - 1em);
+		left: calc(50% - 1em);
+		width: 2em;
+		height: 2em;
+		z-index: 1;
+
+		&:nth-of-type(1) {
+			left: calc(50% - 5.5em);
+		}
+
+		&:nth-of-type(2) {
+			left: calc(50% - 2.5em);
+			animation-delay: 0.1s;
+		}
+
+		&:nth-of-type(3) {
+			left: calc(50% - -0.5em);
+			animation-delay: 0.2s;
+		}
+
+		&:nth-of-type(4) {
+			left: calc(50% - -3.5em);
+			animation-delay: 0.3s;
+		}
+	}
+}
+
+@keyframes moveSphere {
+	from,
+	to {
+		filter: brightness(100%) blur(0);
+		-webkit-filter: brightness(100%) blur(0);
+		transform: translateZ(10em);
+	}
+
+	25%,
+	75% {
+		filter: brightness(100%) blur(0);
+		-webkit-filter: brightness(100%) blur(0);
+		transform: translateZ(12em);
+	}
+
+	50% {
+		filter: brightness(80%) blur(4px);
+		-webkit-filter: brightness(80%) blur(4px);
+		transform: translateZ(-10em);
+	}
+}
+
+@keyframes moveSphereShadow {
+	from,
+	to {
+		transform: translateY(4em) translateZ(10em) rotateX(90deg);
+	}
+
+	25%,
+	75% {
+		transform: translateY(4em) translateZ(12em) rotateX(90deg);
+	}
+
+	50% {
+		transform: translateY(4em) translateZ(-10em) rotateX(90deg);
+	}
+}

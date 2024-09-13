@@ -167,8 +167,8 @@
 	font-size: 76px;
 	line-height: 100%;
 
-	@include _320-1920 {
-		font-size: calc(28px + (76 - 28) * ((100vw - 320px) / (1920 - 320)));
+	@include _1440-1920 {
+		font-size: calc(60px + (76 - 60) * ((100vw - 1440px) / (1920 - 1440)));
 	}
 
 	@include _320-1440 {

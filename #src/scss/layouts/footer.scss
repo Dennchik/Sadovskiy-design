@@ -4,7 +4,6 @@
 		position: relative;
 		padding: 120px 50px;
 		overflow: hidden;
-		background: url('../img/bg-order.png') center / cover no-repeat;
 
 		@include _screen-1440 {
 			padding: 50px 30px;
@@ -14,8 +13,69 @@
 			padding: 50px 10px 10px;
 		}
 
+		@include _min-490 {
+			background-image: radial-gradient(
+					ellipse at 17% 15%,
+					#171b1c 25%,
+					#171b1c67 60%,
+					transparent 100%
+				),
+				radial-gradient(
+					circle at 40% 140%,
+					#eeeeee6a 0%,
+					#2b3769 25%,
+					transparent
+				),
+				radial-gradient(
+					circle at 100% 100%,
+					#eeeeee4d 0%,
+					#2b3769 20%,
+					transparent
+				),
+				radial-gradient(
+					ellipse at 30% 2%,
+					#171b1c 70%,
+					rgb(43, 55, 105) 100%,
+					transparent
+				),
+				radial-gradient(
+					circle at center left,
+					rgba(238, 238, 238, 0) 10%,
+					rgb(4, 5, 10) 50%,
+					transparent
+				);
+		}
+
 		@include _screen-490 {
-			background: url('../img/bg-order-s.png') center / cover no-repeat;
+			background-image: radial-gradient(
+					ellipse at bottom center,
+					#2b37695b,
+					transparent
+				),
+				radial-gradient(
+					ellipse at 10% 19%,
+					#171b1c 35%,
+					#eeeeee00 70%,
+					transparent 100%
+				),
+				radial-gradient(
+					circle at 0% 100%,
+					#eeeeee25 0%,
+					#2b376964 30%,
+					transparent
+				),
+				radial-gradient(
+					circle at 100% 0%,
+					#eeeeee41 0%,
+					#2b3769 30%,
+					transparent
+				),
+				radial-gradient(
+					ellipse at 30% 2%,
+					#171b1c 0%,
+					#2b3769 100%,
+					transparent
+				);
 		}
 	}
 
@@ -89,7 +149,7 @@
 			background: #039be5;
 			background: linear-gradient(
 				to bottom,
-				#039ae580,
+				#2c5364,
 				#039ae5b4,
 				#039be5
 			); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -106,13 +166,13 @@
 		}
 
 		.icon-vk-brand {
-			background: #091216;
+			background: $color;
 
 			background: linear-gradient(
-				to bottom,
+				to top,
 				#2c5364,
-				#203a43fa,
-				#091216
+				#039ae5b4,
+				#039be5
 			); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 			&::before {

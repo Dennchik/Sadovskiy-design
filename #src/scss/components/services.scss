@@ -1,6 +1,7 @@
 .services {
 	width: 100%;
 	max-height: 100%;
+	min-height: 100%;
 
 	// .services__body
 	&__body {
@@ -35,46 +36,74 @@
 			display: flex;
 			padding: 59px 30px 114px;
 
-			padding: 80px 15px 80px 20px;
+			padding: 90px 15px 90px 20px;
 			overflow: hidden;
-			// background: url('../img/bg-order.png') center / cover no-repeat;
+			background: $second-color;
 
-			// @include _screen-690 {
-			// 	background: url('../img/bg-order-s.png') center / cover no-repeat;
-			// }
-			background: #2b3769;
-			background-image: radial-gradient(
-					at 48.80471232833396% 9.30748322820174%,
-					hsla(192, 9.803921568627452%, 10%, 1) 0%,
-					hsla(192, 9.803921568627452%, 10%, 0) 100%
-				),
-				radial-gradient(
-					at 8.85803151489657% 61.07794556735604%,
-					rgba(23, 27, 28, 0.616) 0%,
-					hsla(192, 9.803921568627452%, 10%, 0) 100%
-				),
-				radial-gradient(
-					at 33.65934550218424% 1.0435675415443102%,
-					rgb(43, 55, 105) 0%,
-					#2b37696b 100%
-				),
-				radial-gradient(
-					at 16.53026174283987% 62.392939901251076%,
-					hsla(0, 0.9900990099009866%, 60.3921568627451%, 1) 0%,
-					hsla(0, 0.9900990099009866%, 60.3921568627451%, 0) 100%
-				),
-				radial-gradient(
-					at 93.00587806049488% 33.931783684955086%,
-					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 1)
-						0%,
-					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0)
-						100%
-				),
-				radial-gradient(
-					at 52.99372800916484% 82.22235399737667%,
-					hsla(192, 9.803921568627452%, 10%, 1) 0%,
-					hsla(192, 9.803921568627452%, 10%, 0) 100%
-				);
+			@include _min-490 {
+				background-image: radial-gradient(
+						ellipse at top center,
+						#171b1c,
+						transparent
+					),
+					radial-gradient(
+						ellipse at 170% 2%,
+						#2b3769 20%,
+						rgba(238, 238, 238, 0.048) 70%,
+						transparent
+					),
+					radial-gradient(
+						ellipse at 30% 2%,
+						#171b1c 0%,
+						rgba(43, 55, 105, 0) 70%,
+						transparent
+					),
+					radial-gradient(
+						ellipse at 40% 140%,
+						rgba(238, 238, 238, 0.5176470588) 10%,
+						rgba(43, 55, 105, 0.891) 40%,
+						transparent
+					),
+					radial-gradient(
+						circle at 110% 110%,
+						rgb(238, 238, 238) 10%,
+						rgb(43, 55, 105) 40%,
+						transparent
+					);
+			}
+
+			@include _screen-490 {
+				background-image: radial-gradient(
+						ellipse at top center,
+						#171b1c,
+						transparent
+					),
+					radial-gradient(
+						ellipse at 0% 30%,
+						#171b1c 0%,
+						rgba(43, 55, 105, 0.548) 70%,
+						transparent
+					),
+					radial-gradient(
+						circle at 110% 10%,
+						rgba(238, 238, 238, 0.37) 20%,
+						rgb(43, 55, 105) 40%,
+						transparent
+					),
+					radial-gradient(
+						ellipse at 170% 2%,
+						#2b3769 20%,
+						rgba(238, 238, 238, 0.048) 70%,
+						transparent
+					),
+					radial-gradient(
+						ellipse at 20% 110%,
+						rgb(238, 238, 238) 10%,
+						rgba(43, 55, 105, 0.891) 40%,
+						transparent
+					);
+			}
+
 			@include _screen-1440 {
 				border-radius: 15px;
 				padding: 80px 25px 80px 30px;
