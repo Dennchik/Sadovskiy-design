@@ -14,7 +14,7 @@ export function anchorsSmoothScrolling() {
 
 				// Если ширина экрана 768px и меньше, используем отступ 55px
 				if (screenWidth <= 768) {
-					offset = 50;
+					offset = 20;
 				}
 
 				const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
