@@ -210,10 +210,12 @@
 
 	&._open-menu {
 		transform: translateY(0px);
+
 		.sidebar-menu__column {
 			opacity: 1;
 			transition: opacity 0.7s ease-in-out 0.9s;
 		}
+
 		&::before {
 			height: 200%;
 			background-image: radial-gradient(

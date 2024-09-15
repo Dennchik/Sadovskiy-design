@@ -1,8 +1,6 @@
 export function anchorsSmoothScrolling() {
 	document.addEventListener('DOMContentLoaded', function () {
 		const anchorLinks = document.querySelectorAll('.anchor-link');
-		console.log(anchorLinks);
-
 		anchorLinks.forEach(link => {
 			link.addEventListener('click', function (e) {
 				e.preventDefault();

@@ -30,9 +30,9 @@
 
 [class*='_container'] {
 	max-width: $maxWidthContainer;
-	box-sizing: content-box;
 	margin: 0 auto;
 	height: 100%;
+	box-sizing: content-box;
 }
 
 [class*='icon-'] {
@@ -45,7 +45,7 @@
 
 [class*='icon-arrow-'] {
 	&::before {
-		font-size: 2rem;
+		font-size: 2.5rem;
 
 		@include _screen-690 {
 			font-size: 1.8rem;

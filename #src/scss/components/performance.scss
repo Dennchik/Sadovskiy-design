@@ -2,23 +2,23 @@
 	width: 100%;
 	background: #171b1c;
 	overflow: hidden;
+	max-width: 2020px;
 
 	// .performance__body
 	&__body {
-		padding: 0 50px;
-		padding: 216px 50px 162px;
-		position: relative;
+		padding: 216px 0 147px;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		column-gap: 40px;
 		height: 100%;
+		padding: 216px 50px 147px;
 
 		@include _screen-768 {
-			padding: 150px 30px 151px;
+			padding: 150px 50px 147px;
 		}
 
 		@include _screen-375 {
-			padding: 150px 10px 0;
+			padding: 150px 0 0;
 		}
 	}
 
@@ -29,7 +29,6 @@
 		max-width: 950px;
 
 		&:nth-child(1) {
-			margin-bottom: 70px;
 			grid-column: 1/4;
 		}
 
@@ -38,6 +37,7 @@
 			display: flex;
 			flex-direction: column;
 			align-self: start;
+			margin-bottom: 150px;
 
 			@include _screen-960 {
 				margin-left: 0;
@@ -96,15 +96,16 @@
 	// .performance__text
 	&__text {
 		position: relative;
-		margin-bottom: 70px;
 		align-self: end;
+		margin: 80px 0;
+
+		@include _1440-1920 {
+			// margin: calc(50px + (80 - 50) * ((100vw - 1440px) / (1920 - 1440))) 0;
+		}
 
 		p {
 			color: #fff;
 			line-height: 125%; /* 20px/16 */
-		}
-
-		@include _screen-320 {
 		}
 	}
 
@@ -157,74 +158,5 @@
 
 	.icon-arrow-right {
 		color: #fff;
-	}
-}
-
-.elipsis-cont {
-	position: absolute;
-	justify-content: center;
-	z-index: 1;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-
-	// .elipsis-cont__elipse-01
-	&__elipse-01 {
-		position: absolute;
-		top: 38%;
-		left: -25%;
-		bottom: 0;
-		width: 131.19rem;
-		height: 131.19rem;
-		border-radius: 50%;
-
-		filter: blur(364.58px);
-		background: #2b3769;
-
-		@include _screen-1024 {
-			margin-top: 40%;
-		}
-	}
-
-	// .elipsis-cont__elipse-02
-	&__elipse-02 {
-		position: absolute;
-		top: 60%;
-		left: -10%;
-		width: 56.8rem;
-		height: 56.8rem;
-		border-radius: 50%;
-
-		filter: blur(100.58px);
-		background: #acbabd80;
-		opacity: 0.5;
-	}
-
-	// .elipsis-cont__elipse-03
-	&__elipse-03 {
-		position: absolute;
-		top: -30%;
-		right: -73%;
-		width: 239.83rem;
-		height: 239.83rem;
-		border-radius: 50%;
-
-		filter: blur(364.58px);
-		background: #2b3769;
-	}
-
-	// .elipsis-cont__elipse-03
-	&__elipse-04 {
-		position: absolute;
-		top: 30%;
-		right: -10%;
-		width: 56.8rem;
-		height: 56.8rem;
-		border-radius: 50%;
-
-		filter: blur(100.58px);
-		background: #acbabd80;
-		opacity: 0.5;
 	}
 }

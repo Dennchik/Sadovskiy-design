@@ -1,4 +1,18 @@
 .schedule {
+	background: #2b3769;
+	padding: 13rem 50px;
+
+	@include _screen-1440 {
+		padding: 13rem 30px;
+	}
+
+	@include _screen-690 {
+		padding: 50px 30px;
+	}
+
+	@include _screen-375 {
+		padding: 50px 10px;
+	}
 	// .schedule__body
 	&__body {
 		position: relative;
@@ -18,8 +32,13 @@
 		justify-content: space-between;
 		grid-template-columns: repeat(3, minmax(200px, 1fr));
 
+		@include _1440-1920 {
+			gap: calc(20px + (40 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+		}
+
 		@include _screen-1440 {
 			grid-template-columns: repeat(2, minmax(200px, 1fr));
+			gap: 20px;
 		}
 
 		@include _screen-690 {
@@ -40,7 +59,7 @@
 			line-height: 100%;
 
 			@include _min-690 {
-				max-width: 520px;
+				max-width: 300px;
 			}
 
 			@include _320-1920 {
@@ -104,30 +123,5 @@
 		@include _screen-320 {
 			font-size: 12px;
 		}
-	}
-}
-
-.elipsis-cont {
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 1;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	width: 100%;
-
-	&__elipse-11 {
-		position: absolute;
-		width: 1195px;
-		height: 852px;
-		border-radius: 30%;
-		top: 30%;
-		right: -10%;
-
-		filter: blur(241.65px);
-		background: rgba(172, 186, 189, 0.2);
 	}
 }

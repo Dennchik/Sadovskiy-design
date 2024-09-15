@@ -15,7 +15,7 @@
 
 		@include _screen-690 {
 			border-radius: 15px;
-			padding: 50px 30px 58px;
+			padding: 50px 50px 58px;
 		}
 
 		@include _screen-375 {
@@ -121,14 +121,8 @@
 	&__body {
 		position: relative;
 		z-index: 9;
-		display: grid;
-		grid-template-columns: 1fr;
 		position: relative;
-		max-width: 1013px;
-
-		@include _320-960 {
-			max-width: calc(290px + (1013 - 290) * ((100vw - 375px) / (960 - 375)));
-		}
+		max-width: 900px;
 	}
 
 	// .order-place__header
@@ -166,11 +160,10 @@
 	// .audit__form
 	&__form {
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		gap: 25px;
 		margin: 40px auto;
 		width: 100%;
-		max-width: 838px;
 		display: flex;
 
 		@include _screen-960 {
@@ -222,8 +215,8 @@
 	&__column {
 		box-sizing: border-box;
 		border-radius: 30px;
-		overflow: hidden;
 		align-self: center;
+		flex: 0 1 268px;
 
 		&._brd-order {
 			&:not(:last-child) {
@@ -244,7 +237,6 @@
 			}
 
 			.order-form__button {
-				background: #fff;
 				&:hover {
 					border: 1px solid #fff;
 					.icon {
@@ -321,6 +313,7 @@
 		@include _screen-960 {
 			max-width: 268px;
 			width: 100%;
+			max-height: 50px;
 		}
 
 		@include _screen-490 {
@@ -329,12 +322,10 @@
 			width: 100%;
 		}
 
-		@include _320-490 {
-			// transform: scaleY(0.8);
-		}
-
-		&:not(:last-child) {
-			flex: 1 1 auto;
+		@include _screen-690 {
+			&:not(:last-child) {
+				flex: 1 1 auto;
+			}
 		}
 
 		&:last-child {
@@ -353,6 +344,7 @@
 	&__line {
 		height: 100%;
 		width: 100%;
+		max-width: 266px;
 	}
 
 	// .order-form__input
@@ -368,6 +360,10 @@
 			height: 100%;
 			line-height: 170%;
 			font-size: 16px;
+
+			@include _490-690 {
+				height: 50px;
+			}
 
 			@include _screen-490 {
 				padding: 0 2rem 4px;

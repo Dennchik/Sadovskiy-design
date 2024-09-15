@@ -55,8 +55,8 @@
 	}
 }
 
-.pqge-grid-3 {
-	pointer-events: none;
+.page-grid-3 {
+	// pointer-events: none;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -66,26 +66,30 @@
 
 	&__content {
 		margin: 0 auto;
-		padding: 0 50px;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 40px;
 		box-sizing: border-box;
 
-		@include _screen-1440 {
-			grid-template-columns: repeat(2, 1fr);
-			padding: 0 30px;
-			gap: 30px;
+		@include _1440-1920 {
+			gap: calc(20px + (40 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+			padding: 0 calc(30px + (50 - 30) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 
-		@include _screen-960 {
+		@include _screen-1440 {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+		}
+
+		@include _screen-1440 {
+			padding: 0 30px;
 		}
 
 		@include _screen-690 {
 			grid-template-columns: repeat(1, 1fr);
 		}
 
-		@include _screen-490 {
+		@include _screen-375 {
 			padding: 0 10px;
 			gap: 10px;
 		}
@@ -130,7 +134,7 @@
 		@include _screen-1440 {
 			grid-template-columns: repeat(3, 1fr);
 			padding: 0 30px;
-			gap: 30px;
+			gap: 20px;
 		}
 
 		@include _screen-960 {

@@ -2,7 +2,12 @@
 	// .answers__body
 	&__body {
 		margin: 0 auto;
-		max-width: 1264px;
+		max-width: 1280px;
+		@include _1440-1920 {
+			max-width: calc(
+				1000px + (1280 - 1000) * ((100vw - 1440px) / (1920 - 1440))
+			);
+		}
 	}
 
 	// .answers__title

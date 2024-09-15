@@ -22,8 +22,8 @@
 	max-width: 266px;
 
 	transition: all 0.4s ease-in-out;
-	// border: 1px solid transparent;
-	border: 1px solid #fff;
+	border: 1px solid transparent;
+	// border: 1px solid #fff;
 
 	overflow: hidden;
 	.icon {
@@ -91,12 +91,9 @@
 		}
 	}
 }
-
-//* ---------------------------------- [Idj] -----------------------------------
-
 .icon {
-	width: 5rem;
-	height: 5rem;
+	width: 48px;
+	height: 48px;
 	border-radius: 50%;
 	background: #2b3769;
 	display: flex;
@@ -108,7 +105,7 @@
 		height: 28px;
 	}
 }
-
+//* ---------------------------------- [Idj] -----------------------------------
 .burger-button {
 	//.burger-button__wrapper
 	&__wrapper {
@@ -168,7 +165,7 @@
 	line-height: 100%;
 
 	@include _1440-1920 {
-		font-size: calc(60px + (76 - 60) * ((100vw - 1440px) / (1920 - 1440)));
+		font-size: calc(54px + (76 - 54) * ((100vw - 1440px) / (1920 - 1440)));
 	}
 
 	@include _320-1440 {
@@ -182,11 +179,13 @@
 .t-h2 {
 	font-size: 65px;
 	line-height: 100%;
+
 	@include _1440-1920 {
 		font-size: calc(52px + (65 - 52) * ((100vw - 1440px) / (1920 - 1440)));
 	}
+
 	@include _320-1920 {
-		font-size: calc(20px + (52 - 20) * ((100vw - 320px) / (1440 - 320)));
+		font-size: calc(24px + (52 - 24) * ((100vw - 320px) / (1440 - 320)));
 	}
 
 	@include _screen-320 {
@@ -196,6 +195,7 @@
 .t-h3 {
 	font-size: 35px;
 	line-height: 122.857143%; /* 43px/35 */
+
 	@include _320-1920 {
 		font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (1920 - 320)));
 	}

@@ -17,8 +17,15 @@
 		justify-content: space-between;
 		grid-template-columns: repeat(3, minmax(200px, 1fr));
 
-		@include _screen-1140 {
-			gap: 30px;
+		@include _1440-1920 {
+			gap: calc(20px + (40 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+		}
+
+		@include _screen-1440 {
+			gap: 20px;
+		}
+
+		@include _screen-1300 {
 			grid-template-columns: repeat(2, minmax(200px, 51fr));
 		}
 

@@ -1,8 +1,4 @@
 .services {
-	width: 100%;
-	max-height: 100%;
-	min-height: 100%;
-
 	// .services__body
 	&__body {
 		display: grid;
@@ -11,9 +7,6 @@
 
 		@include _screen-1440 {
 			grid-template-columns: repeat(2, 1fr);
-		}
-
-		@include _screen-960 {
 			gap: 20px;
 		}
 
@@ -34,41 +27,58 @@
 			max-height: 401px;
 			border-radius: 30px;
 			display: flex;
-			padding: 59px 30px 114px;
 
 			padding: 90px 15px 90px 20px;
 			overflow: hidden;
-			background: $second-color;
+			// background: $color;
 
 			@include _min-490 {
 				background-image: radial-gradient(
-						ellipse at top center,
-						#171b1c,
+						circle at -90% -30%,
+						#171b1c00 10%,
+						#171b1cc9 55%,
 						transparent
 					),
 					radial-gradient(
-						ellipse at 170% 2%,
-						#2b3769 20%,
-						rgba(238, 238, 238, 0.048) 70%,
+						circle at 37% 4%,
+						rgba(43, 55, 105, 0.644) 1%,
+						rgba(255, 255, 255, 0) 20%,
 						transparent
 					),
 					radial-gradient(
-						ellipse at 30% 2%,
-						#171b1c 0%,
-						rgba(43, 55, 105, 0) 70%,
+						ellipse at 60% 10%,
+						#171b1c77 8%,
+						rgba(255, 255, 255, 0) 30%,
 						transparent
 					),
 					radial-gradient(
-						ellipse at 40% 140%,
-						rgba(238, 238, 238, 0.5176470588) 10%,
-						rgba(43, 55, 105, 0.891) 40%,
-						transparent
-					),
-					radial-gradient(
-						circle at 110% 110%,
-						rgb(238, 238, 238) 10%,
+						circle at 35% 155%,
+						rgba(255, 255, 255, 0.726) 5%,
 						rgb(43, 55, 105) 40%,
 						transparent
+					),
+					radial-gradient(
+						circle at 99% 170%,
+						rgba(238, 238, 238, 0.911) 10%,
+						rgb(43, 55, 105) 40%,
+						transparent
+					),
+					radial-gradient(
+						circle at 0% -10%,
+						#171b1c 30%,
+						#2b37695d 60%,
+						transparent
+					),
+					radial-gradient(
+						ellipse at right top,
+						rgba(43, 55, 105, 0.714) 50%,
+						rgba(238, 238, 238, 0.329) 60%,
+						transparent
+					),
+					radial-gradient(
+						ellipse at 50% 160%,
+						rgb(43, 57, 105) 50%,
+						rgba(43, 57, 105, 0.329) 150%
 					);
 			}
 
@@ -118,10 +128,13 @@
 				grid-column: 1 / 3;
 			}
 
-			@include _screen-690 {
-				grid-column: 1 / 2;
+			@include _screen-768 {
 				margin: 0 -30px;
 				border-radius: 0px;
+			}
+
+			@include _screen-690 {
+				grid-column: 1 / 2;
 			}
 
 			@include _screen-375 {
@@ -217,6 +230,10 @@
 		max-width: 857px;
 		line-height: 100%;
 
+		@include _1440-1920 {
+			max-width: calc(600px + (857 - 600) * ((100vw - 1440px) / (1920 - 1440)));
+		}
+
 		@include _320-1440 {
 			max-width: calc(320px + (857 - 320) * ((100vw - 320px) / (1440 - 320)));
 		}
@@ -239,16 +256,17 @@
 
 		@include _1440-1920 {
 			transform: translateX(
-				calc(255px + (300 - 255) * ((100vw - 1440px) / (1920 - 1440)))
+				calc(225px + (300 - 225) * ((100vw - 1440px) / (1920 - 1440)))
 			);
-			top: calc(10px + (20 - 10) * ((100vw - 1440px) / (1920 - 1440)));
+			top: calc(5px + (20 - 5) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 
-		@include _690-1440 {
+		@include _960-1440 {
 			transform: translateX(
-				calc(215px + (325 - 215) * ((100vw - 690px) / (1920 - 690)))
+				calc(215px + (355 - 215) * ((100vw - 960px) / (1920 - 960)))
 			);
-			top: calc(10px + (20 - 10) * ((100vw - 690px) / (1920 - 690)));
+
+			top: calc(5px + (28 - 5) * ((100vw - 960px) / (1440 - 960)));
 		}
 
 		@include _screen-960 {

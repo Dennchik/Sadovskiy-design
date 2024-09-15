@@ -41,7 +41,7 @@
 	&__row {
 		flex: 1 2 50%;
 		display: flex;
-		gap: 10px;
+		gap: 40px;
 		padding: 20px 0 5rem;
 
 		&:first-child {
@@ -50,6 +50,14 @@
 
 		&:last-child {
 			padding-bottom: 0;
+		}
+
+		@include _1440-1920 {
+			gap: calc(20px + (40 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+		}
+
+		@include _screen-1440 {
+			gap: 20px;
 		}
 
 		@include _screen-690 {

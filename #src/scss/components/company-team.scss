@@ -1,4 +1,19 @@
 .company-team {
+	background: #2b3769;
+	padding: 13rem 50px;
+
+	@include _screen-1440 {
+		padding: 13rem 30px;
+	}
+
+	@include _screen-690 {
+		padding: 60px 30px;
+	}
+
+	@include _screen-375 {
+		padding: 50px 10px;
+	}
+
 	// .company-team__body
 	&__body {
 		position: relative;
@@ -26,6 +41,14 @@
 		display: grid;
 		gap: 4rem;
 		grid-template-columns: repeat(3, 1fr);
+
+		@include _1440-1920 {
+			gap: calc(20px + (40 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+		}
+
+		@include _screen-1440 {
+			gap: 20px;
+		}
 
 		@include _screen-1164 {
 			grid-template-columns: repeat(2, 1fr);

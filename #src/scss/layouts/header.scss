@@ -6,9 +6,6 @@
 	@include _screen-1440 {
 		padding: 0 30px 0 25px;
 	}
-	@include _screen-690 {
-		padding: 0 25px;
-	}
 
 	@include _screen-375 {
 		padding: 0 5px 0 3px;
@@ -29,10 +26,6 @@
 
 		@include _1440-1920 {
 			gap: calc(20px + (40 - 20) * ((100vw - 1440px) / (1920 - 1440)));
-		}
-
-		@include _min-490 {
-			// gap: 40px;
 		}
 	}
 
