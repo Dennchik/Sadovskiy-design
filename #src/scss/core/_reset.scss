@@ -5,6 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
 
 html {
+	// overflow-x: hidden;
+	height: 100%;
 	font: {
 		style: normal;
 		size: 62.5%;
@@ -12,7 +14,6 @@ html {
 		family: $font-defoult;
 	}
 	background: $bg-color;
-	height: 100%;
 	counter-reset: heading;
 	color: $font-color-defoult;
 
@@ -22,7 +23,7 @@ html {
 }
 
 body {
-	position: relative;
+	// height: 100%;
 	overscroll-behavior: none;
 	font: {
 		size: 1.6rem;

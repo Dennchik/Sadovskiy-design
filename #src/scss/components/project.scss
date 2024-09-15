@@ -1,4 +1,7 @@
 .project {
+	@include _screen-1140 {
+		background: #2b3769;
+	}
 	// .project__title
 	&__title {
 		text-align: center;
@@ -18,16 +21,20 @@
 	&__content {
 		position: relative;
 		z-index: 2;
-		padding: 50px;
 		background: #2b3769;
+		padding-top: 50px;
+		padding-bottom: 50px;
 
 		@include _min-960 {
 			border-radius: 30px;
 		}
 
+		@include _screen-1440 {
+			padding: 50px 30px !important;
+		}
+
 		@include _screen-1140 {
 			border-radius: 0px;
-			padding: 50px 30px;
 		}
 
 		@include _screen-690 {
@@ -35,7 +42,7 @@
 		}
 
 		@include _screen-375 {
-			padding: 50px 10px;
+			padding: 20px 10px !important;
 		}
 	}
 
@@ -43,53 +50,46 @@
 	&__tabs {
 		position: relative;
 		width: 100%;
-		transition: all 0.9s ease-in-out;
 		display: grid;
 		align-items: center;
 		justify-content: space-between;
 		grid-template-columns: 1fr min-content;
-		transition: all 0.4s ease 0s;
+		transition: grid-template-rows 0.5s ease 0s;
 
 		&._responsive {
 			background: #3a4a91;
 			grid-template-rows: 1fr;
 			height: 100%;
 
-			.tabs-button__item {
-				display: block;
-				position: relative !important;
+			@include _screen-960 {
+				.tabs-button__item {
+					position: relative;
+					opacity: 1;
+					pointer-events: all;
+					transform: translateX(0);
+				}
 			}
+		}
+
+		@include _min-1140 {
+			margin-bottom: -3rem;
+			height: 145px;
+		}
+
+		@include _1140-1920 {
+			height: calc(108px + (145 - 108) * ((100vw - 1140px) / (1920 - 1140)));
+		}
+
+		@include _screen-1140 {
+			border-top-left-radius: 0px;
+			border-top-right-radius: 0px;
+			background: #2b3769;
+			padding: 0 25px 0 30px;
 		}
 
 		@include _screen-960 {
 			grid-template-rows: 0fr;
-		}
-
-		@include _min-1140 {
-			height: 145px;
-
-			@include _1140-1920 {
-				height: calc(108px + (145 - 108) * ((100vw - 1140px) / (1920 - 1140)));
-			}
-		}
-
-		@include _screen-1140 {
-			// border-bottom: 1px solid rgb(134 134 134 / 20%);
-			gap: 20px;
-			border-top-left-radius: 30px;
-			border-top-right-radius: 30px;
-			background: #2b3769;
-		}
-
-		@include _screen-1140 {
-			border-top-left-radius: 15px;
-			border-top-right-radius: 15px;
-		}
-
-		@include _screen-960 {
-			border-top-left-radius: 0;
-			border-top-right-radius: 0;
-			padding: 0 25px 0 30px;
+			overflow: hidden;
 		}
 
 		@include _screen-375 {
@@ -134,10 +134,6 @@
 }
 
 .tabs-button {
-	@include _min-1140 {
-		margin-bottom: -3rem;
-	}
-
 	// .tabs-buton__item
 	&__wrapper {
 		width: 100%;
@@ -145,6 +141,7 @@
 		display: flex;
 		align-items: flex-end;
 		gap: 10px;
+
 		min-height: 0;
 
 		@include _screen-1140 {
@@ -152,7 +149,6 @@
 			box-sizing: border-box;
 			justify-content: flex-start;
 			gap: 40px;
-			padding: 0 3.4rem;
 		}
 
 		@include _screen-960 {
@@ -166,36 +162,42 @@
 	// .tabs-buton__item
 	&__item {
 		cursor: pointer;
-		padding: 24px 0 31px;
-		font-family: $font-family-third;
-		font-size: 3.5rem;
 		font-weight: 400;
 		line-height: 120%; /* 42px/35 */
 		white-space: nowrap;
 		color: #fff;
+		display: flex;
+		align-items: center;
 
 		border-top-left-radius: 30px;
 		border-top-right-radius: 30px;
-		transition: all 0.5s ease-in-out;
 
 		span {
 			position: relative;
 			display: inline-flex;
 			line-height: 150%;
-			padding: 2px 0;
 
-			@include _min-1140 {
-				padding: 0 50px;
+			@include _screen-1440 {
+				font-size: 24px;
+				padding: 0 30px;
 			}
 
-			&::after {
-				content: '';
-				position: absolute;
-				bottom: 0;
-				width: 100%;
-				height: 1px;
-				opacity: 0;
-				transition: opacity 0.4s ease-in-out;
+			@include _screen-1140 {
+				padding: 0;
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					height: 1px;
+					opacity: 0;
+					transition: opacity 0.4s ease-in-out;
+				}
+			}
+
+			@include _screen-960 {
+				margin: 13px 0;
+				font-size: 20px;
 			}
 		}
 
@@ -215,7 +217,10 @@
 			}
 
 			@include _screen-960 {
-				display: none;
+				pointer-events: none;
+				transform: translateX(-100%);
+
+				opacity: 0;
 			}
 		}
 
@@ -226,11 +231,11 @@
 
 			@include _screen-960 {
 				background: transparent;
+				position: absolute;
 			}
 
 			@include _screen-1140 {
 				span {
-					position: relative;
 					&::after {
 						opacity: 0.5;
 						background: #fff;
@@ -240,12 +245,9 @@
 		}
 
 		&:nth-child(1) {
-			max-width: 128px;
-
 			@include _min-1140 {
-				min-width: 138px;
 				span {
-					display: block;
+					display: inline-flex;
 					text-align: center;
 				}
 			}
@@ -255,14 +257,15 @@
 			}
 		}
 
-		@include _960-1920 {
-			font-size: calc(16px + (35 - 16) * ((100vw - 1140px) / (1920 - 1140)));
+		@include _min-1140 {
+			padding: 24px 0 31px;
+			transition: all 0.4s ease-in-out;
 		}
 
 		@include _screen-960 {
-			width: 100%;
-			padding: 21px 0;
-			font-size: 16px;
+			width: 260px;
+			z-index: 1;
+			// padding: 21px 0;
 		}
 	}
 
@@ -273,9 +276,11 @@
 		}
 
 		@include _screen-960 {
+			position: relative;
 			display: block;
 			align-self: start;
 			margin: 10px 0;
+			z-index: 2;
 
 			.burger-button__items {
 				span {

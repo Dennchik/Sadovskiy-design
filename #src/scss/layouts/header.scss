@@ -4,7 +4,11 @@
 	padding: 0 50px;
 
 	@include _screen-1440 {
-		padding: 0 30px 0 25px;
+		padding: 0 30px;
+	}
+
+	@include _screen-768 {
+		padding: 0 25px;
 	}
 
 	@include _screen-375 {
