@@ -42,8 +42,31 @@ export function sidebarMenuHendle() {
 	});
 }
 // -----------------------------------------------------------------------------
+export function toggleSidebarMenu(sidebarMenu) {
+	if (sidebarMenu.classList.contains('_open-menu')) {
+		sidebarMenu.classList.add('_close-menu');
+		setTimeout(() => {
+			document.body.classList.remove('no-scroll');
+			sidebarMenu.style.transition = 'transform 0.4s ease-in-out';
+			sidebarMenu.addEventListener('transitionend', function transitionEndHandler() {
+				sidebarMenu.style.transition = '';
+				sidebarMenu.removeEventListener('transitionend', transitionEndHandler);
+			}, { once: true });
+			sidebarMenu.classList.remove('_open-menu');
+			sidebarMenu.classList.remove('_close-menu');
+		}, 1300);
+	} else {
+		sidebarMenu.classList.add('_open-menu');
+		document.body.classList.add('no-scroll');
 
-
+		sidebarMenu.style.transition = 'transform 0.4s ease-in-out';
+		sidebarMenu.addEventListener('transitionend', function transitionEndHandler() {
+			sidebarMenu.style.transition = '';
+			sidebarMenu.removeEventListener('transitionend', transitionEndHandler);
+		}, { once: true });
+	}
+}
+// -----------------------------------------------------------------------------
 export function tabsHandler() {
 	const tablinks = document.querySelectorAll('.tabs-button__item');
 	const tabcontents = document.querySelectorAll('.tab-content__items');
