@@ -44,8 +44,15 @@
 			padding: 0 15px 0 30px;
 			overflow: hidden;
 			background: $color;
+
 			.services__column {
 				transform: translateY(-5%);
+			}
+
+			@include _1440-1920 {
+				padding-left: calc(
+					20px + (30 - 20) * ((100vw - 1440px) / (1920 - 1440))
+				);
 			}
 
 			@include _min-490 {
@@ -181,7 +188,8 @@
 					border: 1px solid #6673a1;
 					box-shadow: none;
 					background: none;
-					padding: 20px 25px 28px 30px;
+					padding: 27px 30px;
+
 					&:hover {
 						box-shadow: none !important;
 					}
@@ -206,6 +214,18 @@
 							}
 						}
 					}
+
+					@include _1440-1920 {
+						min-height: calc(
+							68px + (100 - 68) * ((100vw - 1440px) / (1920 - 1440))
+						);
+						max-height: calc(
+							68px + (100 - 68) * ((100vw - 1440px) / (1920 - 1440))
+						);
+						padding: calc(15px + (27 - 15) * ((100vw - 1440px) / (1920 - 1440)))
+							calc(20px + (30 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+					}
+
 					@include _screen-1440 {
 						display: none;
 					}
@@ -350,9 +370,9 @@
 .card {
 	cursor: pointer;
 	height: 100%;
-	// min-height: 261px;
 	border-radius: 30px;
-	padding: 21px 25px 30px 30px;
+	// padding: 21px 25px 30px 30px;
+	padding: 34px 30px;
 	background: url('../img/main/card-item-bg.png') center / cover no-repeat;
 	display: flex;
 	flex-direction: column;
@@ -374,6 +394,12 @@
 		.card__header {
 			margin-bottom: 0;
 		}
+	}
+
+	@include _1440-1920 {
+		border-radius: calc(20px + (30 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+		padding-left: calc(20px + (30 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+		padding-right: calc(20px + (30 - 20) * ((100vw - 1440px) / (1920 - 1440)));
 	}
 
 	@include _screen-690 {
@@ -410,6 +436,10 @@
 			align-self: center;
 			font-size: 35px;
 			line-height: 122.857143%; /* 43px/35 */
+			height: 100%;
+			display: flex;
+			align-items: center;
+			padding-bottom: 5px;
 
 			&:nth-child(2) {
 				align-self: flex-start;

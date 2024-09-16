@@ -68,11 +68,17 @@
 					pointer-events: all;
 					transform: translateX(0);
 				}
+
+				.tabs-button__item {
+					&:nth-child(4) {
+						padding-bottom: 15px;
+					}
+				}
 			}
 		}
 
 		@include _min-1140 {
-			margin-bottom: -3rem;
+			margin-bottom: -30px;
 			height: 145px;
 		}
 
@@ -104,7 +110,6 @@
 
 	&__button {
 		background: #ffffff;
-		border: 1px solid transparent;
 
 		.icon-arrow-dow {
 			color: #fff;
@@ -134,17 +139,17 @@
 }
 
 .tabs-button {
-	// .tabs-buton__item
+	// .tabs-buton_wrapper
 	&__wrapper {
 		width: 100%;
 		height: 100%;
+		min-height: 60px;
 		display: flex;
 		align-items: flex-end;
 		gap: 10px;
 
-		min-height: 0;
-
 		@include _screen-1140 {
+			padding: 20px 0;
 			align-items: center;
 			box-sizing: border-box;
 			justify-content: flex-start;
@@ -183,20 +188,20 @@
 			}
 
 			@include _screen-1140 {
-				padding: 0;
+				padding: 0px;
 				&::after {
 					content: '';
 					position: absolute;
-					bottom: 0;
+					bottom: -2px;
 					width: 100%;
-					height: 1px;
+					height: 2px;
 					opacity: 0;
 					transition: opacity 0.4s ease-in-out;
 				}
 			}
 
 			@include _screen-960 {
-				margin: 13px 0;
+				margin: 15px 0;
 				font-size: 20px;
 			}
 		}
@@ -213,7 +218,7 @@
 			}
 
 			@include _1140-1920 {
-				height: calc(92px + (128 - 92) * ((100vw - 1140px) / (1920 - 1140)));
+				height: calc(80px + (128 - 80) * ((100vw - 1140px) / (1920 - 1140)));
 			}
 
 			@include _screen-960 {
@@ -232,6 +237,10 @@
 			@include _screen-960 {
 				background: transparent;
 				position: absolute;
+			}
+
+			@include _1140-1920 {
+				height: calc(100px + (145 - 100) * ((100vw - 1140px) / (1920 - 1140)));
 			}
 
 			@include _screen-1140 {
@@ -258,7 +267,7 @@
 		}
 
 		@include _min-1140 {
-			padding: 24px 0 31px;
+			padding: 15px 0 40px;
 			transition: all 0.4s ease-in-out;
 		}
 

@@ -2,10 +2,10 @@
 	width: 100vw;
 	// .page__content
 	&__content {
-		padding: 100px 0 0;
+		padding-top: 20px;
 
 		@include _screen-768 {
-			padding-top: 50px;
+			padding-top: 0;
 		}
 	}
 
@@ -25,7 +25,7 @@
 
 	// .page__header-main
 	&__header-main {
-		position: fixed;
+		position: sticky;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -161,7 +161,11 @@
 		padding: 6.8rem 50px 6.8rem;
 
 		@include _screen-1440 {
-			padding: 6.8rem 0 6.2rem;
+			padding: 6.8rem 30px 6.2rem;
+		}
+
+		@include _screen-1140 {
+			padding: 6.8rem 0 6.2rem !important;
 		}
 
 		@include _screen-690 {
@@ -328,10 +332,10 @@
 	// .page__brands
 	&__brands {
 		height: 100%;
-		padding: 6.5rem 10px;
+		padding: 6.5rem 0;
 
 		@include _screen-690 {
-			padding: 30px 10px;
+			padding: 30px 0;
 		}
 	}
 

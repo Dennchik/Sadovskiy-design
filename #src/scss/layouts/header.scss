@@ -1,10 +1,9 @@
 .header {
 	max-width: $maxWidthContainer;
 	margin: 0 auto;
-	padding: 0 50px;
 
 	@include _screen-1440 {
-		padding: 0 30px;
+		padding: 0 30px 0 25px;
 	}
 
 	@include _screen-768 {
@@ -22,14 +21,17 @@
 		grid-template-columns: repeat(3, 1fr);
 		align-items: center;
 		justify-content: space-between;
-		gap: 40px;
+
+		@include _min-1440 {
+			gap: 60px;
+		}
 
 		@include _screen-960 {
 			grid-template-columns: min-content max-content;
 		}
 
 		@include _1440-1920 {
-			gap: calc(20px + (40 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+			gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 	}
 

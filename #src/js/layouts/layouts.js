@@ -181,7 +181,7 @@ export function shadowScroll() {
 export function scalingFunction() {
 
 	// Универсальная функция для масштабирования элементов между разрешениями 320 и 490px
-	function applyScaling(selector, scaleMin, scaleMax, minViewport = 320, maxViewport = 490) {
+	function applyScaling(selector, scaleMin, scaleMax, minViewport = 1441, maxViewport = 1920) {
 		const scaleElements = document.querySelectorAll(selector);
 		const currentViewportWidth = window.innerWidth;
 
@@ -189,33 +189,40 @@ export function scalingFunction() {
 		if (currentViewportWidth < minViewport || currentViewportWidth > maxViewport) {
 			scaleElements.forEach(scaleElement => {
 				// Сбросим масштабирование, если за пределами диапазона
-				scaleElement.style.transform = `scaleY(1)`;
+				scaleElement.style.transform = `scale(1)`;
 			});
 			return;
 		}
 
 		scaleElements.forEach(scaleElement => {
-			// Ограничим значение ширины окна диапазоном [minViewport, maxViewport]
+			// Ограничиваем значение ширины окна диапазоном [minViewport, maxViewport]
 			const clampedWidth = Math.min(Math.max(currentViewportWidth, minViewport), maxViewport);
 
-			// Рассчитаем пропорцию для масштабирования
+			// Рассчитываем коэффициент масштабирования
 			const scaleFactor = scaleMin + (scaleMax - scaleMin) * ((clampedWidth - minViewport) / (maxViewport - minViewport));
 
-			// Применим scaleY с динамическим значением
-			scaleElement.style.transform = `scaleY(${scaleFactor})`;
+			// Рассчитываем смещение по оси Y
+			const containerHeight = document.documentElement.clientHeight; // Высота видимой части окна
+			const scaledHeight = containerHeight / scaleFactor;
+
+			// Смещение по оси Y
+			// const translateY = (scaledHeight - containerHeight) / 2;
+
+			// Применяем transform с корректировкой по оси Y
+			scaleElement.style.transform = `scale(${scaleFactor})`;
 		});
 	}
 
 	// Добавляем обработчик события 'resize' с вызовом унифицированной функции
 	window.addEventListener('resize', function () {
-		applyScaling('.page__order-place', 1, 1.3); // Для '.page__order-place'
-		applyScaling('.order-place__body', 1, 0.7692); // Для '.order-form__column'
+		applyScaling('.page__content', 0.91, 1); // Для '.page__order-place'
+		// applyScaling('.order-place__body', 1, 0.7692); // Для '.order-form__column'
 	});
 
 	// Вызовем функции сразу после загрузки страницы, чтобы применить масштабирование сразу
 	document.addEventListener('DOMContentLoaded', function () {
-		applyScaling('.page__order-place', 1, 1.3);
-		applyScaling('.order-place__body', 1, 0.7692);
+		applyScaling('.page__content', 0.91, 1);
+		// applyScaling('.order-place__body', 1, 0.7692);
 	});
 
 }
