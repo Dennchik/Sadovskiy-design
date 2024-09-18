@@ -160,9 +160,13 @@
 		white-space: nowrap;
 		opacity: 0.6;
 		transition: all 0.4s ease-in-out;
+		&:not(:last-child) {
+			// margin-right: 47px;
+		}
 
 		@include _1440-1920 {
 			font-size: calc(14px + (16 - 14) * ((100vw - 1440px) / (1920 - 1440)));
+			margin-right: calc(25px + (30 - 25) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 		@include _screen-960 {
 			margin-right: 20px;
