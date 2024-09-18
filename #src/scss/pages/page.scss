@@ -124,7 +124,7 @@
 	// page__performance
 	&__performance {
 		margin-top: -20px;
-		padding: 0 0 13rem;
+		padding: 0 0 16rem;
 
 		@include _screen-690 {
 			padding: 0 0 60px;
@@ -136,10 +136,10 @@
 		position: relative;
 		z-index: 9;
 		display: flow-root;
-		padding: 0 50px 13rem;
+		padding: 0 50px 16rem;
 
 		@include _screen-1440 {
-			padding: 0 30px 13rem;
+			padding: 0 30px 16rem;
 		}
 
 		@include _screen-690 {
@@ -154,14 +154,10 @@
 	// .page__progect
 	&__project {
 		position: relative;
-		padding: 0 50px 13rem;
+		padding: 0 50px 16rem;
 
 		@include _screen-1440 {
-			padding: 0 30px 13rem;
-		}
-
-		@include _screen-1440 {
-			padding: 0 0 13rem !important;
+			padding: 0 0 16rem !important;
 		}
 
 		@include _screen-690 {
@@ -171,10 +167,10 @@
 
 	// .page__about-company
 	&__about-company {
-		padding: 0 50px 13rem;
+		padding: 0 50px 16rem;
 
 		@include _screen-1440 {
-			padding: 0 30px 13rem;
+			padding: 0 30px 16rem;
 		}
 
 		@include _screen-690 {
@@ -189,11 +185,7 @@
 	// .page__schedule
 	&__schedule {
 		overflow: hidden;
-		padding: 0 0 13rem;
-
-		@include _screen-1440 {
-			// padding: 6.5rem 0;
-		}
+		padding: 0 0 16rem;
 
 		@include _screen-690 {
 			padding: 0 0 60px;
@@ -202,10 +194,10 @@
 
 	// .page__services-price
 	&__services-price {
-		padding: 0 50px 13rem;
+		padding: 0 50px 16rem;
 
 		@include _screen-1440 {
-			padding: 0 30px 13rem;
+			padding: 0 30px 16rem;
 		}
 
 		@include _screen-690 {
@@ -218,10 +210,10 @@
 
 	// .page__order-place
 	&__order-place {
-		padding: 0 50px 13rem;
+		padding: 0 50px 16rem;
 
 		@include _screen-1440 {
-			padding: 0 30px 13rem;
+			padding: 0 30px 16rem;
 		}
 
 		@include _screen-690 {
@@ -234,12 +226,7 @@
 
 	// .page__request-audit
 	&__request-audit {
-		padding: 0 0 13rem;
-
-		@include _screen-1440 {
-			margin: -6.5rem 0 0;
-		}
-
+		margin-top: -16rem;
 		@include _screen-690 {
 			padding: 0 0 60px;
 		}
@@ -248,29 +235,29 @@
 	// .page__seo-block
 	&__seo-block {
 		background: url('../img/main/s-bg.png') center / contain repeat;
-		padding: 13rem 50px;
-		margin: -13rem 0 0;
+		padding: 13rem 50px 16rem;
+		margin: -16rem 0 0;
 
 		@include _screen-1440 {
-			padding: 13rem 30px;
+			padding: 13rem 30px 16rem;
 		}
 
 		@include _screen-690 {
 			margin: -60px 0 0;
-			padding: 60px 30px;
+			padding: 60px 30px 60px;
 		}
 
 		@include _screen-375 {
-			padding: 60px 10px;
+			padding: 60px 10px 60px;
 		}
 	}
 
 	// .page__company-team
 	&__company-team {
-		padding: 0 0 13rem;
+		padding: 0 0 16rem;
 
 		@include _screen-1440 {
-			padding: 0 0 13rem;
+			padding: 0 0 16rem;
 		}
 
 		@include _screen-690 {
@@ -280,10 +267,10 @@
 
 	// .page__answers
 	&__answers {
-		padding: 0 50px 13rem;
+		padding: 0 50px 16rem;
 
 		@include _screen-1440 {
-			padding: 0 30px 13rem;
+			padding: 0 30px 16rem;
 		}
 
 		@include _screen-690 {
@@ -297,10 +284,10 @@
 
 	// .page__answers-project
 	&__answers-project {
-		padding: 0 50px 13rem;
+		padding: 0 50px 16rem;
 
 		@include _screen-1440 {
-			padding: 0 30px 13rem;
+			padding: 0 30px 16rem;
 		}
 
 		@include _screen-1440 {
@@ -315,7 +302,7 @@
 	// .page__brands
 	&__brands {
 		height: 100%;
-		padding: 0 0 13rem;
+		padding: 0 0 16rem;
 
 		@include _screen-690 {
 			padding: 0 0 60px;
@@ -325,10 +312,10 @@
 	// .page__info-block
 	&__info-block {
 		position: relative;
-		padding: 0 50px 13rem;
+		padding: 0 50px 16rem;
 
 		@include _screen-1440 {
-			padding: 0 30px 13rem;
+			padding: 0 30px 16rem;
 		}
 
 		@include _screen-690 {
@@ -343,7 +330,7 @@
 	//page__dev-info
 	&__dev-info {
 		position: relative;
-		padding: 0 0 13rem;
+		padding: 0 0 16rem;
 
 		@include _screen-690 {
 			padding: 0 0 60px;
@@ -351,11 +338,5 @@
 	}
 
 	&__footer {
-		// border: 5px solid #38b343;
-
-		padding-top: 6.5rem;
-		@include _screen-690 {
-			margin-top: 30px;
-		}
 	}
 }

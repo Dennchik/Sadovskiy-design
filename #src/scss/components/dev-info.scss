@@ -18,6 +18,33 @@
 		margin: 0 auto;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+
+		@include _min-490 {
+			&::before {
+				content: '';
+				position: absolute;
+				width: 250%;
+				height: 250%;
+				top: -40%;
+				left: -50%;
+				z-index: 4;
+				pointer-events: none;
+				transform: rotate(90deg);
+
+				background: radial-gradient(
+						ellipse 70% 290% at 30% 80%,
+						#161616a2 0%,
+						#00000049 10%,
+						transparent 45%
+					),
+					radial-gradient(
+						circle at 50% 31%,
+						#6e7bb1ec 1%,
+						#2b376979 14%,
+						transparent 35%
+					);
+			}
+		}
 	}
 
 	&__img-wrapper {
@@ -25,7 +52,6 @@
 		align-items: center;
 		justify-content: center;
 		position: relative;
-		transform: translateX(20px);
 	}
 
 	// .dev-info__title
@@ -131,8 +157,8 @@
 		width: 100%;
 		height: 100%;
 		background: url('../img/performance/ellipse-01.png') right / 105% no-repeat;
-		transform: translate(0, 20px);
-		opacity: 0.5;
+		transform: translate(20px, 20px);
+		opacity: 0.3;
 	}
 
 	// .dev-info__footer
@@ -192,85 +218,5 @@
 			color: #fff;
 			line-height: 125%; /* 20px/16 */
 		}
-	}
-}
-
-.elipsis-cont {
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 1;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	width: 100%;
-
-	&__elipse-15 {
-		position: absolute;
-		width: 510px;
-		height: 510px;
-		right: -170px;
-		top: -60px;
-		opacity: 0.5;
-		background: url('../img/performance/ellipse-02.png') center / contain
-			no-repeat;
-		@include _320-1920 {
-			right: calc(-30px + (-170 - (-30)) * ((100vw - 320px) / (1920 - 320)));
-			top: calc(-10px + (-170 - (-10)) * ((100vw - 320px) / (1920 - 320)));
-			width: calc(100px + (510 - (-100)) * ((100vw - 320px) / (1920 - 320)));
-			height: calc(100px + (510 - (-100)) * ((100vw - 320px) / (1920 - 320)));
-		}
-
-		@include _screen-320 {
-			right: -30px;
-			top: -10px;
-			width: 100px;
-			height: 100px;
-		}
-	}
-
-	&__elipse-16 {
-		position: absolute;
-		width: 1920px;
-		height: 1400px;
-		border-radius: 50%;
-		top: 0;
-		right: -50%;
-
-		filter: blur(304.58px);
-		background: rgba(43, 55, 105, 0.575);
-	}
-
-	&__elipse-17 {
-		position: absolute;
-		width: 619px;
-		height: 619px;
-
-		right: -500px;
-		bottom: -10%;
-		border-radius: 50%;
-		filter: blur(100.53px);
-		background: #acbabd46;
-
-		@include _320-1920 {
-			right: calc(-500px + (-500 - (-500)) * ((100vw - 320px) / (1920 - 320)));
-		}
-
-		@include _screen-320 {
-			right: -500px;
-		}
-	}
-
-	&__elipse-18 {
-		position: absolute;
-		width: 619px;
-		height: 619px;
-		left: -5%;
-		bottom: -10%;
-		border-radius: 50%;
-		filter: blur(284.58px);
-		background: rgb(43, 55, 105);
 	}
 }

@@ -79,53 +79,53 @@
 			}
 		}
 
-		@include _screen-490 {
-			background-image: radial-gradient(
-					ellipse at bottom center,
-					#2b37695b,
-					transparent
-				),
-				radial-gradient(
-					ellipse at 10% 19%,
-					#171b1c 35%,
-					#eeeeee00 70%,
-					transparent 100%
-				),
-				radial-gradient(
-					circle at 0% 100%,
-					#eeeeee6a 0%,
-					#2b376964 30%,
-					transparent
-				),
-				radial-gradient(
-					circle at 100% 0%,
-					#eeeeee4d 0%,
-					#2b3769 30%,
-					transparent
-				),
-				radial-gradient(
-					ellipse at 30% 2%,
-					#171b1c 0%,
-					#2b3769 100%,
-					transparent
-				);
-		}
+		// @include _screen-490 {
+		// 	background-image: radial-gradient(
+		// 			ellipse at bottom center,
+		// 			#2b37695b,
+		// 			transparent
+		// 		),
+		// 		radial-gradient(
+		// 			ellipse at 10% 19%,
+		// 			#171b1c 35%,
+		// 			#eeeeee00 70%,
+		// 			transparent 100%
+		// 		),
+		// 		radial-gradient(
+		// 			circle at 0% 100%,
+		// 			#eeeeee6a 0%,
+		// 			#2b376964 30%,
+		// 			transparent
+		// 		),
+		// 		radial-gradient(
+		// 			circle at 100% 0%,
+		// 			#eeeeee4d 0%,
+		// 			#2b3769 30%,
+		// 			transparent
+		// 		),
+		// 		radial-gradient(
+		// 			ellipse at 30% 2%,
+		// 			#171b1c 0%,
+		// 			#2b3769 100%,
+		// 			transparent
+		// 		);
+		// }
 
 		@include _1440-1920 {
 			column-gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 
 		@include _screen-1440 {
-			padding: 60px 30px 60px;
+			padding: 21.6rem 30px 14.7rem;
 			gap: 20px;
 		}
 
 		@include _screen-690 {
-			padding: 60px 30px 60px;
+			padding: 100px 30px 60px;
 		}
 
 		@include _screen-375 {
-			padding: 60px 10px 60px;
+			padding: 100px 10px 60px;
 		}
 	}
 

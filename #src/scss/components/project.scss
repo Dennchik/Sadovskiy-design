@@ -25,6 +25,36 @@
 		padding-top: 50px;
 		padding-bottom: 50px;
 
+		@include _min-490 {
+			background-image: radial-gradient(
+					circle at 15% 125%,
+					rgba(160, 176, 240, 0.637) 0%,
+					rgb(43, 55, 105) 40%,
+					transparent 25%
+				),
+				radial-gradient(
+					circle at 99% 10%,
+					rgba(160, 176, 240, 0.637) 0%,
+					rgb(43, 55, 105) 40%,
+					transparent 25%
+				);
+		}
+
+		@include _screen-490 {
+			background-image: radial-gradient(
+					ellipse at 90% 25%,
+					rgba(160, 176, 240, 0.637) 0%,
+					rgba(238, 238, 238, 0.048) 20%,
+					transparent 75%
+				),
+				radial-gradient(
+					circle at 10% 99%,
+					rgba(160, 176, 240, 0.637) 0%,
+					rgba(43, 55, 105, 0.891) 7%,
+					transparent 25%
+				);
+		}
+
 		@include _min-960 {
 			border-radius: 30px;
 		}

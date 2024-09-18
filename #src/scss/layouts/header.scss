@@ -79,7 +79,6 @@
 	&__logo {
 		display: flex;
 		align-items: center;
-		// margin-right: 4.7rem;
 
 		@include _screen-490 {
 			margin-right: 3rem;
@@ -150,26 +149,122 @@
 	}
 }
 
+// .menu-list {
+// 	// .menu-list__link
+// 	&__link {
+// 		position: relative;
+// 		margin-right: 30px;
+
+// 		display: inline-block;
+// 		overflow: hidden;
+
+// 		span {
+// 			font-size: 16px;
+// 			font-weight: 600;
+// 			position: relative;
+// 			display: block;
+// 			transform: translateY(0);
+// 			transition: all 0.4s ease 0s;
+// 			opacity: 0.6;
+
+// 			&::before {
+// 				content: attr(data-text);
+// 				position: absolute;
+// 				top: 100%;
+// 				left: 0;
+// 				transition: transform 0.5s ease;
+// 				transform: translateY(0);
+// 				pointer-events: none;
+// 				user-select: none;
+// 				opacity: 1;
+// 			}
+
+// 			@include _1440-1920 {
+// 				font-size: calc(14px + (16 - 14) * ((100vw - 1440px) / (1920 - 1440)));
+// 				margin-right: calc(
+// 					25px + (30 - 25) * ((100vw - 1440px) / (1920 - 1440))
+// 				);
+// 			}
+// 			@include _screen-960 {
+// 				margin-right: 20px;
+// 			}
+// 		}
+
+// 		&:hover {
+// 			span {
+// 				transform: translateY(-100%);
+// 				opacity: 1;
+
+// 				&::before {
+// 					font-weight: 600;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
 .menu-list {
-	// .menu-list__link
 	&__link {
-		margin-right: 30px;
+		height: 100%;
 		position: relative;
-		font-size: 16px;
-		font-weight: 600;
-		white-space: nowrap;
-		opacity: 0.6;
-		transition: all 0.4s ease-in-out;
-		&:not(:last-child) {
-			// margin-right: 47px;
+		margin-right: 30px;
+		display: inline-block;
+		overflow: hidden;
+		transition: all 0.4s ease;
+
+		span {
+			font-size: 16px;
+			font-weight: 600;
+			position: relative;
+			display: block;
+			transform: translateY(0);
+			transition: all 0.4s ease;
+			opacity: 0.6;
+
+			&::before {
+				content: attr(data-text);
+				position: absolute;
+				top: 100%;
+				left: 0;
+				transition: transform 0.5s ease;
+				transform: translateY(0);
+				pointer-events: none;
+				user-select: none;
+				opacity: 1;
+			}
+
+			@include _1440-1920 {
+				font-size: calc(14px + (16 - 14) * ((100vw - 1440px) / (1920 - 1440)));
+				// margin-right: calc(
+				// 	25px + (30 - 25) * ((100vw - 1440px) / (1920 - 1440))
+				// );
+			}
+
+			@include _screen-960 {
+				margin-right: 20px;
+			}
 		}
 
-		@include _1440-1920 {
-			font-size: calc(14px + (16 - 14) * ((100vw - 1440px) / (1920 - 1440)));
-			margin-right: calc(25px + (30 - 25) * ((100vw - 1440px) / (1920 - 1440)));
+		&:hover {
+			span {
+				animation: moveText 0.4s forwards;
+				opacity: 1;
+
+				&::before {
+					// transform: translateY(-100%);
+					font-weight: 600;
+				}
+			}
 		}
-		@include _screen-960 {
-			margin-right: 20px;
-		}
+	}
+}
+
+// Анимация для перемещения текста
+@keyframes moveText {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-100%);
 	}
 }

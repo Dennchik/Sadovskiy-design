@@ -277,3 +277,16 @@
 		@content;
 	}
 }
+@mixin add-class-on-hover($selector, $class) {
+	#{$selector} {
+		position: relative;
+		overflow: hidden;
+
+		&:hover {
+			&.#{$class} {
+				// Стили для состояния наведения с классом
+				@content;
+			}
+		}
+	}
+}

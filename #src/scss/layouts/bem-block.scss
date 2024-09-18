@@ -281,3 +281,22 @@
 		max-width: 1000px;
 	}
 }
+
+.maxw-b0102 {
+	max-width: 1165px;
+	margin: 0 auto;
+
+	@include _min-1920 {
+	}
+
+	@include _1440-1920 {
+		max-width: calc(900px + (1165 - 900) * ((100vw - 1440px) / (1920 - 1440)));
+	}
+
+	@include _screen-1440 {
+		max-width: 900px;
+	}
+}
+
+.menu-list__link {
+}
