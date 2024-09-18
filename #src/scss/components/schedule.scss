@@ -28,12 +28,12 @@
 	&__items {
 		display: grid;
 		height: 100%;
-		gap: 40px;
+		gap: 60px;
 		justify-content: space-between;
 		grid-template-columns: repeat(3, minmax(200px, 1fr));
 
 		@include _1440-1920 {
-			gap: calc(20px + (40 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+			gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 
 		@include _screen-1440 {

@@ -1,7 +1,5 @@
 .project-page {
-	padding: 0 0 16.2rem;
-
-	@include _screen-960 {
+	@include _screen-1440 {
 		padding: 0 30px 60px;
 	}
 

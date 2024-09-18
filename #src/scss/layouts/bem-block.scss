@@ -18,8 +18,8 @@
 	align-items: center;
 	padding: 4px;
 	border-radius: 30px;
-	width: 266px;
-	max-width: 266px;
+	width: 268px;
+	max-width: 268px;
 	overflow: hidden;
 	transition: all 0.4s ease-in-out;
 	border: 1px solid transparent;
@@ -43,12 +43,14 @@
 		flex: 0 1 auto;
 		pointer-events: none;
 		transition: color 0.5s ease-in-out;
-		font-size: 20px;
-		line-height: 125%; /* 25px/20 */
 		z-index: 2;
 
-		@include _320-1920 {
-			font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
+		@include _1440-1920 {
+			font-size: calc(15px + (20 - 15) * ((100vw - 1440px) / (1920 - 1440)));
+		}
+
+		@include _320-1440 {
+			font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1140 - 320)));
 		}
 
 		@include _screen-490 {
@@ -205,7 +207,7 @@
 	}
 }
 .t-h3 {
-	font-size: 35px;
+	font-size: 35px !important;
 	line-height: 122.857143%; /* 43px/35 */
 
 	@include _1440-1920 {
@@ -221,7 +223,7 @@
 	}
 
 	@include _screen-320 {
-		font-size: 20px;
+		font-size: 20px !important;
 	}
 }
 
@@ -229,7 +231,11 @@
 	font-size: 16px;
 	line-height: 125%;
 
-	@include _320-1920 {
+	@include _1440-1920 {
+		font-size: calc(12px + (16 - 12) * ((100vw - 1440px) / (1920 - 1440)));
+	}
+
+	@include _320-1440 {
 		font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
 	}
 
@@ -241,6 +247,7 @@
 .mlrp-b0101 {
 	padding-left: 50px;
 	padding-right: 50px;
+
 	@include _1440-1920 {
 		padding-left: calc(30px + (50 - 30) * ((100vw - 1440px) / (1920 - 1440)));
 		padding-right: calc(30px + (50 - 30) * ((100vw - 1440px) / (1920 - 1440)));
@@ -254,5 +261,23 @@
 	@include _screen-375 {
 		padding-left: 10px;
 		padding-right: 10px;
+	}
+}
+
+.maxw-b0101 {
+	max-width: 1280px;
+	margin: 0 auto;
+
+	@include _min-1920 {
+	}
+
+	@include _1440-1920 {
+		max-width: calc(
+			1000px + (1280 - 1000) * ((100vw - 1440px) / (1920 - 1440))
+		);
+	}
+
+	@include _screen-1440 {
+		max-width: 1000px;
 	}
 }

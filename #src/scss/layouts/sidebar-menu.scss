@@ -52,12 +52,17 @@
 	// .sidebar-menu__menu
 	&__menu {
 		width: 100%;
+		height: 100%;
 		position: relative;
 		z-index: 15;
-		padding: 40px 25px;
+		padding: 40px 30px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+
+		@include _screen-375 {
+			padding: 40px 10px;
+		}
 
 		.header__menu {
 			flex-direction: column;

@@ -3,26 +3,10 @@
 
 	// .seo-block__body
 	&__body {
-		max-width: 1280px;
 		margin: 0 auto;
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
-		// padding: 0 50px;
-
-		// @include _1440-1920 {
-		// 	max-width: calc(
-		// 		1000px + (1273 - 1000) * ((100vw - 1440px) / (1920 - 1440))
-		// 	);
-		// }
-		@include _screen-1440 {
-			max-width: 1000px;
-			// padding: 0 30px;
-		}
-
-		@include _screen-375 {
-			// padding: 0 10px;
-		}
 	}
 
 	// .seo-block__title

@@ -20,16 +20,16 @@ html(lang="ru")
 body 
 	include ../modules/pl-preloader
 	include ../includes/mixins
-	//- div(class="wrapper")
-	block page-content 
-		.page#page 
-			block sidebar-menu 
-				include ../chunk/sidebar-menu 
-			block header
-			main._content._container#content 
-				block main-content
-			footer._footer
-				block footer 
-					include ../layouts/footer 
-block page-grid 
-	include ../layouts/page-grid-3
+	div(class="wrapper")
+		block page-content 
+			.page#page 
+				block sidebar-menu 
+					include ../chunk/sidebar-menu 
+				block header
+				main._content._container#content 
+					block main-content
+				footer._footer
+					block footer 
+						include ../layouts/footer 
+//- block page-grid 
+//- 	include ../layouts/page-grid-3

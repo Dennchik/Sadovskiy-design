@@ -2,25 +2,19 @@
 	max-width: $maxWidthContainer;
 	margin: 0 auto;
 	box-sizing: content-box;
+
 	// .footer__body
 	&__body {
 		position: relative;
 		padding: 120px 50px;
 		overflow: hidden;
-		// margin: 0 -50px;
-
-		// @include _1440-1920 {
-		// 	padding: 120px calc(30px + (50 - 30) * ((100vw - 1440px) / (1920 - 1440)));
-		// }
 
 		@include _screen-1440 {
 			padding: 50px 30px;
-			// margin: 0 -30px;
 		}
 
 		@include _screen-375 {
 			padding: 50px 10px 10px;
-			// margin: 0 -10px;
 		}
 
 		@include _min-490 {
@@ -101,21 +95,19 @@
 		padding-bottom: 26px;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 40px;
+		gap: 60px;
 		justify-content: space-between;
 
 		@include _screen-1440 {
-			gap: 30px;
+			gap: 20px;
 		}
 
 		@include _screen-490 {
 			gap: 10px;
-			margin-left: -5px;
 		}
 
-		@include _screen-375 {
+		@include _screen-490 {
 			grid-template-columns: repeat(1, 1fr);
-			flex-direction: column;
 		}
 	}
 
@@ -149,7 +141,7 @@
 		align-items: center;
 		justify-content: flex-start;
 
-		@include _screen-375 {
+		@include _screen-490 {
 			justify-content: flex-end;
 		}
 
@@ -187,6 +179,7 @@
 				font-size: 1.8rem !important;
 			}
 		}
+
 		.icon-youtube-lg {
 			background: #fff;
 			&::before {
@@ -215,6 +208,9 @@
 
 	// .footer__link
 	&__link {
+		color: #ffffff;
+		line-height: 118.75%; /* 19px/16 */
+
 		&:not(:last-child) {
 			margin-right: 10px;
 		}
@@ -230,11 +226,15 @@
 		padding-top: 25px;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 50px;
+		gap: 60px;
 		height: 100%;
 
+		@include _1440-1920 {
+			gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+		}
+
 		@include _screen-1440 {
-			gap: 30px;
+			gap: 20px;
 		}
 
 		@include _screen-690 {
@@ -358,12 +358,6 @@
 		}
 	}
 
-	// .footer__link
-	&__link {
-		color: #ffffff;
-		line-height: 118.75%; /* 19px/16 */
-	}
-
 	// .footer__contacts
 	&__contacts {
 		flex: 1 1 auto;
@@ -409,51 +403,5 @@
 	&__address {
 		color: #ffffff;
 		line-height: 118.75%; /* 19px/16 */
-	}
-}
-
-.elipsis-cont {
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 1;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	width: 100%;
-
-	&__elipse-12 {
-		position: absolute;
-		width: 2304.27px;
-		height: 2304.27px;
-		top: -30%;
-		left: 12%;
-
-		filter: blur(300px);
-		background: #2b3769;
-	}
-
-	&__elipse-13 {
-		position: absolute;
-		width: 1239.13px;
-		height: 1239.13px;
-		top: 120%;
-		border-radius: 50%;
-		filter: blur(100.53px);
-		background: rgb(172, 186, 189);
-	}
-
-	&__elipse-14 {
-		position: absolute;
-		width: 1415.44px;
-		height: 1415.44px;
-
-		top: calc(99% + (120 - 99) * ((100vw - 320px) / (1920 - 320)));
-		right: -55%;
-		border-radius: 50%;
-		filter: blur(100.53px);
-		background: rgba(172, 186, 189, 0.5);
 	}
 }

@@ -30,7 +30,7 @@
 		}
 
 		@include _screen-1440 {
-			padding: 50px 30px !important;
+			padding: 50px 30px;
 		}
 
 		@include _screen-1140 {
@@ -38,11 +38,11 @@
 		}
 
 		@include _screen-690 {
-			padding: 50px 30px;
+			padding: 50px 30px 60px;
 		}
 
 		@include _screen-375 {
-			padding: 20px 10px !important;
+			padding: 50px 10px 60px;
 		}
 	}
 
@@ -54,7 +54,7 @@
 		align-items: center;
 		justify-content: space-between;
 		grid-template-columns: 1fr min-content;
-		transition: grid-template-rows 0.5s ease 0s;
+		transition: all 0.7s ease 0s;
 
 		&._responsive {
 			background: #3a4a91;
@@ -172,7 +172,7 @@
 		white-space: nowrap;
 		color: #fff;
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 
 		border-top-left-radius: 30px;
 		border-top-right-radius: 30px;
@@ -201,7 +201,7 @@
 			}
 
 			@include _screen-960 {
-				margin: 15px 0;
+				margin: 10px 0;
 				font-size: 20px;
 			}
 		}

@@ -181,7 +181,7 @@ export function shadowScroll() {
 export function scalingFunction() {
 
 	// Универсальная функция для масштабирования элементов между разрешениями 320 и 490px
-	function applyScaling(selector, scaleMin, scaleMax, minViewport = 1441, maxViewport = 1920) {
+	function applyScaling(selector, scaleMin, scaleMax, minViewport = 320, maxViewport = 1400) {
 		const scaleElements = document.querySelectorAll(selector);
 		const currentViewportWidth = window.innerWidth;
 
@@ -216,13 +216,13 @@ export function scalingFunction() {
 	// Добавляем обработчик события 'resize' с вызовом унифицированной функции
 	window.addEventListener('resize', function () {
 		applyScaling('.page__content', 0.91, 1); // Для '.page__order-place'
-		// applyScaling('.order-place__body', 1, 0.7692); // Для '.order-form__column'
+		// applyScaling('.page__content', 1.1, 0.9); // Для '.order-form__column'
 	});
 
 	// Вызовем функции сразу после загрузки страницы, чтобы применить масштабирование сразу
 	document.addEventListener('DOMContentLoaded', function () {
 		applyScaling('.page__content', 0.91, 1);
-		// applyScaling('.order-place__body', 1, 0.7692);
+		applyScaling('.page__content', 1, 0.9);
 	});
 
 }

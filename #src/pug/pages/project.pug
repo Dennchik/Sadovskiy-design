@@ -12,16 +12,16 @@ block header
 		include ../layouts/header 
 block main-content  
 	block perform 
-		section.page__performance
+		section.page__performance 
 			include ../components/performance
 	block project-page 
-		section.page__project#project
+		section.page__project.mlrp-b0101#project
 			include ../components/project-page 
 	block dev-info
 		section.page__dev-info
 			include ../components/dev-info 
 	block info-block
-		section.page__info-block
+		section.page__info-block#about
 			include ../components/info-block 
 	block request-audit
 		section.page__request-audit
@@ -30,13 +30,13 @@ block main-content
 		section.page__schedule
 			include ../components/development 
 	block project-services-price
-		section.page__services-price#service
+		section.page__services-price.mlrp-b0101#service
 			include ../components/project-services-price 
 	block seo-block
 		section.page__seo-block 
 			include ../components/seo-block
 	block order-place
-		section.page__order-place-project
+		section.page__order-place.mlrp-b0101 
 			include ../components/order-place
 	block answers-project
 		section.page__answers-project
