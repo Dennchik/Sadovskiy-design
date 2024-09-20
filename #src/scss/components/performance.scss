@@ -1,10 +1,91 @@
 .performance {
+	position: relative;
+	overflow: hidden;
 	width: 100%;
 	background: #171b1c;
 
+	// .performance__wrapper
+	&__wrapper {
+		background:
+			url('../img/performance/ellipse-01.png') top -15% left 17% / 50% no-repeat,
+			url('../img/performance/ellipse-02.png') top -6% right -7% / 25% no-repeat;
+
+		@include _320-1440 {
+			background:
+				url('../img/performance/ellipse-01.png') top
+					calc(45% + (-15 - 45) * ((100vw - 690px) / (1440 - 690))) left
+					calc(-235px + (-150 - (-235)) * ((100vw - 690px) / (1440 - 690))) /
+					calc(600px + (850 - 600) * ((100vw - 690px) / (1440 - 690))) no-repeat,
+				url('../img/performance/ellipse-02.png') top -6% right calc(
+						-150px + (-150 - (-150)) * ((100vw - 690px) / (1440 - 690))
+					) / calc(55% + (-265 - 55) * ((100vw - 690px) / (1440 - 690))) no-repeat;
+		}
+
+		@include _screen-320 {
+			background:
+				url('../img/performance/ellipse-01.png') top 48% left -290px / 490px no-repeat,
+				url('../img/performance/ellipse-02.png') top -6% right -150px / 330px
+					no-repeat;
+		}
+	}
+
+	// .performance__g-box
+
+	&__g-box {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			width: 250%;
+			height: 250%;
+			pointer-events: none;
+		}
+
+		&::after {
+			left: -40%;
+			top: 0;
+			z-index: 3;
+
+			background: radial-gradient(
+				ellipse 70% 40% at 40% 50%,
+				rgb(43, 55, 105) 10%,
+				rgba(43, 55, 105, 0.795) 30%,
+				transparent 60%
+			);
+		}
+
+		&::before {
+			top: -40%;
+			left: -50%;
+			z-index: 4;
+
+			background: radial-gradient(
+					ellipse 70% 40% at 30% 20%,
+					rgba(23, 27, 28, 0.644) 20%,
+					rgba(23, 27, 28, 0.397) 25%,
+					transparent 45%
+				),
+				radial-gradient(
+					circle at 20% 49%,
+					rgba(110, 123, 177, 0.623) 1%,
+					rgba(43, 55, 105, 0.26) 15%,
+					transparent 25%
+				),
+				radial-gradient(
+					circle at 64% 35%,
+					rgba(110, 123, 177, 0.623) 1%,
+					rgba(43, 55, 105, 0.26) 15%,
+					transparent 35%
+				);
+		}
+	}
+
 	// .performance__body
 	&__body {
-		position: relative;
 		padding-top: 21.6rem;
 		padding-bottom: 14.7rem;
 		display: grid;
@@ -13,103 +94,6 @@
 		height: 100%;
 		width: 100%;
 		overflow: hidden;
-
-		background:
-			url('../img/performance/ellipse-01.png') top -15% left 17% / 50% no-repeat,
-			url('../img/performance/ellipse-02.png') top -6% right -7% / 25% no-repeat;
-
-		@include _1440-1920 {
-			// background:
-			// 	url('../img/performance/ellipse-01.png') top -15% left 17% / calc(
-			// 			25% + (50 - 25) * ((100vw - 1440px) / (1920 - 1440))
-			// 		) no-repeat,
-			// 	url('../img/performance/ellipse-02.png') top -7.7% right -9% /
-			// 		calc(23% + (85 - 23) * ((100vw - 1440px) / (1920 - 1440))) no-repeat;
-		}
-
-		@include _min-490 {
-			&::before {
-				content: '';
-				position: absolute;
-				width: 250%;
-				height: 250%;
-				top: -40%;
-				left: -50%;
-				z-index: 4;
-				pointer-events: none;
-				transform: rotate(90deg);
-
-				background: radial-gradient(
-						ellipse 70% 290% at 30% 80%,
-						#161616a2 0%,
-						#00000049 10%,
-						transparent 45%
-					),
-					radial-gradient(
-						circle at 40% 29%,
-						#6e7bb1ec 1%,
-						#2b376979 14%,
-						transparent 25%
-					),
-					radial-gradient(
-						ellipse 74% 95% at 45% 85%,
-						#6e7bb1 0%,
-						#2b376960 13%,
-						transparent 25%
-					);
-			}
-
-			&::after {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 3;
-				width: 250%;
-				height: 250%;
-				pointer-events: none;
-				transform: rotate(-20deg);
-
-				background: radial-gradient(
-					ellipse 30% 30% at 27% 22%,
-					#2b3769 0%,
-					#2b376979 30%,
-					transparent 60%
-				);
-			}
-		}
-
-		// @include _screen-490 {
-		// 	background-image: radial-gradient(
-		// 			ellipse at bottom center,
-		// 			#2b37695b,
-		// 			transparent
-		// 		),
-		// 		radial-gradient(
-		// 			ellipse at 10% 19%,
-		// 			#171b1c 35%,
-		// 			#eeeeee00 70%,
-		// 			transparent 100%
-		// 		),
-		// 		radial-gradient(
-		// 			circle at 0% 100%,
-		// 			#eeeeee6a 0%,
-		// 			#2b376964 30%,
-		// 			transparent
-		// 		),
-		// 		radial-gradient(
-		// 			circle at 100% 0%,
-		// 			#eeeeee4d 0%,
-		// 			#2b3769 30%,
-		// 			transparent
-		// 		),
-		// 		radial-gradient(
-		// 			ellipse at 30% 2%,
-		// 			#171b1c 0%,
-		// 			#2b3769 100%,
-		// 			transparent
-		// 		);
-		// }
 
 		@include _1440-1920 {
 			column-gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));

@@ -235,13 +235,6 @@
 
 			@include _1440-1920 {
 				font-size: calc(14px + (16 - 14) * ((100vw - 1440px) / (1920 - 1440)));
-				// margin-right: calc(
-				// 	25px + (30 - 25) * ((100vw - 1440px) / (1920 - 1440))
-				// );
-			}
-
-			@include _screen-960 {
-				margin-right: 20px;
 			}
 		}
 
@@ -254,6 +247,13 @@
 					// transform: translateY(-100%);
 					font-weight: 600;
 				}
+			}
+		}
+
+		@include _screen-1440 {
+			margin-right: 15px;
+			&:last-child {
+				margin-right: 35px;
 			}
 		}
 	}

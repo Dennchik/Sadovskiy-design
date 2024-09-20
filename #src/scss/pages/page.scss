@@ -157,7 +157,7 @@
 		padding: 0 50px 16rem;
 
 		@include _screen-1440 {
-			padding: 0 0 16rem !important;
+			padding: 0 0 16rem;
 		}
 
 		@include _screen-690 {
