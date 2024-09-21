@@ -231,7 +231,7 @@ export function addToBlock() {
 		const blocks = document.querySelectorAll('.seo-block__content .seo-block__column');
 		const button = document.querySelector('.seo-block__button'); // Кнопка
 
-		let visibleCount = 2; // Сколько блоков видно изначально
+		let visibleCount = 3; // Сколько блоков видно изначально
 
 		// Показываем первые два блока, остальные скрываем
 		blocks.forEach((block, index) => {
@@ -242,10 +242,14 @@ export function addToBlock() {
 
 		// Функция для обновления стилей кнопки
 		const updateButtonStyle = () => {
-			if (visibleCount % 2 === 0) {
-				button.classList.add('seo-block__button--even'); // Добавляем класс для четного количества видимых блоков 
+			if (window.innerWidth >= 768) { // Проверка ширины экрана
+				if (visibleCount % 2 === 0) {
+					button.classList.add('seo-block__button--even'); // Добавляем класс для четного количества видимых блоков 
+				} else {
+					button.classList.remove('seo-block__button--even'); // Удаляем класс для четного количества 
+				}
 			} else {
-				button.classList.remove('seo-block__button--even'); // Удаляем класс для четного количества 
+				button.classList.remove('seo-block__button--even'); // Удаляем класс, если ширина больше 768px
 			}
 		};
 

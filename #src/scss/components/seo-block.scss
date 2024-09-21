@@ -83,6 +83,7 @@
 		@include _screen-768 {
 			margin-top: 16px;
 			justify-self: center;
+			grid-column: 1 / 2 !important;
 		}
 
 		span {
