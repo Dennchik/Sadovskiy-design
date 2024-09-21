@@ -157,11 +157,11 @@
 		padding: 0 50px 16rem;
 
 		@include _screen-1440 {
-			padding: 0 0 16rem;
+			padding: 0 0 16rem !important;
 		}
 
 		@include _screen-690 {
-			padding: 0 0 60px;
+			padding: 0 0 60px !important;
 		}
 	}
 
@@ -236,14 +236,14 @@
 	&__seo-block {
 		background: url('../img/main/s-bg.png') center / contain repeat;
 		padding: 13rem 50px 16rem;
-		margin: -16rem 0 0;
+		// margin: -16rem 0 0;
 
 		@include _screen-1440 {
 			padding: 13rem 30px 16rem;
 		}
 
 		@include _screen-690 {
-			margin: -60px 0 0;
+			// margin: -60px 0 0;
 			padding: 60px 30px 60px;
 		}
 
@@ -278,7 +278,7 @@
 		}
 
 		@include _screen-375 {
-			padding: 0 10px;
+			padding: 0 10px 60px;
 		}
 	}
 

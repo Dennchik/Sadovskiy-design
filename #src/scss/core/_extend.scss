@@ -6,11 +6,13 @@
 		&:hover {
 			font-weight: 600;
 			opacity: 1;
+
 			&::before {
-				width: 48%;
+				width: 47%;
 			}
+
 			&::after {
-				width: 48%;
+				width: 47%;
 			}
 		}
 
@@ -21,10 +23,11 @@
 			bottom: 0px;
 			width: 0;
 			height: 2px;
-			background-color: #000;
+			background-color: $color;
 			opacity: 0.8;
 			transition: width 0.4s ease-in-out;
 		}
+
 		&::after {
 			content: '';
 			position: absolute;
@@ -32,18 +35,21 @@
 			bottom: 0px;
 			width: 0;
 			height: 2px;
-			background-color: #000;
+			background-color: $color;
 			opacity: 0.8;
 			transition: width 0.4s ease-in-out;
 		}
 	}
+
 	.underline-w {
 		&:hover {
 			font-weight: 600;
 			opacity: 1;
+
 			&::before {
 				width: 48%;
 			}
+
 			&::after {
 				width: 48%;
 			}

@@ -1,12 +1,4 @@
 .project-page {
-	@include _screen-1440 {
-		padding: 0 30px 60px;
-	}
-
-	@include _screen-375 {
-		padding: 0 10px 60px;
-	}
-
 	// .project__title
 	&__title {
 		text-align: center;
@@ -84,7 +76,7 @@
 		.icon-arrow-down {
 			&::before {
 				color: $color;
-				font-size: 18px;
+				font-size: 15px;
 				font-weight: 600;
 			}
 		}

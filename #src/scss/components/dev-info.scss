@@ -18,6 +18,18 @@
 		margin: 0 auto;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+		background: radial-gradient(
+				ellipse 70% 290% at 30% 80%,
+				#161616a2 0%,
+				#00000049 10%,
+				transparent 45%
+			),
+			radial-gradient(
+				circle at 95% 91%,
+				#6e7bb191 0%,
+				#2b37695d 15%,
+				transparent 75%
+			);
 
 		@include _min-490 {
 			&::before {
@@ -31,18 +43,18 @@
 				pointer-events: none;
 				transform: rotate(90deg);
 
-				background: radial-gradient(
-						ellipse 70% 290% at 30% 80%,
-						#161616a2 0%,
-						#00000049 10%,
-						transparent 45%
-					),
-					radial-gradient(
-						circle at 50% 31%,
-						#6e7bb1ec 1%,
-						#2b376979 14%,
-						transparent 35%
-					);
+				// background: radial-gradient(
+				// 		ellipse 70% 290% at 30% 80%,
+				// 		#161616a2 0%,
+				// 		#00000049 10%,
+				// 		transparent 45%
+				// 	),
+				// 	radial-gradient(
+				// 		circle at 50% 31%,
+				// 		#6e7bb1ec 1%,
+				// 		#2b376979 14%,
+				// 		transparent 35%
+				// 	);
 			}
 		}
 	}

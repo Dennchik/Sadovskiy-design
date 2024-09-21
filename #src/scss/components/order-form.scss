@@ -15,11 +15,11 @@
 
 		@include _screen-690 {
 			border-radius: 15px;
-			padding: 60px 50px 58px;
+			padding: 60px 50px;
 		}
 
 		@include _screen-375 {
-			padding: 60px 10px 58px;
+			padding: 60px 10px;
 		}
 	}
 
