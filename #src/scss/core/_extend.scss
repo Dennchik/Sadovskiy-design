@@ -23,7 +23,7 @@
 			bottom: 0px;
 			width: 0;
 			height: 2px;
-			background-color: $color;
+			background-color: #000;
 			opacity: 0.8;
 			transition: width 0.4s ease-in-out;
 		}
@@ -35,7 +35,7 @@
 			bottom: 0px;
 			width: 0;
 			height: 2px;
-			background-color: $color;
+			background-color: #000;
 			opacity: 0.8;
 			transition: width 0.4s ease-in-out;
 		}
@@ -47,11 +47,11 @@
 			opacity: 1;
 
 			&::before {
-				width: 48%;
+				width: 47%;
 			}
 
 			&::after {
-				width: 48%;
+				width: 47%;
 			}
 		}
 

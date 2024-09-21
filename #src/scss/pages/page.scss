@@ -93,7 +93,7 @@
 			.menu-list__link {
 				@extend .underline;
 				&:hover {
-					color: $color;
+					color: #000;
 				}
 			}
 		}
@@ -226,7 +226,6 @@
 
 	// .page__request-audit
 	&__request-audit {
-		margin-top: -16rem;
 		@include _screen-690 {
 			padding: 0 0 60px;
 		}
