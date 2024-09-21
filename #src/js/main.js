@@ -1,12 +1,16 @@
 import loaded from './modules/preloader.js';
 loaded('.preloader');
 //* ----------------------------------------------------------------------------
-import { sidebarMenuHendle, scalingFunction } from "./layouts/layouts.js";
+import { sidebarMenuHendle, addToBlock } from "./layouts/layouts.js";
 sidebarMenuHendle();
 // -----------------------------------------------------------------------------
 import { anchorsSmoothScrolling } from "./modules/anchors-smooth-scrolling.js";
 anchorsSmoothScrolling();
-// scalingFunction();
+addToBlock();
+
+
+
+
 
 
 

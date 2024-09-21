@@ -50,6 +50,10 @@
 		@include _screen-768 {
 			flex: 0 100%;
 		}
+
+		&.hidden {
+			display: none;
+		}
 	}
 
 	// .seo-block__text
@@ -87,6 +91,12 @@
 			line-height: 125%; /* 25px/20 */
 			text-align: center;
 		}
+	}
+
+	&__button--even {
+		grid-column: -3 / -1;
+		justify-self: center;
+		margin-top: 20px;
 	}
 
 	// .seo-block__icon-btn

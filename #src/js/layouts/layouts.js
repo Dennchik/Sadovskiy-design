@@ -178,51 +178,93 @@ export function shadowScroll() {
 	};
 }
 // -----------------------------------------------------------------------------
-export function scalingFunction() {
+// export function scalingFunction() {
 
-	// Универсальная функция для масштабирования элементов между разрешениями 320 и 490px
-	function applyScaling(selector, scaleMin, scaleMax, minViewport = 320, maxViewport = 1400) {
-		const scaleElements = document.querySelectorAll(selector);
-		const currentViewportWidth = window.innerWidth;
+// 	// Универсальная функция для масштабирования элементов между разрешениями 320 и 490px
+// 	function applyScaling(selector, scaleMin, scaleMax, minViewport = 320, maxViewport = 1400) {
+// 		const scaleElements = document.querySelectorAll(selector);
+// 		const currentViewportWidth = window.innerWidth;
 
-		// Если ширина окна вне диапазона 320-490, ничего не делаем
-		if (currentViewportWidth < minViewport || currentViewportWidth > maxViewport) {
-			scaleElements.forEach(scaleElement => {
-				// Сбросим масштабирование, если за пределами диапазона
-				scaleElement.style.transform = `scale(1)`;
-			});
-			return;
-		}
+// 		// Если ширина окна вне диапазона 320-490, ничего не делаем
+// 		if (currentViewportWidth < minViewport || currentViewportWidth > maxViewport) {
+// 			scaleElements.forEach(scaleElement => {
+// 				// Сбросим масштабирование, если за пределами диапазона
+// 				scaleElement.style.transform = `scale(1)`;
+// 			});
+// 			return;
+// 		}
 
-		scaleElements.forEach(scaleElement => {
-			// Ограничиваем значение ширины окна диапазоном [minViewport, maxViewport]
-			const clampedWidth = Math.min(Math.max(currentViewportWidth, minViewport), maxViewport);
+// 		scaleElements.forEach(scaleElement => {
+// 			// Ограничиваем значение ширины окна диапазоном [minViewport, maxViewport]
+// 			const clampedWidth = Math.min(Math.max(currentViewportWidth, minViewport), maxViewport);
 
-			// Рассчитываем коэффициент масштабирования
-			const scaleFactor = scaleMin + (scaleMax - scaleMin) * ((clampedWidth - minViewport) / (maxViewport - minViewport));
+// 			// Рассчитываем коэффициент масштабирования
+// 			const scaleFactor = scaleMin + (scaleMax - scaleMin) * ((clampedWidth - minViewport) / (maxViewport - minViewport));
 
-			// Рассчитываем смещение по оси Y
-			const containerHeight = document.documentElement.clientHeight; // Высота видимой части окна
-			const scaledHeight = containerHeight / scaleFactor;
+// 			// Рассчитываем смещение по оси Y
+// 			const containerHeight = document.documentElement.clientHeight; // Высота видимой части окна
+// 			const scaledHeight = containerHeight / scaleFactor;
 
-			// Смещение по оси Y
-			// const translateY = (scaledHeight - containerHeight) / 2;
+// 			// Смещение по оси Y
+// 			// const translateY = (scaledHeight - containerHeight) / 2;
 
-			// Применяем transform с корректировкой по оси Y
-			scaleElement.style.transform = `scale(${scaleFactor})`;
-		});
-	}
+// 			// Применяем transform с корректировкой по оси Y
+// 			scaleElement.style.transform = `scale(${scaleFactor})`;
+// 		});
+// 	}
 
-	// Добавляем обработчик события 'resize' с вызовом унифицированной функции
-	window.addEventListener('resize', function () {
-		applyScaling('.page__content', 0.91, 1); // Для '.page__order-place'
-		// applyScaling('.page__content', 1.1, 0.9); // Для '.order-form__column'
-	});
+// 	// Добавляем обработчик события 'resize' с вызовом унифицированной функции
+// 	window.addEventListener('resize', function () {
+// 		applyScaling('.page__content', 0.91, 1); // Для '.page__order-place'
+// 		// applyScaling('.page__content', 1.1, 0.9); // Для '.order-form__column'
+// 	});
 
-	// Вызовем функции сразу после загрузки страницы, чтобы применить масштабирование сразу
+// 	// Вызовем функции сразу после загрузки страницы, чтобы применить масштабирование сразу
+// 	document.addEventListener('DOMContentLoaded', function () {
+// 		applyScaling('.page__content', 0.91, 1);
+// 		applyScaling('.page__content', 1, 0.9);
+// 	});
+// }
+// -----------------------------------------------------------------------------
+export function addToBlock() {
 	document.addEventListener('DOMContentLoaded', function () {
-		applyScaling('.page__content', 0.91, 1);
-		applyScaling('.page__content', 1, 0.9);
-	});
+		const blocks = document.querySelectorAll('.seo-block__content .seo-block__column');
+		const button = document.querySelector('.seo-block__button'); // Кнопка
 
+		let visibleCount = 2; // Сколько блоков видно изначально
+
+		// Показываем первые два блока, остальные скрываем
+		blocks.forEach((block, index) => {
+			if (index >= visibleCount) {
+				block.classList.add('hidden');  // Скрываем все блоки, начиная с третьего
+			}
+		});
+
+		// Функция для обновления стилей кнопки
+		const updateButtonStyle = () => {
+			if (visibleCount % 2 === 0) {
+				button.classList.add('seo-block__button--even'); // Добавляем класс для четного количества видимых блоков 
+			} else {
+				button.classList.remove('seo-block__button--even'); // Удаляем класс для четного количества 
+			}
+		};
+
+		// Проверяем стили кнопки сразу после загрузки
+		updateButtonStyle();
+
+		// Обработчик события для кнопки
+		button.addEventListener('click', function () {
+			if (visibleCount < blocks.length) {
+				blocks[visibleCount].classList.remove('hidden'); // Показываем следующий блок 
+				visibleCount++; // Увеличиваем счетчик видимых блоков
+			}
+
+			if (visibleCount === blocks.length) {
+				button.style.display = 'none'; // Скрываем кнопку, если все блоки  показаны  
+			}
+
+			// Обновляем стили кнопки после клика
+			updateButtonStyle();
+		});
+	});
 }

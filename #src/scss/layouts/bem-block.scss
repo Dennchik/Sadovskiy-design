@@ -13,13 +13,14 @@
 	cursor: pointer;
 	white-space: nowrap;
 	position: relative;
-	display: flex;
+	display: inline-flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 4px;
 	border-radius: 30px;
 	width: 268px;
 	max-width: 268px;
+	max-height: 58px;
 	overflow: hidden;
 	transition: all 0.4s ease-in-out;
 	border: 1px solid transparent;
@@ -296,7 +297,4 @@
 	@include _screen-1440 {
 		max-width: 900px;
 	}
-}
-
-.menu-list__link {
 }
