@@ -60,6 +60,7 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		column-gap: 40px;
+		row-gap: 70px;
 
 		@include _screen-1440 {
 			grid-template-columns: repeat(3, 1fr);
@@ -71,6 +72,7 @@
 
 		@include _screen-690 {
 			grid-template-columns: repeat(1, 1fr);
+			row-gap: 20px;
 		}
 	}
 }
@@ -80,14 +82,7 @@
 
 	&__column {
 		border-top: 1px solid #a9a9a9;
-		padding: 10px 0 8rem;
-		@include _320-1920 {
-			padding-bottom: calc(20px + (80 - 20) * ((100vw - 32px) / (1920 - 320)));
-		}
-
-		@include _screen-320 {
-			padding-bottom: 20px;
-		}
+		padding-top: 10px;
 	}
 
 	// .info__title

@@ -74,6 +74,16 @@
     content: $icon-volume-phone;
   }
 }
+.icon-angle-up {
+  &:before {
+    content: $icon-angle-up;
+  }
+}
+.icon-angle-down {
+  &:before {
+    content: $icon-angle-down;
+  }
+}
 .icon-angle-left {
   &:before {
     content: $icon-angle-left;

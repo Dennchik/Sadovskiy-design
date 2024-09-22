@@ -226,8 +226,17 @@
 
 	// .page__request-audit
 	&__request-audit {
+		padding: 0 50px 16rem;
+
+		@include _screen-1440 {
+			padding: 0 30px 16rem;
+		}
 		@include _screen-690 {
-			padding: 0 0 60px;
+			padding: 0 30px 60px;
+		}
+
+		@include _screen-375 {
+			padding: 0 10px 60px;
 		}
 	}
 
