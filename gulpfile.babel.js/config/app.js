@@ -109,6 +109,7 @@ export default {
 			},
 		},
 		entry: {
+			project: './#src/js/project.js',
 			index: './#src/js/index.js',
 			main: './#src/js/main.js',
 		},

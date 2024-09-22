@@ -1,18 +1,7 @@
-//* ----------------------------------------------------------------------------
-import { dinamicAdaptive } from './assets/move-elements.js';
-dinamicAdaptive();
+
 // -----------------------------------------------------------------------------
 import { brandsSlide } from "./modules/brands-slide.js";
 brandsSlide();
-// -----------------------------------------------------------------------------
-import { tabsHandler, answersHandler, maskPhone, shadowScroll } from "./layouts/layouts";
-tabsHandler();
-answersHandler();
-shadowScroll();
-document.addEventListener('DOMContentLoaded', () => {
-	maskPhone('.phone');
-	// timeLineServiceItem();
-});
 // -----------------------------------------------------------------------------
 
 
@@ -32,8 +21,10 @@ contentItems.forEach(contentItem => {
 	});
 });
 // -----------------------------------------------------------------------------
-
-
+import { opacityForEachItems } from "./animations/layout-anime.js";
+opacityForEachItems('.company-team__content', '.company-team__column');
+opacityForEachItems('.about-company__content', '.about-company__row');
+// -----------------------------------------------------------------------------
 // import { timeLineServiceItem, animateTitles, animateForEachItems, animateTextLeft, opasityForEachItems, animateTitles1 } from "./animations/layout-anime";
 // animateTitles('.project__title', '.project', '.project', '=100', '=0');
 // animateTitles('.project__body', '.project__body', '.project__body', '=100', '=0');
