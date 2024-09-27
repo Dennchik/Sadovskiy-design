@@ -1,8 +1,8 @@
 extends ../layouts/app_layout
 append link 
-	link(rel="stylesheet" type="text/css" href="@@webRoot/css/project.min.css")
+	link(rel="stylesheet" type="text/css" href="@@webRoot/css/project-page.min.css")
 prepend script 
-	script(defer type="text/javascript" src="@@webRoot/js/project.min.js")
+	script(defer type="text/javascript" src="@@webRoot/js/project-page.min.js")
 block title
 	- var text='Sadovskiy-design/Project' 
 
@@ -16,7 +16,7 @@ block main-content
 			include ../components/performance
 	block project-page 
 		section.page__project.mlrp-b0101#project
-			include ../components/project-page 
+			include ../components/project-page-section
 	block dev-info
 		section.page__dev-info
 			include ../components/dev-info 

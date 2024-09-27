@@ -1,4 +1,10 @@
-.project-page {
+// todo -------------------------- Variables -----------------------------------
+@import '../core/variables';
+//todo ----------------------------- Core --------------------------------------
+@import '../core/mixins';
+@import '../core/extend';
+
+.project-page-section {
 	// .project__title
 	&__title {
 		text-align: center;

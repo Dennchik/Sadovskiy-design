@@ -1,14 +1,108 @@
+// todo -------------------------- Variables -----------------------------------
+@import '../core/variables';
+//todo ----------------------------- Core --------------------------------------
+@import '../core/mixins';
+@import '../core/extend';
+
 .performance {
+	position: relative;
+	overflow: hidden;
 	width: 100%;
 	background: #171b1c;
 
+	// .performance__wrapper
+	&__wrapper {
+		background:
+			url('../img/performance/ellipse-01.png') top -15% left 17% / 50% no-repeat,
+			url('../img/performance/ellipse-02.png') top -6% right -7% / 25% no-repeat;
+
+		&::before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			background: radial-gradient(
+				ellipse 120% 50% at 30% 10%,
+				rgba(23, 27, 28, 0.74) 0%,
+				rgba(23, 27, 28, 0.397) 25%,
+				transparent 65%
+			);
+		}
+
+		@include _320-1440 {
+			background:
+				url('../img/performance/ellipse-01.png') top
+					calc(45% + (-15 - 45) * ((100vw - 690px) / (1440 - 690))) left
+					calc(-235px + (-150 - (-235)) * ((100vw - 690px) / (1440 - 690))) /
+					calc(600px + (850 - 600) * ((100vw - 690px) / (1440 - 690))) no-repeat,
+				url('../img/performance/ellipse-02.png') top -6% right calc(
+						-150px + (-150 - (-150)) * ((100vw - 690px) / (1440 - 690))
+					) / calc(55% + (-265 - 55) * ((100vw - 690px) / (1440 - 690))) no-repeat;
+		}
+
+		@include _screen-320 {
+			background:
+				url('../img/performance/ellipse-01.png') top 48% left -290px / 490px no-repeat,
+				url('../img/performance/ellipse-02.png') top -6% right -150px / 330px
+					no-repeat;
+		}
+	}
+
+	// .performance__g-box
+
+	&__g-box {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			width: 250%;
+			height: 250%;
+			pointer-events: none;
+		}
+
+		&::after {
+			left: -40%;
+			top: 0;
+			z-index: 3;
+
+			background: radial-gradient(
+				ellipse 70% 40% at 40% 50%,
+				rgb(43, 55, 105) 10%,
+				rgba(43, 55, 105, 0.795) 30%,
+				transparent 60%
+			);
+		}
+
+		&::before {
+			top: -40%;
+			left: -50%;
+			z-index: 4;
+
+			background: radial-gradient(
+					circle at 20% 49%,
+					rgba(110, 123, 177, 0.623) 1%,
+					rgba(43, 55, 105, 0.26) 15%,
+					transparent 25%
+				),
+				radial-gradient(
+					circle at 64% 35%,
+					rgba(110, 123, 177, 0.623) 1%,
+					rgba(43, 55, 105, 0.26) 15%,
+					transparent 35%
+				);
+		}
+	}
+
 	// .performance__body
 	&__body {
-		// background:
-		// 	url('../img/performance/ellipse-01.png') top -15% left 17% no-repeat,
-		// 	url('../img/performance/ellipse-02.png') top -7.7% right -9% no-repeat;
-		position: relative;
-		padding-top: 15.3rem;
+		padding-top: 21.6rem;
 		padding-bottom: 14.7rem;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
@@ -18,114 +112,20 @@
 		overflow: hidden;
 
 		@include _1440-1920 {
-			// background:
-			// 	url('../img/performance/ellipse-01.png') top -15% left calc(
-			// 			-300px + (150 - (-300)) * ((100vw - 1440px) / (1920 - 1440))
-			// 		) no-repeat,
-			// 	url('../img/performance/ellipse-02.png') top -7.7% right calc(
-			// 			-200px + (-125 - (-200)) * ((100vw - 1440px) / (1920 - 1440))
-			// 		) no-repeat;
-
-			// background:
-			// 	url('../img/performance/ellipse-01.png') top -15% left 17% / calc(
-			// 			60% + (100 - 60) * ((100vw - 1440px) / (1920 - 1440))
-			// 		) no-repeat,
-			// 	url('../img/performance/ellipse-02.png') top -7.7% right -9% no-repeat;
-		}
-
-		@include _min-490 {
-			&::before {
-				content: '';
-				position: absolute;
-				width: 250%;
-				height: 250%;
-				top: -40%;
-				left: -50%;
-				z-index: 2;
-				transform: rotate(90deg);
-				pointer-events: none;
-
-				background: radial-gradient(
-						circle at 53% 29%,
-						#6e7bb1ec 10%,
-						#2b376979 21%,
-						transparent 45%
-					),
-					radial-gradient(
-						circle at 53% 89%,
-						#6e7bb1ec 10%,
-						#2b376979 21%,
-						transparent 25%
-					);
-			}
-
-			&::after {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 3;
-				width: 250%;
-				height: 250%;
-				transform: rotate(-20deg);
-				pointer-events: none;
-
-				background: radial-gradient(
-					ellipse 30% 30% at 27% 22%,
-					#2b3769 0%,
-					#2b376979 30%,
-					transparent 60%
-				);
-			}
-		}
-
-		@include _screen-490 {
-			background-image: radial-gradient(
-					ellipse at bottom center,
-					#2b37695b,
-					transparent
-				),
-				radial-gradient(
-					ellipse at 10% 19%,
-					#171b1c 35%,
-					#eeeeee00 70%,
-					transparent 100%
-				),
-				radial-gradient(
-					circle at 0% 100%,
-					#eeeeee6a 0%,
-					#2b376964 30%,
-					transparent
-				),
-				radial-gradient(
-					circle at 100% 0%,
-					#eeeeee4d 0%,
-					#2b3769 30%,
-					transparent
-				),
-				radial-gradient(
-					ellipse at 30% 2%,
-					#171b1c 0%,
-					#2b3769 100%,
-					transparent
-				);
-		}
-
-		@include _1440-1920 {
 			column-gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 
 		@include _screen-1440 {
-			padding: 60px 30px 60px;
+			padding: 21.6rem 30px 14.7rem;
 			gap: 20px;
 		}
 
 		@include _screen-690 {
-			padding: 60px 30px 60px;
+			padding: 100px 30px 60px;
 		}
 
 		@include _screen-375 {
-			padding: 60px 10px 60px;
+			padding: 100px 10px 60px;
 		}
 	}
 
@@ -209,10 +209,10 @@
 	&__text {
 		position: relative;
 		align-self: end;
-		margin: 70px 0;
+		margin: 100px 0;
 
 		@include _1440-1920 {
-			// margin: calc(50px + (80 - 50) * ((100vw - 1440px) / (1920 - 1440))) 0;
+			margin: calc(50px + (100 - 50) * ((100vw - 1440px) / (1920 - 1440))) 0;
 		}
 
 		p {
@@ -303,7 +303,6 @@
 		width: 100%;
 		max-width: 100%;
 		padding: 0 30px;
-		// border-radius: 30px;
 		overflow: hidden;
 
 		&:hover {
@@ -323,9 +322,11 @@
 
 		@include _screen-890 {
 			max-width: 480px;
-
-			min-height: 75px;
 			padding: 0 15px;
+		}
+
+		@include _screen-690 {
+			min-height: 65px;
 		}
 	}
 

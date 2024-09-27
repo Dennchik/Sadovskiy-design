@@ -22,7 +22,7 @@ export default {
 		dest: pathDest
 	},
 	scss: {
-		src: pathSrc + '/scss/*.{sass,scss}',
+		src: [pathSrc + '/scss/*.{sass,scss}', pathSrc + '/scss/style/*.{sass,scss}'],
 		watch: [pathSrc + '/scss/**/*.{sass,scss}', '!' + pathSrc + '/scss/app/**/*.{sass,scss}'],
 
 		dest: pathDest + '/css',

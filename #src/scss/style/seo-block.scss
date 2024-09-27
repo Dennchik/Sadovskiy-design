@@ -1,0 +1,117 @@
+// todo -------------------------- Variables -----------------------------------
+@import '../core/variables';
+//todo ----------------------------- Core --------------------------------------
+@import '../core/mixins';
+@import '../core/extend';
+
+.seo-block {
+	position: relative;
+
+	// .seo-block__body
+	&__body {
+		margin: 0 auto;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+
+	// .seo-block__title
+	&__title {
+		margin-bottom: 49px;
+		font-weight: 400;
+
+		@include _screen-690 {
+			margin-bottom: 20px;
+		}
+
+		h2 {
+			margin-bottom: 60px;
+			text-align: center;
+
+			@include _screen-690 {
+				margin-bottom: 40px;
+			}
+		}
+
+		h3 {
+			text-align: center;
+		}
+	}
+
+	// .seo-block__content
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+		grid-auto-flow: dense;
+		grid-auto-rows: auto;
+
+		@include _screen-768 {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	// .seo-block__column
+	&__column {
+		@include _screen-768 {
+			flex: 0 100%;
+		}
+
+		&.hidden {
+			display: none;
+		}
+	}
+
+	// .seo-block__text
+	&__text {
+		p {
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	// .seo-block__button
+	&__button {
+		align-self: end;
+		background: #fff;
+
+		&::before {
+			background: #2b3769;
+		}
+
+		&:hover {
+			.icon {
+				transform: rotate(-90deg);
+			}
+		}
+
+		@include _screen-768 {
+			margin-top: 16px;
+			justify-self: center;
+			grid-column: 1 / 2 !important;
+		}
+
+		span {
+			white-space: nowrap;
+			font-weight: 400;
+			line-height: 125%; /* 25px/20 */
+			text-align: center;
+		}
+	}
+
+	&__button--even {
+		grid-column: -3 / -1;
+		justify-self: center;
+		margin-top: 20px;
+	}
+
+	// .seo-block__icon-btn
+	&__icon-btn {
+		.icon-arrow-down {
+			&::before {
+				color: #fff;
+			}
+		}
+	}
+}

@@ -1,0 +1,94 @@
+// // todo -------------------------- Variables -----------------------------------
+// @import '../core/variables';
+// //todo ----------------------------- Core --------------------------------------
+// @import '../core/mixins';
+// @import '../core/extend';
+// .about-company {
+// 	// .about-company__title
+// 	&__title {
+// 		margin: 0 auto 69px;
+
+// 		@include _screen-1440 {
+// 			text-align: center;
+// 		}
+
+// 		@include _screen-690 {
+// 			margin-bottom: 40px;
+// 		}
+// 	}
+
+// 	// .about-company__content
+// 	&__content {
+// 		margin: 0 auto;
+// 		display: flex;
+// 		flex-direction: column;
+// 	}
+
+// 	// .about-company__row
+// 	&__row {
+// 		flex: 1 2 50%;
+// 		display: flex;
+// 		gap: 40px;
+// 		padding: 20px 0 5rem;
+
+// 		&:first-child {
+// 			border-top: 1px solid rgb(169, 169, 169);
+// 		}
+
+// 		&:last-child {
+// 			padding-bottom: 0;
+// 		}
+
+// 		@include _1440-1920 {
+// 			gap: calc(20px + (40 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+// 		}
+
+// 		@include _screen-1440 {
+// 			gap: 20px;
+// 		}
+
+// 		@include _screen-690 {
+// 			flex-direction: column;
+// 		}
+
+// 		h3 {
+// 			@include _screen-690 {
+// 				margin-bottom: 10px;
+// 			}
+// 		}
+
+// 		p {
+// 			font-size: 16px;
+// 			font-weight: 400;
+// 			line-height: 125%; /* 20px/16 */
+
+// 			@include _320-1920 {
+// 				font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
+// 			}
+
+// 			@include _screen-320 {
+// 				font-size: 12px;
+// 			}
+// 		}
+
+// 		&:not(:last-child) {
+// 			border-bottom: 1px solid rgb(169, 169, 169);
+// 		}
+// 	}
+
+// 	// .about-company__item
+// 	&__item {
+// 		flex: 0 1 50%;
+// 	}
+
+// 	// .about-company__text
+// 	&__text {
+// 		color: rgb(0, 0, 0);
+// 		font-family: Averta Demo PE Cutted Demo;
+// 		font-size: 16px;
+// 		font-weight: 400;
+// 		line-height: 20px;
+// 		letter-spacing: 0%;
+// 		text-align: left;
+// 	}
+// }
