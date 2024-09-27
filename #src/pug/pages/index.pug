@@ -1,8 +1,9 @@
 extends ../layouts/app_layout
-append link 
+append link  
 	link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
 prepend script 
-	script(type="text/javascript" src="@@webRoot/js/index.min.js" defer)
+	script(defer type="text/javascript" src="@@webRoot/js/anime-vendors.min.js")
+	script(defer type="text/javascript" src="@@webRoot/js/index.min.js")
 block title
 	- var text='Sadovskiy-design' 
 

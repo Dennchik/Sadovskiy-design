@@ -4,6 +4,7 @@ swiperLayout();
 import Swiper from 'swiper/bundle';
 export function brandsSlide(
 	mainslide = '.brand-slide__body',
+	// pagination = '.brand-slide__pagination',
 	// nextEl = '.sale-products__button-next',
 	// prevEl = '.sale-products__button-prev',
 
