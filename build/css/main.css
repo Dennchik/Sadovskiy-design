@@ -372,17 +372,17 @@ h6 {
 }
 
 @font-face {
-  font-family: "averta-regular";
+  font-family: "icon-set";
   font-display: swap;
-  src: url("../fonts/averta-regular.eot") format("eot"), url("../fonts/averta-regular.woff") format("woff"), url("../fonts/averta-regular.woff2") format("woff2"), url("../fonts/averta-regular.ttf") format("truetype");
+  src: url("../fonts/icon-set.eot") format("eot"), url("../fonts/icon-set.woff") format("woff"), url("../fonts/icon-set.woff2") format("woff2"), url("../fonts/icon-set.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "icon-set";
+  font-family: "averta-regular";
   font-display: swap;
-  src: url("../fonts/icon-set.eot") format("eot"), url("../fonts/icon-set.woff") format("woff"), url("../fonts/icon-set.woff2") format("woff2"), url("../fonts/icon-set.ttf") format("truetype");
+  src: url("../fonts/averta-regular.eot") format("eot"), url("../fonts/averta-regular.woff") format("woff"), url("../fonts/averta-regular.woff2") format("woff2"), url("../fonts/averta-regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }

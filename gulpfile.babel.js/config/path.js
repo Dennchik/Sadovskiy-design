@@ -21,12 +21,19 @@ export default {
 		watch: pathDest + '/**/*.html',
 		dest: pathDest
 	},
-	scss: {
-		src: pathSrc + '/scss/*.{sass,scss}',
-		watch: [pathSrc + '/scss/**/*.{sass,scss}', '!' + pathSrc + '/scss/app/**/*.{sass,scss}'],
+	// scss: {
+	// 	src: [pathSrc + '/scss/*.{sass,scss}', pathSrc + '/scss/style/*.{sass,scss}'],
+	// 	watch: [pathSrc + '/scss/**/*.{sass,scss}', '!' + pathSrc + '/scss/app/**/*.{sass,scss}'],
 
+	// 	dest: pathDest + '/css',
+	// },
+	scss: {
+		src: [pathSrc + '/scss/*.{sass,scss}', pathSrc + '/scss/style/*.{sass,scss}'],
+		watch: [pathSrc + '/scss/**/*.{sass,scss}', '!' + pathSrc + '/scss/app/**/*.{sass,scss}'],
 		dest: pathDest + '/css',
+		base: pathSrc + '/scss', // Добавляем базовый путь для сохранения структуры
 	},
+
 	js: {
 		src: pathSrc + '/js/*.js',
 		watch: pathSrc + '/js/**/*.{js,scss}',

@@ -3,7 +3,7 @@ import path from '../config/path.js';
 import app from '../config/app.js';
 //* Scss Processing
 export default () => {
-	return $.gulp.src(path.scss.src, { base: path.scss.base })
+	return $.gulp.src(path.scss.src)
 		.pipe($.gul.plumber({
 			errorHandler: $.gul.notify.onError(error => ({
 				title: 'SCSS',
