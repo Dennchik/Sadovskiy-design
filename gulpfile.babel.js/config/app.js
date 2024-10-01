@@ -97,6 +97,8 @@ export default {
 					extractComments: false,
 				}),
 			],
+
+			runtimeChunk: 'single',
 			splitChunks: {
 				chunks: 'async',
 				cacheGroups: {
@@ -109,9 +111,15 @@ export default {
 			},
 		},
 		entry: {
-			project: './#src/js/project.js',
-			index: './#src/js/index.js',
+			'project-page': './#src/js/project-page.js',
+			// index: './#src/js/index.js',
 			main: './#src/js/main.js',
+
+			index: {
+				import: ['./#src/js/index.js'],
+				dependOn: ['anime-vendors']
+			},
+			'anime-vendors': ['animejs', 'swiper/bundle']
 		},
 		output: {
 			filename: '[name].min.js',
@@ -139,6 +147,19 @@ export default {
 						'sass-loader'   // компилирует Sass в CSS
 					]
 				},
+				{
+					test: /\.(png|jpe?g|gif|webp)$/i,
+					use: [
+						{
+							loader: 'file-loader',
+							options: {
+								name: '[name].[ext]',
+								outputPath: 'images', // папка, куда будут сохранены изображения
+							},
+						},
+
+					]
+				}
 			],
 		},
 

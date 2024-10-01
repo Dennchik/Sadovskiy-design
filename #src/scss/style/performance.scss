@@ -1,0 +1,338 @@
+// todo -------------------------- Variables -----------------------------------
+@import '../core/variables';
+//todo ----------------------------- Core --------------------------------------
+@import '../core/mixins';
+@import '../core/extend';
+
+.performance {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	background: #171b1c;
+
+	// .performance__wrapper
+	&__wrapper {
+		background:
+			url('../img/performance/ellipse-01.png') top -15% left 17% / 50% no-repeat,
+			url('../img/performance/ellipse-02.png') top -6% right -7% / 25% no-repeat;
+
+		&::before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			background: radial-gradient(
+				ellipse 120% 50% at 30% 10%,
+				rgba(23, 27, 28, 0.74) 0%,
+				rgba(23, 27, 28, 0.397) 25%,
+				transparent 65%
+			);
+		}
+
+		@include _320-1440 {
+			background:
+				url('../img/performance/ellipse-01.png') top
+					calc(45% + (-15 - 45) * ((100vw - 690px) / (1440 - 690))) left
+					calc(-235px + (-150 - (-235)) * ((100vw - 690px) / (1440 - 690))) /
+					calc(600px + (850 - 600) * ((100vw - 690px) / (1440 - 690))) no-repeat,
+				url('../img/performance/ellipse-02.png') top -6% right calc(
+						-150px + (-150 - (-150)) * ((100vw - 690px) / (1440 - 690))
+					) / calc(55% + (-265 - 55) * ((100vw - 690px) / (1440 - 690))) no-repeat;
+		}
+
+		@include _screen-320 {
+			background:
+				url('../img/performance/ellipse-01.png') top 48% left -290px / 490px no-repeat,
+				url('../img/performance/ellipse-02.png') top -6% right -150px / 330px
+					no-repeat;
+		}
+	}
+
+	// .performance__g-box
+
+	&__g-box {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			width: 250%;
+			height: 250%;
+			pointer-events: none;
+		}
+
+		&::after {
+			left: -40%;
+			top: 0;
+			z-index: 3;
+
+			background: radial-gradient(
+				ellipse 70% 40% at 40% 50%,
+				rgb(43, 55, 105) 10%,
+				rgba(43, 55, 105, 0.795) 30%,
+				transparent 60%
+			);
+		}
+
+		&::before {
+			top: -40%;
+			left: -50%;
+			z-index: 4;
+
+			background: radial-gradient(
+					circle at 20% 49%,
+					rgba(110, 123, 177, 0.623) 1%,
+					rgba(43, 55, 105, 0.26) 15%,
+					transparent 25%
+				),
+				radial-gradient(
+					circle at 64% 35%,
+					rgba(110, 123, 177, 0.623) 1%,
+					rgba(43, 55, 105, 0.26) 15%,
+					transparent 35%
+				);
+		}
+	}
+
+	// .performance__body
+	&__body {
+		padding-top: 21.6rem;
+		padding-bottom: 14.7rem;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: 60px;
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+
+		@include _1440-1920 {
+			column-gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+		}
+
+		@include _screen-1440 {
+			padding: 21.6rem 30px 14.7rem;
+			gap: 20px;
+		}
+
+		@include _screen-690 {
+			padding: 100px 30px 60px;
+		}
+
+		@include _screen-375 {
+			padding: 100px 10px 60px;
+		}
+	}
+
+	// .performance__row
+	&__row {
+		width: 100%;
+		position: relative;
+		z-index: 9;
+
+		&:nth-child(1) {
+			grid-column: 1 / 4;
+			max-width: 950px;
+		}
+
+		&:nth-child(2) {
+			margin-bottom: 115px;
+			grid-column: 2/4;
+			display: flex;
+			flex-direction: column;
+			align-self: start;
+			max-width: 950px;
+
+			@include _screen-960 {
+				margin-left: 0;
+				grid-column: 1/4;
+			}
+
+			@include _screen-690 {
+				margin-bottom: 60px;
+			}
+
+			@include _screen-490 {
+				transform: translateX(0);
+			}
+		}
+
+		&:nth-child(3) {
+			grid-column: 1/4;
+		}
+	}
+
+	// .performance__title
+	&__title {
+		color: #fff;
+		font-weight: 400;
+
+		h1 {
+			margin-bottom: 24px;
+			line-height: 100%;
+
+			@include _screen-690 {
+				margin-bottom: 40px;
+				text-align: center;
+			}
+		}
+
+		h2 {
+			font-size: 55px;
+			line-height: 100%;
+
+			@include _320-1920 {
+				font-size: calc(16px + (55 - 16) * ((100vw - 320px) / (1920 - 320)));
+			}
+
+			@include _screen-320 {
+				font-size: 16px;
+			}
+		}
+
+		@include _min-1640 {
+			position: relative;
+		}
+
+		@include _screen-1640 {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	// .performance__text
+	&__text {
+		position: relative;
+		align-self: end;
+		margin: 100px 0;
+
+		@include _1440-1920 {
+			margin: calc(50px + (100 - 50) * ((100vw - 1440px) / (1920 - 1440))) 0;
+		}
+
+		p {
+			color: #fff;
+			line-height: 125%; /* 20px/16 */
+		}
+	}
+
+	// .performance__list
+	&__list {
+		color: #fff;
+		margin-left: 19px;
+	}
+
+	// .performance__item
+	&__item {
+		list-style: disc;
+		span {
+			margin-left: 20px;
+			line-height: 150%; /* 24px/16 */
+
+			@include _screen-490 {
+				margin-left: 0px;
+			}
+		}
+	}
+
+	// .performance__buttom
+	&__button {
+		right: 0;
+		bottom: 0;
+		background: #ffffff;
+		border: 1px solid transparent;
+		align-self: flex-start;
+
+		&:hover {
+			border: 1px solid #fff;
+			.icon {
+				transform: rotate(-45deg);
+			}
+
+			span {
+				color: #fff !important;
+			}
+
+			&::before {
+				background: $color;
+			}
+		}
+
+		@include _screen-960 {
+			align-self: center;
+		}
+	}
+
+	.icon-arrow-right {
+		color: #fff;
+	}
+}
+
+.bottom-menu {
+	// .bottom-menu__items
+	&__items {
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 60px;
+
+		@include _1440-1920 {
+			gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+		}
+
+		@include _screen-1440 {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+		}
+
+		@include _screen-890 {
+			grid-template-columns: repeat(1, 1fr);
+			justify-items: center;
+		}
+	}
+
+	// .bottom-menu__button
+	&__button {
+		background: url('../img/performance/button-bg.png') center / cover no-repeat;
+		min-height: 94px;
+		width: 100%;
+		max-width: 100%;
+		padding: 0 30px;
+		overflow: hidden;
+
+		&:hover {
+			span {
+				opacity: 0.7;
+				color: #000;
+			}
+			.icon {
+				transform: rotate(-45deg);
+			}
+		}
+
+		span {
+			margin: 0;
+			transition: opacity 0.4s ease-in-out;
+		}
+
+		@include _screen-890 {
+			max-width: 480px;
+			padding: 0 15px;
+		}
+
+		@include _screen-690 {
+			min-height: 65px;
+		}
+	}
+
+	// .bottom-menu__item
+	&__item {
+		display: flex;
+		align-items: center;
+	}
+}

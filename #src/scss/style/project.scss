@@ -1,0 +1,577 @@
+// todo -------------------------- Variables -----------------------------------
+@import '../core/variables';
+//todo ----------------------------- Core --------------------------------------
+@import '../core/mixins';
+@import '../core/extend';
+
+.project {
+	@include _screen-1140 {
+		background: #2b3769;
+	}
+	// .project__title
+	&__title {
+		text-align: center;
+		margin-bottom: 53px;
+
+		@include _960-1920 {
+			font-size: calc(24px + (65 - 24) * ((100vw - 960px) / (1920 - 960)));
+		}
+
+		@include _screen-1140 {
+			color: #fff;
+			margin-bottom: 40px;
+		}
+	}
+
+	// .project__content
+	&__content {
+		position: relative;
+		z-index: 2;
+		background: #2b3769;
+		padding-top: 50px;
+		padding-bottom: 50px;
+
+		@include _min-490 {
+			background-image: radial-gradient(
+					circle at 15% 125%,
+					rgba(160, 176, 240, 0.637) 0%,
+					rgb(43, 55, 105) 40%,
+					transparent 25%
+				),
+				radial-gradient(
+					circle at 99% 10%,
+					rgba(160, 176, 240, 0.637) 0%,
+					rgb(43, 55, 105) 40%,
+					transparent 25%
+				);
+		}
+
+		@include _screen-490 {
+			background-image: radial-gradient(
+					ellipse at 90% 25%,
+					rgba(160, 176, 240, 0.637) 0%,
+					rgba(238, 238, 238, 0.048) 20%,
+					transparent 75%
+				),
+				radial-gradient(
+					circle at 10% 99%,
+					rgba(160, 176, 240, 0.637) 0%,
+					rgba(43, 55, 105, 0.891) 7%,
+					transparent 25%
+				);
+		}
+
+		@include _min-960 {
+			border-radius: 30px;
+		}
+
+		@include _screen-1440 {
+			padding: 50px 30px;
+		}
+
+		@include _screen-1140 {
+			border-radius: 0px;
+		}
+
+		@include _screen-690 {
+			padding: 50px 30px 60px;
+		}
+
+		@include _screen-375 {
+			padding: 50px 10px 60px;
+		}
+	}
+
+	// .project__tabs
+	&__tabs {
+		position: relative;
+		width: 100%;
+		display: grid;
+		align-items: center;
+		justify-content: space-between;
+		grid-template-columns: 1fr min-content;
+		transition: all 0.7s ease 0s;
+
+		&._responsive {
+			background: #3a4a91;
+			grid-template-rows: 1fr;
+			height: 100%;
+
+			@include _screen-960 {
+				.tabs-button__item {
+					position: relative;
+					opacity: 1;
+					pointer-events: all;
+					transform: translateX(0);
+				}
+
+				.tabs-button__item {
+					&:nth-child(4) {
+						padding-bottom: 15px;
+					}
+				}
+			}
+		}
+
+		@include _min-1140 {
+			margin-bottom: -30px;
+			height: 145px;
+		}
+
+		@include _1140-1920 {
+			height: calc(108px + (145 - 108) * ((100vw - 1140px) / (1920 - 1140)));
+		}
+
+		@include _screen-1140 {
+			border-top-left-radius: 0px;
+			border-top-right-radius: 0px;
+			background: #2b3769;
+			padding: 0 25px 0 30px;
+		}
+
+		@include _screen-960 {
+			grid-template-rows: 0fr;
+			overflow: hidden;
+		}
+
+		@include _screen-375 {
+			padding: 0 5px 0 10px;
+		}
+	}
+
+	&__footer {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__button {
+		background: #ffffff;
+
+		.icon-arrow-dow {
+			color: #fff;
+		}
+
+		&:hover {
+			border: 1px solid #fff;
+			.icon {
+				transform: rotate(-90deg);
+			}
+			span {
+				color: #fff;
+			}
+			&::before {
+				background: $color;
+			}
+		}
+	}
+
+	&__icon {
+		.icon-arrow-down {
+			&::before {
+				color: #fff;
+			}
+		}
+	}
+}
+
+.tabs-button {
+	// .tabs-buton_wrapper
+	&__wrapper {
+		width: 100%;
+		height: 100%;
+		min-height: 60px;
+		display: flex;
+		align-items: flex-end;
+		gap: 10px;
+
+		@include _screen-1140 {
+			padding: 20px 0;
+			align-items: center;
+			box-sizing: border-box;
+			justify-content: flex-start;
+			gap: 40px;
+		}
+
+		@include _screen-960 {
+			align-items: flex-start;
+			flex-direction: column;
+			padding: 0;
+			gap: 0;
+		}
+	}
+
+	// .tabs-buton__item
+	&__item {
+		cursor: pointer;
+		font-weight: 400;
+		line-height: 120%; /* 42px/35 */
+		white-space: nowrap;
+		color: #fff;
+		display: flex;
+		align-items: flex-start;
+
+		border-top-left-radius: 30px;
+		border-top-right-radius: 30px;
+
+		span {
+			position: relative;
+			display: inline-flex;
+			line-height: 150%;
+
+			@include _screen-1440 {
+				font-size: 24px;
+				padding: 0 30px;
+			}
+
+			@include _screen-1140 {
+				padding: 0px;
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: -2px;
+					width: 100%;
+					height: 2px;
+					opacity: 0;
+					transition: opacity 0.4s ease-in-out;
+				}
+			}
+
+			@include _screen-960 {
+				margin: 10px 0;
+				font-size: 20px;
+			}
+		}
+
+		&:hover {
+			box-shadow: 0 -1px 7px #b8b8b8;
+		}
+
+		&:not(.active) {
+			@include _min-1140 {
+				color: #000;
+				background: #f2f2f2;
+				height: 128px;
+			}
+
+			@include _1140-1920 {
+				height: calc(80px + (128 - 80) * ((100vw - 1140px) / (1920 - 1140)));
+			}
+
+			@include _screen-960 {
+				pointer-events: none;
+				transform: translateX(-100%);
+
+				opacity: 0;
+			}
+		}
+
+		&.active {
+			box-shadow: none;
+			height: 100%;
+			background: #2b3769;
+
+			@include _screen-960 {
+				background: transparent;
+				position: absolute;
+			}
+
+			@include _1140-1920 {
+				height: calc(100px + (145 - 100) * ((100vw - 1140px) / (1920 - 1140)));
+			}
+
+			@include _screen-1140 {
+				span {
+					&::after {
+						opacity: 0.5;
+						background: #fff;
+					}
+				}
+			}
+		}
+
+		&:nth-child(1) {
+			@include _min-1140 {
+				span {
+					display: inline-flex;
+					text-align: center;
+				}
+			}
+
+			@include _screen-960 {
+				max-width: 100%;
+			}
+		}
+
+		@include _min-1140 {
+			padding: 15px 0 40px;
+			transition: all 0.4s ease-in-out;
+		}
+
+		@include _screen-960 {
+			width: 260px;
+			z-index: 1;
+			// padding: 21px 0;
+		}
+	}
+
+	// .tabs-buton__button
+	&__button {
+		@include _min-960 {
+			display: none;
+		}
+
+		@include _screen-960 {
+			position: relative;
+			display: block;
+			align-self: start;
+			margin: 10px 0;
+			z-index: 2;
+
+			.burger-button__items {
+				span {
+					background: #fff;
+				}
+				&__wrapper {
+					background: transparent;
+				}
+			}
+		}
+	}
+}
+
+.tab-content {
+	position: relative;
+	height: 100%;
+
+	// .tab-content__items
+	&__items {
+		display: none;
+		margin-bottom: 40px;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 40px;
+
+		@include _1440-1920 {
+			gap: calc(20px + (40 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+		}
+
+		@include _screen-1440 {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+		}
+
+		@include _screen-690 {
+			grid-template-columns: repeat(1, 1fr);
+		}
+		span {
+			display: inline;
+		}
+
+		&.active {
+			display: grid !important;
+		}
+	}
+
+	// .tab-content__column
+	&__column {
+		cursor: pointer;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+
+		@include _min-960 {
+			&:hover {
+				.tab-content__text {
+					opacity: 1;
+					scale: 1;
+				}
+			}
+		}
+	}
+
+	// .tab-content__image
+	&__image {
+		cursor: pointer;
+		width: 100%;
+		overflow: hidden;
+		border-radius: 30px;
+		overflow: hidden;
+		margin-bottom: 5px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+
+		@include _screen-1140 {
+			border-radius: 15px;
+		}
+
+		@include _min-768 {
+			pointer-events: none;
+		}
+
+		@include _screen-768 {
+			margin-bottom: 5px;
+			border-radius: 15px;
+		}
+	}
+
+	// .tab-content__footer
+	&__footer {
+		flex: 1 1 auto;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		justify-content: space-between;
+
+		@include _1440-1740 {
+			flex-direction: column;
+			gap: 20px;
+		}
+
+		@include _screen-1164 {
+			flex-direction: column;
+			gap: 20px;
+		}
+	}
+
+	// .tab-content__text
+	&__text {
+		pointer-events: none;
+		color: #fff;
+		line-height: 125%; /* 20px/16 */
+		text-align: left;
+		flex: 1 1 auto;
+		display: none;
+		border-radius: 30px;
+
+		@include _screen-1164 {
+			max-width: 100%;
+			width: 100%;
+		}
+
+		@include _min-960 {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			padding: 30px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			align-items: flex-end;
+			background: #3c3b51ce;
+			scale: 0;
+			opacity: 0;
+			transition:
+				opacity 0.4s,
+				scale 0.4s ease 0s;
+
+			span {
+				height: 100%;
+				display: flex;
+				align-items: center;
+			}
+		}
+
+		@include _screen-960 {
+			display: block;
+			position: relative;
+		}
+	}
+
+	// .tab-content__button
+	&__button {
+		right: 0;
+		bottom: 0;
+		background: #2b3769;
+		border: 1px solid transparent;
+
+		span {
+			color: #fff;
+		}
+
+		&:hover {
+			.icon {
+				transform: rotate(-45deg);
+				background: $color;
+			}
+			._icon {
+				&::before {
+					color: #fff;
+					font-weight: 400;
+				}
+			}
+			span {
+				color: #000;
+			}
+			&::before {
+				background: #fff;
+				color: #fff;
+			}
+		}
+		.icon {
+			background: #fff;
+		}
+
+		._icon {
+			border-radius: 50%;
+			color: #2b3769;
+
+			&::before {
+				font-weight: 600;
+			}
+		}
+
+		@include _screen-960 {
+			width: 268px;
+		}
+	}
+
+	// .tab-content__icon
+	&__icon {
+		flex: 0 0 4.8rem;
+		pointer-events: all;
+		width: 4.8rem;
+		height: 4.8rem;
+		border-radius: 50%;
+		background: #fff;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease-in-out;
+		overflow: hidden;
+		display: grid;
+		grid-template-columns: 1fr;
+
+		&:hover {
+			box-shadow: 1px 1px 7px #000000;
+			.icon-arrow-right {
+				transform: translateY(-100%);
+			}
+			.icon-group {
+				transform: translateY(-100%);
+			}
+		}
+
+		@include _screen-960 {
+			display: none;
+		}
+
+		._icon {
+			transition: all 0.5s ease 0s;
+			height: 4.8rem;
+			&::before {
+				color: #2b3769;
+				font-weight: 900;
+			}
+		}
+
+		.icon-group {
+			&::before {
+				font-size: 14px;
+			}
+		}
+	}
+}

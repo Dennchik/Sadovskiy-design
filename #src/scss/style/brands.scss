@@ -1,0 +1,53 @@
+// todo -------------------------- Variables -----------------------------------
+@import '../core/variables';
+//todo ----------------------------- Core --------------------------------------
+@import '../core/mixins';
+@import '../core/extend';
+
+.brands {
+	// .brands__title
+	&__title {
+		margin-bottom: 30px;
+		text-align: center;
+
+		@include _screen-690 {
+			margin-bottom: 40px;
+		}
+	}
+}
+
+.brand-slide {
+	// .brand-slide__body
+	&__body {
+		overflow: hidden;
+	}
+
+	// .brand-slide__slide
+	&__slide {
+		user-select: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		a {
+			cursor: grab;
+		}
+
+		img {
+			object-fit: cover;
+			filter: grayscale(1);
+			transition: filter 0.4s ease-in-out;
+		}
+
+		&:hover {
+			img {
+				filter: grayscale(0);
+			}
+		}
+	}
+
+	// .brand-slide__image
+	&__image {
+		width: 100%;
+	}
+}
