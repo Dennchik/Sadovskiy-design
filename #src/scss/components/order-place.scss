@@ -370,13 +370,6 @@
 		bottom: 0;
 		background: #fff;
 		width: 100%;
-
-		@include _screen-960 {
-			max-width: 320px;
-		}
-
-		@include _screen-490 {
-			max-width: 215px;
-		}
+		max-width: 268px;
 	}
 }

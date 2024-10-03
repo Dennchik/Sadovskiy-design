@@ -372,17 +372,17 @@ h6 {
 }
 
 @font-face {
-  font-family: "icon-set";
+  font-family: "averta-regular";
   font-display: swap;
-  src: url("../fonts/icon-set.eot") format("eot"), url("../fonts/icon-set.woff") format("woff"), url("../fonts/icon-set.woff2") format("woff2"), url("../fonts/icon-set.ttf") format("truetype");
+  src: url("../fonts/averta-regular.eot") format("eot"), url("../fonts/averta-regular.woff") format("woff"), url("../fonts/averta-regular.woff2") format("woff2"), url("../fonts/averta-regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "averta-regular";
+  font-family: "icon-set";
   font-display: swap;
-  src: url("../fonts/averta-regular.eot") format("eot"), url("../fonts/averta-regular.woff") format("woff"), url("../fonts/averta-regular.woff2") format("woff2"), url("../fonts/averta-regular.ttf") format("truetype");
+  src: url("../fonts/icon-set.eot") format("eot"), url("../fonts/icon-set.woff") format("woff"), url("../fonts/icon-set.woff2") format("woff2"), url("../fonts/icon-set.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -2043,17 +2043,16 @@ button.swiper-pagination-bullet {
 .page__aside-button {
   position: fixed;
   top: 56%;
-  left: -10px;
+  right: 48px;
   z-index: 13;
-  padding-left: 1rem;
 }
 
 .page__aside-button .icon-angle-down {
   cursor: pointer;
   margin-right: 1rem;
   position: absolute;
-  width: 4rem;
-  height: 4rem;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   top: 50%;
   z-index: 13;
@@ -4197,6 +4196,7 @@ button.swiper-pagination-bullet {
   bottom: 0;
   background: #fff;
   width: 100%;
+  max-width: 268px;
 }
 
 @media (min-width: 490.99px) {
@@ -4493,10 +4493,6 @@ button.swiper-pagination-bullet {
     max-width: 320px;
     width: 100%;
     max-height: 58px;
-  }
-
-  .order-form__button {
-    max-width: 320px;
   }
 }
 
@@ -4865,10 +4861,6 @@ button.swiper-pagination-bullet {
 
   .order-form__input {
     height: 38px;
-  }
-
-  .order-form__button {
-    max-width: 215px;
   }
 }
 
