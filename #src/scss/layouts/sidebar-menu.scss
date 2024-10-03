@@ -26,7 +26,6 @@
 	&__column {
 		opacity: 0;
 		width: 100%;
-		overflow-x: hidden;
 		min-width: 300px;
 
 		@include _min-960 {
@@ -51,6 +50,7 @@
 
 	// .sidebar-menu__menu
 	&__menu {
+		overflow-x: hidden;
 		width: 100%;
 		height: 100%;
 		position: relative;

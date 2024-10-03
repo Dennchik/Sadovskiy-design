@@ -20,9 +20,15 @@ export function sidebarMenuHendle() {
 }
 // -----------------------------------------------------------------------------
 export function toggleSidebarMenu(sidebarMenu) {
+	const asideButton = document.querySelector('.page__aside-button');
 	if (sidebarMenu.classList.contains('_open-menu')) {
+		console.log(asideButton);
+
 		sidebarMenu.classList.add('_close-menu');
 		setTimeout(() => {
+			asideButton.style.opacity = '1';
+			asideButton.style.transition = 'opacity 0.4s ease-in-out';
+			asideButton.style.pointerEvents = 'all';
 			document.body.classList.remove('no-scroll');
 			sidebarMenu.style.transition = 'transform 0.4s ease-in-out';
 			sidebarMenu.addEventListener('transitionend', function transitionEndHandler() {
@@ -33,6 +39,9 @@ export function toggleSidebarMenu(sidebarMenu) {
 			sidebarMenu.classList.remove('_close-menu');
 		}, 1300);
 	} else {
+		asideButton.style.opacity = '0';
+		asideButton.style.transition = 'opacity 0.4s ease-in-out';
+		asideButton.style.pointerEvents = 'none';
 		sidebarMenu.classList.add('_open-menu');
 		document.body.classList.add('no-scroll');
 
@@ -182,27 +191,38 @@ export function shadowScroll() {
 export function addToBlock() {
 	document.addEventListener('DOMContentLoaded', function () {
 		const blocks = document.querySelectorAll('.seo-block__content .seo-block__column');
-		const button = document.querySelector('.seo-block__button'); // Кнопка
+		// Кнопка
+		const button = document.querySelector('.seo-block__button');
+		// Текст внутри кнопки
+		const buttonText = button.querySelector('span');
 
-		let visibleCount = 3; // Сколько блоков видно изначально
+		// Сколько блоков видно изначально
+		let visibleCount = 5;
+		// Сколько блоков нужно показывать при каждом нажатии
+		const blocksToShow = 3;
 
-		// Показываем первые два блока, остальные скрываем
+		// Показываем первые несколько блоков, остальные скрываем
 		blocks.forEach((block, index) => {
 			if (index >= visibleCount) {
-				block.classList.add('hidden');  // Скрываем все блоки, начиная с третьего
+				// Скрываем все блоки, начиная с определенного
+				block.classList.add('hidden');
 			}
 		});
 
 		// Функция для обновления стилей кнопки
 		const updateButtonStyle = () => {
-			if (window.innerWidth >= 768) { // Проверка ширины экрана
+			// Проверка ширины экрана
+			if (window.innerWidth >= 768) {
 				if (visibleCount % 2 === 0) {
-					button.classList.add('seo-block__button--even'); // Добавляем класс для четного количества видимых блоков 
+					// Добавляем класс для четного количества видимых блоков 
+					button.classList.add('seo-block__button--even');
 				} else {
-					button.classList.remove('seo-block__button--even'); // Удаляем класс для четного количества 
+					// Удаляем класс для четного количества 
+					button.classList.remove('seo-block__button--even');
 				}
 			} else {
-				button.classList.remove('seo-block__button--even'); // Удаляем класс, если ширина больше 768px
+				// Удаляем класс, если ширина меньше 768px
+				button.classList.remove('seo-block__button--even');
 			}
 		};
 
@@ -212,12 +232,31 @@ export function addToBlock() {
 		// Обработчик события для кнопки
 		button.addEventListener('click', function () {
 			if (visibleCount < blocks.length) {
-				blocks[visibleCount].classList.remove('hidden'); // Показываем следующий блок 
-				visibleCount++; // Увеличиваем счетчик видимых блоков
-			}
-
-			if (visibleCount === blocks.length) {
-				button.style.display = 'none'; // Скрываем кнопку, если все блоки  показаны  
+				// Показываем следующие три блока
+				for (let i = 0; i < blocksToShow; i++) {
+					if (visibleCount < blocks.length) {
+						// Показываем следующий блок 
+						blocks[visibleCount].classList.remove('hidden');
+						// Увеличиваем счетчик видимых блоков
+						visibleCount++;
+					}
+				}
+				// Если все блоки показаны, меняем текст кнопки на "Свернуть"
+				if (visibleCount === blocks.length) {
+					// Меняем текст на "Свернуть"
+					buttonText.textContent = 'Свернуть';
+				}
+			} else {
+				// Если текст кнопки "Свернуть", возвращаем все блоки в исходное состояние
+				blocks.forEach((block, index) => {
+					if (index >= 5) {
+						block.classList.add('hidden'); // Скрываем блоки снова
+					}
+				});
+				// Сбрасываем видимое количество блоков
+				visibleCount = 5;
+				// Возвращаем текст кнопки обратно на "Читать ещё"
+				buttonText.textContent = 'Читать ещё';
 			}
 
 			// Обновляем стили кнопки после клика
@@ -225,6 +264,7 @@ export function addToBlock() {
 		});
 	});
 }
+
 
 // -----------------------------------------------------------------------------
 export function returnToSavedPosition() {

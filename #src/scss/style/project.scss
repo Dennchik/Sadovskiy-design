@@ -244,6 +244,10 @@
 
 		&:hover {
 			box-shadow: 0 -1px 7px #b8b8b8;
+
+			@include _screen-1440 {
+				box-shadow: none;
+			}
 		}
 
 		&:not(.active) {
@@ -254,13 +258,12 @@
 			}
 
 			@include _1140-1920 {
-				height: calc(80px + (128 - 80) * ((100vw - 1140px) / (1920 - 1140)));
+				height: calc(88px + (128 - 80) * ((100vw - 1140px) / (1920 - 1140)));
 			}
 
 			@include _screen-960 {
 				pointer-events: none;
 				transform: translateX(-100%);
-
 				opacity: 0;
 			}
 		}
@@ -307,10 +310,13 @@
 			transition: all 0.4s ease-in-out;
 		}
 
+		@include _screen-1140 {
+			border-radius: 0;
+		}
+
 		@include _screen-960 {
 			width: 260px;
 			z-index: 1;
-			// padding: 21px 0;
 		}
 	}
 
