@@ -56,6 +56,10 @@ body {
 img {
 	vertical-align: top;
 }
+.scroll-to-top {
+	/* замените на реальный селектор кнопки */
+	display: none !important;
+}
 
 img,
 svg {

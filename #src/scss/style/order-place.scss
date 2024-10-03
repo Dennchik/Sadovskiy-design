@@ -1,9 +1,9 @@
 // todo -------------------------- Variables -----------------------------------
 @import '../core/variables';
-//todo ----------------------------- Core --------------------------------------
+//todo --------------------------- Core ----------------------------------------
 @import '../core/mixins';
 @import '../core/extend';
-
+//todo --------------------------- Layout --------------------------------------
 .order-place {
 	// .order-place__content
 	&__content {
@@ -153,8 +153,16 @@
 		margin: 0 auto;
 		font-size: 16px;
 
+		@include _screen-960 {
+			max-width: 620px;
+		}
+
 		@include _320-490 {
 			font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (490 - 320)));
+		}
+
+		@include _screen-375 {
+			max-width: 270px;
 		}
 
 		@include _screen-320 {
@@ -307,22 +315,28 @@
 			}
 		}
 
+		@include _1440-1920 {
+			max-width: calc(215px + (268 - 215) * ((100vw - 1440px) / (1920 - 1440)));
+			max-height: calc(48px + (58 - 48) * ((100vw - 1440px) / (1920 - 1440)));
+		}
+
 		@include _screen-960 {
 			max-width: 268px;
 			width: 100%;
-			max-height: 50px;
-		}
-
-		@include _screen-490 {
-			max-width: 215px;
-			max-height: 38px;
-			width: 100%;
+			max-height: 58px;
 		}
 
 		@include _screen-690 {
+			max-height: 48px;
 			&:not(:last-child) {
 				flex: 1 1 auto;
 			}
+		}
+
+		@include _screen-490 {
+			max-width: 195px;
+			max-height: 38px;
+			width: 100%;
 		}
 
 		&:last-child {
@@ -355,7 +369,7 @@
 			font-size: 16px;
 
 			@include _490-690 {
-				height: 50px;
+				height: 48px;
 			}
 
 			@include _screen-490 {
@@ -375,5 +389,9 @@
 		background: #fff;
 		width: 100%;
 		max-width: 268px;
+
+		@include _screen-690 {
+			max-height: 48px;
+		}
 	}
 }

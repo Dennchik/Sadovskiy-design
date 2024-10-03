@@ -383,6 +383,10 @@
 }
 
 @media screen and (max-width: 960px) {
+  .order-place__text {
+    max-width: 620px;
+  }
+
   .order-place__form {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -394,7 +398,7 @@
   .order-form__column {
     max-width: 268px;
     width: 100%;
-    max-height: 50px;
+    max-height: 58px;
   }
 }
 
@@ -404,11 +408,19 @@
     padding: 60px 50px 60px;
   }
 
+  .order-form__column {
+    max-height: 48px;
+  }
+
   .order-form__column:not(:last-child) {
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
+  }
+
+  .order-form__button {
+    max-height: 48px;
   }
 }
 
@@ -424,7 +436,7 @@
   }
 
   .order-form__column {
-    max-width: 215px;
+    max-width: 195px;
     max-height: 38px;
     width: 100%;
   }
@@ -441,6 +453,10 @@
 @media screen and (max-width: 375px) {
   .order-place__content {
     padding: 60px 10px;
+  }
+
+  .order-place__text {
+    max-width: 270px;
   }
 
   .order-place__form {
@@ -477,9 +493,18 @@
   }
 }
 
+@media (min-width: 1440.98px) and (max-width: 1920px) {
+  .order-form__column {
+    max-width: -webkit-calc(215px + 53 * (100vw - 1440px) / 480);
+    max-width: calc(215px + 53 * (100vw - 1440px) / 480);
+    max-height: -webkit-calc(48px + 10 * (100vw - 1440px) / 480);
+    max-height: calc(48px + 10 * (100vw - 1440px) / 480);
+  }
+}
+
 @media (min-width: 490.98px) and (max-width: 690px) {
   .order-form__input input {
-    height: 50px;
+    height: 48px;
   }
 }
 @supports (-webkit-appearance:none){
@@ -559,6 +584,14 @@
 }
 
  @media (min-width: 320.98px) and (max-width: 1920px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (min-width: 1440.98px) and (max-width: 1920px){
 
 @supports (-webkit-appearance:none){
 
