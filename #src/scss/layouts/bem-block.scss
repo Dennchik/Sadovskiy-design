@@ -2,11 +2,6 @@
 .answers__content > ._collapse:not(._show) {
 	display: none;
 }
-.sidebar-menu._open-menu {
-	.page__aside-button {
-		display: none;
-	}
-}
 
 :root {
 	--clip: left center;
