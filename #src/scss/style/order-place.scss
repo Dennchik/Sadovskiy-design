@@ -216,12 +216,10 @@
 		border-radius: 30px;
 		align-self: center;
 		flex: 0 1 268px;
+		height: 58px;
+		border: 1px solid #ffffff;
 
 		&._brd-order {
-			&:not(:last-child) {
-				border: 1px solid #ffffff;
-			}
-
 			input {
 				color: #fff;
 			}
@@ -310,9 +308,9 @@
 		}
 
 		@include _screen-960 {
-			max-width: 320px;
+			max-width: 268px;
 			width: 100%;
-			max-height: 58px;
+			max-height: 50px;
 		}
 
 		@include _screen-490 {
@@ -346,7 +344,7 @@
 	&__input {
 		display: flex;
 		align-items: center;
-		height: 58px;
+		height: 100%;
 
 		input {
 			padding: 8px 2rem 10px;
@@ -361,7 +359,7 @@
 			}
 
 			@include _screen-490 {
-				padding: 0 2rem 4px;
+				padding: 0 3rem 4px;
 			}
 		}
 
@@ -376,5 +374,6 @@
 		bottom: 0;
 		background: #fff;
 		width: 100%;
+		max-width: 268px;
 	}
 }

@@ -118,10 +118,11 @@ export function maskPhone(selector) {
 		// Функция для инициализации маски
 		function initializeMask() {
 			mask = IMask(element, {
-				mask: '+7 (000)-000-00-00',
+				mask: '+7 (000) 000-00-00',
 				lazy: true // Показывать маску только при фокусе
 			});
 			mask.updateValue(); // Сразу обновляем значение маски
+
 		}
 
 		// При фокусе на поле ввода, показываем маску
@@ -177,54 +178,6 @@ export function shadowScroll() {
 		window.removeEventListener('scroll', handleScroll);
 	};
 }
-// -----------------------------------------------------------------------------
-// export function scalingFunction() {
-
-// 	// Универсальная функция для масштабирования элементов между разрешениями 320 и 490px
-// 	function applyScaling(selector, scaleMin, scaleMax, minViewport = 320, maxViewport = 1400) {
-// 		const scaleElements = document.querySelectorAll(selector);
-// 		const currentViewportWidth = window.innerWidth;
-
-// 		// Если ширина окна вне диапазона 320-490, ничего не делаем
-// 		if (currentViewportWidth < minViewport || currentViewportWidth > maxViewport) {
-// 			scaleElements.forEach(scaleElement => {
-// 				// Сбросим масштабирование, если за пределами диапазона
-// 				scaleElement.style.transform = `scale(1)`;
-// 			});
-// 			return;
-// 		}
-
-// 		scaleElements.forEach(scaleElement => {
-// 			// Ограничиваем значение ширины окна диапазоном [minViewport, maxViewport]
-// 			const clampedWidth = Math.min(Math.max(currentViewportWidth, minViewport), maxViewport);
-
-// 			// Рассчитываем коэффициент масштабирования
-// 			const scaleFactor = scaleMin + (scaleMax - scaleMin) * ((clampedWidth - minViewport) / (maxViewport - minViewport));
-
-// 			// Рассчитываем смещение по оси Y
-// 			const containerHeight = document.documentElement.clientHeight; // Высота видимой части окна
-// 			const scaledHeight = containerHeight / scaleFactor;
-
-// 			// Смещение по оси Y
-// 			// const translateY = (scaledHeight - containerHeight) / 2;
-
-// 			// Применяем transform с корректировкой по оси Y
-// 			scaleElement.style.transform = `scale(${scaleFactor})`;
-// 		});
-// 	}
-
-// 	// Добавляем обработчик события 'resize' с вызовом унифицированной функции
-// 	window.addEventListener('resize', function () {
-// 		applyScaling('.page__content', 0.91, 1); // Для '.page__order-place'
-// 		// applyScaling('.page__content', 1.1, 0.9); // Для '.order-form__column'
-// 	});
-
-// 	// Вызовем функции сразу после загрузки страницы, чтобы применить масштабирование сразу
-// 	document.addEventListener('DOMContentLoaded', function () {
-// 		applyScaling('.page__content', 0.91, 1);
-// 		applyScaling('.page__content', 1, 0.9);
-// 	});
-// }
 // -----------------------------------------------------------------------------
 export function addToBlock() {
 	document.addEventListener('DOMContentLoaded', function () {

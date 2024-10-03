@@ -2,22 +2,14 @@
 	&__aside-button {
 		position: fixed;
 		top: 56%;
-		right: 48px;
+		right: 5px;
 		z-index: 13;
+		box-shadow: 0 0 10px #000;
 
 		.icon-angle-down {
 			cursor: pointer;
-			margin-right: 1rem;
-			position: absolute;
-
-			width: 48px;
-			height: 48px;
-			border-radius: 50%;
-			top: 50%;
 			z-index: 13;
-			background: $color;
 			transition: all 0.5s ease-in-out;
-			box-shadow: 0 0 10px #000;
 
 			&::before {
 				font-size: 3rem;
