@@ -245,6 +245,8 @@ export function addToBlock() {
 				if (visibleCount === blocks.length) {
 					// Меняем текст на "Свернуть"
 					buttonText.textContent = 'Свернуть';
+					// Добавляем класс для кнопки вращения
+					button.classList.add('_rotate-button');
 				}
 			} else {
 				// Если текст кнопки "Свернуть", возвращаем все блоки в исходное состояние
@@ -257,6 +259,8 @@ export function addToBlock() {
 				visibleCount = 5;
 				// Возвращаем текст кнопки обратно на "Читать ещё"
 				buttonText.textContent = 'Читать ещё';
+				// Удаляем класс для кнопки вращения
+				button.classList.remove('_rotate-button');
 			}
 
 			// Обновляем стили кнопки после клика

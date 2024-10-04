@@ -8,6 +8,7 @@
 	@include _screen-1140 {
 		background: #2b3769;
 	}
+
 	// .project__title
 	&__title {
 		text-align: center;
@@ -31,42 +32,20 @@
 		padding-top: 50px;
 		padding-bottom: 50px;
 
-		@include _min-490 {
-			background-image: radial-gradient(
-					circle at 15% 125%,
-					rgba(160, 176, 240, 0.637) 0%,
-					rgb(43, 55, 105) 40%,
-					transparent 25%
-				),
-				radial-gradient(
-					circle at 99% 10%,
-					rgba(160, 176, 240, 0.637) 0%,
-					rgb(43, 55, 105) 40%,
-					transparent 25%
-				);
-		}
-
-		@include _screen-490 {
-			background-image: radial-gradient(
-					ellipse at 90% 25%,
-					rgba(160, 176, 240, 0.637) 0%,
-					rgba(238, 238, 238, 0.048) 20%,
-					transparent 75%
-				),
-				radial-gradient(
-					circle at 10% 99%,
-					rgba(160, 176, 240, 0.637) 0%,
-					rgba(43, 55, 105, 0.891) 7%,
-					transparent 25%
-				);
-		}
+		background-image: radial-gradient(
+			circle at 100% 100%,
+			rgba(160, 176, 240, 0.178) 10%,
+			rgb(43, 55, 105) 20%,
+			transparent
+		);
 
 		@include _min-960 {
 			border-radius: 30px;
+			border-top-left-radius: 0;
 		}
 
 		@include _screen-1440 {
-			padding: 50px 30px;
+			padding: 30px 30px;
 		}
 
 		@include _screen-1140 {
@@ -114,12 +93,12 @@
 		}
 
 		@include _min-1140 {
-			margin-bottom: -30px;
+			margin-bottom: -31px;
 			height: 145px;
 		}
 
 		@include _1140-1920 {
-			height: calc(108px + (145 - 108) * ((100vw - 1140px) / (1920 - 1140)));
+			height: calc(115px + (145 - 115) * ((100vw - 1140px) / (1920 - 1140)));
 		}
 
 		@include _screen-1140 {
@@ -204,43 +183,9 @@
 	&__item {
 		cursor: pointer;
 		font-weight: 400;
-		line-height: 120%; /* 42px/35 */
 		white-space: nowrap;
-		color: #fff;
 		display: flex;
 		align-items: flex-start;
-
-		border-top-left-radius: 30px;
-		border-top-right-radius: 30px;
-
-		span {
-			position: relative;
-			display: inline-flex;
-			line-height: 150%;
-
-			@include _screen-1440 {
-				font-size: 24px;
-				padding: 0 30px;
-			}
-
-			@include _screen-1140 {
-				padding: 0px;
-				&::after {
-					content: '';
-					position: absolute;
-					bottom: -2px;
-					width: 100%;
-					height: 2px;
-					opacity: 0;
-					transition: opacity 0.4s ease-in-out;
-				}
-			}
-
-			@include _screen-960 {
-				margin: 10px 0;
-				font-size: 20px;
-			}
-		}
 
 		&:hover {
 			box-shadow: 0 -1px 7px #b8b8b8;
@@ -252,13 +197,13 @@
 
 		&:not(.active) {
 			@include _min-1140 {
+				height: 98px;
 				color: #000;
 				background: #f2f2f2;
-				height: 128px;
 			}
 
 			@include _1140-1920 {
-				height: calc(88px + (128 - 80) * ((100vw - 1140px) / (1920 - 1140)));
+				height: calc(70px + (98 - 70) * ((100vw - 1140px) / (1920 - 1140)));
 			}
 
 			@include _screen-960 {
@@ -270,8 +215,13 @@
 
 		&.active {
 			box-shadow: none;
-			height: 100%;
+			color: #fff;
 			background: #2b3769;
+
+			@include _min-1140 {
+				height: 115px;
+				padding-top: 24px;
+			}
 
 			@include _screen-960 {
 				background: transparent;
@@ -279,7 +229,7 @@
 			}
 
 			@include _1140-1920 {
-				height: calc(100px + (145 - 100) * ((100vw - 1140px) / (1920 - 1140)));
+				height: calc(85px + (115 - 85) * ((100vw - 1140px) / (1920 - 1140)));
 			}
 
 			@include _screen-1140 {
@@ -306,8 +256,11 @@
 		}
 
 		@include _min-1140 {
-			padding: 15px 0 40px;
+			margin-bottom: 30px;
+			padding-top: 21px;
 			transition: all 0.4s ease-in-out;
+			border-top-left-radius: 30px;
+			border-top-right-radius: 30px;
 		}
 
 		@include _screen-1140 {
@@ -317,6 +270,37 @@
 		@include _screen-960 {
 			width: 260px;
 			z-index: 1;
+		}
+
+		span {
+			position: relative;
+			display: inline-flex;
+			line-height: 122.857143%;
+
+			@include _screen-1440 {
+				font-size: 20px;
+				padding: 0 30px;
+			}
+
+			@include _screen-1140 {
+				padding: 0px;
+				color: #fff;
+
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: -2px;
+					width: 100%;
+					height: 2px;
+					opacity: 0;
+					transition: opacity 0.4s ease-in-out;
+				}
+			}
+
+			@include _screen-960 {
+				margin: 10px 0;
+				font-size: 20px;
+			}
 		}
 	}
 

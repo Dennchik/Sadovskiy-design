@@ -4,7 +4,6 @@
 	// .seo-block__body
 	&__body {
 		margin: 0 auto;
-		overflow: hidden;
 		display: flex;
 		flex-direction: column;
 	}
@@ -54,6 +53,19 @@
 		&.hidden {
 			display: none;
 		}
+		li {
+			text-align: justify;
+
+			&::before {
+				content: '';
+				display: inline-block;
+				width: 13px;
+				height: 13px;
+				margin-right: 10px;
+				background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="%23000000" d="M0 352l64-64 160 160 352-352 64 64-416 416z"></path></svg>');
+				background-size: contain;
+			}
+		}
 	}
 
 	// .seo-block__text
@@ -69,15 +81,14 @@
 	&__button {
 		align-self: end;
 		background: #fff;
+		&._rotate-button {
+			.icon {
+				transform: rotate(180deg);
+			}
+		}
 
 		&::before {
 			background: #2b3769;
-		}
-
-		&:hover {
-			.icon {
-				transform: rotate(-90deg);
-			}
 		}
 
 		@include _screen-768 {

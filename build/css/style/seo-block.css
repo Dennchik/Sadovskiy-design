@@ -51,7 +51,6 @@
 
 .seo-block__body {
   margin: 0 auto;
-  overflow: hidden;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -91,6 +90,19 @@
   display: none;
 }
 
+.seo-block__column li {
+  text-align: justify;
+}
+
+.seo-block__column li::before {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="%23000000" d="M0 352l64-64 160 160 352-352 64 64-416 416z"></path></svg>') 0 0/contain;
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin-right: 10px;
+}
+
 .seo-block__text p:not(:last-child) {
   margin-bottom: 20px;
 }
@@ -103,15 +115,15 @@
   background: #fff;
 }
 
-.seo-block__button::before {
-  background: #2b3769;
+.seo-block__button._rotate-button .icon {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
-.seo-block__button:hover .icon {
-  -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  transform: rotate(-90deg);
+.seo-block__button::before {
+  background: #2b3769;
 }
 
 .seo-block__button span {
@@ -249,7 +261,7 @@
   }
 }
 @supports (-webkit-appearance:none){
-
+.seo-block__column li::before{background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="%23000000" d="M0 352l64-64 160 160 352-352 64 64-416 416z"></path></svg>') 0 0/contain}
 }
 
  @media (min-width: 1440.99px){

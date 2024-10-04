@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-@import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
-
 :root {
   --clip: left center;
   --size: 0;
@@ -47,11 +45,6 @@
   background: linear-gradient(90deg, #2b3769 -23.739%, #93a9ff 96.778%);
 }
 
-@font-face {
-  font-family: "Bandeins Sans & Strange Variable";
-  src: url("https://res.cloudinary.com/dldmpwpcp/raw/upload/v1566406079/BandeinsStrangeVariable_esetvq.ttf");
-}
-
 html {
   font: normal 400 62.5% "averta-regular", sans-serif;
   height: 100%;
@@ -89,16 +82,9 @@ body.no-scroll {
   box-sizing: border-box;
 }
 
-img {
-  vertical-align: top;
-}
-
-.scroll-to-top {
-  display: none !important;
-}
-
 img,
 svg {
+  vertical-align: top;
   max-width: 100%;
   height: auto;
   pointer-events: none;
@@ -3793,7 +3779,6 @@ button.swiper-pagination-bullet {
 
 .seo-block__body {
   margin: 0 auto;
-  overflow: hidden;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3833,6 +3818,19 @@ button.swiper-pagination-bullet {
   display: none;
 }
 
+.seo-block__column li {
+  text-align: justify;
+}
+
+.seo-block__column li::before {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="%23000000" d="M0 352l64-64 160 160 352-352 64 64-416 416z"></path></svg>') 0 0/contain;
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin-right: 10px;
+}
+
 .seo-block__text p:not(:last-child) {
   margin-bottom: 20px;
 }
@@ -3845,15 +3843,15 @@ button.swiper-pagination-bullet {
   background: #fff;
 }
 
-.seo-block__button::before {
-  background: #2b3769;
+.seo-block__button._rotate-button .icon {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
-.seo-block__button:hover .icon {
-  -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  transform: rotate(-90deg);
+.seo-block__button::before {
+  background: #2b3769;
 }
 
 .seo-block__button span {
@@ -5223,6 +5221,7 @@ button.swiper-pagination-bullet {
 .page__header-project .header__image{background:url("../img/icons/logo-w.webp") center no-repeat}
 .page__seo-block{background:url("../img/main/s-bg.webp") center/contain repeat}
 .services-price__card{background:url("../img/main/card-item-bg.webp") center/cover no-repeat}
+.seo-block__column li::before{background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="%23000000" d="M0 352l64-64 160 160 352-352 64 64-416 416z"></path></svg>') 0 0/contain}
 .order-place__content--audit-page{background:url("../img/main/fon.webp") center/cover no-repeat}
 }
 
