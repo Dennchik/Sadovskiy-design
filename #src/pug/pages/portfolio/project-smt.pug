@@ -1,0 +1,57 @@
+extends ../../layouts/app_layout
+append link  
+	link(rel="stylesheet" type="text/css" href="@@webRoot/css/project-smt.min.css")
+prepend script 
+	script(defer type="text/javascript" src="@@webRoot/js/anime-vendors.min.js")
+	script(defer type="text/javascript" src="@@webRoot/js/project/project-smt.min.js")
+block title
+	- var text='Sadovskiy-design' 
+
+block header 
+	header.page__header-main
+		include ../../layouts/header 
+block main-content
+	block perform 
+		section.page__portfolio-project
+			include ../../components/performance-smt
+	block aboute-project 
+		section.page__aboute-project
+			include ../../components/aboute-project
+	block structure-project
+		section.page__structure-project
+			include ../../components/structure-project
+	block design-concept
+		section.page__design-concept
+			include ../../components/design-concept
+	block catalog-project
+		section.page__catalog-project
+			include ../../components/catalog-project
+	block product-card
+		section.page__product-card
+			include ../../components/product-card
+	block separator
+		section.page__separator
+			include ../../components/separator
+	block order-registration
+		section.page__order-registration
+			include ../../components/order-registration
+	block portfolio-services
+		section.page__portfolio-services
+			include ../../components/portfolio-services
+	block portfolio-news
+		section.page__portfolio-news
+			include ../../components/portfolio-news
+
+
+	block unknown-page
+		section.page__page-unknown
+			include ../../components/unknown-page
+
+
+
+	block order-place
+		section.page__order-portfolio.mlrp-b0101 
+			include ../../components/order-place
+
+block page-grid 
+	//- include ../../layouts/page-grid-3

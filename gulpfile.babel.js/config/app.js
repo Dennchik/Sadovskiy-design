@@ -1,6 +1,6 @@
-import TerserPlugin from 'terser-webpack-plugin';
-import pugbem from "gulp-pugbem";
 import imagemin from "gulp-imagemin";
+import pugbem from "gulp-pugbem";
+import TerserPlugin from 'terser-webpack-plugin';
 
 const isProd = process.argv.includes("--production");
 const isDev = !isProd;
@@ -118,6 +118,11 @@ export default {
 			index: {
 				import: ['./#src/js/index.js'],
 				dependOn: ['anime-vendors']
+			},
+			'project-smt': {
+				import: ['./#src/js/project-smt.js'],
+				dependOn: ['anime-vendors'],
+				filename: 'project/[name].min.js'
 			},
 			'anime-vendors': ['animejs', 'swiper/bundle']
 		},

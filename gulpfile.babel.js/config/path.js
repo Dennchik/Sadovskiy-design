@@ -60,7 +60,7 @@ export default {
 		dest: pathDest + '/img/',
 	},
 	sprite: {
-		src: pathSrc + '/img-sprite/**/*.svg',
+		src: pathSrc + 'img//img-sprite/**/*.svg',
 		watch: pathSrc + '/img-sprite/**/*.svg',
 		dest: pathDest + '/img/sprites'
 	},

@@ -26,12 +26,16 @@
 		gap: 40px;
 		padding: 20px 0 5rem;
 
+		&:not(:last-child) {
+			border-bottom: 1px solid rgb(169, 169, 169);
+		}
+
 		&:first-child {
 			border-top: 1px solid rgb(169, 169, 169);
 		}
 
 		&:last-child {
-			padding-bottom: 0;
+			padding-bottom: 120px;
 		}
 
 		@include _1440-1920 {
@@ -64,10 +68,6 @@
 			@include _screen-320 {
 				font-size: 12px;
 			}
-		}
-
-		&:not(:last-child) {
-			border-bottom: 1px solid rgb(169, 169, 169);
 		}
 	}
 

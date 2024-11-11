@@ -5,7 +5,7 @@
 		padding-top: 20px;
 
 		@include _screen-768 {
-			padding-top: 0;
+			// padding-top: 0;
 		}
 	}
 
@@ -131,6 +131,108 @@
 		}
 	}
 
+	// .page__aboute-project
+	&__aboute-project {
+		background: url('../../img/portfolio/project-smt/phonoteka.png') center /
+			cover no-repeat;
+	}
+
+	// .page__structure-project
+	&__structure-project {
+		padding-left: 50px;
+		padding-right: 50px;
+
+		@include _screen-1440 {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+		@include _screen-375 {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	// .page__catalog-project
+	&__catalog-project {
+		padding-left: 50px;
+		padding-right: 50px;
+
+		@include _screen-1440 {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+		@include _screen-375 {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	// .page__product-card
+	&__product-card {
+		padding-left: 50px;
+		padding-right: 50px;
+
+		@include _screen-1440 {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+		@include _screen-375 {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	// .page__order-registration
+	&__order-registration {
+		padding-left: 50px;
+		padding-right: 50px;
+
+		@include _screen-1440 {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+		@include _screen-375 {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	// .page__portfolio-services
+	&__portfolio-services {
+		padding-left: 50px;
+		padding-right: 50px;
+
+		@include _screen-1440 {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+		@include _screen-375 {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	// .page__portfolio-news
+	&__portfolio-news {
+		padding-left: 50px;
+		padding-right: 50px;
+
+		@include _screen-1440 {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+		@include _screen-375 {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
 	// .page__services
 	&__services {
 		position: relative;
@@ -180,6 +282,22 @@
 		@include _screen-375 {
 			padding: 0 10px 60px;
 		}
+	}
+
+	// .page__order-portfolio
+	&__order-portfolio {
+		background: url('../../img/main/fon.png') center / cover no-repeat;
+	}
+
+	// .page__page-unknown
+	&__page-unknown {
+		background: url('../../img/portfolio/project-smt/fon.png') center / cover
+			no-repeat;
+	}
+
+	// .page__design-concept
+	&__design-concept {
+		background: rgb(2, 2, 2);
 	}
 
 	// .page__schedule

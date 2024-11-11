@@ -15,23 +15,23 @@ global.$ = {
 	app: require('./config/app'),
 };
 //* Configuration
-import path from './config/path.js';
 import app from './config/app.js';
+import path from './config/path.js';
 //* Tasks
 import clear from './task/clear';
-import pug from './task/pug';
-import js from './task/js';
-import react from './task/react';
-import json from './task/json';
-import scss from './task/scss';
-import image from './task/image';
-import sprite from './task/sprite';
-import server from './task/server';
+import clearFonts from './task/clearFonts';
 import fonts from './task/fonts';
 import fontsStyle from './task/fontStyle';
-import clearFonts from './task/clearFonts';
+import image from './task/image';
+import js from './task/js';
+import json from './task/json';
+import pug from './task/pug';
+import react from './task/react';
 import reactWebp from './task/reactWebp';
 import redirect from "./task/redirect";
+import scss from './task/scss';
+import server from './task/server';
+import sprite from './task/sprite';
 
 const change = $.gulp.series(clearFonts, fonts, fontsStyle);
 const changejson = $.gulp.series(json, pug);
@@ -63,18 +63,6 @@ const end = $.gulp.series(
 );
 const dev = $.gulp.series(end, $.gulp.parallel(watcher, server));
 //* Call back
-export { clear };
-export { clearFonts };
-export { reactWebp };
-export { pug };
-export { json };
-export { scss };
-export { js };
-export { react };
-export { image };
-export { sprite };
-export { fonts };
-export { fontsStyle };
-export { redirect };
+export { clear, clearFonts, fonts, fontsStyle, image, js, json, pug, react, reactWebp, redirect, scss, sprite };
 //* Assembly
 export default app.isProd ? end : dev;

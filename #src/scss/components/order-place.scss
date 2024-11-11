@@ -335,6 +335,7 @@
 
 		&:last-child {
 			align-self: center;
+			border: none;
 
 			@include _screen-375 {
 				width: 100%;

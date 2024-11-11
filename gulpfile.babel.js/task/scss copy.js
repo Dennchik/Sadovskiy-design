@@ -1,6 +1,6 @@
 //* Configuration
-import path from '../config/path.js';
 import app from '../config/app.js';
+import path from '../config/path.js';
 //* Scss Processing
 export default () => {
 	return $.gulp.src(path.scss.src)
@@ -14,9 +14,10 @@ export default () => {
 		.pipe($.gulpIf(app.isDev, $.gul.sourcemaps.init({
 			loadMaps: true,
 		})))
-		.pipe($.sass.sync({
-			outputStyle: 'expanded',
-		}).on('error', $.gul.notify.onError()))
+		// .pipe($.sass({
+		// 	outputStyle: 'expanded',
+		// }).on('error', $.gul.notify.onError()))
+		// .pipe(sass($.app.scss).on("error", sass.logError))
 		.pipe($.gulpIf(app.isProd, $.gul.stripCssComments()))
 		.pipe($.gulpIf(app.isProd, $.gul.autoprefixer(app.autoprefixer)))
 		.pipe($.gulpIf(app.isProd, $.gul.debug({

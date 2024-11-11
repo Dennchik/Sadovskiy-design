@@ -1,10 +1,11 @@
-import { timeLineHeaderItem, timeLineHeaderItemRevers } from '../modules/anime-js.js';
+import { timeLineHeaderItem } from '../modules/anime-js.js';
 
 // -----------------------------------------------------------------------------
 export function sidebarMenuHendle() {
 	const sidebarMenu = document.querySelector('.sidebar-menu');
 	const buttonItems = document.querySelectorAll('.burger-button');
 	const tabsItem = document.querySelector('.project__tabs');
+
 
 	buttonItems.forEach(buttonItem => {
 		buttonItem.addEventListener('click', (e) => {
@@ -63,7 +64,7 @@ export function tabsHandler() {
 		tablink.addEventListener('click', () => {
 			const tabcontent = tabcontents[i];
 
-			// Удаляем класс active у всех табов и контентов
+			// Удаляем класс active у всех Tabs и Contents
 			tablinks.forEach(link => link.classList.remove('active'));
 			tabcontents.forEach(content => content.classList.remove('active'));
 
@@ -78,11 +79,9 @@ export function tabsHandler() {
 			});
 
 			// Применяем анимацию только к активному контенту
-			timeLineHeaderItem(tabcontent);
-
-			// if (!tabcontent.classList.contains('.active')) {
-			// 	timeLineHeaderItemRevers(tabcontent);
-			// }
+			if (!tabcontent.classList.contains('.active')) {
+				timeLineHeaderItem(tabcontent);
+			}
 		});
 	});
 }

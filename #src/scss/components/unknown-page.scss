@@ -1,0 +1,47 @@
+.unknown-page {
+	// .unknown-page__body
+	&__body {
+		background: rgba(1, 1, 2, 0.8);
+		padding-left: 50px;
+		padding-right: 50px;
+		display: flex;
+
+		@include _min-1920 {
+			padding-top: 160px;
+			padding-bottom: 160px;
+		}
+		@include _320-1920 {
+			padding-top: calc(60px + (160 - 60) * ((100vw - 320px) / (1920 - 320)));
+			padding-bottom: calc(
+				60px + (160 - 60) * ((100vw - 320px) / (1920 - 320))
+			);
+		}
+
+		@include _screen-960 {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+		@include _screen-375 {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		@include _screen-320 {
+			padding: 60px 10px;
+		}
+	}
+
+	// .unknown-page__column
+
+	&__column {
+	}
+
+	// .unknown-page__image
+
+	&__image {
+		width: 100%;
+		max-height: 737;
+		object-fit: contain;
+	}
+}
