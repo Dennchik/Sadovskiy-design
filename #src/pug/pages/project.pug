@@ -1,8 +1,6 @@
 extends ../layouts/app_layout
 append link 
-	link(rel="stylesheet" type="text/css" href="@@webRoot/css/project-page.min.css")
-prepend script 
-	script(defer type="text/javascript" src="@@webRoot/js/project-page.min.js")
+	link(rel="stylesheet" type="text/css" href="@@webRoot/css/projects-page.min.css")
 block title
 	- var text='Sadovskiy-design/Project' 
 
@@ -24,7 +22,7 @@ block main-content
 		section.page__info-block#about
 			include ../components/info-block 
 	block request-audit
-		section.page__request-audit
+		section.page__request-audit#order
 			include ../components/request-audit
 	block schedule
 		section.page__schedule

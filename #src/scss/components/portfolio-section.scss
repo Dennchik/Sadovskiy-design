@@ -1,0 +1,205 @@
+.portfolio-section {
+	position: relative;
+
+	// .portfolio-section__background
+	&__background {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+			max-width: 100%;
+		}
+	}
+
+	// .portfolio-section__body
+	&__body {
+		padding-left: 50px;
+		padding-right: 50px;
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+
+		@include _min-1920 {
+			padding-top: 130px;
+			padding-bottom: 130px;
+		}
+
+		@include _320-1920 {
+			padding-top: calc(50px + (130 - 60) * ((100vw - 320px) / (1920 - 320)));
+			padding-bottom: calc(
+				60px + (130 - 50) * ((100vw - 320px) / (1920 - 320))
+			);
+		}
+		@include _screen-1440 {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+		@include _screen-375 {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		@include _screen-320 {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+	}
+
+	// .portfolio-section___line-1-col
+	&__line-1-col {
+		display: grid;
+		gap: 3rem;
+		color: #000;
+		margin-bottom: 70px;
+
+		@include _320-1920 {
+			gap: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320)));
+			margin-bottom: calc(25px + (30 - 25) * ((100vw - 320px) / (1920 - 320)));
+		}
+
+		@include _min-960 {
+			grid-template-columns:
+				minmax(
+					calc(190px + (450 - 190) * ((100vw - 320px) / (1920 - 320))),
+					min-content
+				)
+				1fr;
+		}
+
+		@include _screen-320 {
+			gap: 10px;
+			margin-bottom: 25px;
+		}
+	}
+
+	// .portfolio-section__line-2-col
+	&__line-2-col {
+		@include _min-960 {
+			display: grid;
+			grid-template-columns: 45% 1fr;
+			gap: 4rem;
+		}
+
+		@include _screen-960 {
+			display: flex;
+			flex-direction: column;
+			gap: 4rem;
+		}
+	}
+
+	// .portfolio-section__line-2-row-col
+	&__line-2-row-col {
+		gap: 2rem;
+
+		@include _min-960 {
+			display: grid;
+			grid-template-columns:
+				1fr
+				minmax(
+					calc(190px + (450 - 190) * ((100vw - 320px) / (1920 - 320))),
+					min-content
+				);
+		}
+		@include _screen-960 {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+	}
+
+	// .portfolio-section__info
+	&__info {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		li {
+			min-width: 320px;
+			max-width: 413px;
+
+			&:first-child {
+				list-style-position: inside;
+				list-style-type: disc;
+				color: rgb(7, 7, 7);
+				background-position: 0 0;
+				background-size: 1.6rem 1.6rem;
+				line-height: 122.857143%; /* 43px/35 */
+				letter-spacing: 0%;
+				margin-bottom: 30px;
+
+				&::marker {
+					color: $color;
+					margin: 0;
+				}
+
+				@include _320-1920 {
+					margin-bottom: calc(
+						10px + (30 - 10) * ((100vw - 320px) / (1920 - 320))
+					);
+				}
+
+				@include _screen-320 {
+					margin-bottom: 10px;
+				}
+				span {
+					margin-left: -15px;
+				}
+			}
+
+			&:not(:first-child) {
+				color: rgb(7, 7, 7);
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 125%; /* 20px/16 */
+				letter-spacing: 0%;
+				padding-left: 25px;
+			}
+			@include _min-960 {
+				min-width: 415px;
+			}
+		}
+	}
+
+	//.portfolio-section__order-registration
+	&__order-registration {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+	}
+
+	//.portfolio-section__order-registration__button
+	&__order-registration__button {
+		background-color: #000;
+		color: #fff;
+	}
+
+	//.portfolio-section__order-registration__text
+	&__order-registration__text {
+		line-height: 125%;
+	}
+
+	//.portfolio-section__order-registration__price
+	// .portfolio-section__title
+	&__title {
+		line-height: 100%;
+		letter-spacing: 0%;
+	}
+
+	// .order-registration__text
+	&__text {
+		line-height: 125%;
+		padding-top: 20px;
+	}
+
+	// .portfolio-section__image
+	&__image {
+		img {
+			object-fit: contain;
+		}
+	}
+}

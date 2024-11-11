@@ -17,6 +17,8 @@ export default {
 			minimizer: [
 				new TerserPlugin({
 					terserOptions: {
+						keep_fnames: true, // сохраняем имена функций
+						keep_classnames: true, // сохраняем имена классов
 						format: {
 							comments: false,
 						},
@@ -26,6 +28,7 @@ export default {
 			],
 			runtimeChunk: 'single',
 		},
+
 		entry: {
 			// index: { import: ['./#src/js/index.jsx'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'], filename: '[name].min.js' },
 			// about: { import: ['./#src/js/layouts/about.jsx'], dependOn: ['react-vendors', 'anime-vendors', 'swiper-bundle'], filename: '[name].min.js' },
@@ -87,9 +90,13 @@ export default {
 		mode: 'production',
 		optimization: {
 			minimize: true,
+			concatenateModules: true,
+			sideEffects: true,
 			minimizer: [
 				new TerserPlugin({
 					terserOptions: {
+						keep_fnames: true, // сохраняем имена функций
+						keep_classnames: true, // сохраняем имена классов
 						format: {
 							comments: false,
 						},
@@ -97,37 +104,19 @@ export default {
 					extractComments: false,
 				}),
 			],
-
 			runtimeChunk: 'single',
-			splitChunks: {
-				chunks: 'async',
-				cacheGroups: {
-					vendor: {
-						test: /[\\/]module[\\/]/,
-						name: 'vendors',
-						chunks: 'all',
-					},
-				},
-			},
 		},
-		entry: {
-			'project-page': './#src/js/project-page.js',
-			// index: './#src/js/index.js',
-			main: './#src/js/main.js',
 
-			index: {
-				import: ['./#src/js/index.js'],
-				dependOn: ['anime-vendors']
-			},
-			'project-smt': {
-				import: ['./#src/js/project-smt.js'],
+		entry: {
+			main: {
+				import: ['./#src/js/main.js'],
 				dependOn: ['anime-vendors'],
-				filename: 'project/[name].min.js'
+				filename: '[name].min.js'
 			},
 			'anime-vendors': ['animejs', 'swiper/bundle']
 		},
 		output: {
-			filename: '[name].min.js',
+			filename: 'app/[name].min.js',
 		},
 		module: {
 			rules: [
@@ -139,35 +128,25 @@ export default {
 				{
 					test: /\.css$/,
 					use: [
-						"style-loader",
-						"css-loader"
+						'style-loader',
+						'css-loader'
 					],
 				},
 				{
 					test: /\.scss$/,
 					exclude: /node_modules/,
 					use: [
-						"style-loader",
-						"css-loader",
+						'style-loader',
+						'css-loader',
 						'sass-loader'   // компилирует Sass в CSS
 					]
 				},
-				{
-					test: /\.(png|jpe?g|gif|webp)$/i,
-					use: [
-						{
-							loader: 'file-loader',
-							options: {
-								name: '[name].[ext]',
-								outputPath: 'images', // папка, куда будут сохранены изображения
-							},
-						},
-
-					]
-				}
 			],
 		},
-
+		resolve: {
+			extensions: ['.js', '.jsx'],
+			// разрешаем импорт файлов с расширениями .js и .jsx
+		},
 	},
 
 	svgSpr: {

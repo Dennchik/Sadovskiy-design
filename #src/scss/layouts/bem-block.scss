@@ -97,7 +97,9 @@
 		}
 	}
 }
+
 .icon {
+	cursor: pointer;
 	width: 48px;
 	height: 48px;
 	border-radius: 50%;
@@ -235,18 +237,18 @@
 
 	@include _1440-1920 {
 		font-size: calc(
-			12px + (35 - 12) * ((100vw - 1440px) / (1920 - 1440))
+			16px + (35 - 16) * ((100vw - 1440px) / (1920 - 1440))
 		) !important;
 	}
 
 	@include _320-1440 {
 		font-size: calc(
-			12px + (35 - 12) * ((100vw - 320px) / (1920 - 320))
+			16px + (35 - 16) * ((100vw - 320px) / (1920 - 320))
 		) !important;
 	}
 
 	@include _screen-320 {
-		font-size: 12px !important;
+		font-size: 16px !important;
 	}
 }
 .p-text {

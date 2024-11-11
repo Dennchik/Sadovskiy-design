@@ -1,5 +1,4 @@
 .page {
-	width: 100vw;
 	// .page__content
 	&__content {
 		padding-top: 20px;
@@ -131,94 +130,8 @@
 		}
 	}
 
-	// .page__aboute-project
-	&__aboute-project {
-		background: url('../img/portfolio/project-smt/phonoteka.png') center / cover
-			no-repeat;
-	}
-
-	// .page__structure-project
-	&__structure-project {
-		padding-left: 50px;
-		padding-right: 50px;
-
-		@include _screen-1440 {
-			padding-left: 30px;
-			padding-right: 30px;
-		}
-
-		@include _screen-375 {
-			padding-left: 10px;
-			padding-right: 10px;
-		}
-	}
-
-	// .page__catalog-project
-	&__catalog-project {
-		padding-left: 50px;
-		padding-right: 50px;
-
-		@include _screen-1440 {
-			padding-left: 30px;
-			padding-right: 30px;
-		}
-
-		@include _screen-375 {
-			padding-left: 10px;
-			padding-right: 10px;
-		}
-	}
-
 	// .page__product-card
 	&__product-card {
-		padding-left: 50px;
-		padding-right: 50px;
-
-		@include _screen-1440 {
-			padding-left: 30px;
-			padding-right: 30px;
-		}
-
-		@include _screen-375 {
-			padding-left: 10px;
-			padding-right: 10px;
-		}
-	}
-
-	// .page__order-registration
-	&__order-registration {
-		padding-left: 50px;
-		padding-right: 50px;
-
-		@include _screen-1440 {
-			padding-left: 30px;
-			padding-right: 30px;
-		}
-
-		@include _screen-375 {
-			padding-left: 10px;
-			padding-right: 10px;
-		}
-	}
-
-	// .page__portfolio-services
-	&__portfolio-services {
-		padding-left: 50px;
-		padding-right: 50px;
-
-		@include _screen-1440 {
-			padding-left: 30px;
-			padding-right: 30px;
-		}
-
-		@include _screen-375 {
-			padding-left: 10px;
-			padding-right: 10px;
-		}
-	}
-
-	// .page__portfolio-news
-	&__portfolio-news {
 		padding-left: 50px;
 		padding-right: 50px;
 
@@ -269,10 +182,14 @@
 
 	// .page__about-company
 	&__about-company {
+		scroll-margin-top: 100px;
 		padding: 0 50px 16rem;
 
 		@include _screen-1440 {
 			padding: 0 30px 16rem;
+		}
+		@include _screen-768 {
+			scroll-margin-top: 60px;
 		}
 
 		@include _screen-690 {
@@ -304,7 +221,6 @@
 	&__schedule {
 		overflow: hidden;
 		padding: 0 0 16rem;
-
 		@include _screen-690 {
 			padding: 0 0 60px;
 		}
@@ -313,9 +229,14 @@
 	// .page__services-price
 	&__services-price {
 		padding: 0 50px 16rem;
+		scroll-margin-top: 100px;
 
 		@include _screen-1440 {
 			padding: 0 30px 16rem;
+		}
+
+		@include _screen-768 {
+			scroll-margin-top: 60px;
 		}
 
 		@include _screen-690 {
