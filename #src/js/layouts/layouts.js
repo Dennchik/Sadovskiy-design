@@ -189,84 +189,86 @@ export function shadowScroll() {
 }
 // -----------------------------------------------------------------------------
 export function addToBlock() {
-	document.addEventListener('DOMContentLoaded', function () {
-		const blocks = document.querySelectorAll('.seo-block__content .seo-block__column');
-		// Кнопка
-		const button = document.querySelector('.seo-block__button');
-		// Текст внутри кнопки
-		const buttonText = button.querySelector('span');
+		document.addEventListener('DOMContentLoaded', function () {
+			if (document.querySelector('.seo-block__button')) {
+				const blocks = document.querySelectorAll('.seo-block__content .seo-block__column');
+				// Кнопка
+				const button = document.querySelector('.seo-block__button');
+				// Текст внутри кнопки
+				const buttonText = button.querySelector('span');
 
-		// Сколько блоков видно изначально
-		let visibleCount = 5;
-		// Сколько блоков нужно показывать при каждом нажатии
-		const blocksToShow = 3;
+				// Сколько блоков видно изначально
+				let visibleCount = 5;
+				// Сколько блоков нужно показывать при каждом нажатии
+				const blocksToShow = 3;
 
-		// Показываем первые несколько блоков, остальные скрываем
-		blocks.forEach((block, index) => {
-			if (index >= visibleCount) {
-				// Скрываем все блоки, начиная с определенного
-				block.classList.add('hidden');
-			}
-		});
-
-		// Функция для обновления стилей кнопки
-		const updateButtonStyle = () => {
-			// Проверка ширины экрана
-			if (window.innerWidth >= 768) {
-				if (visibleCount % 2 === 0) {
-					// Добавляем класс для четного количества видимых блоков 
-					button.classList.add('seo-block__button--even');
-				} else {
-					// Удаляем класс для четного количества 
-					button.classList.remove('seo-block__button--even');
-				}
-			} else {
-				// Удаляем класс, если ширина меньше 768px
-				button.classList.remove('seo-block__button--even');
-			}
-		};
-
-		// Проверяем стили кнопки сразу после загрузки
-		updateButtonStyle();
-
-		// Обработчик события для кнопки
-		button.addEventListener('click', function () {
-			if (visibleCount < blocks.length) {
-				// Показываем следующие три блока
-				for (let i = 0; i < blocksToShow; i++) {
-					if (visibleCount < blocks.length) {
-						// Показываем следующий блок 
-						blocks[visibleCount].classList.remove('hidden');
-						// Увеличиваем счетчик видимых блоков
-						visibleCount++;
-					}
-				}
-				// Если все блоки показаны, меняем текст кнопки на "Свернуть"
-				if (visibleCount === blocks.length) {
-					// Меняем текст на "Свернуть"
-					buttonText.textContent = 'Свернуть';
-					// Добавляем класс для кнопки вращения
-					button.classList.add('_rotate-button');
-				}
-			} else {
-				// Если текст кнопки "Свернуть", возвращаем все блоки в исходное состояние
+				// Показываем первые несколько блоков, остальные скрываем
 				blocks.forEach((block, index) => {
-					if (index >= 5) {
-						block.classList.add('hidden'); // Скрываем блоки снова
+					if (index >= visibleCount) {
+						// Скрываем все блоки, начиная с определенного
+						block.classList.add('hidden');
 					}
 				});
-				// Сбрасываем видимое количество блоков
-				visibleCount = 5;
-				// Возвращаем текст кнопки обратно на "Читать ещё"
-				buttonText.textContent = 'Читать ещё';
-				// Удаляем класс для кнопки вращения
-				button.classList.remove('_rotate-button');
-			}
 
-			// Обновляем стили кнопки после клика
-			updateButtonStyle();
+				// Функция для обновления стилей кнопки
+				const updateButtonStyle = () => {
+					// Проверка ширины экрана
+					if (window.innerWidth >= 768) {
+						if (visibleCount % 2 === 0) {
+							// Добавляем класс для четного количества видимых блоков
+							button.classList.add('seo-block__button--even');
+						} else {
+							// Удаляем класс для четного количества
+							button.classList.remove('seo-block__button--even');
+						}
+					} else {
+						// Удаляем класс, если ширина меньше 768px
+						button.classList.remove('seo-block__button--even');
+					}
+				};
+
+				// Проверяем стили кнопки сразу после загрузки
+				updateButtonStyle();
+
+				// Обработчик события для кнопки
+				button.addEventListener('click', function () {
+					if (visibleCount < blocks.length) {
+						// Показываем следующие три блока
+						for (let i = 0; i < blocksToShow; i++) {
+							if (visibleCount < blocks.length) {
+								// Показываем следующий блок
+								blocks[visibleCount].classList.remove('hidden');
+								// Увеличиваем счетчик видимых блоков
+								visibleCount++;
+							}
+						}
+						// Если все блоки показаны, меняем текст кнопки на "Свернуть"
+						if (visibleCount === blocks.length) {
+							// Меняем текст на "Свернуть"
+							buttonText.textContent = 'Свернуть';
+							// Добавляем класс для кнопки вращения
+							button.classList.add('_rotate-button');
+						}
+					} else {
+						// Если текст кнопки "Свернуть", возвращаем все блоки в исходное состояние
+						blocks.forEach((block, index) => {
+							if (index >= 5) {
+								block.classList.add('hidden'); // Скрываем блоки снова
+							}
+						});
+						// Сбрасываем видимое количество блоков
+						visibleCount = 5;
+						// Возвращаем текст кнопки обратно на "Читать ещё"
+						buttonText.textContent = 'Читать ещё';
+						// Удаляем класс для кнопки вращения
+						button.classList.remove('_rotate-button');
+					}
+
+					// Обновляем стили кнопки после клика
+					updateButtonStyle();
+				});
+			}
 		});
-	});
 }
 
 
