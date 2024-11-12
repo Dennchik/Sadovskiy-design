@@ -88,9 +88,9 @@
 		@include _min-960 {
 			display: grid;
 			grid-template-columns:
-				1fr
+				auto
 				minmax(
-					calc(190px + (450 - 190) * ((100vw - 320px) / (1920 - 320))),
+					calc(110px + (570 - 110) * ((100vw - 320px) / (1920 - 320))),
 					min-content
 				);
 		}
@@ -106,9 +106,10 @@
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
+		justify-self: start;
 		li {
 			min-width: 320px;
-			max-width: 413px;
+			// max-width: 450px;
 
 			&:first-child {
 				list-style-position: inside;
