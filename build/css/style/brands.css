@@ -1,0 +1,211 @@
+@charset "UTF-8";
+
+:root {
+  --clip: left center;
+  --size: 0;
+  --background-thumb: #2b3769;
+  --scrollbar-thumb-bgcolor: #757575;
+  --shadow-size: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
+  --stripe-width: 10px;
+  --nav-marker-border: #3b8686;
+  --sidebar-width: 28.5rem;
+  --duration: 0.3s;
+  --button-size: 4rem;
+  --mob-expanded-width: 320px;
+  --mob-collapsed-width: 4rem;
+}
+
+.masked-input {
+  color: transparent;
+}
+
+.masked-input::-webkit-input-placeholder {
+  color: black;
+}
+
+.masked-input::-moz-placeholder {
+  color: black;
+}
+
+.masked-input:-ms-input-placeholder {
+  color: black;
+}
+
+.masked-input::-ms-input-placeholder {
+  color: black;
+}
+
+.masked-input::placeholder {
+  color: black;
+}
+
+.gradient-preloader {
+  background: -webkit-gradient(linear, left top, right top, color-stop(-23.739%, #2b3769), color-stop(96.778%, #93a9ff));
+  background: -webkit-linear-gradient(left, #2b3769 -23.739%, #93a9ff 96.778%);
+  background: -o-linear-gradient(left, #2b3769 -23.739%, #93a9ff 96.778%);
+  background: linear-gradient(90deg, #2b3769 -23.739%, #93a9ff 96.778%);
+}
+
+.brands__title {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.brand-slide__body {
+  overflow: hidden;
+}
+
+.brand-slide__slide {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.brand-slide__slide a {
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
+}
+
+.brand-slide__slide img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  -webkit-transition: -webkit-filter 0.4s ease-in-out;
+  transition: -webkit-filter 0.4s ease-in-out;
+  -o-transition: filter 0.4s ease-in-out;
+  transition: filter 0.4s ease-in-out;
+  transition: filter 0.4s ease-in-out, -webkit-filter 0.4s ease-in-out;
+}
+
+.brand-slide__slide:hover img {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+.brand-slide__image {
+  width: 100%;
+}
+
+@media (min-width: 1440.99px) {
+  .underline:hover {
+    font-weight: 600;
+    opacity: 1;
+  }
+
+  .underline:hover::before {
+    width: 47%;
+  }
+
+  .underline:hover::after {
+    width: 47%;
+  }
+
+  .underline::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    opacity: 0.8;
+    -webkit-transition: width 0.4s ease-in-out;
+    -o-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+
+  .underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    opacity: 0.8;
+    -webkit-transition: width 0.4s ease-in-out;
+    -o-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+
+  .underline-w:hover {
+    font-weight: 600;
+    opacity: 1;
+  }
+
+  .underline-w:hover::before {
+    width: 47%;
+  }
+
+  .underline-w:hover::after {
+    width: 47%;
+  }
+
+  .underline-w::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    opacity: 0.8;
+    -webkit-transition: width 0.4s ease-in-out;
+    -o-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+
+  .underline-w::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    opacity: 0.8;
+    -webkit-transition: width 0.4s ease-in-out;
+    -o-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .brands__title {
+    margin-bottom: 40px;
+  }
+}
+@supports (-webkit-appearance:none){
+
+}
+
+ @media (min-width: 1440.99px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 690px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}

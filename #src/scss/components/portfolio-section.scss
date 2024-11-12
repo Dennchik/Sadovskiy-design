@@ -1,26 +1,12 @@
 .portfolio-section {
 	position: relative;
 
-	// .portfolio-section__background
-	&__background {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		z-index: -1;
-		img {
-			object-fit: cover;
-			width: 100%;
-			height: 100%;
-			max-width: 100%;
-		}
+	&._bg-color {
+		background: #020202;
 	}
 
 	// .portfolio-section__body
 	&__body {
-		padding-left: 50px;
-		padding-right: 50px;
 		display: flex;
 		flex-direction: column;
 		gap: 3rem;
@@ -36,14 +22,7 @@
 				60px + (130 - 50) * ((100vw - 320px) / (1920 - 320))
 			);
 		}
-		@include _screen-1440 {
-			padding-left: 30px;
-			padding-right: 30px;
-		}
-		@include _screen-375 {
-			padding-left: 10px;
-			padding-right: 10px;
-		}
+
 		@include _screen-320 {
 			padding-top: 50px;
 			padding-bottom: 50px;
@@ -51,11 +30,21 @@
 	}
 
 	// .portfolio-section___line-1-col
-	&__line-1-col {
+	&__line {
+		position: relative;
+		z-index: 9;
 		display: grid;
 		gap: 3rem;
 		color: #000;
 		margin-bottom: 70px;
+
+		&._text-white {
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			color: white;
+		}
 
 		@include _320-1920 {
 			gap: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320)));
@@ -183,7 +172,6 @@
 		line-height: 125%;
 	}
 
-	//.portfolio-section__order-registration__price
 	// .portfolio-section__title
 	&__title {
 		line-height: 100%;
