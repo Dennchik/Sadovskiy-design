@@ -364,17 +364,17 @@ h6 {
 }
 
 @font-face {
-  font-family: "aa_neon";
+  font-family: "averta-regular";
   font-display: swap;
-  src: url("../fonts/aa_neon.eot") format("eot"), url("../fonts/aa_neon.woff") format("woff"), url("../fonts/aa_neon.woff2") format("woff2"), url("../fonts/aa_neon.ttf") format("truetype");
+  src: url("../fonts/averta-regular.eot") format("eot"), url("../fonts/averta-regular.woff") format("woff"), url("../fonts/averta-regular.woff2") format("woff2"), url("../fonts/averta-regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "averta-regular";
+  font-family: "aa_neon";
   font-display: swap;
-  src: url("../fonts/averta-regular.eot") format("eot"), url("../fonts/averta-regular.woff") format("woff"), url("../fonts/averta-regular.woff2") format("woff2"), url("../fonts/averta-regular.ttf") format("truetype");
+  src: url("../fonts/aa_neon.eot") format("eot"), url("../fonts/aa_neon.woff") format("woff"), url("../fonts/aa_neon.woff2") format("woff2"), url("../fonts/aa_neon.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
