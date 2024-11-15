@@ -151,7 +151,7 @@
 			}
 
 			.icon-arrow-right {
-				color: #fff;
+				color: $color;
 				font-size: 16px;
 
 				&::before {
@@ -171,60 +171,6 @@
 
 					&::before {
 						background: $color;
-					}
-				}
-			}
-		}
-
-		&._brd-audit {
-			&:not(:last-child) {
-				border: 1px solid #00000033;
-			}
-
-			input {
-				color: #2c2c2c;
-			}
-
-			.order-form__button {
-				background: $color;
-
-				.icon-arrow-right {
-					color: $color;
-					font-size: 16px;
-
-					&::before {
-						font-weight: 500;
-					}
-				}
-
-				.icon {
-					background: #fff;
-				}
-
-				span {
-					color: #fff;
-				}
-
-				&:hover {
-					border: 1px solid rgb(209, 209, 209);
-
-					.icon {
-						transform: rotate(-45deg);
-						background: $color;
-					}
-
-					.icon-arrow-right {
-						&::before {
-							color: #fff;
-						}
-					}
-
-					span {
-						color: #000;
-					}
-
-					&::before {
-						background: #fff;
 					}
 				}
 			}
@@ -301,13 +247,39 @@
 	&__button {
 		right: 0;
 		bottom: 0;
-		background: #fff;
+		background: $color;
 		width: 100%;
 		max-width: 268px;
 		border: none;
+		color: #fff;
+		&:hover {
+			.order-form__icon {
+				&.icon {
+					background: $color;
+				}
+			}
+			.icon-arrow-right {
+				&::before {
+					color: #fff;
+				}
+			}
+			span {
+				color: #000 !important;
+			}
+			&::before {
+				background: #fff !important;
+			}
+		}
 
 		@include _screen-690 {
 			max-height: 48px;
+		}
+	}
+
+	// .order-form__icon
+	&__icon {
+		&.icon {
+			background: #fff;
 		}
 	}
 }

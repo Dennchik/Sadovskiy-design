@@ -845,10 +845,10 @@
   color: #fff;
   line-height: 125%;
   text-align: left;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
   display: none;
   border-radius: 30px;
 }
@@ -1255,6 +1255,7 @@
   }
 
   .tab-content__image {
+    margin-bottom: 0;
     pointer-events: none;
   }
 

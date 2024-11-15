@@ -1880,6 +1880,10 @@ button.swiper-pagination-bullet {
   transform: translateX(0.5px);
 }
 
+[class*=icon-]::before {
+  pointer-events: none;
+}
+
 [class*=icon-arrow-]::before {
   font-size: 2.4rem;
 }
@@ -2053,7 +2057,6 @@ button.swiper-pagination-bullet {
 }
 
 .page__aside-button .icon-angle-down {
-  cursor: pointer;
   z-index: 13;
   -webkit-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -2189,36 +2192,7 @@ button.swiper-pagination-bullet {
   padding: 0 0 16rem;
 }
 
-.page__aboute-project {
-  background: url("../img/portfolio/project-smt/phonoteka.png") center/cover no-repeat;
-}
-
-.page__structure-project {
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-.page__catalog-project {
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
 .page__product-card {
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-.page__order-registration {
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-.page__portfolio-services {
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-.page__portfolio-news {
   padding-left: 50px;
   padding-right: 50px;
 }
@@ -2236,6 +2210,7 @@ button.swiper-pagination-bullet {
 }
 
 .page__about-company {
+  scroll-margin-top: 100px;
   padding: 0 50px 16rem;
 }
 
@@ -2258,6 +2233,7 @@ button.swiper-pagination-bullet {
 
 .page__services-price {
   padding: 0 50px 16rem;
+  scroll-margin-top: 100px;
 }
 
 .page__order-place {
@@ -2329,7 +2305,6 @@ button.swiper-pagination-bullet {
   border-radius: 30px;
   width: 268px;
   max-width: 268px;
-  height: 100%;
   max-height: 58px;
   overflow: hidden;
   border: 1px solid transparent;
@@ -2400,6 +2375,7 @@ button.swiper-pagination-bullet {
 }
 
 .icon {
+  cursor: pointer;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -4167,32 +4143,7 @@ button.swiper-pagination-bullet {
     font-size: 50%;
   }
 
-  .page__structure-project {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  .page__catalog-project {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
   .page__product-card {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  .page__order-registration {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  .page__portfolio-services {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  .page__portfolio-news {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -4328,6 +4279,14 @@ button.swiper-pagination-bullet {
 
   .page__header-project {
     padding: 5px 0;
+  }
+
+  .page__about-company {
+    scroll-margin-top: 60px;
+  }
+
+  .page__services-price {
+    scroll-margin-top: 60px;
   }
 
   .header {
@@ -4654,32 +4613,7 @@ button.swiper-pagination-bullet {
     font-size: 1.6rem;
   }
 
-  .page__structure-project {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .page__catalog-project {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
   .page__product-card {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .page__order-registration {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .page__portfolio-services {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .page__portfolio-news {
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -4769,7 +4703,7 @@ button.swiper-pagination-bullet {
   }
 
   .t-h4 {
-    font-size: 12px !important;
+    font-size: 16px !important;
   }
 
   .p-text {
@@ -4814,6 +4748,8 @@ button.swiper-pagination-bullet {
   .button {
     max-width: -webkit-calc(215px + 51 * (100vw - 1440px) / 480);
     max-width: calc(215px + 51 * (100vw - 1440px) / 480);
+    max-height: -webkit-calc(46px + 12 * (100vw - 1440px) / 480);
+    max-height: calc(46px + 12 * (100vw - 1440px) / 480);
   }
 
   .button span {
@@ -4844,8 +4780,8 @@ button.swiper-pagination-bullet {
   }
 
   .t-h4 {
-    font-size: -webkit-calc(12px + 23 * (100vw - 1440px) / 480) !important;
-    font-size: calc(12px + 23 * (100vw - 1440px) / 480) !important;
+    font-size: -webkit-calc(16px + 19 * (100vw - 1440px) / 480) !important;
+    font-size: calc(16px + 19 * (100vw - 1440px) / 480) !important;
   }
 
   .p-text {
@@ -4923,8 +4859,8 @@ button.swiper-pagination-bullet {
   }
 
   .t-h4 {
-    font-size: -webkit-calc(12px + 23 * (100vw - 320px) / 1600) !important;
-    font-size: calc(12px + 23 * (100vw - 320px) / 1600) !important;
+    font-size: -webkit-calc(16px + 19 * (100vw - 320px) / 1600) !important;
+    font-size: calc(16px + 19 * (100vw - 320px) / 1600) !important;
   }
 
   .p-text {
@@ -4989,7 +4925,6 @@ button.swiper-pagination-bullet {
 .page__header-main .header__image{background:url("../img/icons/logo-b.webp") center no-repeat}
 .page__header-project.with-shadow .header__image{background:url("../img/icons/logo-b.webp") center no-repeat}
 .page__header-project .header__image{background:url("../img/icons/logo-w.webp") center no-repeat}
-.page__aboute-project{background:url("../img/portfolio/project-smt/phonoteka.webp") center/cover no-repeat}
 .page__order-portfolio{background:url("../img/main/fon.webp") center/cover no-repeat}
 .page__page-unknown{background:url("../img/portfolio/project-smt/fon.webp") center/cover no-repeat}
 .page__seo-block{background:url("../img/main/s-bg.webp") center/contain repeat}

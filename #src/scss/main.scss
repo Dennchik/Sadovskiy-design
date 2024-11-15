@@ -42,6 +42,10 @@
 	align-items: center;
 	justify-content: center;
 	transform: translateX(0.5px);
+
+	&::before {
+		pointer-events: none;
+	}
 }
 
 [class*='icon-arrow-'] {

@@ -1,5 +1,21 @@
 import { timeLineHeaderItem } from '../modules/anime-js.js';
+//* ----------------------------------------------------------------------------
+export function showCard() {
+	const contentItems = document.querySelectorAll('.services-price__column');
+	contentItems.forEach(contentItem => {
 
+		const openButton = contentItem.querySelector('.card-price__open-btn');
+		const closeButton = contentItem.querySelector('.card-price__close-btn');
+
+
+		openButton.addEventListener('click', () => {
+			contentItem.classList.add('_open');
+		});
+		closeButton.addEventListener('click', () => {
+			contentItem.classList.remove('_open');
+		});
+	});
+}
 // -----------------------------------------------------------------------------
 export function sidebarMenuHendle() {
 	const sidebarMenu = document.querySelector('.sidebar-menu');
