@@ -11,16 +11,6 @@ export function timeLineServiceItem() {
 		duration: 350
 	});
 	timeLine
-		// .add({
-		// 	targets: '.el-item', opacity: [0, 1],
-		// 	translateX: [-100, 0],
-		// 	delay: anime.stagger(200, { start: 0 }),
-		// 	begin: function (anim) {
-		// 		anim.animatables.forEach(function (animatable) {
-		// 			animatable.target.style.transition = 'all 0.3s ease-out';
-		// 		});
-		// 	}
-		// });
 		.add({
 			targets: '.el-item',
 			opacity: [0.2, 1],
