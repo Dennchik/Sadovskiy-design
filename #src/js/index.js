@@ -18,6 +18,7 @@ contentItems.forEach(contentItem => {
 });
 // -----------------------------------------------------------------------------
 import { opacityForEachItems } from "./animations/layout-anime.js";
+
 opacityForEachItems('.company-team__content', '.company-team__column');
 opacityForEachItems('.about-company__content', '.about-company__row');
 opacityForEachItems('.answers__list', '.answers__content');

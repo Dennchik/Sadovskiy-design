@@ -94,79 +94,80 @@ export function animateTitles(element, trigger, endTrigger, start, end) {
 
 export function opacityForEachItems(elContainer, elElements) {
 	const container = document.querySelector(elContainer); // Контейнер с элементами
-	const elements = document.querySelectorAll(elElements); // Элементы для анимации
+	if (container){ // проверка классов
+		const elements = document.querySelectorAll(elElements); // Элементы для анимации
+		const options = {
+			root: null, // viewport
+			rootMargin: '0px',
+			threshold: 0.1 // 10% элемента должно быть видимо
+		};
 
-	const options = {
-		root: null, // viewport
-		rootMargin: '0px',
-		threshold: 0.1 // 10% элемента должно быть видимо
-	};
+		let elementsPerRow = Math.floor(container.clientWidth / elements[0].offsetWidth); // Определяем количество элементов в ряду
 
-	let elementsPerRow = Math.floor(container.clientWidth / elements[0].offsetWidth); // Определяем количество элементов в ряду
+		const updateElementsPerRow = () => {
+			elementsPerRow = Math.floor(container.clientWidth / elements[0].offsetWidth);
+			console.log(elementsPerRow);
+		};
 
-	const updateElementsPerRow = () => {
-		elementsPerRow = Math.floor(container.clientWidth / elements[0].offsetWidth);
-		console.log(elementsPerRow);
-	};
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting && entry.boundingClientRect.top > 0) {
+					// Определяем индекс элемента в группе
+					const indexInRow = Array.from(elements).indexOf(entry.target) % elementsPerRow;
 
-	const observer = new IntersectionObserver((entries) => {
-		entries.forEach(entry => {
-			if (entry.isIntersecting && entry.boundingClientRect.top > 0) {
-				// Определяем индекс элемента в группе
-				const indexInRow = Array.from(elements).indexOf(entry.target) % elementsPerRow;
+					// Создаем временную линию для анимации
+					let timeLine = anime.timeline({
+						easing: 'easeOutExpo',
+						duration: 250
+					});
 
-				// Создаем временную линию для анимации
-				let timeLine = anime.timeline({
-					easing: 'easeOutExpo',
-					duration: 250
-				});
+					// Устанавливаем задержку для элементов в зависимости от их позиции в группе
+					const delay = indexInRow > 0 ? indexInRow * 350 : 0; // 250 мс для каждого последующего элемента в группе
 
-				// Устанавливаем задержку для элементов в зависимости от их позиции в группе
-				const delay = indexInRow > 0 ? indexInRow * 350 : 0; // 250 мс для каждого последующего элемента в группе
+					timeLine.add({
+						targets: entry.target,
+						scale: [0.95, 1],
+						// opacity: [0.7, 1],
+						filter: ['blur(1.5px)', 'blur(0px)'], // Добавляем размытие
+						// translateY: [30, 0],
+						delay: delay, // Задержка для элементов, начиная со второго
+						easing: 'easeInOutSine',
+						begin: function (anim) {
+							anim.animatables.forEach(function (animatable) {
+								animatable.target.style.transition = 'all 0.3s ease-out';
+							});
+						}
+					});
 
-				timeLine.add({
-					targets: entry.target,
-					scale: [0.95, 1],
-					// opacity: [0.7, 1],
-					filter: ['blur(1.5px)', 'blur(0px)'], // Добавляем размытие
-					// translateY: [30, 0],
-					delay: delay, // Задержка для элементов, начиная со второго
-					easing: 'easeInOutSine',
-					begin: function (anim) {
-						anim.animatables.forEach(function (animatable) {
-							animatable.target.style.transition = 'all 0.3s ease-out';
-						});
-					}
-				});
+					// Устанавливаем начальное состояние невидимости для элемента
+					entry.target.style.transform = 'scale(0.95)';
+					// entry.target.style.opacity = 0.7;
+					entry.target.style.filter = 'blur(1.5px)';
+				}
 
-				// Устанавливаем начальное состояние невидимости для элемента
-				entry.target.style.transform = 'scale(0.95)';
-				// entry.target.style.opacity = 0.7;
-				entry.target.style.filter = 'blur(1.5px)';
-			}
+				// Если элемент выходит из зоны видимости вниз, возвращаем его в начальное состояние
+				if (!entry.isIntersecting && entry.boundingClientRect.bottom > window.innerHeight) {
+					anime({
+						targets: entry.target,
+						scale: 0.95,
+						// opacity: 0.7,
+						filter: 'blur(1.5px)',
+						// translateY: 30,
+						duration: 0, // Мгновенный возврат без задержки
+						easing: 'easeOutExpo'
+					});
+				}
+			});
+		}, options);
 
-			// Если элемент выходит из зоны видимости вниз, возвращаем его в начальное состояние
-			if (!entry.isIntersecting && entry.boundingClientRect.bottom > window.innerHeight) {
-				anime({
-					targets: entry.target,
-					scale: 0.95,
-					// opacity: 0.7,
-					filter: 'blur(1.5px)',
-					// translateY: 30,
-					duration: 0, // Мгновенный возврат без задержки
-					easing: 'easeOutExpo'
-				});
-			}
+		// Наблюдаем за каждым элементом
+		elements.forEach(element => {
+			observer.observe(element);
 		});
-	}, options);
 
-	// Наблюдаем за каждым элементом
-	elements.forEach(element => {
-		observer.observe(element);
-	});
-
-	// Обновляем количество элементов в ряду при изменении размера окна
-	window.addEventListener('resize', updateElementsPerRow);
+		// Обновляем количество элементов в ряду при изменении размера окна
+		window.addEventListener('resize', updateElementsPerRow);
+	}
 }
 
 
