@@ -167,15 +167,10 @@
 	&__line-2-row-col {
 		gap: 2rem;
 
-		@include _min-960 {
-			display: grid;
-			grid-template-columns:
-				auto
-				minmax(
-					calc(110px + (570 - 110) * ((100vw - 320px) / (1920 - 320))),
-					min-content
-				);
-		}
+		// @include _min-960 {
+		display: grid;
+		grid-template-columns: 1fr minmax(400px, 575px);
+		// }
 		@include _screen-960 {
 			display: flex;
 			flex-direction: column-reverse;
@@ -188,10 +183,9 @@
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
-		justify-self: start;
 		li {
-			min-width: 320px;
-			// max-width: 450px;
+			min-width: 300px;
+			max-width: 450px;
 
 			&:first-child {
 				list-style-position: inside;
@@ -282,13 +276,13 @@
 
 		&:nth-child(6) {
 			.tooltip {
-				transform: translateY(-650%);
+				transform: translateY(-400%);
 			}
 		}
 
 		&:nth-child(10) {
 			.tooltip {
-				transform: translateY(-150%);
+				transform: translateY(-100%);
 			}
 		}
 

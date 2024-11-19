@@ -359,6 +359,10 @@
 
 .portfolio-section__line-2-row-col {
   gap: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2rem minmax(400px, 575px);
+  grid-template-columns: 1fr minmax(400px, 575px);
 }
 
 .portfolio-section__info {
@@ -376,12 +380,11 @@
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -ms-grid-column-align: start;
-  justify-self: start;
 }
 
 .portfolio-section__info li {
-  min-width: 320px;
+  min-width: 300px;
+  max-width: 450px;
 }
 
 .portfolio-section__info li:first-child {
@@ -465,17 +468,17 @@
 }
 
 .portfolio-section__image:nth-child(6) .tooltip {
-  -webkit-transform: translateY(-650%);
-  -ms-transform: translateY(-650%);
-  -o-transform: translateY(-650%);
-  transform: translateY(-650%);
+  -webkit-transform: translateY(-400%);
+  -ms-transform: translateY(-400%);
+  -o-transform: translateY(-400%);
+  transform: translateY(-400%);
 }
 
 .portfolio-section__image:nth-child(10) .tooltip {
-  -webkit-transform: translateY(-150%);
-  -ms-transform: translateY(-150%);
-  -o-transform: translateY(-150%);
-  transform: translateY(-150%);
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 
 .portfolio-section__image img {
@@ -771,15 +774,6 @@
     -ms-grid-columns: 45% 4rem 1fr;
     grid-template-columns: 45% 1fr;
     gap: 4rem;
-  }
-
-  .portfolio-section__line-2-row-col {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: auto minmax(-webkit-calc(110px + 460 * (100vw - 320px) / 1600), -webkit-min-content);
-    -ms-grid-columns: auto minmax(calc(110px + 460 * (100vw - 320px) / 1600), min-content);
-    grid-template-columns: auto minmax(-webkit-calc(110px + 460 * (100vw - 320px) / 1600), -webkit-min-content);
-    grid-template-columns: auto minmax(calc(110px + 460 * (100vw - 320px) / 1600), min-content);
   }
 
   .portfolio-section__info li {
