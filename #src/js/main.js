@@ -7,7 +7,7 @@ dinamicAdaptive();
 import { opacityForEachItems } from "./animations/layout-anime.js";
 import { brandsSlide } from "./modules/brands-slide.js";
 //* ----------------------------------------------------------------------------
-import { sidebarMenuHendle, returnToSavedPosition, maskPhone, answersHandler, tabsHandler, shadowScroll, addToBlock, showCard } from "./layouts/layouts.js";
+import { sidebarMenuHendle, returnToSavedPosition, maskPhone, answersHandler, tabsHandler, shadowScroll, addToBlock, showCard, tooltipHide } from "./layouts/layouts.js";
 sidebarMenuHendle();
 returnToSavedPosition();
 shadowScroll();
@@ -29,6 +29,7 @@ const companyTeam = document.querySelector('.company-team');
 const aboutCompany = document.querySelector('.about-company');
 const brands = document.querySelector('.about-company');
 const cardPrice = document.querySelector('.card-price');
+const tooltip = document.querySelector('.tooltip');
 if (cardPrice) {
 	showCard();
 }
@@ -53,5 +54,8 @@ if (companyTeam) {
 }
 if (aboutCompany) {
 	opacityForEachItems('.about-company__content', '.about-company__row');
+}
+if (tooltip) {
+	tooltipHide();
 }
 //* ----------------------------------------------------------------------------

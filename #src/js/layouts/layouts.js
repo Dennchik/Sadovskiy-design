@@ -286,7 +286,6 @@ export function addToBlock() {
 	});
 }
 
-
 // -----------------------------------------------------------------------------
 export function returnToSavedPosition() {
 	var savedScrollPosition = 0;
@@ -328,5 +327,19 @@ export function returnToSavedPosition() {
 			// Иначе удаляем класс _rotate у кнопки
 			scrollButton.classList.remove('_rotate');
 		}
+	});
+}
+//* ----------------------------------------------------------------------------
+export function tooltipHide() {
+	const tooltip = document.querySelector('.tooltip__content');
+	const tooltipButtons = document.querySelectorAll('.tooltip__button');
+
+	tooltipButtons.forEach(tooltipButton => {
+		tooltipButton.addEventListener('click', function () {
+
+			const tooltip = tooltipButton.closest('.tooltip');
+			tooltip.classList.toggle('visible');
+			console.log(tooltip);
+		});
 	});
 }
