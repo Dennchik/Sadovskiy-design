@@ -10,6 +10,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 3rem;
+		padding-bottom: 6rem;
 
 		@include _min-1920 {
 			padding-top: 130px;
@@ -293,6 +294,13 @@
 			width: auto;
 			object-fit: fill;
 		}
+	}
+
+	// .portfolio-about__background
+	&__background {
+		position: absolute;
+		left: 0;
+		bottom: 0;
 	}
 }
 

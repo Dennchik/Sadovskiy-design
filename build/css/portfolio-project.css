@@ -243,6 +243,7 @@
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 3rem;
+  padding-bottom: 6rem;
 }
 
 .portfolio-section__content {
@@ -488,6 +489,12 @@
   width: auto;
   -o-object-fit: fill;
   object-fit: fill;
+}
+
+.portfolio-section__background {
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 .tooltip.visible .tooltip__content {
