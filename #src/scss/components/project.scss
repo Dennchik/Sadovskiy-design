@@ -14,7 +14,7 @@
 
 		@include _screen-1140 {
 			color: #fff;
-			margin-bottom: 40px;
+			margin-bottom: 10px;
 			padding-top: 12rem;
 		}
 
@@ -27,36 +27,31 @@
 	&__content {
 		position: relative;
 		z-index: 2;
-		background: #2b3769;
 		padding-top: 50px;
 		padding-bottom: 50px;
 
-		background-image: radial-gradient(
-			circle at 100% 100%,
-			rgba(160, 176, 240, 0.178) 10%,
-			rgb(43, 55, 105) 20%,
-			transparent
+		background: #2b3769 radial-gradient(
+										circle at 100% 100%,
+										rgba(160, 176, 240, 0.178) 10%,
+										rgb(43, 55, 105) 20%,
+										transparent
 		);
 
 		@include _min-960 {
-			border-radius: 30px;
-			border-top-left-radius: 0;
+			border-radius: 0 30px 30px 30px;
 		}
 
 		@include _screen-1440 {
-			padding: 30px 30px;
-		}
-
-		@include _screen-1140 {
-			border-radius: 0px;
+			padding: 0 30px 60px;
+			border-radius: 0;
 		}
 
 		@include _screen-690 {
-			padding: 50px 30px 60px;
+			padding: 0 30px 60px;
 		}
 
 		@include _screen-375 {
-			padding: 50px 10px 60px;
+			padding: 0 10px 60px;
 		}
 	}
 
@@ -102,8 +97,8 @@
 		}
 
 		@include _screen-1140 {
-			border-top-left-radius: 0px;
-			border-top-right-radius: 0px;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
 			background: #2b3769;
 			padding: 0 25px 0 30px;
 		}
@@ -124,7 +119,7 @@
 	}
 
 	&__button {
-		background: #ffffff;
+		background: #fff;
 
 		.icon-arrow-dow {
 			color: #fff;
@@ -132,12 +127,15 @@
 
 		&:hover {
 			border: 1px solid #fff;
+
 			.icon {
 				transform: rotate(-90deg);
 			}
+
 			span {
 				color: #fff;
 			}
+
 			&::before {
 				background: $color;
 			}
@@ -151,13 +149,14 @@
 			}
 		}
 	}
+
 	.tab-content__text {
 		color: #fff;
 	}
 }
 
 .tabs-button {
-	// .tabs-buton_wrapper
+	// .tabs-button_wrapper
 	&__wrapper {
 		width: 100%;
 		height: 100%;
@@ -182,7 +181,7 @@
 		}
 	}
 
-	// .tabs-buton__item
+	// .tabs-button__item
 	&__item {
 		cursor: pointer;
 		font-weight: 400;
@@ -286,7 +285,7 @@
 			}
 
 			@include _screen-1140 {
-				padding: 0px;
+				padding: 0;
 				color: #fff;
 
 				&::after {
@@ -307,7 +306,7 @@
 		}
 	}
 
-	// .tabs-buton__button
+	// .tabs-button__button
 	&__button {
 		@include _min-960 {
 			display: none;
@@ -324,6 +323,7 @@
 				span {
 					background: #fff;
 				}
+
 				&__wrapper {
 					background: transparent;
 				}
@@ -331,4 +331,5 @@
 		}
 	}
 }
+
 @import '../chunk/tab-content';

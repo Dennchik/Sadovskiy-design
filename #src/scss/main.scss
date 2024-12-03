@@ -25,7 +25,6 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	// min-height: 100%;
 	margin: 0 auto;
 }
 
@@ -69,6 +68,7 @@
 		}
 	}
 }
+
 // -----------------------------------------------------------------------------
 @keyframes shaking {
 	0% {
@@ -87,6 +87,7 @@
 		transform: translateY(0);
 	}
 }
+
 // -----------------------------------------------------------------------------
 @keyframes shake {
 	10%,
@@ -107,6 +108,7 @@
 		transform: translateX(2px);
 	}
 }
+
 // todo --------------------------- Chunk --------------------------------------
 @import 'chunk/aside-button';
 // todo --------------------------- Pages --------------------------------------

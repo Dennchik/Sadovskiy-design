@@ -15,79 +15,79 @@
 
 		@include _screen-690 {
 			border-radius: 15px;
-			padding: 60px 50px 60px;
+			padding: 50px 50px 60px;
 		}
 
 		@include _screen-375 {
-			padding: 60px 10px;
+			padding: 50px 10px 60px;
 		}
 	}
 
-	// .order-place__content--bd-orderform
+	// .order-place__content--order-page
 	&__content--order-page {
 		@include _min-490 {
 			background-image: radial-gradient(
-					ellipse at 17% 15%,
-					#171b1c 25%,
-					#171b1c67 60%,
-					transparent 100%
-				),
-				radial-gradient(
-					circle at 40% 140%,
-					#eeeeee96 0%,
-					#2b3769 30%,
-					transparent
-				),
-				radial-gradient(
-					circle at 100% 100%,
-					#eeeeee4d 0%,
-					#2b3769 20%,
-					transparent
-				),
-				radial-gradient(
-					ellipse at 30% 2%,
-					#171b1c 70%,
-					rgb(43, 55, 105) 100%,
-					transparent
-				),
-				radial-gradient(
-					circle at center left,
-					rgba(238, 238, 238, 0) 10%,
-					rgb(4, 5, 10) 50%,
-					transparent
-				);
+											ellipse at 17% 15%,
+											#171b1c 25%,
+											#171b1c67 60%,
+											transparent 100%
+			),
+			radial-gradient(
+											circle at 40% 140%,
+											#eeeeee96 0%,
+											#2b3769 30%,
+											transparent
+			),
+			radial-gradient(
+											circle at 100% 100%,
+											#eeeeee4d 0%,
+											#2b3769 20%,
+											transparent
+			),
+			radial-gradient(
+											ellipse at 30% 2%,
+											#171b1c 70%,
+											rgb(43, 55, 105) 100%,
+											transparent
+			),
+			radial-gradient(
+											circle at center left,
+											rgba(238, 238, 238, 0) 10%,
+											rgb(4, 5, 10) 50%,
+											transparent
+			);
 		}
 
 		@include _screen-490 {
 			background-image: radial-gradient(
-					ellipse at bottom center,
-					#2b37695b,
-					transparent
-				),
-				radial-gradient(
-					ellipse at 10% 19%,
-					#171b1c 35%,
-					#eeeeee00 70%,
-					transparent 100%
-				),
-				radial-gradient(
-					circle at 0% 100%,
-					#eeeeee6a 0%,
-					#2b376964 30%,
-					transparent
-				),
-				radial-gradient(
-					circle at 100% 0%,
-					#eeeeee4d 0%,
-					#2b3769 30%,
-					transparent
-				),
-				radial-gradient(
-					ellipse at 30% 2%,
-					#171b1c 0%,
-					#2b3769 100%,
-					transparent
-				);
+											ellipse at bottom center,
+											#2b37695b,
+											transparent
+			),
+			radial-gradient(
+											ellipse at 10% 19%,
+											#171b1c 35%,
+											#eeeeee00 70%,
+											transparent 100%
+			),
+			radial-gradient(
+											circle at 0% 100%,
+											#eeeeee6a 0%,
+											#2b376964 30%,
+											transparent
+			),
+			radial-gradient(
+											circle at 100% 0%,
+											#eeeeee4d 0%,
+											#2b3769 30%,
+											transparent
+			),
+			radial-gradient(
+											ellipse at 30% 2%,
+											#171b1c 0%,
+											#2b3769 100%,
+											transparent
+			);
 		}
 	}
 
@@ -121,7 +121,6 @@
 	&__body {
 		position: relative;
 		z-index: 9;
-		position: relative;
 	}
 
 	// .order-place__header
@@ -171,14 +170,14 @@
 		gap: 25px;
 		margin: 40px auto;
 		width: 100%;
-		display: flex;
 
 		@include _screen-960 {
+			gap: 15px;
 			flex-direction: column;
 		}
 
-		@include _screen-375 {
-			gap: 15px;
+		@include _screen-490 {
+			gap: 12px;
 			margin: 16px auto;
 		}
 	}
@@ -219,7 +218,7 @@
 		align-self: center;
 		flex: 0 1 268px;
 		height: 58px;
-		border: 1px solid #ffffff;
+		border: 1px solid #fff;
 
 		&._brd-order {
 			input {
@@ -238,6 +237,7 @@
 			.order-form__button {
 				&:hover {
 					border: 1px solid #fff;
+
 					.icon {
 						transform: rotate(-45deg);
 					}
@@ -384,6 +384,10 @@
 		background: #fff;
 		width: 100%;
 		max-width: 268px;
+
+		span {
+			font-weight: 400;
+		}
 
 		@include _screen-690 {
 			max-height: 48px;

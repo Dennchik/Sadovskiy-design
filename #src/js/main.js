@@ -1,18 +1,32 @@
 import loaded from './modules/preloader.js';
+
 loaded('.preloader');
 //* ----------------------------------------------------------------------------
 import { dinamicAdaptive } from './assets/move-elements.js';
+
 dinamicAdaptive();
 //* ----------------------------------------------------------------------------
 import { opacityForEachItems } from "./animations/layout-anime.js";
 import { brandsSlide } from "./modules/brands-slide.js";
 //* ----------------------------------------------------------------------------
-import { sidebarMenuHendle, returnToSavedPosition, maskPhone, answersHandler, tabsHandler, shadowScroll, addToBlock, showCard, tooltipHide } from "./layouts/layouts.js";
-sidebarMenuHendle();
+import {
+	sidebarMenuHandle,
+	returnToSavedPosition,
+	maskPhone,
+	answersHandler,
+	tabsHandler,
+	shadowScroll,
+	addToBlock,
+	showCard,
+	tooltipHide
+} from "./layouts/layouts.js";
+
+sidebarMenuHandle();
 returnToSavedPosition();
 shadowScroll();
-//* ----------------- Плавная прокрутка стринци до позиции ---------------------
+//* ---------------- Плавная прокрутка страницы до позиции ---------------------
 import { anchorsSmoothScrolling } from "./modules/anchors-smooth-scrolling.js";
+
 const anchorLink = document.querySelector('.anchor-link');
 if (anchorLink) {
 	anchorsSmoothScrolling();
@@ -58,4 +72,3 @@ if (aboutCompany) {
 if (tooltip) {
 	tooltipHide();
 }
-//* ----------------------------------------------------------------------------

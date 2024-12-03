@@ -81,9 +81,7 @@
 			align-self: start;
 			font-size: 20px;
 			font-weight: 400;
-			opacity: 1;
 			white-space: nowrap;
-
 			opacity: 0.8;
 			transition: all 0.5s ease-in-out;
 
@@ -91,6 +89,7 @@
 			&:not(:last-child) {
 				margin-bottom: 20px;
 			}
+
 			&:hover {
 				opacity: 1;
 			}
@@ -150,8 +149,6 @@
 		.icon-arrow-right {
 			position: relative;
 			z-index: 9;
-
-			transition: 0.5s linear;
 			transition: all 0.4s ease-in-out;
 
 			&::before {
@@ -224,55 +221,50 @@
 		&::before {
 			height: 200%;
 			background-image: radial-gradient(
-					at 51.219887531528066% 73.75802524063498%,
-					hwb(228 17% 59%) 0%,
-					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0)
-						100%
-				),
-				radial-gradient(
-					at 82.3747128137153% 47.854555124063424%,
-					hsla(192, 9.803921568627452%, 10%, 1) 0%,
-					hsla(192, 9.803921568627452%, 10%, 0) 100%
-				),
-				radial-gradient(
-					at 7.222668315528513% 65.99692412690541%,
-					hsla(192, 9.803921568627452%, 10%, 1) 0%,
-					hsla(192, 9.803921568627452%, 10%, 0) 100%
-				),
-				radial-gradient(
-					at 28.247189370281145% 40.43717988749253%,
-					hsla(192, 9.803921568627452%, 10%, 1) 0%,
-					hsla(192, 9.803921568627452%, 10%, 0) 100%
-				),
-				radial-gradient(
-					at 54.59975191052144% 0.011447407615872152%,
-					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 1)
-						0%,
-					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0)
-						100%
-				),
-				radial-gradient(
-					at 79.74105101791258% 72.89600397390794%,
-					hsla(192, 9.803921568627452%, 10%, 1) 0%,
-					hsla(192, 9.803921568627452%, 10%, 0) 100%
-				),
-				radial-gradient(
-					at 27.353713288329608% 60.00042076869605%,
-					hsla(192, 9.803921568627452%, 10%, 1) 0%,
-					hsla(192, 9.803921568627452%, 10%, 0) 100%
-				),
-				radial-gradient(
-					at 30.871687014459216% 51.91539250189692%,
-					hsla(192, 9.803921568627452%, 10%, 1) 0%,
-					hsla(192, 9.803921568627452%, 10%, 0) 100%
-				),
-				radial-gradient(
-					at 15.415090896688245% 72.75274820343758%,
-					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 1)
-						0%,
-					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0)
-						100%
-				);
+											at 51.219887531528066% 73.75802524063498%,
+											hwb(228 17% 59%) 0%,
+											hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0) 100%
+			),
+			radial-gradient(
+											at 82.3747128137153% 47.854555124063424%,
+											hsla(192, 9.803921568627452%, 10%, 1) 0%,
+											hsla(192, 9.803921568627452%, 10%, 0) 100%
+			),
+			radial-gradient(
+											at 7.222668315528513% 65.99692412690541%,
+											hsla(192, 9.803921568627452%, 10%, 1) 0%,
+											hsla(192, 9.803921568627452%, 10%, 0) 100%
+			),
+			radial-gradient(
+											at 28.247189370281145% 40.43717988749253%,
+											hsla(192, 9.803921568627452%, 10%, 1) 0%,
+											hsla(192, 9.803921568627452%, 10%, 0) 100%
+			),
+			radial-gradient(
+											at 54.59975191052144% 0.011447407615872152%,
+											hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 1) 0%,
+											hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0) 100%
+			),
+			radial-gradient(
+											at 79.74105101791258% 72.89600397390794%,
+											hsla(192, 9.803921568627452%, 10%, 1) 0%,
+											hsla(192, 9.803921568627452%, 10%, 0) 100%
+			),
+			radial-gradient(
+											at 27.353713288329608% 60.00042076869605%,
+											hsla(192, 9.803921568627452%, 10%, 1) 0%,
+											hsla(192, 9.803921568627452%, 10%, 0) 100%
+			),
+			radial-gradient(
+											at 30.871687014459216% 51.91539250189692%,
+											hsla(192, 9.803921568627452%, 10%, 1) 0%,
+											hsla(192, 9.803921568627452%, 10%, 0) 100%
+			),
+			radial-gradient(
+											at 15.415090896688245% 72.75274820343758%,
+											hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 1) 0%,
+											hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0) 100%
+			);
 		}
 
 		.sidebar-menu__order {
@@ -281,6 +273,7 @@
 				transition: opacity 0.7s ease-in-out 0.9s;
 				will-change: opacity;
 			}
+
 			&::after {
 				opacity: 1;
 				transition: opacity 0.7s ease-in-out 0.9s;
@@ -312,10 +305,12 @@
 
 	&._close-menu {
 		transition: height 1s ease-out 0s;
+
 		.sidebar-menu__column {
 			opacity: 0;
 			transition: opacity 0.3s ease-in-out 0.7s;
 		}
+
 		.main-wrapper {
 			opacity: 0;
 			transition: opacity 0.3s ease-in-out 0.7s;
@@ -338,13 +333,13 @@
 
 		.menu-list__link {
 			color: #ffffff00;
-			transition: color 0.9s ease-in-out 0.7s;
+			transition: color 0.4s ease-in-out 0.7s;
 			will-change: color;
 		}
 
 		.sidebar-menu__button {
 			opacity: 0;
-			transition: opacity 0.7s ease-in-out 0.2s;
+			transition: opacity 0.4s ease-in-out 0.2s;
 			will-change: opacity;
 		}
 
@@ -358,7 +353,6 @@
 	width: 100%;
 	// .networks__icon
 	&__icon {
-		flex: 0 1 50%;
 		gap: 10px;
 		font-weight: 600;
 		display: flex;
@@ -376,12 +370,23 @@
 		&:not(:last-child) {
 			margin-bottom: 15px;
 		}
+
+		.icon-telegram-fly {
+			background: #039be5;
+		}
+
+		.icon-whatsapp {
+			background: #4caf50;
+		}
+
 		._icon {
-			font-size: 34px;
-			color: #859dff;
+			width: 5.3rem;
+			height: 5.3rem;
+			border-radius: 50%;
 
 			&::before {
-				font-weight: 900;
+				font-size: 28px;
+				font-weight: 600;
 			}
 		}
 
@@ -389,13 +394,6 @@
 			color: #091216;
 		}
 
-		.icon-whatsapp-draw {
-			color: #4caf50;
-		}
-
-		.icon-telegram-draw {
-			color: #039be5;
-		}
 		.icon-youtube {
 			color: red;
 		}
@@ -434,11 +432,13 @@
 			text-align-last: left;
 			color: #8d8d8d;
 		}
+
 		a {
 			white-space: nowrap;
 			font-size: 15px;
 			opacity: 0.9;
 			font-weight: 400;
+
 			&:not(:last-child) {
 				margin-bottom: 5px;
 			}
@@ -451,7 +451,6 @@
 
 		span {
 			margin-bottom: 10px;
-			font-size: 13px;
 			text-align-last: left;
 			font-size: 14px;
 			font-weight: 700;

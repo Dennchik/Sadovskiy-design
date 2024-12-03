@@ -1,4 +1,5 @@
 import { toggleSidebarMenu } from "../layouts/layouts.js";
+
 export function anchorsSmoothScrolling() {
 	document.addEventListener('DOMContentLoaded', function () {
 		const anchorLinks = document.querySelectorAll('.anchor-link');
@@ -10,11 +11,11 @@ export function anchorsSmoothScrolling() {
 
 				// Определяем отступ в зависимости от ширины экрана
 				const screenWidth = window.innerWidth;
-				let offset = 88; // По умолчанию 150px
+				let offset = 98; // По умолчанию 150px
 
 				// Если ширина экрана 768px и меньше, используем отступ 50px
 				if (screenWidth <= 768) {
-					offset = 50;
+					offset = 60;
 				}
 
 				const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;

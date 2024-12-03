@@ -11,7 +11,7 @@
 	}
 
 	@include _screen-375 {
-		padding: 50px 10px;
+		padding: 50px 10px 60px;
 	}
 	// .schedule__body
 	&__body {
@@ -38,7 +38,7 @@
 
 		@include _screen-1440 {
 			grid-template-columns: repeat(2, minmax(200px, 1fr));
-			gap: 20px;
+			gap: 30px;
 		}
 
 		@include _screen-690 {
@@ -53,7 +53,7 @@
 		height: 100%;
 
 		h2 {
-			color: #ffffff;
+			color: #fff;
 			font-size: 65px;
 			font-weight: 400;
 			line-height: 100%;
@@ -79,7 +79,7 @@
 	// .schedule__title
 	&__title {
 		margin-bottom: 30px;
-		color: #ffffff;
+		color: #fff;
 
 		@include _screen-768 {
 			white-space: normal;
@@ -94,10 +94,10 @@
 	&__number {
 		margin-bottom: 7px;
 		padding-bottom: 20px;
-		color: #ffffff;
+		color: #fff;
 		font-size: 96px;
 		font-weight: 400;
-		line-height: 123.958333%; /* 119px/96 */
+		line-height: 100%; /* 119px/96 */
 		border-bottom: 1px solid #a9a9a9;
 
 		@include _320-1920 {
@@ -111,7 +111,7 @@
 
 	// .schedule__text
 	&__text {
-		color: #ffffff;
+		color: #fff;
 		font-family: $font-defoult;
 		font-size: 16px;
 		font-weight: 400;

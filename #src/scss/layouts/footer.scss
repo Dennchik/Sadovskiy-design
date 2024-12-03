@@ -6,7 +6,7 @@
 	// .footer__body
 	&__body {
 		position: relative;
-		padding: 120px 50px;
+		padding: 70px 50px 120px;
 		overflow: hidden;
 
 		@include _screen-1440 {
@@ -19,67 +19,67 @@
 
 		@include _min-490 {
 			background-image: radial-gradient(
-					ellipse at 17% 15%,
-					#171b1c 25%,
-					#171b1c67 60%,
-					transparent 100%
-				),
-				radial-gradient(
-					circle at 40% 140%,
-					#eeeeee6a 0%,
-					#2b3769 25%,
-					transparent
-				),
-				radial-gradient(
-					circle at 100% 100%,
-					#eeeeee4d 0%,
-					#2b3769 20%,
-					transparent
-				),
-				radial-gradient(
-					ellipse at 30% 2%,
-					#171b1c 70%,
-					rgb(43, 55, 105) 100%,
-					transparent
-				),
-				radial-gradient(
-					circle at center left,
-					rgba(238, 238, 238, 0) 10%,
-					rgb(4, 5, 10) 50%,
-					transparent
-				);
+											ellipse at 17% 15%,
+											#171b1c 25%,
+											#171b1c67 60%,
+											transparent 100%
+			),
+			radial-gradient(
+											circle at 40% 140%,
+											#eeeeee6a 0%,
+											#2b3769 25%,
+											transparent
+			),
+			radial-gradient(
+											circle at 100% 100%,
+											#eeeeee4d 0%,
+											#2b3769 20%,
+											transparent
+			),
+			radial-gradient(
+											ellipse at 30% 2%,
+											#171b1c 70%,
+											rgb(43, 55, 105) 100%,
+											transparent
+			),
+			radial-gradient(
+											circle at center left,
+											rgba(238, 238, 238, 0) 10%,
+											rgb(4, 5, 10) 50%,
+											transparent
+			);
 		}
 
 		@include _screen-490 {
 			background-image: radial-gradient(
-					ellipse at bottom center,
-					#2b37695b,
-					transparent
-				),
-				radial-gradient(
-					ellipse at 10% 19%,
-					#171b1c 35%,
-					#eeeeee00 70%,
-					transparent 100%
-				),
-				radial-gradient(
-					circle at 0% 100%,
-					#eeeeee25 0%,
-					#2b376964 30%,
-					transparent
-				),
-				radial-gradient(
-					circle at 100% 0%,
-					#eeeeee41 0%,
-					#2b3769 30%,
-					transparent
-				),
-				radial-gradient(
-					ellipse at 30% 2%,
-					#171b1c 0%,
-					#2b3769 100%,
-					transparent
-				);
+											ellipse at bottom center,
+											#2b37695b,
+											transparent
+			),
+			radial-gradient(
+											ellipse at 10% 19%,
+											#171b1c 35%,
+											#eeeeee00 70%,
+											transparent 100%
+			),
+			radial-gradient(
+											circle at 0% 100%,
+											#eeeeee25 0%,
+											#2b376964 30%,
+											transparent
+			),
+			radial-gradient(
+											circle at 100% 0%,
+											#eeeeee41 0%,
+											#2b3769 30%,
+											transparent
+			),
+			radial-gradient(
+											ellipse at 30% 2%,
+											#171b1c 0%,
+											#2b3769 100%,
+											transparent
+			);
 		}
 	}
 
@@ -120,7 +120,7 @@
 		a {
 			transition: all 0.4s ease 0s;
 			white-space: nowrap;
-			color: #ffffff;
+			color: #fff;
 			font-size: 19px;
 			line-height: 116.666667%; /* 28px/24 */
 
@@ -142,38 +142,19 @@
 		justify-content: flex-start;
 
 		@include _screen-490 {
-			justify-content: flex-end;
+			justify-content: flex-start;
 		}
 
 		.icon-telegram-fly {
 			background: #039be5;
-			background: linear-gradient(
-				to bottom,
-				#2c5364,
-				#039ae5b4,
-				#039be5
-			); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 		}
 
 		.icon-whatsapp {
 			background: #4caf50;
-			background: linear-gradient(
-				to bottom,
-				#4caf4f8a,
-				#4caf4fd7,
-				#4caf50
-			); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 		}
 
 		.icon-vk-brand {
 			background: $color;
-
-			background: linear-gradient(
-				to top,
-				#2c5364,
-				#039ae5b4,
-				#039be5
-			); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 			&::before {
 				font-size: 1.8rem !important;
@@ -181,7 +162,8 @@
 		}
 
 		.icon-youtube-lg {
-			background: #ff0033;
+			background: #f03;
+
 			&::before {
 				color: white !important;
 			}
@@ -208,12 +190,13 @@
 
 	// .footer__link
 	&__link {
-		color: #ffffff;
+		color: #fff;
 		line-height: 118.75%; /* 19px/16 */
 
 		&:not(:last-child) {
 			margin-right: 10px;
 		}
+
 		&:hover {
 			animation: shake 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
 		}
@@ -294,7 +277,7 @@
 			margin-bottom: 10px;
 
 			@include _screen-690 {
-				margin-bottom: 0px;
+				margin-bottom: 0;
 			}
 		}
 	}
@@ -327,7 +310,7 @@
 		flex: 1 1 auto;
 
 		li {
-			color: #ffffff;
+			color: #fff;
 			line-height: 118.75%; /* 19px/16 */
 			text-transform: uppercase;
 
@@ -347,7 +330,7 @@
 
 	// .footer__privacy-policy
 	&__privacy-policy {
-		color: #ffffff;
+		color: #fff;
 		line-height: 118.75%; /* 19px/16 */
 	}
 
@@ -365,10 +348,9 @@
 
 	// .footer__phone
 	&__phone {
-		color: #ffffff;
+		color: #fff;
 		font-size: 16px;
 		font-weight: 400;
-		line-height: 118.75%; /* 19px/16 */
 		text-align: left;
 		margin-bottom: 10px;
 		display: flex;
@@ -401,7 +383,7 @@
 
 	// .footer__address
 	&__address {
-		color: #ffffff;
+		color: #fff;
 		line-height: 118.75%; /* 19px/16 */
 	}
 }

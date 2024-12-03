@@ -1,12 +1,10 @@
 .page {
 	width: 100vw;
+
 	// .page__content
 	&__content {
 		padding-top: 20px;
-
-		@include _screen-768 {
-			// padding-top: 0;
-		}
+ 
 	}
 
 	// .page__header-main
@@ -133,7 +131,7 @@
 		padding: 0 0 13rem;
 
 		@include _screen-690 {
-			padding: 0 0 60px;
+			padding: 0 0 50px;
 		}
 	}
 
@@ -173,7 +171,7 @@
 		}
 	}
 
-	// .page__progect
+	// .page__project
 	&__project {
 		position: relative;
 		padding: 0 50px 13rem;
@@ -255,7 +253,7 @@
 
 	// .page__order-place
 	&__order-place {
-		padding: 0 50px 13rem;
+		padding: 0 50px 12rem;
 
 		@include _screen-1440 {
 			padding: 0 30px 13rem;
@@ -288,7 +286,7 @@
 	// .page__seo-block
 	&__seo-block {
 		background: url('../img/main/s-bg.png') center / contain repeat;
-		padding: 13rem 50px 13rem;
+		padding: 12rem 50px 13rem;
 		// margin: -16rem 0 0;
 
 		@include _screen-1440 {
@@ -296,8 +294,7 @@
 		}
 
 		@include _screen-690 {
-			// margin: -60px 0 0;
-			padding: 60px 30px 60px;
+			padding: 50px 30px 60px;
 		}
 
 		@include _screen-375 {
@@ -383,10 +380,10 @@
 	//page__dev-info
 	&__dev-info {
 		position: relative;
-		padding: 0 0 13rem;
+		padding: 0 0 12rem;
 
 		@include _screen-690 {
-			padding: 0 0 60px;
+			padding: 0 0 50px;
 		}
 	}
 }

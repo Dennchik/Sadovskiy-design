@@ -1,4 +1,8 @@
+import IMask from 'imask';
+//* ----------------------------------------------------------------------------
+import ItcCollapse from "../assets/collapse.js";
 import { timeLineHeaderItem } from '../modules/anime-js.js';
+
 //* ----------------------------------------------------------------------------
 export function showCard() {
 	const contentItems = document.querySelectorAll('.services-price__column');
@@ -16,15 +20,16 @@ export function showCard() {
 		});
 	});
 }
+
 // -----------------------------------------------------------------------------
-export function sidebarMenuHendle() {
+export function sidebarMenuHandle() {
 	const sidebarMenu = document.querySelector('.sidebar-menu');
 	const buttonItems = document.querySelectorAll('.burger-button');
 	const tabsItem = document.querySelector('.project__tabs');
 
 
 	buttonItems.forEach(buttonItem => {
-		buttonItem.addEventListener('click', (e) => {
+		buttonItem.addEventListener('click', () => {
 			if (buttonItem.classList.contains('header__button')) {
 				buttonItem.classList.toggle('_open-menu');
 				toggleSidebarMenu(sidebarMenu);
@@ -35,6 +40,7 @@ export function sidebarMenuHendle() {
 		});
 	});
 }
+
 // -----------------------------------------------------------------------------
 export function toggleSidebarMenu(sidebarMenu) {
 	const asideButton = document.querySelector('.page__aside-button');
@@ -48,10 +54,12 @@ export function toggleSidebarMenu(sidebarMenu) {
 			asideButton.style.pointerEvents = 'all';
 			document.body.classList.remove('no-scroll');
 			sidebarMenu.style.transition = 'transform 0.4s ease-in-out';
-			sidebarMenu.addEventListener('transitionend', function transitionEndHandler() {
-				sidebarMenu.style.transition = '';
-				sidebarMenu.removeEventListener('transitionend', transitionEndHandler);
-			}, { once: true });
+			sidebarMenu.addEventListener('transitionend',
+				function transitionEndHandler() {
+					sidebarMenu.style.transition = '';
+					sidebarMenu.removeEventListener('transitionend',
+						transitionEndHandler);
+				}, {once: true});
 			sidebarMenu.classList.remove('_open-menu');
 			sidebarMenu.classList.remove('_close-menu');
 		}, 1300);
@@ -63,30 +71,30 @@ export function toggleSidebarMenu(sidebarMenu) {
 		document.body.classList.add('no-scroll');
 
 		sidebarMenu.style.transition = 'transform 0.4s ease-in-out';
-		sidebarMenu.addEventListener('transitionend', function transitionEndHandler() {
-			sidebarMenu.style.transition = '';
-			sidebarMenu.removeEventListener('transitionend', transitionEndHandler);
-		}, { once: true });
+		sidebarMenu.addEventListener('transitionend',
+			function transitionEndHandler() {
+				sidebarMenu.style.transition = '';
+				sidebarMenu.removeEventListener('transitionend', transitionEndHandler);
+			}, {once: true});
 	}
 }
+
 // -----------------------------------------------------------------------------
 export function tabsHandler() {
-	const tablinks = document.querySelectorAll('.tabs-button__item');
-	const tabcontents = document.querySelectorAll('.tab-content__items');
+	const tabLinks = document.querySelectorAll('.tabs-button__item');
+	const tabContents = document.querySelectorAll('.tab-content__items');
 	const tabsItem = document.querySelector('.project__tabs');
 	const buttonItems = document.querySelectorAll('.burger-button');
 
-	tablinks.forEach((tablink, i) => {
-		tablink.addEventListener('click', () => {
-			const tabcontent = tabcontents[i];
+	tabLinks.forEach((tabLink, i) => {
+		tabLink.addEventListener('click', () => {
+			const tabContent = tabContents[i];
 
 			// Удаляем класс active у всех Tabs и Contents
-			tablinks.forEach(link => link.classList.remove('active'));
-			tabcontents.forEach(content => content.classList.remove('active'));
+			tabLinks.forEach(link => link.classList.remove('active'));
+			tabContents.forEach(content => content.classList.remove('active'));
 
-			// Добавляем класс active к текущей кнопке и контенту
-			tablink.classList.add('active');
-			tabcontent.classList.add('active');
+			tabContent.classList.add('active');
 			tabsItem.classList.remove('_responsive');
 			buttonItems.forEach(buttonItem => {
 				if (buttonItem.classList.contains('_open-menu')) {
@@ -95,14 +103,12 @@ export function tabsHandler() {
 			});
 
 			// Применяем анимацию только к активному контенту
-			if (!tabcontent.classList.contains('.active')) {
-				timeLineHeaderItem(tabcontent);
+			if (!tabContent.classList.contains('.active')) {
+				timeLineHeaderItem(tabContent);
 			}
 		});
 	});
 }
-// -----------------------------------------------------------------------------
-import ItcCollapse from "../assets/collapse.js";
 
 export function answersHandler() {
 	const listItems = document.querySelectorAll('.answers__content');
@@ -129,8 +135,6 @@ export function answersHandler() {
 		}
 	};
 }
-// -----------------------------------------------------------------------------
-import IMask from 'imask';
 
 export function maskPhone(selector) {
 	const elements = document.querySelectorAll(selector);
@@ -202,10 +206,12 @@ export function shadowScroll() {
 		window.removeEventListener('scroll', handleScroll);
 	};
 }
+
 // -----------------------------------------------------------------------------
 export function addToBlock() {
 	document.addEventListener('DOMContentLoaded', function () {
-		const blocks = document.querySelectorAll('.seo-block__content .seo-block__column');
+		const blocks = document.querySelectorAll(
+			'.seo-block__content .seo-block__column');
 		// Кнопка
 		const button = document.querySelector('.seo-block__button');
 		if (button) {
@@ -265,7 +271,8 @@ export function addToBlock() {
 						button.classList.add('_rotate-button');
 					}
 				} else {
-					// Если текст кнопки "Свернуть", возвращаем все блоки в исходное состояние
+					// Если текст кнопки "Свернуть", возвращаем все блоки в исходное
+					// состояние
 					blocks.forEach((block, index) => {
 						if (index >= 5) {
 							block.classList.add('hidden'); // Скрываем блоки снова
@@ -299,13 +306,15 @@ export function returnToSavedPosition() {
 				behavior: 'smooth'
 			});
 		} else if (savedScrollPosition !== 0) {
-			// Если прокрутка находится в самом верху и есть сохраненная позиция, возвращаемся к сохраненной позиции
+			// Если прокрутка находится в самом верху и есть сохраненная позиция,
+			// возвращаемся к сохраненной позиции
 			window.scrollTo({
 				top: savedScrollPosition,
 				behavior: 'smooth'
 			});
 		}
 	}
+
 	// Добавляем обработчик события для кнопки
 	const scrollButton = document.getElementById('scrollButton');
 	scrollButton.addEventListener('click', function () {
@@ -320,7 +329,8 @@ export function returnToSavedPosition() {
 
 	// Отслеживаем событие прокрутки страницы
 	window.addEventListener('scroll', function () {
-		// Если прокрутка больше, чем половина высоты окна браузера, добавляем класс "_rotate" кнопке 
+		// Если прокрутка больше, чем половина высоты окна браузера, добавляем
+		// класс "_rotate" кнопке
 		if ((window.scrollY || document.documentElement.scrollTop) > window.innerHeight * 0.2) {
 			scrollButton.classList.add('_rotate');
 		} else {
@@ -329,9 +339,9 @@ export function returnToSavedPosition() {
 		}
 	});
 }
+
 //* ----------------------------------------------------------------------------
 export function tooltipHide() {
-	const tooltip = document.querySelector('.tooltip__content');
 	const tooltipButtons = document.querySelectorAll('.tooltip__button');
 
 	tooltipButtons.forEach(tooltipButton => {

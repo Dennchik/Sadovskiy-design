@@ -329,3 +329,10 @@
 		max-width: 900px;
 	}
 }
+
+.icon-telegram-fly {
+	&::before {
+		transform: translateX(-1px);
+	}
+
+}

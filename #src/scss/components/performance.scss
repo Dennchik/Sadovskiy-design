@@ -10,6 +10,7 @@
 		url('../img/performance/ellipse-02.png') top -6% right -7% / 25% no-repeat;
 
 		&::before {
+			pointer-events: none;
 			content: '';
 			width: 100%;
 			height: 100%;
@@ -42,6 +43,7 @@
 	// .performance__g-box
 
 	&__g-box {
+		pointer-events: none;
 		position: absolute;
 		width: 100%;
 		height: 100%;
