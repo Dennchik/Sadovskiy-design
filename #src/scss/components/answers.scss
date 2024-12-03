@@ -18,6 +18,7 @@
 	// .answers__content
 	&__content {
 		border-bottom: 1px solid rgb(169, 169, 169);
+
 		&._open {
 			._icon {
 				transform: rotate(-405deg);
@@ -32,16 +33,19 @@
 		cursor: pointer;
 		display: flex;
 		gap: 8px;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: space-between;
 
 		._icon {
+			margin-top: 4px;
 			font-size: 20px;
 			transition: transform 0.4s ease-in-out;
 			color: #2b3769;
 
 			&::before {
 				font-weight: 700;
+				user-select: none;
+				pointer-events: none;
 			}
 		}
 	}
@@ -50,6 +54,7 @@
 	&__icon {
 		display: flex;
 		align-items: center;
+
 	}
 
 	// .answers__text

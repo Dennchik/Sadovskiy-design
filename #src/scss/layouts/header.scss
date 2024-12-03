@@ -52,19 +52,21 @@
 		height: 40px;
 	}
 
-	// .heade__title
+	// .head__title
 	&__title {
 		font-family: $font-defoult;
 		font-size: 19px;
 		font-weight: 900;
 		line-height: 126.315789%; /* 24px/19 */
 		white-space: nowrap;
+
 		a {
 			transition: color 0.5s ease 0s;
 		}
 
 		span {
 			display: block;
+
 			&:nth-child(2) {
 				font-size: 14px;
 				font-weight: 500;

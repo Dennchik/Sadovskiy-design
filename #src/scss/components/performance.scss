@@ -6,9 +6,8 @@
 
 	// .performance__wrapper
 	&__wrapper {
-		background:
-			url('../img/performance/ellipse-01.png') top -15% left 17% / 50% no-repeat,
-			url('../img/performance/ellipse-02.png') top -6% right -7% / 25% no-repeat;
+		background: url('../img/performance/ellipse-01.png') top -15% left 17% / 50% no-repeat,
+		url('../img/performance/ellipse-02.png') top -6% right -7% / 25% no-repeat;
 
 		&::before {
 			content: '';
@@ -19,29 +18,24 @@
 			left: 0;
 			z-index: 1;
 			background: radial-gradient(
-				ellipse 120% 50% at 30% 10%,
-				rgba(23, 27, 28, 0.74) 0%,
-				rgba(23, 27, 28, 0.397) 25%,
-				transparent 65%
+											ellipse 120% 50% at 30% 10%,
+											rgba(23, 27, 28, 0.74) 0%,
+											rgba(23, 27, 28, 0.397) 25%,
+											transparent 65%
 			);
 		}
 
 		@include _320-1440 {
-			background:
-				url('../img/performance/ellipse-01.png') top
-					calc(45% + (-15 - 45) * ((100vw - 690px) / (1440 - 690))) left
-					calc(-235px + (-150 - (-235)) * ((100vw - 690px) / (1440 - 690))) /
+			background: url('../img/performance/ellipse-01.png') top calc(45% + (-15 - 45) * ((100vw - 690px) / (1440 - 690))) left calc(-235px + (-150 - (-235)) * ((100vw - 690px) / (1440 - 690))) /
 					calc(600px + (850 - 600) * ((100vw - 690px) / (1440 - 690))) no-repeat,
-				url('../img/performance/ellipse-02.png') top -6% right calc(
+			url('../img/performance/ellipse-02.png') top -6% right calc(
 						-150px + (-150 - (-150)) * ((100vw - 690px) / (1440 - 690))
 					) / calc(55% + (-265 - 55) * ((100vw - 690px) / (1440 - 690))) no-repeat;
 		}
 
 		@include _screen-320 {
-			background:
-				url('../img/performance/ellipse-01.png') top 48% left -290px / 490px no-repeat,
-				url('../img/performance/ellipse-02.png') top -6% right -150px / 330px
-					no-repeat;
+			background: url('../img/performance/ellipse-01.png') top 48% left -290px / 490px no-repeat,
+			url('../img/performance/ellipse-02.png') top -6% right -150px / 330px no-repeat;
 		}
 	}
 
@@ -67,10 +61,10 @@
 			z-index: 3;
 
 			background: radial-gradient(
-				ellipse 70% 40% at 40% 50%,
-				rgb(43, 55, 105) 10%,
-				rgba(43, 55, 105, 0.795) 30%,
-				transparent 60%
+											ellipse 70% 40% at 40% 50%,
+											rgb(43, 55, 105) 10%,
+											rgba(43, 55, 105, 0.795) 30%,
+											transparent 60%
 			);
 		}
 
@@ -80,17 +74,17 @@
 			z-index: 4;
 
 			background: radial-gradient(
-					circle at 20% 49%,
-					rgba(110, 123, 177, 0.623) 1%,
-					rgba(43, 55, 105, 0.26) 15%,
-					transparent 25%
-				),
-				radial-gradient(
-					circle at 64% 35%,
-					rgba(110, 123, 177, 0.623) 1%,
-					rgba(43, 55, 105, 0.26) 15%,
-					transparent 35%
-				);
+											circle at 20% 49%,
+											rgba(110, 123, 177, 0.623) 1%,
+											rgba(43, 55, 105, 0.26) 15%,
+											transparent 25%
+			),
+			radial-gradient(
+											circle at 64% 35%,
+											rgba(110, 123, 177, 0.623) 1%,
+											rgba(43, 55, 105, 0.26) 15%,
+											transparent 35%
+			);
 		}
 	}
 
@@ -111,7 +105,6 @@
 
 		@include _screen-1440 {
 			padding: 21.6rem 30px 14.7rem;
-			gap: 20px;
 		}
 
 		@include _screen-690 {
@@ -203,10 +196,13 @@
 	&__text {
 		position: relative;
 		align-self: end;
-		margin: 100px 0;
+		margin: 70px 0;
 
 		@include _1440-1920 {
 			margin: calc(50px + (100 - 50) * ((100vw - 1440px) / (1920 - 1440))) 0;
+		}
+		@include _screen-1440 {
+			margin: 20px 0 70px;
 		}
 
 		p {
@@ -224,26 +220,28 @@
 	// .performance__item
 	&__item {
 		list-style: disc;
+
 		span {
 			margin-left: 20px;
 			line-height: 150%; /* 24px/16 */
 
 			@include _screen-490 {
-				margin-left: 0px;
+				margin-left: 0;
 			}
 		}
 	}
 
-	// .performance__buttom
+	// .performance__button
 	&__button {
 		right: 0;
 		bottom: 0;
-		background: #ffffff;
+		background: #fff;
 		border: 1px solid transparent;
 		align-self: flex-start;
 
 		&:hover {
 			border: 1px solid #fff;
+
 			.icon {
 				transform: rotate(-45deg);
 			}
@@ -304,6 +302,7 @@
 				opacity: 0.7;
 				color: #000;
 			}
+
 			.icon {
 				transform: rotate(-45deg);
 			}

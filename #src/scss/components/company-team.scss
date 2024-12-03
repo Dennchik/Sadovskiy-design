@@ -11,7 +11,7 @@
 	}
 
 	@include _screen-375 {
-		padding: 50px 10px;
+		padding: 60px 10px;
 	}
 
 	// .company-team__body
@@ -28,7 +28,7 @@
 	// .company-team__title
 	&__title {
 		margin-bottom: 70px;
-		color: #ffffff;
+		color: #fff;
 		text-align: center;
 
 		@include _screen-690 {
@@ -62,7 +62,7 @@
 	// .company-team__column
 	&__column {
 		border-radius: 30px;
-		background: #ffffff;
+		background: #fff;
 
 		@include _screen-690 {
 			border-radius: 15px;
@@ -121,6 +121,7 @@
 			object-fit: contain;
 			filter: grayscale(0.3);
 		}
+
 		@include _screen-768 {
 			border-radius: 10px;
 		}
@@ -165,6 +166,7 @@
 		}
 	}
 }
+
 .elipsis-cont {
 	position: absolute;
 	display: flex;

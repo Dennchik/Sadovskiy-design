@@ -6,7 +6,7 @@
 	// .project__title
 	&__title {
 		text-align: center;
-		margin-bottom: 53px;
+		margin-bottom: 50px;
 
 		@include _960-1920 {
 			font-size: calc(24px + (65 - 24) * ((100vw - 960px) / (1920 - 960)));
@@ -15,6 +15,11 @@
 		@include _screen-1140 {
 			color: #fff;
 			margin-bottom: 40px;
+			padding-top: 12rem;
+		}
+
+		@include _screen-960 {
+			padding-top: 50px;
 		}
 	}
 
@@ -63,7 +68,7 @@
 		align-items: center;
 		justify-content: space-between;
 		grid-template-columns: 1fr min-content;
-		transition: all 0.7s ease 0s;
+		transition: all 0.4s ease-in-out;
 
 		&._responsive {
 			background: #3a4a91;
@@ -74,6 +79,7 @@
 				.tabs-button__item {
 					position: relative;
 					opacity: 1;
+					transition: opacity 0.4s ease-in-out;
 					pointer-events: all;
 					transform: translateX(0);
 				}
