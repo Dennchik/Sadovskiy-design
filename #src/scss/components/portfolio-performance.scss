@@ -143,7 +143,6 @@
 	}
 
 	// .performance__image
-
 	&__image {
 		height: 100%;
 		width: 100%;
@@ -164,13 +163,5 @@
 				margin-bottom: 20px;
 			}
 		}
-
-		// @include _screen-960 {
-		// 	position: absolute;
-		// 	top: 0;
-		// 	left: 0;
-		// 	z-index: -1;
-		// 	opacity: 0.4;
-		// }
 	}
 }

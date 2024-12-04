@@ -7,7 +7,7 @@
 		border-bottom: 1px solid #a9a9a9;
 
 		@include _screen-690 {
-			padding-bottom: 24px;
+			padding-bottom: 40px;
 		}
 
 		@include _screen-320 {
@@ -28,7 +28,7 @@
 
 	// .answers__question
 	&__question {
-		padding: 20px 0 20px;
+		padding: 7px 0 20px;
 		user-select: none;
 		cursor: pointer;
 		display: flex;
@@ -84,7 +84,7 @@
 
 	// .answers__answer
 	&__answer {
-		padding: 5px 0 40px;
+		padding-bottom: 40px;
 		min-height: 0;
 	}
 }
