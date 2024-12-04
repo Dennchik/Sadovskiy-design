@@ -128,7 +128,7 @@
 	// page__performance
 	&__performance {
 		margin-top: -20px;
-		padding: 0 0 13rem;
+		padding: 0 0 12rem;
 
 		@include _screen-690 {
 			padding: 0 0 50px;
@@ -156,10 +156,10 @@
 		position: relative;
 		z-index: 9;
 		display: flow-root;
-		padding: 0 50px 13rem;
+		padding: 0 50px 12rem;
 
 		@include _screen-1440 {
-			padding: 0 30px 13rem;
+			padding: 0 30px 12rem;
 		}
 
 		@include _screen-690 {
@@ -174,10 +174,10 @@
 	// .page__project
 	&__project {
 		position: relative;
-		padding: 0 50px 13rem;
+		padding: 0 50px 12rem;
 
 		@include _screen-1440 {
-			padding: 0 0 13rem !important;
+			padding: 0 0 12rem !important;
 		}
 
 		@include _screen-690 {
@@ -225,7 +225,7 @@
 	&__schedule {
 		overflow: hidden;
 		padding: 0 0 12rem;
-		
+
 		@include _screen-690 {
 			padding: 0 0 50px;
 		}
