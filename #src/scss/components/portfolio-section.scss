@@ -36,8 +36,12 @@
 		width: 100%;
 		// height: 100%;
 		display: grid;
-		justify-content: space-between;
-		grid-template-columns: repeat(2, auto);
+		// justify-content: space-between;
+		grid-template-columns: minmax(
+					calc(190px + (450 - 190) * ((100vw - 320px) / (1920 - 320))),
+										max-content
+				)
+				1fr;
 
 		img {
 			height: 100%;
