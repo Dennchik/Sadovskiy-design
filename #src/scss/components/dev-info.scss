@@ -21,7 +21,7 @@
 		grid-template-columns: repeat(2, 1fr);
 		background: radial-gradient(
 										circle at 100% 75%,
-										#6e7bb191 0%,
+										rgba(110, 123, 177, 0.35) 0%,
 										#2b37695d 15%,
 										transparent 75%
 		);
@@ -54,17 +54,17 @@
 	&__content {
 		position: relative;
 		z-index: 2;
-		padding: 13rem 50px 16.2rem;
+		padding: 12rem 50px 13rem;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		column-gap: 40px;
 
 		@include _screen-1440 {
-			padding: 13rem 30px 16.2rem;
+			padding: 12rem 30px 13rem;
 		}
 
-		@include _screen-1440 {
-			padding: 50px 30px 16px;
+		@include _screen-960 {
+			padding: 50px 30px 60px;
 		}
 
 		@include _screen-375 {

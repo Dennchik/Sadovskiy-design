@@ -2,7 +2,7 @@
 	// .order-place__content
 	&__content {
 		position: relative;
-		padding: 13rem 60px;
+		padding: 12rem 60px 13rem;
 		overflow: hidden;
 		border-radius: 30px;
 		display: flex;
@@ -10,7 +10,7 @@
 		justify-content: center;
 
 		@include _screen-1440 {
-			padding: 13rem 30px 16rem;
+			padding: 12rem 30px 13rem;
 		}
 
 		@include _screen-690 {
