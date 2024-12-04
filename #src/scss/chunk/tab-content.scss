@@ -5,9 +5,12 @@
 	// .tab-content__items
 	&__items {
 		display: none;
-		margin-bottom: 40px;
+		padding-bottom: 40px;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 40px;
+		@include _min-1140 {
+			padding-top: 50px;
+		}
 
 		@include _screen-1440 {
 			grid-template-columns: repeat(2, 1fr);

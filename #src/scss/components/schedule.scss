@@ -1,6 +1,6 @@
 .schedule {
 	background: #2b3769;
-	padding: 13rem 50px;
+	padding: 12rem 50px 13rem;
 
 	@include _screen-1440 {
 		padding: 13rem 30px;
@@ -28,7 +28,7 @@
 	&__items {
 		display: grid;
 		height: 100%;
-		gap: 60px;
+		gap: 80px;
 		justify-content: space-between;
 		grid-template-columns: repeat(3, minmax(200px, 1fr));
 
@@ -92,8 +92,8 @@
 
 	// .schedule__number
 	&__number {
-		margin-bottom: 7px;
-		padding-bottom: 20px;
+		margin-bottom: 10px;
+		padding-bottom: 30px;
 		color: #fff;
 		font-size: 96px;
 		font-weight: 400;
