@@ -145,8 +145,9 @@
 		@include _screen-768 {
 			right: 0;
 		}
+
 		@include _screen-490 {
-			top: 70%;
+			top: 77%;
 		}
 	}
 
@@ -371,7 +372,7 @@
 	&__content {
 		font-size: 16px;
 		max-width: 445px;
-		min-width: 270px;
+		min-width: 295px;
 		border-radius: 5px;
 		background: #fff;
 		padding: 1.5rem 1.5rem;
