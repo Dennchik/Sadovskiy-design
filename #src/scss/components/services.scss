@@ -25,7 +25,10 @@
 
 		&:nth-child(n + 2) {
 			.card {
-				min-height: 265px;
+				@include _min-1440 {
+					min-height: 265px;
+				}
+
 				@include _1440-1920 {
 					min-height: calc(
 									205px + (265 - 205) * ((100vw - 1440px) / (1920 - 1440))
@@ -380,7 +383,9 @@
 	transition: all 0.5s ease-in-out;
 
 	&:hover {
-		box-shadow: 0 2px 7px #929292;
+		@include _screen-960 {
+			box-shadow: 0 2px 7px #929292;
+		}
 
 		.card__icon {
 			transform: rotate(45deg);
