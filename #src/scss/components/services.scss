@@ -25,10 +25,10 @@
 
 		&:nth-child(n + 2) {
 			.card {
+				min-height: 265px;
 				@include _1440-1920 {
-					min-height: 265px;
 					min-height: calc(
-						205px + (265 - 205) * ((100vw - 1440px) / (1920 - 1440))
+									205px + (265 - 205) * ((100vw - 1440px) / (1920 - 1440))
 					);
 				}
 			}
@@ -38,8 +38,6 @@
 			border-radius: 30px;
 			display: flex;
 			align-items: center;
-
-			padding: 90px 15px 90px 30px;
 			padding: 0 15px 0 30px;
 			overflow: hidden;
 			background: $color;
@@ -50,90 +48,90 @@
 
 			@include _1440-1920 {
 				padding-left: calc(
-					20px + (30 - 20) * ((100vw - 1440px) / (1920 - 1440))
+								20px + (30 - 20) * ((100vw - 1440px) / (1920 - 1440))
 				);
 			}
 
 			@include _min-490 {
 				background-image: radial-gradient(
-						circle at -90% -30%,
-						#171b1c00 10%,
-						#171b1cc9 55%,
-						transparent
-					),
-					radial-gradient(
-						circle at 37% 4%,
-						rgba(43, 55, 105, 0.644) 1%,
-						rgba(255, 255, 255, 0) 20%,
-						transparent
-					),
-					radial-gradient(
-						ellipse at 60% 10%,
-						#171b1c77 8%,
-						rgba(255, 255, 255, 0) 30%,
-						transparent
-					),
-					radial-gradient(
-						circle at 35% 155%,
-						rgba(255, 255, 255, 0.726) 5%,
-						rgb(43, 55, 105) 40%,
-						transparent
-					),
-					radial-gradient(
-						circle at 99% 170%,
-						rgba(238, 238, 238, 0.911) 10%,
-						rgb(43, 55, 105) 40%,
-						transparent
-					),
-					radial-gradient(
-						circle at 0% -10%,
-						#171b1c 30%,
-						#2b37695d 60%,
-						transparent
-					),
-					radial-gradient(
-						ellipse at right top,
-						rgba(43, 55, 105, 0.714) 50%,
-						rgba(238, 238, 238, 0.329) 60%,
-						transparent
-					),
-					radial-gradient(
-						ellipse at 50% 160%,
-						rgb(43, 57, 105) 50%,
-						rgba(43, 57, 105, 0.329) 150%
-					);
+												circle at -90% -30%,
+												#171b1c00 10%,
+												#171b1cc9 55%,
+												transparent
+				),
+				radial-gradient(
+												circle at 37% 4%,
+												rgba(43, 55, 105, 0.644) 1%,
+												rgba(255, 255, 255, 0) 20%,
+												transparent
+				),
+				radial-gradient(
+												ellipse at 60% 10%,
+												#171b1c77 8%,
+												rgba(255, 255, 255, 0) 30%,
+												transparent
+				),
+				radial-gradient(
+												circle at 35% 155%,
+												rgba(255, 255, 255, 0.726) 5%,
+												rgb(43, 55, 105) 40%,
+												transparent
+				),
+				radial-gradient(
+												circle at 99% 170%,
+												rgba(238, 238, 238, 0.911) 10%,
+												rgb(43, 55, 105) 40%,
+												transparent
+				),
+				radial-gradient(
+												circle at 0% -10%,
+												#171b1c 30%,
+												#2b37695d 60%,
+												transparent
+				),
+				radial-gradient(
+												ellipse at right top,
+												rgba(43, 55, 105, 0.714) 50%,
+												rgba(238, 238, 238, 0.329) 60%,
+												transparent
+				),
+				radial-gradient(
+												ellipse at 50% 160%,
+												rgb(43, 57, 105) 50%,
+												rgba(43, 57, 105, 0.329) 150%
+				);
 			}
 
 			@include _screen-490 {
 				background-image: radial-gradient(
-						ellipse at top center,
-						#171b1c,
-						transparent
-					),
-					radial-gradient(
-						ellipse at 0% 30%,
-						#171b1c 0%,
-						rgba(43, 55, 105, 0.548) 70%,
-						transparent
-					),
-					radial-gradient(
-						circle at 110% 10%,
-						rgba(238, 238, 238, 0.37) 20%,
-						rgb(43, 55, 105) 40%,
-						transparent
-					),
-					radial-gradient(
-						ellipse at 170% 2%,
-						#2b3769 20%,
-						rgba(238, 238, 238, 0.048) 70%,
-						transparent
-					),
-					radial-gradient(
-						ellipse at 20% 110%,
-						rgb(238, 238, 238) 10%,
-						rgba(43, 55, 105, 0.891) 40%,
-						transparent
-					);
+												ellipse at top center,
+												#171b1c,
+												transparent
+				),
+				radial-gradient(
+												ellipse at 0% 30%,
+												#171b1c 0%,
+												rgba(43, 55, 105, 0.548) 70%,
+												transparent
+				),
+				radial-gradient(
+												circle at 110% 10%,
+												rgba(238, 238, 238, 0.37) 20%,
+												rgb(43, 55, 105) 40%,
+												transparent
+				),
+				radial-gradient(
+												ellipse at 170% 2%,
+												#2b3769 20%,
+												rgba(238, 238, 238, 0.048) 70%,
+												transparent
+				),
+				radial-gradient(
+												ellipse at 20% 110%,
+												rgb(238, 238, 238) 10%,
+												rgba(43, 55, 105, 0.891) 40%,
+												transparent
+				);
 			}
 
 			@include _screen-1440 {
@@ -152,7 +150,7 @@
 
 			@include _screen-768 {
 				margin: 0 -30px;
-				border-radius: 0px;
+				border-radius: 0;
 			}
 
 			@include _screen-690 {
@@ -181,6 +179,7 @@
 
 			.card {
 				width: 100%;
+
 				&:nth-child(1) {
 					max-height: 100px;
 					min-height: 100px;
@@ -192,9 +191,11 @@
 					&:hover {
 						box-shadow: none !important;
 					}
+
 					.card__title {
 						margin-bottom: 0;
 					}
+
 					.card__icon {
 						pointer-events: all !important;
 
@@ -205,6 +206,7 @@
 
 					&:hover {
 						box-shadow: 2px 2px 4px #929292;
+
 						.card__icon {
 							transform: rotate(0);
 
@@ -216,13 +218,12 @@
 
 					@include _1440-1920 {
 						min-height: calc(
-							68px + (100 - 68) * ((100vw - 1440px) / (1920 - 1440))
+										68px + (100 - 68) * ((100vw - 1440px) / (1920 - 1440))
 						);
 						max-height: calc(
-							68px + (100 - 68) * ((100vw - 1440px) / (1920 - 1440))
+										68px + (100 - 68) * ((100vw - 1440px) / (1920 - 1440))
 						);
-						padding: calc(15px + (27 - 15) * ((100vw - 1440px) / (1920 - 1440)))
-							calc(20px + (30 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+						padding: calc(15px + (27 - 15) * ((100vw - 1440px) / (1920 - 1440))) calc(20px + (30 - 20) * ((100vw - 1440px) / (1920 - 1440)));
 					}
 
 					@include _screen-1440 {
@@ -290,14 +291,14 @@
 
 		@include _1440-1920 {
 			transform: translateX(
-				calc(225px + (300 - 225) * ((100vw - 1440px) / (1920 - 1440)))
+											calc(225px + (300 - 225) * ((100vw - 1440px) / (1920 - 1440)))
 			);
 			top: calc(5px + (20 - 5) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 
 		@include _960-1440 {
 			transform: translateX(
-				calc(225px + (370 - 225) * ((100vw - 960px) / (1920 - 960)))
+											calc(225px + (370 - 225) * ((100vw - 960px) / (1920 - 960)))
 			);
 
 			top: calc(8px + (20 - 8) * ((100vw - 960px) / (1440 - 960)));
@@ -327,17 +328,18 @@
 		}
 	}
 
-	// .services__buttom
+	// .services__button
 	&__button {
 		right: 0;
 		bottom: 0;
-		background: #ffffff;
+		background: #fff;
 		border: 1px solid transparent;
 		position: absolute;
 		transform: translateY(15%);
 
 		&:hover {
 			border: 1px solid #fff;
+
 			.icon {
 				transform: rotate(-45deg);
 			}
@@ -378,7 +380,8 @@
 	transition: all 0.5s ease-in-out;
 
 	&:hover {
-		box-shadow: 0px 2px 7px #929292;
+		box-shadow: 0 2px 7px #929292;
+
 		.card__icon {
 			transform: rotate(45deg);
 		}
@@ -425,7 +428,7 @@
 
 		@include _1440-1920 {
 			margin-bottom: calc(
-				15px + (35 - 15) * ((100vw - 1440px) / (1920 - 1440))
+							15px + (35 - 15) * ((100vw - 1440px) / (1920 - 1440))
 			);
 		}
 
@@ -475,7 +478,7 @@
 
 				@include _1440-1920 {
 					font-size: calc(
-						17px + (22 - 17) * ((100vw - 1440px) / (1920 - 1440))
+									17px + (22 - 17) * ((100vw - 1440px) / (1920 - 1440))
 					);
 				}
 			}
