@@ -35,7 +35,7 @@
 	&__content {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		gap: 20px;
+		column-gap: 20px;
 		grid-auto-flow: dense;
 		grid-auto-rows: auto;
 
@@ -51,18 +51,24 @@
 
 	// .seo-block__column
 	&__column {
-		// transition: grid-template-rows 0.4s ease-in-out;
-		// overflow: hidden;
-		// display: grid;
-		// grid-template-rows: 1fr;
+		transition: grid-template-rows 0.4s ease-in-out;
+		overflow: hidden;
+		display: grid;
+		grid-template-rows: 1fr;
 
-		// &:not(:last-child) {
-		// 	margin-bottom: 20px;
-		// }
+		@include _screen-768 {
+			flex: 0 100%;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
 
 		&.hidden {
-			// grid-template-rows: 0fr;
-			display: none;
+			margin-bottom: 0;
+			grid-template-rows: 0fr;
+			overflow: hidden;
+
 		}
 
 		li {
