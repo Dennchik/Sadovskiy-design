@@ -152,7 +152,7 @@
 			}
 
 			@include _screen-768 {
-				margin: 0 -30px;
+				margin: 0 -10px;
 				border-radius: 0;
 			}
 
@@ -341,18 +341,20 @@
 		transform: translateY(15%);
 
 		&:hover {
-			border: 1px solid #fff;
+			@include _min-960 {
+				border: 1px solid #fff;
 
-			.icon {
-				transform: rotate(-45deg);
-			}
+				.icon {
+					transform: rotate(-45deg);
+				}
 
-			span {
-				color: #fff;
-			}
+				span {
+					color: #fff;
+				}
 
-			&::before {
-				background: $color;
+				&::before {
+					background: $color;
+				}
 			}
 		}
 

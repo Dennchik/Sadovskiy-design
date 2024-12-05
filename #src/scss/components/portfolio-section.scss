@@ -272,13 +272,13 @@
 
 		@include _320-1220 {
 			// height: calc(1840px + (7360 - 1840) * ((100vw - 320px) / (1220 - 320)));
-			width: calc(67.1px + (268.6 - 67.1) * ((100vw - 320px) / (1220 - 320)));
+			width: calc(67.15px + (268.6 - 67.15) * ((100vw - 320px) / (1220 - 320)));
 
 		}
 
 		@include _screen-320 {
-			height: 1840px;
-			width: 67.1px;
+			// height: 1840px;
+			width: 67.15px;
 
 		}
 	}

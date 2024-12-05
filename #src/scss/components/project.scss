@@ -34,19 +34,15 @@
 		);
 
 		@include _min-960 {
-			border-radius: 0 30px 30px 30px;
+			border-radius: 0 30px 10px 30px;
 		}
 
 		@include _screen-1440 {
-			padding: 0 30px 60px;
+			padding: 0 10px 60px;
 			border-radius: 0;
 		}
 
 		@include _screen-690 {
-			padding: 0 30px 60px;
-		}
-
-		@include _screen-375 {
 			padding: 0 10px 60px;
 		}
 	}

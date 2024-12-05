@@ -163,14 +163,10 @@
 		padding: 0 50px 13rem;
 
 		@include _screen-1440 {
-			padding: 0 30px 13rem;
+			padding: 0 10px 13rem;
 		}
 
 		@include _screen-690 {
-			padding: 0 30px 60px;
-		}
-
-		@include _screen-375 {
 			padding: 0 10px 60px;
 		}
 	}
@@ -195,14 +191,10 @@
 		padding: 0 50px 16.2rem;
 
 		@include _screen-1440 {
-			padding: 0 30px 16.2rem;
+			padding: 0 10px 16.2rem;
 		}
 
 		@include _screen-690 {
-			padding: 0 30px 60px;
-		}
-
-		@include _screen-375 {
 			padding: 0 10px 60px;
 		}
 	}
@@ -289,17 +281,12 @@
 	&__seo-block {
 		background: url('../img/main/s-bg.png') center / contain repeat;
 		padding: 12rem 50px 16.2rem;
-		// margin: -16rem 0 0;
 
 		@include _screen-1440 {
-			padding: 13rem 30px 16.2rem;
+			padding: 13rem 10px 16.2rem;
 		}
 
 		@include _screen-690 {
-			padding: 50px 30px 60px;
-		}
-
-		@include _screen-375 {
 			padding: 50px 10px 60px;
 		}
 	}
@@ -322,14 +309,10 @@
 		padding: 0 50px 16.2rem;
 
 		@include _screen-1440 {
-			padding: 0 30px 16.2rem;
+			padding: 0 10px 16.2rem;
 		}
 
 		@include _screen-690 {
-			padding: 0 30px 60px;
-		}
-
-		@include _screen-375 {
 			padding: 0 10px 60px;
 		}
 	}
@@ -339,15 +322,11 @@
 		padding: 0 50px 16.2rem;
 
 		@include _screen-1440 {
-			padding: 0 30px 16.2rem;
+			padding: 0 10px 16.2rem;
 		}
 
 		@include _screen-1440 {
-			padding: 0 30px 60px;
-		}
-
-		@include _screen-375 {
-			padding: 0 10px;
+			padding: 0 10px 60px;
 		}
 	}
 

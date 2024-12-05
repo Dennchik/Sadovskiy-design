@@ -94,11 +94,11 @@
 		width: 100%;
 
 		@include _screen-960 {
+			gap: 12px;
 			flex-direction: column;
 		}
 
 		@include _screen-375 {
-			gap: 12px;
 			margin: 16px auto 13px;
 		}
 	}

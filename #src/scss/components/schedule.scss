@@ -3,16 +3,13 @@
 	padding: 12rem 50px 13rem;
 
 	@include _screen-1440 {
-		padding: 13rem 30px;
+		padding: 13rem 10px;
 	}
 
 	@include _screen-690 {
-		padding: 50px 30px;
-	}
-
-	@include _screen-375 {
 		padding: 50px 10px 60px;
 	}
+ 
 	// .schedule__body
 	&__body {
 		position: relative;
