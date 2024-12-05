@@ -2,7 +2,7 @@
 	// .order-place__content
 	&__content {
 		position: relative;
-		padding: 12rem 60px 13rem;
+		padding: 13rem 60px 16.2rem;
 		overflow: hidden;
 		border-radius: 30px;
 		display: flex;
@@ -10,7 +10,7 @@
 		justify-content: center;
 
 		@include _screen-1440 {
-			padding: 12rem 30px 13rem;
+			padding: 13rem 30px 16.2rem;
 		}
 
 		@include _screen-690 {
@@ -236,18 +236,20 @@
 
 			.order-form__button {
 				&:hover {
-					border: 1px solid #fff;
+					@include _min-960 {
+						border: 1px solid #fff;
 
-					.icon {
-						transform: rotate(-45deg);
-					}
+						.icon {
+							transform: rotate(-45deg);
+						}
 
-					span {
-						color: #fff;
-					}
+						span {
+							color: #fff;
+						}
 
-					&::before {
-						background: $color;
+						&::before {
+							background: $color;
+						}
 					}
 				}
 			}
@@ -284,26 +286,27 @@
 				}
 
 				&:hover {
-					border: 1px solid rgb(209, 209, 209);
+					@include _min-960 {
+						border: 1px solid rgb(209, 209, 209);
 
-					.icon {
-						transform: rotate(-45deg);
-						background: $color;
-					}
-
-					.icon-arrow-right {
-						&::before {
-							color: #fff;
-							// font-weight: 500;
+						.icon {
+							transform: rotate(-45deg);
+							background: $color;
 						}
-					}
 
-					span {
-						color: #000;
-					}
+						.icon-arrow-right {
+							&::before {
+								color: #fff;
+							}
+						}
 
-					&::before {
-						background: #fff;
+						span {
+							color: #000;
+						}
+
+						&::before {
+							background: #fff;
+						}
 					}
 				}
 			}

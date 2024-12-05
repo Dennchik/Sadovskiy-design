@@ -122,18 +122,20 @@
 		}
 
 		&:hover {
-			border: 1px solid #fff;
+			@include _min-960 {
+				border: 1px solid #fff;
 
-			.icon {
-				transform: rotate(-90deg);
-			}
+				.icon {
+					transform: rotate(-90deg);
+				}
 
-			span {
-				color: #fff;
-			}
+				span {
+					color: #fff;
+				}
 
-			&::before {
-				background: $color;
+				&::before {
+					background: $color;
+				}
 			}
 		}
 	}

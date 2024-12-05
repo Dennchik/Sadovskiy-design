@@ -1,33 +1,35 @@
 .portfolio-section {
 	position: relative;
 
+	// .portfolio-section__bg-image
+	&__bg-image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
 	&._bg-color {
 		background: #020202;
 	}
 
 	// .portfolio-section__body
 	&__body {
-		border: 1px solid green;
-		// display: flex;
-		// flex-direction: column;
-		gap: 3rem;
-		padding-bottom: 6rem;
-
-		@include _min-1920 {
-			padding-top: 130px;
-			padding-bottom: 130px;
+		@include _min-690 {
+			padding-top: 13rem;
+			padding-bottom: 16.2rem;
 		}
 
-		@include _320-1920 {
-			padding-top: calc(50px + (130 - 60) * ((100vw - 320px) / (1920 - 320)));
-			padding-bottom: calc(
-							60px + (130 - 50) * ((100vw - 320px) / (1920 - 320))
-			);
-		}
-
-		@include _screen-320 {
+		@include _screen-690 {
 			padding-top: 50px;
-			padding-bottom: 50px;
+			padding-bottom: 60px;
 		}
 	}
 
@@ -35,19 +37,13 @@
 	&__content {
 		position: relative;
 		width: 100%;
-		// height: 100%;
 		display: grid;
-		// justify-content: space-between;
 		grid-template-columns: minmax(
 					calc(190px + (450 - 190) * ((100vw - 320px) / (1920 - 320))),
 										max-content
 				)
 				1fr;
 
-		img {
-			// height: 100%;
-			width: auto;
-		}
 	}
 
 	// .portfolio-section___line-1-col
@@ -55,10 +51,9 @@
 		position: relative;
 		z-index: 9;
 		display: grid;
-		gap: 3rem;
+		gap: 4rem;
 		color: #000;
 		margin-bottom: 70px;
-		border: 1px solid blue;
 
 		&._text-white {
 			top: 0;
@@ -66,11 +61,6 @@
 			width: 100%;
 			// height: 100%;
 			color: white;
-		}
-
-		@include _320-1920 {
-			gap: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320)));
-			margin-bottom: calc(25px + (30 - 25) * ((100vw - 320px) / (1920 - 320)));
 		}
 
 		@include _min-960 {
@@ -82,9 +72,18 @@
 				1fr;
 		}
 
-		@include _screen-320 {
+		@include _screen-1220 {
+			grid-template-columns: 1fr;
+		}
+
+		@include _screen-690 {
+			margin-bottom: 20px;
 			gap: 10px;
-			margin-bottom: 25px;
+		}
+
+		@include _screen-320 {
+			gap: 20px;
+			margin-bottom: 20px;
 		}
 	}
 
@@ -94,13 +93,9 @@
 		grid-row: -1 /1;
 		top: 0;
 		left: 0;
-		// height: 100%;
 		width: auto;
-		display: flex;
-		flex-direction: column;
 
 		img {
-			// height: 100%;
 			max-width: 100%;
 		}
 
@@ -113,18 +108,8 @@
 		}
 
 		&:nth-child(2) {
-			width: 269px;
 			justify-self: end;
-			position: relative;
 			z-index: 2;
-
-			@include _320-1260 {
-				width: calc(67px + (269 - 67) * ((100vw - 320px) / (1260 - 320)));
-			}
-
-			@include _screen-320 {
-				width: 67px;
-			}
 		}
 	}
 
@@ -168,18 +153,20 @@
 		@include _screen-960 {
 			display: flex;
 			flex-direction: column;
-			gap: 4rem;
+			gap: 20px;
 		}
 	}
 
 	// .portfolio-section__line-2-row-col
 	&__line-2-row-col {
-		gap: 2rem;
-
-		// @include _min-960 {
 		display: grid;
 		grid-template-columns: 1fr minmax(400px, 575px);
-		// }
+		gap: 20px;
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+
 		@include _screen-960 {
 			display: flex;
 			flex-direction: column-reverse;
@@ -270,16 +257,59 @@
 	// .order-registration__text
 	&__text {
 		line-height: 125%;
-		padding-top: 20px;
+	}
+
+	// .portfolio-section__line-main-col--resize
+	&__line-main-col--resize {
+
+		// width: 169px;
+		@include _min-1220 {
+
+			height: 7360px;
+			width: 268.6px;
+
+		}
+
+		@include _320-1220 {
+			// height: calc(1840px + (7360 - 1840) * ((100vw - 320px) / (1220 - 320)));
+			width: calc(67.1px + (268.6 - 67.1) * ((100vw - 320px) / (1220 - 320)));
+
+		}
+
+		@include _screen-320 {
+			height: 1840px;
+			width: 67.1px;
+
+		}
+	}
+
+	// .portfolio-section__image--resize
+	&__image--resize {
+
+		@include _min-1220 {
+			img {
+				height: 7360px;
+			}
+		}
+
+		@include _320-1220 {
+			img {
+				width: 100%;
+				height: calc(1840px + (7360 - 1840) * ((100vw - 320px) / (1220 - 320)));
+			}
+		}
+
+		@include _screen-320 {
+			img {
+				height: 1840px;
+			}
+		}
 	}
 
 	// .portfolio-section__image
 	&__image {
-		// display: flex;
 		position: relative;
 		width: 100%;
-		// height: 100%;
-		border: 1px solid red;
 
 		&:nth-child(5) {
 			.tooltip {
@@ -302,7 +332,7 @@
 		img {
 			position: relative;
 			top: 0;
-			// height: 100%;
+			left: 0;
 			width: auto;
 			object-fit: contain;
 		}

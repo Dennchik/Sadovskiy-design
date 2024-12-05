@@ -7,7 +7,6 @@
 
 	// .project__text
 	&__text {
-		margin: 0 auto;
 		font-family: $font-defoult;
 		line-height: 125%; /* 20px/16 */
 		max-width: 975px;
@@ -50,24 +49,28 @@
 		color: #fff;
 
 		&:hover {
-			border: 1px solid $color;
-			.icon {
-				transform: rotate(-90deg);
-				background: $color;
+			@include _min-9600 {
+				border: 1px solid $color;
 
-				.icon-arrow-down {
-					&::before {
-						color: #fff;
-						font-weight: 500;
+				.icon {
+					transform: rotate(-90deg);
+					background: $color;
+
+					.icon-arrow-down {
+						&::before {
+							color: #fff;
+							font-weight: 500;
+						}
 					}
 				}
-			}
 
-			span {
-				color: #000;
-			}
-			&::before {
-				background: #fff;
+				span {
+					color: #000;
+				}
+
+				&::before {
+					background: #fff;
+				}
 			}
 		}
 	}
@@ -105,6 +108,7 @@
 		@include _screen-690 {
 			grid-template-columns: repeat(1, 1fr);
 		}
+
 		span {
 			display: inline;
 		}
@@ -137,7 +141,6 @@
 		width: 100%;
 		overflow: hidden;
 		border-radius: 30px;
-		overflow: hidden;
 		margin-bottom: 5px;
 
 		img {
@@ -204,9 +207,8 @@
 			background: #3c3b51ce;
 			scale: 0;
 			opacity: 0;
-			transition:
-				opacity 0.4s,
-				scale 0.4s ease 0s;
+			transition: opacity 0.4s,
+			scale 0.4s ease 0s;
 
 			span {
 				height: 100%;
@@ -238,20 +240,24 @@
 				transform: rotate(-45deg);
 				background: $color;
 			}
+
 			._icon {
 				&::before {
 					color: #fff;
 					font-weight: 400;
 				}
 			}
+
 			span {
 				color: #000;
 			}
+
 			&::before {
 				background: #fff;
 				color: #fff;
 			}
 		}
+
 		.icon {
 			background: #fff;
 		}
@@ -278,7 +284,6 @@
 		height: 4.8rem;
 		border-radius: 50%;
 		background: #fff;
-		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
@@ -291,6 +296,7 @@
 			.icon-arrow-right {
 				transform: translateY(-100%);
 			}
+
 			.icon-group {
 				transform: translateY(-100%);
 			}
@@ -303,6 +309,7 @@
 		._icon {
 			transition: all 0.5s ease 0s;
 			height: 4.8rem;
+
 			&::before {
 				color: #2b3769;
 				font-weight: 700;

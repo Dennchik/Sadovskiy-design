@@ -20,23 +20,16 @@
 	// .portfolio-about__body
 	&__body {
 		// background: rgba(0, 0, 0, 0.8);
-		padding-left: 50px;
-		padding-right: 50px;
 
-		@include _min-1920 {
-			padding-top: 160px;
-			padding-bottom: 160px;
-		}
-		@include _320-1920 {
-			padding-top: calc(60px + (160 - 60) * ((100vw - 320px) / (1920 - 320)));
-			padding-bottom: calc(
-							60px + (160 - 60) * ((100vw - 320px) / (1920 - 320))
-			);
+		@include _min-1440 {
+			padding: 14.3rem 50px 16.2rem;
 		}
 
-		@include _screen-960 {
-			padding-left: 30px;
-			padding-right: 30px;
+		@include _screen-1440 {
+			padding: 14.3rem 30px 16.2rem;
+		}
+		@include _screen-690 {
+			padding: 50px 30px 60px;
 		}
 
 		@include _screen-375 {

@@ -2,7 +2,7 @@ extends ../../layouts/app_layout
 append link  
 	link(rel="stylesheet" type="text/css" href="@@webRoot/css/portfolio-project.min.css")
 block title
-	- var text='Sadovskiy-design' 
+	- var text='Sadovskiy-design'
 
 block header 
 	header.page__header-main
@@ -15,7 +15,7 @@ block main-content
 		section.page__portfolio-about
 			include ../../components/portfolio-about
 	block portfolio-section
-		section.page__portfolio-section.mlrp-b0101 
+		section.page__portfolio-section.mlrp-b0101
 			include ../../components/portfolio-structure
 	block portfolio-section
 		section.page__portfolio-section
@@ -24,10 +24,10 @@ block main-content
 		section.page__portfolio-section
 			include ../../components/portfolio-main-section
 	block portfolio-section
-		section.page__portfolio-section.mlrp-b0101 
+		section.page__portfolio-section.mlrp-b0101
 			include ../../components/portfolio-catalog
 	block portfolio-section
-		section.page__portfolio-section.mlrp-b0101 
+		section.page__portfolio-section
 			include ../../components/portfolio-card
 	block portfolio-section
 		section.page__portfolio-section
@@ -39,7 +39,7 @@ block main-content
 		section.page__portfolio-section.mlrp-b0101
 			include ../../components/portfolio-services
 	block portfolio-section
-		section.page__portfolio-section.mlrp-b0101 
+		section.page__portfolio-section.mlrp-b0101
 			include ../../components/portfolio-news
 	block unknown-page
 		section.page__page-unknown

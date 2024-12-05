@@ -2,8 +2,11 @@
 	// .performance__wrapper
 	&__wrapper {
 		height: calc(100vh - 88px);
+		@include _screen-1440 {
+			height: 100%
+		}
 
-		@include _screen-768 {
+		@include _screen-1440 {
 			padding: 50px 0 60px;
 			height: 100%;
 		}
@@ -107,6 +110,7 @@
 		@include _screen-768 {
 			&.button {
 				width: 195px !important;
+				align-self: center;
 
 				span {
 					font-size: 16px;
@@ -123,9 +127,7 @@
 						}
 					}
 				}
-
 			}
-			align-self: center;
 		}
 	}
 

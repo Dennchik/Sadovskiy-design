@@ -15,15 +15,13 @@
 
 		@include _screen-690 {
 			border-radius: 15px;
-			padding: 60px 50px 60px;
+			padding: 50px 50px 60px;
 		}
 
 		@include _screen-375 {
-			padding: 60px 10px;
+			padding: 50px 10px 60px 10px;
 		}
 	}
-
-	// .order-place__content--bd-orderform
 
 	// .order-place__content--audit-page
 	&__content--audit-page {
@@ -45,7 +43,6 @@
 	&__body {
 		position: relative;
 		z-index: 9;
-		position: relative;
 	}
 
 	// .order-place__header
@@ -95,15 +92,14 @@
 		gap: 25px;
 		margin: 40px auto;
 		width: 100%;
-		display: flex;
 
 		@include _screen-960 {
 			flex-direction: column;
 		}
 
 		@include _screen-375 {
-			gap: 15px;
-			margin: 16px auto;
+			gap: 12px;
+			margin: 16px auto 13px;
 		}
 	}
 
@@ -160,17 +156,19 @@
 			}
 
 			.order-form__button {
-				&:hover {
-					.icon {
-						transform: rotate(-45deg);
-					}
+				@include _min-960 {
+					&:hover {
+						.icon {
+							transform: rotate(-45deg);
+						}
 
-					span {
-						color: #fff;
-					}
+						span {
+							color: #fff;
+						}
 
-					&::before {
-						background: $color;
+						&::before {
+							background: $color;
+						}
 					}
 				}
 			}
@@ -252,20 +250,24 @@
 		max-width: 268px;
 		border: none;
 		color: #fff;
+
 		&:hover {
 			.order-form__icon {
 				&.icon {
 					background: $color;
 				}
 			}
+
 			.icon-arrow-right {
 				&::before {
 					color: #fff;
 				}
 			}
+
 			span {
 				color: #000 !important;
 			}
+
 			&::before {
 				background: #fff !important;
 			}

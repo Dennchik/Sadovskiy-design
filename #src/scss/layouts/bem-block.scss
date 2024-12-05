@@ -83,18 +83,22 @@
 			span {
 				color: #fff;
 			}
+
 			&:before {
 				--size: 200%;
 			}
+
 			.icon {
 				background: #fff;
 			}
+
 			._icon {
 				&::before {
 					font-weight: 600;
 					color: $color;
 				}
 			}
+
 		}
 	}
 }
@@ -281,13 +285,13 @@
 	padding-right: 50px;
 
 	@include _1440-1920 {
-		padding-left: calc(30px + (50 - 30) * ((100vw - 1440px) / (1920 - 1440)));
-		padding-right: calc(30px + (50 - 30) * ((100vw - 1440px) / (1920 - 1440)));
+		// padding-left: calc(30px + (50 - 30) * ((100vw - 1440px) / (1920 - 1440)));
+		// padding-right: calc(30px + (50 - 30) * ((100vw - 1440px) / (1920 - 1440)));
 	}
 
 	@include _screen-1440 {
-		padding-left: 30px;
-		padding-right: 30px;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 
 	@include _screen-375 {
