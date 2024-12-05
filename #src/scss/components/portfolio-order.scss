@@ -252,24 +252,27 @@
 		color: #fff;
 
 		&:hover {
-			.order-form__icon {
-				&.icon {
-					background: $color;
-				}
-			}
+			@include _min-960 {
 
-			.icon-arrow-right {
+				.order-form__icon {
+					&.icon {
+						background: $color;
+					}
+				}
+
+				.icon-arrow-right {
+					&::before {
+						color: #fff;
+					}
+				}
+
+				span {
+					color: #000 !important;
+				}
+
 				&::before {
-					color: #fff;
+					background: #fff !important;
 				}
-			}
-
-			span {
-				color: #000 !important;
-			}
-
-			&::before {
-				background: #fff !important;
 			}
 		}
 

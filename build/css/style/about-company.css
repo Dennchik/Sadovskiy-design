@@ -1,0 +1,292 @@
+@charset "UTF-8";
+
+:root {
+  --clip: left center;
+  --size: 0;
+  --background-thumb: #2b3769;
+  --scrollbar-thumb-bgcolor: #757575;
+  --shadow-size: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
+  --stripe-width: 10px;
+  --nav-marker-border: #3b8686;
+  --sidebar-width: 28.5rem;
+  --duration: 0.3s;
+  --button-size: 4rem;
+  --mob-expanded-width: 320px;
+  --mob-collapsed-width: 4rem;
+}
+
+.masked-input {
+  color: transparent;
+}
+
+.masked-input::-webkit-input-placeholder {
+  color: black;
+}
+
+.masked-input::-moz-placeholder {
+  color: black;
+}
+
+.masked-input:-ms-input-placeholder {
+  color: black;
+}
+
+.masked-input::-ms-input-placeholder {
+  color: black;
+}
+
+.masked-input::placeholder {
+  color: black;
+}
+
+.gradient-preloader {
+  background: -webkit-gradient(linear, left top, right top, color-stop(-23.739%, #2b3769), color-stop(96.778%, #93a9ff));
+  background: -webkit-linear-gradient(left, #2b3769 -23.739%, #93a9ff 96.778%);
+  background: -o-linear-gradient(left, #2b3769 -23.739%, #93a9ff 96.778%);
+  background: linear-gradient(90deg, #2b3769 -23.739%, #93a9ff 96.778%);
+}
+
+.about-company__title {
+  margin: 0 auto 69px;
+}
+
+.about-company__content {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.about-company__row {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 2 50%;
+  -ms-flex: 1 2 50%;
+  flex: 1 2 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+  padding: 20px 0 5rem;
+}
+
+.about-company__row:first-child {
+  border-top: 1px solid rgb(169, 169, 169);
+}
+
+.about-company__row:last-child {
+  padding-bottom: 0;
+}
+
+.about-company__row p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 125%;
+}
+
+.about-company__row:not(:last-child) {
+  border-bottom: 1px solid rgb(169, 169, 169);
+}
+
+.about-company__item {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 50%;
+  -ms-flex: 0 1 50%;
+  flex: 0 1 50%;
+}
+
+.about-company__text {
+  font: 400 16px/20px Averta Demo PE Cutted Demo;
+  color: rgb(0, 0, 0);
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+@media (min-width: 1440.99px) {
+  .underline:hover {
+    font-weight: 600;
+    opacity: 1;
+  }
+
+  .underline:hover::before {
+    width: 47%;
+  }
+
+  .underline:hover::after {
+    width: 47%;
+  }
+
+  .underline::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    opacity: 0.8;
+    -webkit-transition: width 0.4s ease-in-out;
+    -o-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+
+  .underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    opacity: 0.8;
+    -webkit-transition: width 0.4s ease-in-out;
+    -o-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+
+  .underline-w:hover {
+    font-weight: 600;
+    opacity: 1;
+  }
+
+  .underline-w:hover::before {
+    width: 47%;
+  }
+
+  .underline-w:hover::after {
+    width: 47%;
+  }
+
+  .underline-w::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    opacity: 0.8;
+    -webkit-transition: width 0.4s ease-in-out;
+    -o-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+
+  .underline-w::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    opacity: 0.8;
+    -webkit-transition: width 0.4s ease-in-out;
+    -o-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .about-company__title {
+    text-align: center;
+  }
+
+  .about-company__row {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .about-company__title {
+    margin-bottom: 40px;
+  }
+
+  .about-company__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .about-company__row h3 {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about-company__row p {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1440.98px) and (max-width: 1920px) {
+  .about-company__row {
+    gap: -webkit-calc(20px + 20 * (100vw - 1440px) / 480);
+    gap: calc(20px + 20 * (100vw - 1440px) / 480);
+  }
+}
+
+@media (min-width: 320.98px) and (max-width: 1920px) {
+  .about-company__row p {
+    font-size: -webkit-calc(12px + 4 * (100vw - 320px) / 1600);
+    font-size: calc(12px + 4 * (100vw - 320px) / 1600);
+  }
+}
+@supports (-webkit-appearance:none){
+
+}
+
+ @media (min-width: 1440.99px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 1440px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 690px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 320px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (min-width: 1440.98px) and (max-width: 1920px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (min-width: 320.98px) and (max-width: 1920px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
