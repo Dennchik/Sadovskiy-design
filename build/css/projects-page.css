@@ -691,7 +691,6 @@
   width: 100%;
   height: 100%;
   max-width: 900.52px;
-  background: url("../img/performance/macbook.png") center/contain no-repeat;
 }
 
 .dev-info__image-bg {
@@ -1635,7 +1634,6 @@
 @supports (-webkit-appearance:none){
 .performance__wrapper{background:url("../img/performance/ellipse-01.webp") top -15% left 17%/50% no-repeat, url("../img/performance/ellipse-02.png") top -6% right -7%/25% no-repeat}
 .bottom-menu__button{background:url("../img/performance/button-bg.webp") center/cover no-repeat}
-.dev-info__image{background:url("../img/performance/macbook.webp") center/contain no-repeat}
 .dev-info__image-bg{background:url("../img/performance/ellipse-01.webp") right/105% no-repeat}
 .order-place__content--audit-page{background:url("../img/main/fon.webp") center/cover no-repeat}
 }

@@ -20,10 +20,10 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		background: radial-gradient(
-										circle at 100% 75%,
-										rgba(110, 123, 177, 0.35) 0%,
-										#2b37695d 15%,
-										transparent 75%
+			circle at 100% 75%,
+			rgba(110, 123, 177, 0.35) 0%,
+			#2b37695d 15%,
+			transparent 75%
 		);
 	}
 
@@ -123,9 +123,7 @@
 		z-index: 1;
 		width: 100%;
 		height: 100%;
-
 		max-width: 900.52px;
-		background: url('../img/performance/macbook.png') center / contain no-repeat;
 	}
 
 	// .dev-info__image
