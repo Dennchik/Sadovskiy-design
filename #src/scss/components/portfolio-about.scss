@@ -59,7 +59,7 @@
 
 			@include _320-1920 {
 				padding-bottom: calc(
-								20px + (70 - 20) * ((100vw - 320px) / (1920 - 320))
+					20px + (70 - 20) * ((100vw - 320px) / (1920 - 320))
 				);
 			}
 
@@ -80,7 +80,7 @@
 			grid-template-columns:
 				minmax(
 					calc(190px + (450 - 190) * ((100vw - 320px) / (1920 - 320))),
-												min-content
+					min-content
 				)
 				1fr;
 		}
@@ -113,8 +113,5 @@
 		line-height: 125%; /* 43px/35 */
 		letter-spacing: 0;
 		text-align: left;
-		opacity: 0.8;
-		mix-blend-mode: difference;
-		text-shadow: 0 0 1px rgb(0, 0, 0);
 	}
 }

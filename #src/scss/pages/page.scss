@@ -8,7 +8,6 @@
 	// .page__content
 	&__content {
 		padding-top: 20px;
-
 	}
 
 	// .page__header-main
@@ -206,7 +205,8 @@
 
 	// .page__page-unknown
 	&__page-unknown {
-		background: url('../img/portfolio/project-smt/fon.png') center / cover no-repeat;
+		background: url('../img/portfolio/project-smt/fon.png') center / cover
+			no-repeat;
 	}
 
 	// .page__design-concept
@@ -279,7 +279,7 @@
 
 	// .page__seo-block
 	&__seo-block {
-		background: url('../img/main/s-bg.png') center / contain repeat;
+		background: url('../img/main/s-bg.png') center / cover repeat;
 		padding: 12rem 50px 16.2rem;
 
 		@include _screen-1440 {

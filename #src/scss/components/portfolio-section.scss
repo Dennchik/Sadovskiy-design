@@ -1,5 +1,13 @@
 .portfolio-section {
 	position: relative;
+	&._offset-top {
+		@include _min-690 {
+			margin-top: -13rem;
+		}
+		@include _screen-690 {
+			margin-top: -50px;
+		}
+	}
 
 	// .portfolio-section__bg-image
 	&__bg-image {
@@ -38,12 +46,12 @@
 		position: relative;
 		width: 100%;
 		display: grid;
-		grid-template-columns: minmax(
-					calc(190px + (450 - 190) * ((100vw - 320px) / (1920 - 320))),
-										max-content
-				)
-				1fr;
-
+		grid-template-columns:
+			minmax(
+				calc(190px + (450 - 190) * ((100vw - 320px) / (1920 - 320))),
+				max-content
+			)
+			1fr;
 	}
 
 	// .portfolio-section___line-1-col
@@ -67,7 +75,7 @@
 			grid-template-columns:
 				minmax(
 					calc(190px + (450 - 190) * ((100vw - 320px) / (1920 - 320))),
-												min-content
+					min-content
 				)
 				1fr;
 		}
@@ -201,7 +209,7 @@
 
 				@include _320-1920 {
 					margin-bottom: calc(
-									10px + (30 - 10) * ((100vw - 320px) / (1920 - 320))
+						10px + (30 - 10) * ((100vw - 320px) / (1920 - 320))
 					);
 				}
 
@@ -261,31 +269,25 @@
 
 	// .portfolio-section__line-main-col--resize
 	&__line-main-col--resize {
-
 		// width: 169px;
 		@include _min-1220 {
-
 			height: 7360px;
 			width: 268.6px;
-
 		}
 
 		@include _320-1220 {
 			// height: calc(1840px + (7360 - 1840) * ((100vw - 320px) / (1220 - 320)));
 			width: calc(67.15px + (268.6 - 67.15) * ((100vw - 320px) / (1220 - 320)));
-
 		}
 
 		@include _screen-320 {
 			// height: 1840px;
 			width: 67.15px;
-
 		}
 	}
 
 	// .portfolio-section__image--resize
 	&__image--resize {
-
 		@include _min-1220 {
 			img {
 				height: 7360px;
@@ -336,13 +338,6 @@
 			width: auto;
 			object-fit: contain;
 		}
-	}
-
-	// .portfolio-about__background
-	&__background {
-		position: absolute;
-		left: 0;
-		bottom: 0;
 	}
 }
 
@@ -417,4 +412,10 @@
 			font-size: 8px;
 		}
 	}
+}
+
+.portfolio-section-background {
+	position: absolute;
+	left: 0;
+	bottom: 0;
 }
