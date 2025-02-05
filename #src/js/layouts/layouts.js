@@ -55,7 +55,7 @@ export function toggleSidebarMenu(sidebarMenu) {
 					sidebarMenu.style.transition = '';
 					sidebarMenu.removeEventListener('transitionend',
 						transitionEndHandler);
-				}, {once: true});
+				}, { once: true });
 			sidebarMenu.classList.remove('_open-menu');
 			sidebarMenu.classList.remove('_close-menu');
 		}, 300);
@@ -71,26 +71,29 @@ export function toggleSidebarMenu(sidebarMenu) {
 			function transitionEndHandler() {
 				sidebarMenu.style.transition = '';
 				sidebarMenu.removeEventListener('transitionend', transitionEndHandler);
-			}, {once: true});
+			}, { once: true });
 	}
 }
 
-// -----------------------------------------------------------------------------
+
+
 export function tabsHandler() {
-	const tabLinks = document.querySelectorAll('.tabs-button__item');
-	const tabContents = document.querySelectorAll('.tab-content__items');
+	const tablinks = document.querySelectorAll('.tabs-button__item');
+	const tabcontents = document.querySelectorAll('.tab-content__items');
 	const tabsItem = document.querySelector('.project__tabs');
 	const buttonItems = document.querySelectorAll('.burger-button');
 
-	tabLinks.forEach((tabLink, i) => {
-		tabLink.addEventListener('click', () => {
-			const tabContent = tabContents[i];
+	tablinks.forEach((tablink, i) => {
+		tablink.addEventListener('click', () => {
+			const tabcontent = tabcontents[i];
 
-			// Удаляем класс active у всех Tabs и Contents
-			tabLinks.forEach(link => link.classList.remove('active'));
-			tabContents.forEach(content => content.classList.remove('active'));
+			// Удаляем класс active у всех табов и контентов
+			tablinks.forEach(link => link.classList.remove('active'));
+			tabcontents.forEach(content => content.classList.remove('active'));
 
-			tabContent.classList.add('active');
+			// Добавляем класс active к текущей кнопке и контенту
+			tablink.classList.add('active');
+			tabcontent.classList.add('active');
 			tabsItem.classList.remove('_responsive');
 			buttonItems.forEach(buttonItem => {
 				if (buttonItem.classList.contains('_open-menu')) {
@@ -99,12 +102,11 @@ export function tabsHandler() {
 			});
 
 			// Применяем анимацию только к активному контенту
-			if (!tabContent.classList.contains('.active')) {
-				timeLineHeaderItem(tabContent);
-			}
+			timeLineHeaderItem(tabcontent);
 		});
 	});
 }
+
 
 export function answersHandler() {
 	const listItems = document.querySelectorAll('.answers__content');
