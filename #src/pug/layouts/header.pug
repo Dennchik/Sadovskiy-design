@@ -6,16 +6,60 @@
 				._title.bp-2 
 					a(href="@@webRoot/index.html") Sadovskiy Design
 		._column
-			._menu
+			nav._menu
 				.menu-list(data-move-el="[{'bp-max': 768.98, 'index': 0, 'target': '.bp-1'}]")
-					a(href="#about")._link.anchor-link 
-						span(data-text="Компания") Компания
-					a(href="#project")._link.anchor-link 
-						span(data-text="Проекты") Проекты
-					a(href="#service")._link.anchor-link 
-						span(data-text="Услуги") Услуги
-					a(href="#contacts")._link.anchor-link 
-						span( data-text="Контакты") Контакты
+					._item
+						a(href="#about")._link.anchor-link 
+							span(data-text="Компания") Компания
+					._item
+						a(href="#project")._link.anchor-link 
+							span(data-text="Проекты") Проекты
+					._item
+						._item-menu
+							a(href="#service")._link.anchor-link 
+								span(data-text="Услуги") Услуги 
+							+iconfont('angle-down', '_icon')
+						._sub-menu
+							ul._list
+								._sub-item 
+									+iconfont('chain-broken', '_icon')
+									li._link.underline
+										a(href="") Одностраничный сайт
+								._sub-item 
+									+iconfont('chain-broken', '_icon')
+									li._link.underline
+										a(href="") Интернет-магазин
+								._sub-item 
+									+iconfont('chain-broken', '_icon')
+									li._link.underline
+										a(href="") Корпоративный сайт
+								._sub-item 
+									+iconfont('chain-broken', '_icon')
+									li._link.underline
+										a(href="") Фирменный стиль
+								._sub-item 
+									+iconfont('chain-broken', '_icon')
+									li._link.underline
+										a(href="") Продвижение сайтов
+								._sub-item 
+									+iconfont('chain-broken', '_icon')
+									li._link.underline
+										a(href="") Разработка логотипа
+								._sub-item 
+									+iconfont('chain-broken', '_icon')
+									li._link.underline
+										a(href="") Дизайн упаковки
+								._sub-item 
+									+iconfont('chain-broken', '_icon')
+									li._link.underline
+										a(href="") Дизайн полиграфии
+								._sub-item 
+									+iconfont('chain-broken', '_icon')
+									li._link.underline
+										a(href="") Оформление соц. сетей
+					._item
+						a(href="#contacts")._link.anchor-link 
+							span( data-text="Контакты") Контакты
 				._contacts
 					._phone
 						a(href="tel:89533321089") 

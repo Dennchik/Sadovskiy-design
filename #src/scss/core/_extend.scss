@@ -5,7 +5,6 @@
 @include _min-1440 {
 	.underline {
 		&:hover {
-			font-weight: 600;
 			opacity: 1;
 
 			&::before {
@@ -23,10 +22,10 @@
 			right: 0;
 			bottom: 0;
 			width: 0;
-			height: 2px;
+			height: 1px;
 			background-color: #000;
 			opacity: 0.8;
-			transition: width 0.4s ease-in-out;
+			transition: width 0.3s ease-in-out;
 		}
 
 		&::after {
@@ -35,16 +34,15 @@
 			left: 0;
 			bottom: 0;
 			width: 0;
-			height: 2px;
+			height: 1px;
 			background-color: #000;
 			opacity: 0.8;
-			transition: width 0.4s ease-in-out;
+			transition: width 0.3s ease-in-out;
 		}
 	}
 
 	.underline-w {
 		&:hover {
-			font-weight: 600;
 			opacity: 1;
 
 			&::before {
@@ -62,7 +60,7 @@
 			right: 0;
 			bottom: 0;
 			width: 0;
-			height: 2px;
+			height: 1px;
 			background-color: #fff;
 			opacity: 0.8;
 			transition: width 0.4s ease-in-out;
@@ -74,7 +72,7 @@
 			left: 0;
 			bottom: 0;
 			width: 0;
-			height: 2px;
+			height: 1px;
 			background-color: #fff;
 			opacity: 0.8;
 			transition: width 0.4s ease-in-out;

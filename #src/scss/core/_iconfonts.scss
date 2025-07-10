@@ -28,9 +28,24 @@
   //* Better Font Rendering
 }
 
-.icon-youtube-lg {
+.icon-chain-broken {
   &:before {
-    content: $icon-youtube-lg;
+    content: $icon-chain-broken;
+  }
+}
+.icon-unlink {
+  &:before {
+    content: $icon-unlink;
+  }
+}
+.icon-chain-broken1 {
+  &:before {
+    content: $icon-chain-broken1;
+  }
+}
+.icon-unlink1 {
+  &:before {
+    content: $icon-unlink1;
   }
 }
 .icon-youtube-square {
@@ -107,6 +122,11 @@
 .icon-telegram-fly {
   &:before {
     content: $icon-telegram-fly;
+  }
+}
+.icon-youtube-lg {
+  &:before {
+    content: $icon-youtube-lg;
   }
 }
 .icon-dzen {

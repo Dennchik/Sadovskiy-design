@@ -19,10 +19,6 @@ export function brandsSlide(
 			// mousewheel: true,
 			// centeredSlides: true,
 			slidesPerView: 6,
-			// navigation: {
-			// 	nextEl: nextEl,
-			// 	prevEl: prevEl,
-			// },
 			breakpoints: {
 				200: {
 					spaceBetween: 10,
@@ -45,6 +41,10 @@ export function brandsSlide(
 					slidesPerView: 5,
 				}
 			}
+			// navigation: {
+			// 	nextEl: nextEl,
+			// 	prevEl: prevEl,
+			// },
 		});
 	}
 };

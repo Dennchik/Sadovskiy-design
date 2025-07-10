@@ -17,8 +17,9 @@
 		left: 0;
 		width: 100%;
 		z-index: 11;
-
-		padding: 24px 0;
+		height: 8.8rem;
+		display: flex;
+		align-items: center;
 		background: #fff;
 		transition: box-shadow 0.9s ease-in-out;
 
@@ -60,7 +61,9 @@
 		width: 100%;
 		z-index: 11;
 
-		padding: 24px 0;
+		height: 8.8rem;
+		display: flex;
+		align-items: center;
 		transition: all 0.3s ease-in-out;
 
 		.header__body {
@@ -94,9 +97,19 @@
 				background: url('../img/icons/logo-b.png') center no-repeat;
 			}
 
+			.menu-list__sub-menu {
+				color: #fff;
+				ul {
+					background: #fff;
+				}
+			}
+
+			.menu-list__item {
+				color: #000;
+			}
+
 			.menu-list__link {
 				@extend .underline;
-
 				&:hover {
 					color: #000;
 				}
@@ -109,6 +122,13 @@
 
 		.header__image {
 			background: url('../img/icons/logo-w.png') center no-repeat;
+		}
+
+		.menu-list__sub-menu {
+			color: #fff;
+			ul {
+				background: $color;
+			}
 		}
 
 		.menu-list__link {

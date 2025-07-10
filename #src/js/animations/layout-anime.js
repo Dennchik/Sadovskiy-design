@@ -22,7 +22,6 @@ export function opacityForEachItems(elContainer, elElements) {
 		const updateElementsPerRow = () => {
 			elementsPerRow = Math.floor(
 				container.clientWidth / elements[0].offsetWidth);
-			console.log(elementsPerRow);
 		};
 
 		const observer = new IntersectionObserver((entries) => {

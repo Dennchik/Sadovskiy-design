@@ -75,8 +75,6 @@ export function toggleSidebarMenu(sidebarMenu) {
 	}
 }
 
-
-
 export function tabsHandler() {
 	const tablinks = document.querySelectorAll('.tabs-button__item');
 	const tabcontents = document.querySelectorAll('.tab-content__items');

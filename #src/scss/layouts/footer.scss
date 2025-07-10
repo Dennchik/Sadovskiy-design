@@ -19,67 +19,67 @@
 
 		@include _min-490 {
 			background-image: radial-gradient(
-											ellipse at 17% 15%,
-											#171b1c 25%,
-											#171b1c67 60%,
-											transparent 100%
-			),
-			radial-gradient(
-											circle at 40% 140%,
-											#eeeeee6a 0%,
-											#2b3769 25%,
-											transparent
-			),
-			radial-gradient(
-											circle at 100% 100%,
-											#eeeeee4d 0%,
-											#2b3769 20%,
-											transparent
-			),
-			radial-gradient(
-											ellipse at 30% 2%,
-											#171b1c 70%,
-											rgb(43, 55, 105) 100%,
-											transparent
-			),
-			radial-gradient(
-											circle at center left,
-											rgba(238, 238, 238, 0) 10%,
-											rgb(4, 5, 10) 50%,
-											transparent
-			);
+					ellipse at 17% 15%,
+					#171b1c 25%,
+					#171b1c67 60%,
+					transparent 100%
+				),
+				radial-gradient(
+					circle at 40% 140%,
+					#eeeeee6a 0%,
+					#2b3769 25%,
+					transparent
+				),
+				radial-gradient(
+					circle at 100% 100%,
+					#eeeeee4d 0%,
+					#2b3769 20%,
+					transparent
+				),
+				radial-gradient(
+					ellipse at 30% 2%,
+					#171b1c 70%,
+					rgb(43, 55, 105) 100%,
+					transparent
+				),
+				radial-gradient(
+					circle at center left,
+					rgba(238, 238, 238, 0) 10%,
+					rgb(4, 5, 10) 50%,
+					transparent
+				);
 		}
 
 		@include _screen-490 {
 			background-image: radial-gradient(
-											ellipse at bottom center,
-											#2b37695b,
-											transparent
-			),
-			radial-gradient(
-											ellipse at 10% 19%,
-											#171b1c 35%,
-											#eeeeee00 70%,
-											transparent 100%
-			),
-			radial-gradient(
-											circle at 0% 100%,
-											#eeeeee25 0%,
-											#2b376964 30%,
-											transparent
-			),
-			radial-gradient(
-											circle at 100% 0%,
-											#eeeeee41 0%,
-											#2b3769 30%,
-											transparent
-			),
-			radial-gradient(
-											ellipse at 30% 2%,
-											#171b1c 0%,
-											#2b3769 100%,
-											transparent
-			);
+					ellipse at bottom center,
+					#2b37695b,
+					transparent
+				),
+				radial-gradient(
+					ellipse at 10% 19%,
+					#171b1c 35%,
+					#eeeeee00 70%,
+					transparent 100%
+				),
+				radial-gradient(
+					circle at 0% 100%,
+					#eeeeee25 0%,
+					#2b376964 30%,
+					transparent
+				),
+				radial-gradient(
+					circle at 100% 0%,
+					#eeeeee41 0%,
+					#2b3769 30%,
+					transparent
+				),
+				radial-gradient(
+					ellipse at 30% 2%,
+					#171b1c 0%,
+					#2b3769 100%,
+					transparent
+				);
 		}
 	}
 
@@ -94,7 +94,7 @@
 		border-bottom: 1.54px solid #bcbcbc8e;
 		padding-bottom: 26px;
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 		gap: 60px;
 		justify-content: space-between;
 
@@ -113,9 +113,9 @@
 
 	// .footer__logo
 	&__logo {
-		grid-column: 1/3;
 		display: flex;
 		align-items: center;
+		margin-left: -5px;
 
 		a {
 			transition: all 0.4s ease 0s;
@@ -136,10 +136,9 @@
 
 	// .footer__icon
 	&__icons {
-		text-align: left;
 		display: flex;
 		align-items: center;
-		justify-content: flex-start;
+		justify-content: flex-end;
 
 		@include _screen-490 {
 			justify-content: flex-start;
@@ -186,19 +185,22 @@
 				font-weight: 400;
 			}
 		}
+
+		.footer__link {
+			&:hover {
+				animation: shake 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+			}
+		}
 	}
 
 	// .footer__link
 	&__link {
 		color: #fff;
-		line-height: 118.75%; /* 19px/16 */
+		// line-height: 118.75%; /* 19px/16 */
+		white-space: nowrap;
 
 		&:not(:last-child) {
 			margin-right: 10px;
-		}
-
-		&:hover {
-			animation: shake 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
 		}
 	}
 
@@ -208,7 +210,10 @@
 		z-index: 9;
 		padding-top: 25px;
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		justify-content: space-between;
+		grid-template-columns:
+			minmax(150px, 33.333%) minmax(170px, 180px)
+			minmax(150px, 33.333%);
 		gap: 60px;
 		height: 100%;
 
@@ -217,15 +222,15 @@
 		}
 
 		@include _screen-1440 {
-			gap: 20px;
+			gap: 15px;
+			column-gap: 30px;
 		}
 
-		@include _screen-690 {
-			gap: 10px;
+		@include _screen-768 {
 			grid-template-columns: repeat(2, 1fr);
 		}
-		@include _screen-605 {
-			grid-template-columns: repeat(1, 1fr);
+		@include _screen-425 {
+			grid-template-columns: 1fr;
 		}
 	}
 
@@ -234,10 +239,15 @@
 		display: flex;
 		gap: 10px;
 		flex-direction: column;
-		justify-content: space-between;
 		padding-bottom: 20px;
 
-		@include _screen-690 {
+		&:nth-child(3) {
+			@include _min-768 {
+				align-items: flex-end;
+			}
+		}
+
+		@include _screen-768 {
 			&:nth-child(1) {
 				border-bottom: 1px solid #414141;
 			}
@@ -246,27 +256,18 @@
 				grid-row: 1 / 2;
 				grid-column: 1 / 3;
 			}
-		}
-
-		@include _screen-605 {
-			&:nth-child(1) {
-				grid-row: 3 /4;
-				border-bottom: none !important;
+			&:not(:last-child) {
+				border-bottom: 1px solid #4141415b;
 			}
-
-			&:nth-child(3) {
-				border-bottom: 1px solid #414141;
+		}
+		@include _screen-425 {
+			&:nth-child(1) {
+				grid-column: 1 / 2;
+				grid-row: 2 / 3;
 			}
 
 			&:nth-child(2) {
-				grid-row: 1 / 2;
-				grid-column: 1 /2;
-			}
-		}
-
-		@include _screen-690 {
-			&:not(:last-child) {
-				border-bottom: 1px solid #4141415b;
+				grid-column: 1 / 2;
 			}
 		}
 	}
@@ -274,7 +275,7 @@
 	//. footer__list
 	&__list {
 		&:not(:last-child) {
-			margin-bottom: 10px;
+			margin-bottom: 5px;
 
 			@include _screen-690 {
 				margin-bottom: 0;
@@ -284,11 +285,11 @@
 
 	//. footer__menu
 	&__menu {
-		@include _screen-690 {
+		@include _screen-768 {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			justify-content: space-between;
-			gap: 15px;
+			gap: 30px;
 		}
 	}
 
@@ -296,7 +297,6 @@
 	&__head {
 		font-size: 16px;
 		color: #8d8d8d;
-		line-height: 118.75%; /* 19px/16 */
 		text-align: left;
 
 		@include _screen-490 {
@@ -311,8 +311,6 @@
 
 		li {
 			color: #fff;
-			line-height: 118.75%; /* 19px/16 */
-			text-transform: uppercase;
 
 			&:not(:last-child) {
 				margin-bottom: 10px;
@@ -336,14 +334,28 @@
 
 	// .footer__item
 	&__item {
+		.footer__link {
+			line-height: initial;
+			&:hover {
+				color: #ffffff;
+			}
+			@extend .underline-fl;
+		}
+
 		&:not(:last-child) {
-			margin-bottom: 10px;
+			margin-bottom: 5px;
 		}
 	}
 
 	// .footer__contacts
 	&__contacts {
-		flex: 1 1 auto;
+		@include _min-768 {
+			flex: 1 1 auto;
+		}
+
+		@include _screen-768 {
+			margin-bottom: 2rem;
+		}
 	}
 
 	// .footer__phone
@@ -354,6 +366,8 @@
 		text-align: left;
 		margin-bottom: 10px;
 		display: flex;
+		flex-direction: column;
+		gap: 10px;
 		flex-wrap: wrap;
 		line-height: 125%;
 
@@ -384,6 +398,86 @@
 	// .footer__address
 	&__address {
 		color: #fff;
-		line-height: 118.75%; /* 19px/16 */
+		max-width: 350px;
+		line-height: 150.923077%; /* 23/13 */
+
+		@include _min-768 {
+			text-align: right;
+		}
+	}
+}
+
+.link-transform {
+	height: 100%;
+	position: relative;
+	display: inline-block;
+	transition: all 0.2s ease;
+	overflow: hidden;
+
+	span {
+		position: relative;
+		display: block;
+		transform: translateY(0);
+
+		&::before {
+			content: attr(data-text);
+			font-weight: 400 !important;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			transition: transform 0.5s ease;
+			transform: translateY(0);
+			pointer-events: none;
+			user-select: none;
+		}
+
+		@include _1440-1920 {
+			font-size: calc(14px + (16 - 14) * ((100vw - 1440px) / (1920 - 1440)));
+		}
+	}
+
+	&:hover {
+		span {
+			animation: moveText 0.4s forwards;
+		}
+	}
+}
+
+// Анимация для перемещения текста
+.underline-fl {
+	&:hover {
+		opacity: 1;
+
+		&::before {
+			width: 47%;
+		}
+
+		&::after {
+			width: 47%;
+		}
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: 0;
+		height: 1px;
+		background-color: #ffffff;
+		opacity: 0.8;
+		transition: width 0.3s ease-in-out;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 0;
+		height: 1px;
+		background-color: #ffffff;
+		opacity: 0.8;
+		transition: width 0.3s ease-in-out;
 	}
 }

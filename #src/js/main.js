@@ -72,3 +72,18 @@ if (aboutCompany) {
 if (tooltip) {
 	tooltipHide();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+	const itemMenu = document.querySelector('.menu-list__item-menu');
+	let item = itemMenu.closest('.menu-list__item');
+
+	item.addEventListener('click', () => {
+		item.classList.toggle('_open');
+	});;
+
+});
+
+
+
+
+

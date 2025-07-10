@@ -1,3 +1,7 @@
+/* 3) Если кликнут класс _open — подменю всегда открыто */
+.menu-list__item._open .menu-list__sub-menu {
+}
+
 .sidebar-menu {
 	position: fixed;
 	left: 0;
@@ -72,9 +76,77 @@
 
 	// .sidebar-menu__menu-list
 	.menu-list {
-		display: flex;
+		display: inline-flex;
 		flex-direction: column;
+		align-items: start;
 		margin-bottom: 30px;
+
+		// .menu-list__item
+		&__item {
+			align-items: start;
+			flex-direction: column;
+
+			&:nth-child(3) {
+				display: grid;
+				grid-template-rows: 0fr;
+
+				.menu-list__link {
+					pointer-events: none;
+				}
+			}
+
+			&._open {
+				&:nth-child(3) {
+					display: grid;
+					grid-template-rows: 1fr;
+				}
+
+				.icon-angle-down {
+					transform: translateY(2px) scale(-1);
+				}
+
+				.menu-list__sub-menu {
+					grid-template-rows: 1fr;
+					opacity: 1;
+					transform: rotateX(0);
+				}
+			}
+
+			&:hover {
+				.menu-list__sub-menu {
+					height: 100%;
+				}
+			}
+
+			.icon-angle-down {
+				transform: translateY(2px);
+			}
+
+			.icon-angle-down,
+			.icon-chain-broken {
+				color: #fff !important;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
+		}
+
+		// .menu-list__list
+		&__list {
+			min-height: 0;
+			padding: 0 1.6rem;
+		}
+
+		// .menu-list__sub-menu
+		&__sub-item {
+			margin-bottom: 1rem;
+			-webkit-tap-highlight-color: #00000041;
+
+			.menu-list__link {
+				pointer-events: all !important;
+			}
+		}
 
 		// .menu-list__link
 		&__link {
@@ -83,11 +155,11 @@
 			font-size: 20px;
 			font-weight: 400;
 			white-space: nowrap;
-			opacity: 0.8;
+			opacity: 1;
 			transition: all 0.4s ease-in-out;
-
-			&:not(:last-child) {
-				margin-bottom: 20px;
+			font-size: 1.6rem;
+			span {
+				opacity: 0.8;
 			}
 
 			&:hover {
@@ -95,6 +167,23 @@
 			}
 
 			@extend .underline;
+		}
+
+		// .menu-list__sub-menu
+		&__sub-menu {
+			min-height: 0;
+			position: relative;
+			margin: 0;
+			box-shadow: none;
+			overflow: hidden;
+			transform: translateY(2rem) !important;
+
+			display: grid;
+			grid-template-rows: 0fr;
+
+			.menu-list__list {
+				background: transparent;
+			}
 		}
 	}
 
@@ -238,50 +327,55 @@
 		&::before {
 			height: 200%;
 			background-image: radial-gradient(
-											at 51.219887531528066% 73.75802524063498%,
-											hwb(228 17% 59%) 0%,
-											hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0) 100%
-			),
-			radial-gradient(
-											at 82.3747128137153% 47.854555124063424%,
-											hsla(192, 9.803921568627452%, 10%, 1) 0%,
-											hsla(192, 9.803921568627452%, 10%, 0) 100%
-			),
-			radial-gradient(
-											at 7.222668315528513% 65.99692412690541%,
-											hsla(192, 9.803921568627452%, 10%, 1) 0%,
-											hsla(192, 9.803921568627452%, 10%, 0) 100%
-			),
-			radial-gradient(
-											at 28.247189370281145% 40.43717988749253%,
-											hsla(192, 9.803921568627452%, 10%, 1) 0%,
-											hsla(192, 9.803921568627452%, 10%, 0) 100%
-			),
-			radial-gradient(
-											at 54.59975191052144% 0.011447407615872152%,
-											hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 1) 0%,
-											hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0) 100%
-			),
-			radial-gradient(
-											at 79.74105101791258% 72.89600397390794%,
-											hsla(192, 9.803921568627452%, 10%, 1) 0%,
-											hsla(192, 9.803921568627452%, 10%, 0) 100%
-			),
-			radial-gradient(
-											at 27.353713288329608% 60.00042076869605%,
-											hsla(192, 9.803921568627452%, 10%, 1) 0%,
-											hsla(192, 9.803921568627452%, 10%, 0) 100%
-			),
-			radial-gradient(
-											at 30.871687014459216% 51.91539250189692%,
-											hsla(192, 9.803921568627452%, 10%, 1) 0%,
-											hsla(192, 9.803921568627452%, 10%, 0) 100%
-			),
-			radial-gradient(
-											at 15.415090896688245% 72.75274820343758%,
-											hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 1) 0%,
-											hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0) 100%
-			);
+					at 51.219887531528066% 73.75802524063498%,
+					hwb(228 17% 59%) 0%,
+					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0)
+						100%
+				),
+				radial-gradient(
+					at 82.3747128137153% 47.854555124063424%,
+					hsla(192, 9.803921568627452%, 10%, 1) 0%,
+					hsla(192, 9.803921568627452%, 10%, 0) 100%
+				),
+				radial-gradient(
+					at 7.222668315528513% 65.99692412690541%,
+					hsla(192, 9.803921568627452%, 10%, 1) 0%,
+					hsla(192, 9.803921568627452%, 10%, 0) 100%
+				),
+				radial-gradient(
+					at 28.247189370281145% 40.43717988749253%,
+					hsla(192, 9.803921568627452%, 10%, 1) 0%,
+					hsla(192, 9.803921568627452%, 10%, 0) 100%
+				),
+				radial-gradient(
+					at 54.59975191052144% 0.011447407615872152%,
+					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 1)
+						0%,
+					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0)
+						100%
+				),
+				radial-gradient(
+					at 79.74105101791258% 72.89600397390794%,
+					hsla(192, 9.803921568627452%, 10%, 1) 0%,
+					hsla(192, 9.803921568627452%, 10%, 0) 100%
+				),
+				radial-gradient(
+					at 27.353713288329608% 60.00042076869605%,
+					hsla(192, 9.803921568627452%, 10%, 1) 0%,
+					hsla(192, 9.803921568627452%, 10%, 0) 100%
+				),
+				radial-gradient(
+					at 30.871687014459216% 51.91539250189692%,
+					hsla(192, 9.803921568627452%, 10%, 1) 0%,
+					hsla(192, 9.803921568627452%, 10%, 0) 100%
+				),
+				radial-gradient(
+					at 15.415090896688245% 72.75274820343758%,
+					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 1)
+						0%,
+					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0)
+						100%
+				);
 		}
 
 		.menu-list__link {
