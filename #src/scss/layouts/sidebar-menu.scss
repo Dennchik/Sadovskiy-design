@@ -141,10 +141,12 @@
 		// .menu-list__sub-menu
 		&__sub-item {
 			margin-bottom: 1rem;
-			-webkit-tap-highlight-color: #00000041;
 
 			.menu-list__link {
 				pointer-events: all !important;
+				a {
+					-webkit-tap-highlight-color: #00000041;
+				}
 			}
 		}
 

@@ -84,6 +84,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+document.addEventListener('DOMContentLoaded', () => {
+	const forms = document.querySelectorAll('.order-form');
+
+	forms.forEach(form => {
+		const checkbox = form.querySelector('.checkbox__input');
+		const button = form.querySelector('.order-form__button');
+
+		if (!checkbox || !button) return;
+
+		checkbox.addEventListener('change', () => {
+			button.disabled = !checkbox.checked;
+		});
+	});
+});
+
+
 
 
 

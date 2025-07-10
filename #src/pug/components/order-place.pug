@@ -5,25 +5,32 @@
 				h2._title.t-h1 Закажите&nbsp;услуги студии Sadovskiy&nbsp;Design
 				p._text.p-text Оставьте&nbsp;свой&nbsp;номер&nbsp;телефона&nbsp;и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;рабочее время. Наша&nbsp;команда&nbsp;проконсультирует&nbsp;и&nbsp;ответит на&nbsp;любые&nbsp;вопросы 
 			._footer.--tcl-order-page
-			form(id="order" action="").order-form._form 
-				._column._brd-order
-					._line
-						label(for="name")._lebel
-						._input
-							input.input(id="name",placeholder="Имя*" autocomplete="off", 
-							type="text", name="name", error="Обязательное поле")
-				._column._brd-order
-					._line
-						label(for="phone")._lebel 
-						._input
-							input.input(type="tel" class="phone" id='phone', 
-							placeholder="+7 (___) ___-__-__", autocomplete="off", name="phone", error="Обязательное поле"
-							)
-				._column._brd-order
-					button(form="order" type="submit")._button.button
-						span Оставить заявку
-						._icon.icon 
-							+iconfont('arrow-right', '_icon')
+			form(id="order" method="post" action="#").order-form._form 
+				._row
+					._column._brd-order
+						._line
+							label(for="name")._lebel
+							._input
+								input.input(id="name",placeholder="Имя*" autocomplete="off", 
+								type="text", name="name", error="Обязательное поле")
+					._column._brd-order
+						._line
+							label(for="phone")._lebel 
+							._input
+								input.input(type="tel" class="phone" id='phone', 
+								placeholder="+7 (___) ___-__-__", autocomplete="off", name="phone", error="Обязательное поле"
+								)
+					._column._brd-order
+						button(form="order" type="submit" disabled="disabled")._button.button
+							span Оставить заявку
+							._icon.icon 
+								+iconfont('arrow-right', '_icon') 
+				._row.--tcl-order-page 
+					label.checkbox
+						input._input(data-error="Ошибка" type="checkbox" value="1" id="agreement")
+						._checked
+							+iconfont('angle-down', '_icon')
+					span._text.p-text Даю согласие на обработку персональных данных
 			._footer.--tcl-order-page
 				p._text.p-text Либо напишите нам на&nbsp;почту info@sadovskiy.art или просто позвоните по&nbsp;номеру
 				._phone +7 (953) 332 10-89
