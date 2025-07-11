@@ -5,6 +5,7 @@
 /Temp
 .vscode
 node_modules
+build
 desktop.ini
 Applications
 Templates
