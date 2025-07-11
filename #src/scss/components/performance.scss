@@ -6,8 +6,10 @@
 
 	// .performance__wrapper
 	&__wrapper {
-		background: url('../img/performance/ellipse-01.png') top -15% left 17% / 50% no-repeat,
-		url('../img/performance/ellipse-02.png') top -6% right -7% / 25% no-repeat;
+		background:
+			url('../../img/performance/ellipse-01.png') top -15% left 17% / 50% no-repeat,
+			url('../../img/performance/ellipse-02.png') top -6% right -7% / 25%
+				no-repeat;
 
 		&::before {
 			pointer-events: none;
@@ -19,24 +21,29 @@
 			left: 0;
 			z-index: 1;
 			background: radial-gradient(
-											ellipse 120% 50% at 30% 10%,
-											rgba(23, 27, 28, 0.74) 0%,
-											rgba(23, 27, 28, 0.397) 25%,
-											transparent 65%
+				ellipse 120% 50% at 30% 10%,
+				rgba(23, 27, 28, 0.74) 0%,
+				rgba(23, 27, 28, 0.397) 25%,
+				transparent 65%
 			);
 		}
 
 		@include _320-1440 {
-			background: url('../img/performance/ellipse-01.png') top calc(45% + (-15 - 45) * ((100vw - 690px) / (1440 - 690))) left calc(-235px + (-150 - (-235)) * ((100vw - 690px) / (1440 - 690))) /
+			background:
+				url('../../img/performance/ellipse-01.png') top
+					calc(45% + (-15 - 45) * ((100vw - 690px) / (1440 - 690))) left
+					calc(-235px + (-150 - (-235)) * ((100vw - 690px) / (1440 - 690))) /
 					calc(600px + (850 - 600) * ((100vw - 690px) / (1440 - 690))) no-repeat,
-			url('../img/performance/ellipse-02.png') top -6% right calc(
+				url('../../img/performance/ellipse-02.png') top -6% right calc(
 						-150px + (-150 - (-150)) * ((100vw - 690px) / (1440 - 690))
 					) / calc(55% + (-265 - 55) * ((100vw - 690px) / (1440 - 690))) no-repeat;
 		}
 
 		@include _screen-320 {
-			background: url('../img/performance/ellipse-01.png') top 48% left -290px / 490px no-repeat,
-			url('../img/performance/ellipse-02.png') top -6% right -150px / 330px no-repeat;
+			background:
+				url('../../img/performance/ellipse-01.png') top 48% left -290px / 490px no-repeat,
+				url('../../img/performance/ellipse-02.png') top -6% right -150px / 330px
+					no-repeat;
 		}
 	}
 
@@ -63,10 +70,10 @@
 			z-index: 3;
 
 			background: radial-gradient(
-											ellipse 70% 40% at 40% 50%,
-											rgb(43, 55, 105) 10%,
-											rgba(43, 55, 105, 0.795) 30%,
-											transparent 60%
+				ellipse 70% 40% at 40% 50%,
+				rgb(43, 55, 105) 10%,
+				rgba(43, 55, 105, 0.795) 30%,
+				transparent 60%
 			);
 		}
 
@@ -76,17 +83,17 @@
 			z-index: 4;
 
 			background: radial-gradient(
-											circle at 20% 49%,
-											rgba(110, 123, 177, 0.623) 1%,
-											rgba(43, 55, 105, 0.26) 15%,
-											transparent 25%
-			),
-			radial-gradient(
-											circle at 64% 35%,
-											rgba(110, 123, 177, 0.623) 1%,
-											rgba(43, 55, 105, 0.26) 15%,
-											transparent 35%
-			);
+					circle at 20% 49%,
+					rgba(110, 123, 177, 0.623) 1%,
+					rgba(43, 55, 105, 0.26) 15%,
+					transparent 25%
+				),
+				radial-gradient(
+					circle at 64% 35%,
+					rgba(110, 123, 177, 0.623) 1%,
+					rgba(43, 55, 105, 0.26) 15%,
+					transparent 35%
+				);
 		}
 	}
 
@@ -292,7 +299,8 @@
 
 	// .bottom-menu__button
 	&__button {
-		background: url('../img/performance/button-bg.png') center / cover no-repeat;
+		background: url('../../img/performance/button-bg.png') center / cover
+			no-repeat;
 		min-height: 94px;
 		width: 100%;
 		max-width: 100%;
