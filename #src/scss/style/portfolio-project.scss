@@ -1,15 +1,15 @@
 // todo -------------------------- Variables -----------------------------------
-@import 'core/variables';
+@import '../core/variables';
 //todo ----------------------------- Core --------------------------------------
-@import 'core/mixins';
-@import 'core/extend';
+@import '../core/mixins';
+@import '../core/extend';
 // todo -------------------------- Sections ------------------------------------
-@import 'components/portfolio-performance';
-@import 'components/portfolio-about';
-@import 'components/portfolio-section';
-@import 'components/unknown-page';
-@import 'components/portfolio-separator';
-@import 'components/portfolio-order';
+@import '../components/portfolio-performance';
+@import '../components/portfolio-about';
+@import '../components/portfolio-section';
+@import '../components/unknown-page';
+@import '../components/portfolio-separator';
+@import '../components/portfolio-order';
 
 // todo ---------------------------- temp --------------------------------------
 
