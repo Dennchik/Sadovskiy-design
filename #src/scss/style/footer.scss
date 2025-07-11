@@ -315,12 +315,9 @@
 		flex: 1 1 auto;
 
 		li {
-<<<<<<< Updated upstream
 			color: #ffffff;
 			line-height: 118.75%; /* 19px/16 */
-=======
-			color: #fff;
->>>>>>> Stashed changes
+			text-transform: uppercase;
 
 			&:not(:last-child) {
 				margin-bottom: 10px;
