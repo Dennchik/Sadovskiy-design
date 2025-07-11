@@ -8,7 +8,7 @@
 	// .order-place__content
 	&__content {
 		position: relative;
-		padding: 13rem 60px;
+		padding: 13rem 60px 16.2rem;
 		overflow: hidden;
 		border-radius: 30px;
 		display: flex;
@@ -16,20 +16,20 @@
 		justify-content: center;
 
 		@include _screen-1440 {
-			padding: 13rem 30px 16rem;
+			padding: 13rem 30px 16.2rem;
 		}
 
 		@include _screen-690 {
 			border-radius: 15px;
-			padding: 60px 50px 60px;
+			padding: 50px 50px 60px;
 		}
 
 		@include _screen-375 {
-			padding: 60px 10px;
+			padding: 50px 10px 60px;
 		}
 	}
 
-	// .order-place__content--bd-orderform
+	// .order-place__content--order-page
 	&__content--order-page {
 		@include _min-490 {
 			background-image: radial-gradient(
@@ -127,7 +127,6 @@
 	&__body {
 		position: relative;
 		z-index: 9;
-		position: relative;
 	}
 
 	// .order-place__header
@@ -174,14 +173,14 @@
 	&__form {
 		margin: 40px auto;
 		width: 100%;
-		display: flex;
 
 		@include _screen-960 {
+			gap: 15px;
 			flex-direction: column;
 		}
 
-		@include _screen-375 {
-			gap: 15px;
+		@include _screen-490 {
+			gap: 12px;
 			margin: 16px auto;
 		}
 	}
@@ -213,6 +212,43 @@
 		}
 	}
 }
+.checkbox {
+	background: #fff;
+	border-radius: 5px;
+
+	&::before {
+		position: absolute;
+		content: '';
+		width: 20px;
+		height: 20px;
+		opacity: 0;
+		transition: 0.2s;
+	}
+	&__input {
+		display: none;
+
+		&:checked + .checkbox__checked .icon-angle-down {
+			scale: 1;
+			opacity: 1;
+		}
+	}
+
+	&__checked {
+		width: 20px;
+		height: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+
+		.icon-angle-down {
+			color: $color;
+			font-size: 24px;
+			transition: scale 0.2s ease-in-out;
+			scale: 0;
+		}
+	}
+}
 
 .order-form {
 	// .order-form__row
@@ -220,6 +256,14 @@
 		display: flex;
 		justify-content: center;
 		gap: 25px;
+		margin-bottom: 40px;
+	}
+
+	&__row--tcl-order-page {
+		color: #fff;
+		font-size: 16px;
+		display: flex;
+		align-items: center;
 	}
 
 	// .order-form__column
@@ -229,7 +273,21 @@
 		align-self: center;
 		flex: 0 1 268px;
 		height: 58px;
-		border: 1px solid #ffffff;
+		border: 1px solid #fff;
+
+		button {
+			&:disabled {
+				cursor: not-allowed;
+				pointer-events: none;
+				box-shadow: none;
+				background-color: #c0c0c0;
+				color: #797979;
+				.icon {
+					background: gray;
+					opacity: 0.6px;
+				}
+			}
+		}
 
 		&._brd-order {
 			input {
@@ -247,17 +305,20 @@
 
 			.order-form__button {
 				&:hover {
-					border: 1px solid #fff;
-					.icon {
-						transform: rotate(-45deg);
-					}
+					@include _min-960 {
+						border: 1px solid #fff;
 
-					span {
-						color: #fff;
-					}
+						.icon {
+							transform: rotate(-45deg);
+						}
 
-					&::before {
-						background: $color;
+						span {
+							color: #fff;
+						}
+
+						&::before {
+							background: $color;
+						}
 					}
 				}
 			}
@@ -294,26 +355,27 @@
 				}
 
 				&:hover {
-					border: 1px solid rgb(209, 209, 209);
+					@include _min-960 {
+						border: 1px solid rgb(209, 209, 209);
 
-					.icon {
-						transform: rotate(-45deg);
-						background: $color;
-					}
-
-					.icon-arrow-right {
-						&::before {
-							color: #fff;
-							// font-weight: 500;
+						.icon {
+							transform: rotate(-45deg);
+							background: $color;
 						}
-					}
 
-					span {
-						color: #000;
-					}
+						.icon-arrow-right {
+							&::before {
+								color: #fff;
+							}
+						}
 
-					&::before {
-						background: #fff;
+						span {
+							color: #000;
+						}
+
+						&::before {
+							background: #fff;
+						}
 					}
 				}
 			}
@@ -345,6 +407,7 @@
 
 		&:last-child {
 			align-self: center;
+			border: none;
 
 			@include _screen-375 {
 				width: 100%;
@@ -393,6 +456,10 @@
 		background: #fff;
 		width: 100%;
 		max-width: 268px;
+
+		span {
+			font-weight: 400;
+		}
 
 		@include _screen-690 {
 			max-height: 48px;
