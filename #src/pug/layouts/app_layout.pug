@@ -10,11 +10,11 @@ html(lang="ru")
 		block link
 			link(rel="icon" type="image/icon" href="@@webRoot/img/icons/icon-log.png")
 			link(rel="stylesheet" type="text/css" href="@@webRoot/css/main.min.css")
+			link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
 		block script 
-			script(defer type="text/javascript" src="@@webRoot/js/app/runtime.min.js")
-			script(defer type="text/javascript" src="@@webRoot/js/app/anime-vendors.min.js") 
-			script(defer type="text/javascript" src="@@webRoot/js/index.min.js") 
-			script(defer type="text/javascript" src="@@webRoot/js/main.min.js") 
+			script(defer src="@@webRoot/js/app/runtime.min.js")
+			script(defer src="@@webRoot/js/app/anime-vendors.min.js")  
+			script(defer src="@@webRoot/js/main.min.js") 
 
 		block title
 		- var text
@@ -28,8 +28,10 @@ body
 			.page#page 
 				block sidebar-menu 
 					include ../chunk/sidebar-menu 
-				block header
-				main._content._container#content 
+				block header 
+					header.page__header
+						include ../layouts/header 
+				main._content
 					block main-content
 				footer._footer
 					block footer 
@@ -37,4 +39,3 @@ body
 				block aside-button 
 					._aside-button.icon#scrollButton
 						+iconfont('angle-down', '_icon')
-block page-grid 

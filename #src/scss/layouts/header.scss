@@ -1,14 +1,17 @@
+@use 'core/variables' as *;
+@use 'core/mixins' as *;
+
 .header {
 	max-width: $maxWidthContainer;
 	margin: 0 auto;
 	width: 100%;
 	height: 100%;
 
-	@include _screen-1440 {
-		padding: 0 10px 0 5px;
+	@include screen-1440 {
+		padding-block: 10px;
 	}
 
-	@include _screen-375 {
+	@include screen-375 {
 		padding: 0 5px 0 3px;
 	}
 
@@ -21,15 +24,15 @@
 		align-items: center;
 		justify-content: space-between;
 
-		@include _min-1440 {
+		@include min-1440 {
 			gap: 60px;
 		}
 
-		@include _screen-960 {
+		@include screen-960 {
 			grid-template-columns: min-content max-content;
 		}
 
-		@include _1440-1920 {
+		@include minmax-1440-1920 {
 			gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 	}
@@ -85,13 +88,14 @@
 		display: flex;
 		align-items: center;
 
-		@include _screen-490 {
+		@include screen-490 {
 			margin-right: 3rem;
 		}
 	}
 
 	// .header__menu
 	&__menu {
+		width: 100%;
 		height: 100%;
 		white-space: nowrap;
 		display: grid;
@@ -123,7 +127,7 @@
 			line-height: 131.25%; /* 21px/16 */
 			transition: opacity 0.4s ease-in-out;
 
-			@include _1440-1920 {
+			@include minmax-1440-1920 {
 				font-size: calc(13px + (16 - 13) * ((100vw - 1440px) / (1920 - 1440)));
 			}
 
@@ -134,7 +138,7 @@
 
 		span {
 			line-height: initial;
-			@include _screen-490 {
+			@include screen-490 {
 				display: none;
 			}
 		}
@@ -148,7 +152,7 @@
 		height: 35px;
 		display: none;
 
-		@include _screen-768 {
+		@include screen-768 {
 			display: flex;
 		}
 	}
@@ -199,11 +203,11 @@
 			}
 		}
 
-		@include _1440-1920 {
+		@include minmax-1440-1920 {
 			margin-right: calc(20px + (30 - 20) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 
-		@include _screen-1440 {
+		@include screen-1440 {
 			margin-right: 15px;
 		}
 	}
@@ -244,19 +248,8 @@
 
 	// .menu-list__sub-menu
 	&__sub-item {
-		display: flex;
-
 		.icon-chain-broken {
 			transition: transform 0.3s ease-in-out;
-		}
-
-		@media (hover: hover) {
-			&:hover {
-				.icon-chain-broken {
-					opacity: 1;
-					transform: rotate(90deg) !important;
-				}
-			}
 		}
 	}
 

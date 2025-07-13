@@ -1,23 +1,24 @@
 // todo -------------------------- Variables -----------------------------------
-@import 'core/variables';
-@import 'core/variables-icon';
-// @import 'core/swiper-vars';
-//todo ----------------------------- Core --------------------------------------
-@import 'core/mixins';
-@import 'core/extend';
-@import 'core/reset';
-// @import 'core/ui';
+@use 'core/variables' as *;
+@use 'core/mixins' as *;
+@use 'core/variables-icon' as *;
 // todo -------------------------- Modules -------------------------------------
-@import 'modules/pl-preloader';
-//todo ------------------------- Default fonts ---------------------------------
+@use 'modules/pl-preloader';
 // todo --------------------------- Fonts --------------------------------------
-@import 'core/fonts';
-//todo  ------------------------ Icon Fonts ------------------------------------
-@import 'core/iconfonts';
+@use 'core/fonts';
+@use 'core/iconfonts';
 // todo -------------------------- Plugins -------------------------------------
-@import 'assets/swiper';
-@import 'assets/swiper-bundle.scss';
-@import 'layouts/slider-layout';
+@use 'assets/swiper-bundle.scss';
+@use 'layouts/slider-layout';
+// todo --------------------------- Chunk --------------------------------------
+@use 'chunk/aside-button';
+// todo --------------------------- Pages --------------------------------------
+@use 'pages/page';
+// todo --------------------------- layout -------------------------------------
+@use 'layouts/bem-block';
+@use 'layouts/header';
+@use 'layouts/footer';
+@use 'layouts/sidebar-menu';
 // todo -------------------------- Classes -------------------------------------
 // #region
 .wrapper {
@@ -51,19 +52,19 @@
 	&::before {
 		font-size: 2.4rem;
 
-		@include _1440-1920 {
+		@include minmax-1440-1920 {
 			font-size: calc(15px + (24 - 15) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 
-		@include _screen-960 {
+		@include screen-960 {
 			font-size: 2.2rem;
 		}
 
-		@include _screen-490 {
+		@include screen-490 {
 			font-size: 1.8rem;
 		}
 
-		@include _screen-375 {
+		@include screen-375 {
 			font-size: 1.6rem;
 		}
 	}
@@ -108,18 +109,3 @@
 		transform: translateX(2px);
 	}
 }
-
-// todo --------------------------- Chunk --------------------------------------
-@import 'chunk/aside-button';
-// todo --------------------------- Pages --------------------------------------
-@import 'pages/page';
-// todo --------------------------- layout -------------------------------------
-@import 'layouts/bem-block';
-@import 'layouts/header';
-@import 'layouts/footer';
-@import 'layouts/sidebar-menu';
-// todo -------------------------- Sections ------------------------------------
-@import 'components/services-price';
-@import 'components/schedule';
-@import 'components/seo-block';
-@import 'components/answers';

@@ -1,3 +1,6 @@
+@use 'core/variables' as *;
+@use 'core/mixins' as *;
+
 .seo-block {
 	position: relative;
 
@@ -13,7 +16,7 @@
 		margin-bottom: 49px;
 		font-weight: 400;
 
-		@include _screen-690 {
+		@include screen-690 {
 			margin-bottom: 20px;
 		}
 
@@ -21,7 +24,7 @@
 			margin-bottom: 60px;
 			text-align: center;
 
-			@include _screen-690 {
+			@include screen-690 {
 				margin-bottom: 40px;
 			}
 		}
@@ -39,7 +42,7 @@
 		grid-auto-flow: dense;
 		grid-auto-rows: auto;
 
-		@include _screen-768 {
+		@include screen-768 {
 			grid-template-columns: repeat(1, 1fr);
 		}
 	}
@@ -51,17 +54,7 @@
 
 	// .seo-block__column
 	&__column {
-		// transition: grid-template-rows 0.4s ease-in-out;
-		// overflow: hidden;
-		// display: grid;
-		// grid-template-rows: 1fr;
-
-		// &:not(:last-child) {
-		// 	margin-bottom: 20px;
-		// }
-
 		&.hidden {
-			// grid-template-rows: 0fr;
 			display: none;
 		}
 
@@ -104,7 +97,7 @@
 			background: #2b3769;
 		}
 
-		@include _screen-768 {
+		@include screen-768 {
 			margin-top: 16px;
 			justify-self: center;
 			grid-column: 1 / 2 !important;

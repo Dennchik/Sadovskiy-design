@@ -1,8 +1,11 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
 .gradient-preloader {
 	background: linear-gradient(90deg, #2b3769 -23.739%, #93a9ff 96.778%);
 }
 
-@include _min-1440 {
+@include min-1440 {
 	.underline {
 		&:hover {
 			opacity: 1;

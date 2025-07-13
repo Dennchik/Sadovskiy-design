@@ -1,5 +1,9 @@
+@use 'core/variables' as *;
+@use 'core/mixins' as *;
+
 .portfolio-about {
 	position: relative;
+
 	// .portfolio-about__image
 	&__background {
 		position: absolute;
@@ -19,26 +23,12 @@
 
 	// .portfolio-about__body
 	&__body {
-		// background: rgba(0, 0, 0, 0.8);
-
-		@include _min-1440 {
-			padding: 14.3rem 50px 16.2rem;
+		@include min-1440 {
+			padding-block: 14.3rem 16.2rem;
 		}
 
-		@include _screen-1440 {
-			padding: 14.3rem 30px 16.2rem;
-		}
-		@include _screen-690 {
-			padding: 50px 30px 60px;
-		}
-
-		@include _screen-375 {
-			padding-left: 10px;
-			padding-right: 10px;
-		}
-
-		@include _screen-320 {
-			padding: 60px 10px;
+		@include screen-690 {
+			padding-block: 50px 60px;
 		}
 	}
 
@@ -57,13 +47,13 @@
 			padding-bottom: 70px;
 			border-bottom: 1px solid rgb(169, 169, 169);
 
-			@include _320-1920 {
+			@include minmax-320-1920 {
 				padding-bottom: calc(
 					20px + (70 - 20) * ((100vw - 320px) / (1920 - 320))
 				);
 			}
 
-			@include _screen-320 {
+			@include screen-320 {
 				padding-bottom: 20px;
 			}
 		}
@@ -71,12 +61,12 @@
 		&:not(:first-child) {
 			padding-top: 20px;
 
-			@include _screen-690 {
+			@include screen-690 {
 				padding-top: 10px;
 			}
 		}
 
-		@include _min-960 {
+		@include min-960 {
 			grid-template-columns:
 				minmax(
 					calc(190px + (450 - 190) * ((100vw - 320px) / (1920 - 320))),
@@ -85,11 +75,11 @@
 				1fr;
 		}
 
-		@include _320-1920 {
+		@include minmax-320-1920 {
 			gap: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320)));
 		}
 
-		@include _screen-320 {
+		@include screen-320 {
 			gap: 10px;
 		}
 	}
@@ -97,7 +87,7 @@
 	// .portfolio-about__column
 	&__column {
 		color: #fff;
-		@include _screen-960 {
+		@include screen-960 {
 		}
 	}
 

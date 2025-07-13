@@ -6,8 +6,8 @@ import { dinamicAdaptive } from './assets/move-elements.js';
 
 dinamicAdaptive();
 //* ----------------------------------------------------------------------------
-import { opacityForEachItems } from "./animations/layout-anime.js";
-import { brandsSlide } from "./modules/brands-slide.js";
+import { opacityForEachItems } from './animations/layout-anime.jsx';
+import { brandsSlide } from './modules/brands-slide.js';
 //* ----------------------------------------------------------------------------
 import {
 	sidebarMenuHandle,
@@ -15,17 +15,17 @@ import {
 	maskPhone,
 	answersHandler,
 	tabsHandler,
-	shadowScroll,
+	shadowScrollHeader,
 	addToBlock,
 	showCard,
 	tooltipHide
-} from "./layouts/layouts.js";
+} from './layouts/layouts.js';
 
 sidebarMenuHandle();
 returnToSavedPosition();
-shadowScroll();
+shadowScrollHeader();
 //* ---------------- Плавная прокрутка страницы до позиции ---------------------
-import { anchorsSmoothScrolling } from "./modules/anchors-smooth-scrolling.js";
+import { anchorsSmoothScrolling } from './modules/anchors-smooth-scrolling.js';
 
 const anchorLink = document.querySelector('.anchor-link');
 if (anchorLink) {
@@ -41,7 +41,7 @@ const seoBlock = document.querySelector('.seo-block');
 const servicesPrice = document.querySelector('.services-price');
 const companyTeam = document.querySelector('.company-team');
 const aboutCompany = document.querySelector('.about-company');
-const brands = document.querySelector('.about-company');
+const brands = document.querySelector('.brand-slide');
 const cardPrice = document.querySelector('.card-price');
 const tooltip = document.querySelector('.tooltip');
 if (cardPrice) {
@@ -97,9 +97,4 @@ document.addEventListener('DOMContentLoaded', () => {
 			button.disabled = !checkbox.checked;
 		});
 	});
-});
-
-
-
-
-
+}); 

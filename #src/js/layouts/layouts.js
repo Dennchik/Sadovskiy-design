@@ -1,5 +1,5 @@
 import IMask from 'imask';
-import ItcCollapse from "../assets/collapse.js";
+import ItcCollapse from '../assets/collapse.js';
 import { timeLineHeaderItem } from '../modules/anime-js.js';
 
 //* ----------------------------------------------------------------------------
@@ -173,9 +173,9 @@ export function maskPhone(selector) {
 }
 
 // -----------------------------------------------------------------------------
-export function shadowScroll() {
+export function shadowScrollHeader() {
 	const handleScroll = () => {
-		const headerMain = document.querySelector('.page__header-main');
+		const headerMain = document.querySelector('.page__header');
 		const headerProject = document.querySelector('.page__header-project');
 		const pageContainer = document.querySelector('.page__content');
 		const pageContainerTop = pageContainer.getBoundingClientRect().top;

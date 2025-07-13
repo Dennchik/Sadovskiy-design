@@ -1,5 +1,9 @@
+@use 'core/variables' as *;
+@use 'core/mixins' as *;
+@use '../core/extend' as *;
 .page {
 	width: 100vw;
+
 	// .page__portfolio-section
 	&__portfolio-section {
 		position: relative;
@@ -10,8 +14,8 @@
 		padding-top: 20px;
 	}
 
-	// .page__header-main
-	&__header-main {
+	// .page__header
+	&__header {
 		position: sticky;
 		top: 0;
 		left: 0;
@@ -28,7 +32,7 @@
 			background: #fff;
 		}
 
-		@include _screen-768 {
+		@include screen-768 {
 			padding: 5px 0;
 		}
 
@@ -53,6 +57,49 @@
 		}
 	}
 
+	// .page__header-main
+	// &__header-main {
+	// 	position: sticky;
+	// 	top: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	z-index: 11;
+	// 	height: 8.8rem;
+	// 	display: flex;
+	// 	align-items: center;
+	// 	background: #fff;
+	// 	transition: box-shadow 0.9s ease-in-out;
+
+	// 	&.with-shadow {
+	// 		box-shadow: 0 2px 9px #6c8fac;
+	// 		background: #fff;
+	// 	}
+
+	// 	@include screen-768 {
+	// 		padding: 5px 0;
+	// 	}
+
+	// 	.header__image {
+	// 		background: url('../img/icons/logo-b.png') center no-repeat;
+	// 	}
+
+	// 	.menu-list__link {
+	// 		&:hover {
+	// 			color: #000;
+	// 		}
+
+	// 		@extend .underline;
+	// 	}
+
+	// 	.header__title {
+	// 		transition: opacity 0.4s ease-in-out;
+
+	// 		&:hover {
+	// 			opacity: 0.6;
+	// 		}
+	// 	}
+	// }
+
 	// .page__header-project
 	&__header-project {
 		position: fixed;
@@ -60,7 +107,6 @@
 		left: 0;
 		width: 100%;
 		z-index: 11;
-
 		height: 8.8rem;
 		display: flex;
 		align-items: center;
@@ -116,7 +162,7 @@
 			}
 		}
 
-		@include _screen-768 {
+		@include screen-768 {
 			padding: 5px 0;
 		}
 
@@ -153,24 +199,8 @@
 		margin-top: -20px;
 		padding: 0 0 13rem;
 
-		@include _screen-690 {
+		@include screen-690 {
 			padding: 0 0 50px;
-		}
-	}
-
-	// .page__product-card
-	&__product-card {
-		padding-left: 50px;
-		padding-right: 50px;
-
-		@include _screen-1440 {
-			padding-left: 30px;
-			padding-right: 30px;
-		}
-
-		@include _screen-375 {
-			padding-left: 10px;
-			padding-right: 10px;
 		}
 	}
 
@@ -179,42 +209,108 @@
 		position: relative;
 		z-index: 9;
 		display: flow-root;
-		padding: 0 50px 13rem;
+		padding-block: 0 13rem;
 
-		@include _screen-1440 {
-			padding: 0 10px 13rem;
-		}
-
-		@include _screen-690 {
-			padding: 0 10px 60px;
+		@include screen-690 {
+			padding-block: 0 60px;
 		}
 	}
+
+	// .page__product-card
+	// &__product-card {
+	// 	padding-left: 50px;
+	// 	padding-right: 50px;
+
+	// 	@include screen-1440 {
+	// 		padding-left: 30px;
+	// 		padding-right: 30px;
+	// 	}
+
+	// 	@include screen-375 {
+	// 		padding-left: 10px;
+	// 		padding-right: 10px;
+	// 	}
+	// }
 
 	// .page__project
 	&__project {
 		position: relative;
-		padding: 0 50px 13rem;
+		padding-block: 0 13rem;
 
-		@include _screen-1440 {
-			padding: 0 0 13rem !important;
+		@include screen-1140 {
+			padding-block: 0 50px;
+		}
+	}
+
+	// .page__schedule
+	&__schedule {
+		overflow: hidden;
+		padding-block: 0 13rem;
+
+		@include screen-690 {
+			padding-block: 0 50px;
+		}
+	}
+
+	// .page__services-price
+	&__services-price {
+		// padding: 0 50px 16.2rem;
+		padding-block: 0 13rem;
+		scroll-margin-top: 100px;
+
+		@include screen-768 {
+			scroll-margin-top: 60px;
 		}
 
-		@include _screen-690 {
-			padding: 0 0 50px !important;
+		@include screen-690 {
+			padding-block: 0 60px;
 		}
 	}
 
 	// .page__about-company
 	&__about-company {
 		scroll-margin-top: 100px;
-		padding: 0 50px 16.2rem;
+		padding-block: 0 13rem;
 
-		@include _screen-1440 {
-			padding: 0 10px 16.2rem;
+		@include screen-690 {
+			padding-block: 0 60px;
 		}
+	}
 
-		@include _screen-690 {
-			padding: 0 10px 60px;
+	// .page__order-place
+	&__order-place {
+		padding-block: 0 13rem;
+
+		@include screen-690 {
+			padding-block: 0 60px;
+		}
+	}
+
+	// .page__seo-block
+	&__seo-block {
+		background: url('../img/main/s-bg.png') center / cover repeat;
+		padding-block: 12rem 13rem;
+
+		@include screen-690 {
+			padding-block: 50px 60px;
+		}
+	}
+
+	// .page__company-team
+	&__company-team {
+		padding-block: 0 13rem;
+
+		@include screen-690 {
+			padding-block: 0 60px;
+		}
+	}
+
+	// .page__answers
+	&__answers {
+		padding-block: 0 13rem;
+
+		@include screen-690 {
+			padding-block: 0 60px;
 		}
 	}
 
@@ -234,105 +330,18 @@
 		background: rgb(2, 2, 2);
 	}
 
-	// .page__schedule
-	&__schedule {
-		overflow: hidden;
-		padding: 0 0 13rem;
-
-		@include _screen-690 {
-			padding: 0 0 50px;
-		}
-	}
-
-	// .page__services-price
-	&__services-price {
-		padding: 0 50px 16.2rem;
-		scroll-margin-top: 100px;
-
-		@include _screen-1440 {
-			padding: 0 30px 16.2rem;
-		}
-
-		@include _screen-768 {
-			scroll-margin-top: 60px;
-		}
-
-		@include _screen-690 {
-			padding: 0 30px 60px;
-		}
-		@include _screen-375 {
-			padding: 0 10px 60px;
-		}
-	}
-
-	// .page__order-place
-	&__order-place {
-		padding: 0 50px 16.2rem;
-
-		@include _screen-1440 {
-			padding: 0 30px 16.2rem;
-		}
-
-		@include _screen-690 {
-			padding: 0 30px 60px;
-		}
-		@include _screen-375 {
-			padding: 0 10px 60px;
-		}
-	}
-
 	// .page__request-audit
 	&__request-audit {
 		padding: 0 50px 16.2rem;
 
-		@include _screen-1440 {
+		@include screen-1440 {
 			padding: 0 30px 16.2rem;
 		}
-		@include _screen-690 {
+		@include screen-690 {
 			padding: 0 30px 60px;
 		}
 
-		@include _screen-375 {
-			padding: 0 10px 60px;
-		}
-	}
-
-	// .page__seo-block
-	&__seo-block {
-		background: url('../img/main/s-bg.png') center / cover repeat;
-		padding: 12rem 50px 16.2rem;
-
-		@include _screen-1440 {
-			padding: 13rem 10px 16.2rem;
-		}
-
-		@include _screen-690 {
-			padding: 50px 10px 60px;
-		}
-	}
-
-	// .page__company-team
-	&__company-team {
-		padding: 0 0 16.2rem;
-
-		@include _screen-1440 {
-			padding: 0 0 16.2rem;
-		}
-
-		@include _screen-690 {
-			padding: 0 0 50px;
-		}
-	}
-
-	// .page__answers
-	&__answers {
-		padding: 0 50px 16.2rem;
-
-		@include _screen-1440 {
-			padding: 0 10px 16.2rem;
-		}
-
-		@include _screen-690 {
+		@include screen-375 {
 			padding: 0 10px 60px;
 		}
 	}
@@ -341,11 +350,11 @@
 	&__answers-project {
 		padding: 0 50px 16.2rem;
 
-		@include _screen-1440 {
+		@include screen-1440 {
 			padding: 0 10px 16.2rem;
 		}
 
-		@include _screen-1440 {
+		@include screen-1440 {
 			padding: 0 10px 60px;
 		}
 	}
@@ -355,7 +364,7 @@
 		height: 100%;
 		padding: 0 0 16.2rem;
 
-		@include _screen-690 {
+		@include screen-690 {
 			padding: 0 0 60px;
 		}
 	}
@@ -365,15 +374,15 @@
 		position: relative;
 		padding: 0 50px 16.2rem;
 
-		@include _screen-1440 {
+		@include screen-1440 {
 			padding: 0 30px 16.2rem;
 		}
 
-		@include _screen-690 {
+		@include screen-690 {
 			padding: 0 30px 60px;
 		}
 
-		@include _screen-375 {
+		@include screen-375 {
 			padding: 0 10px 60px;
 		}
 	}
@@ -383,7 +392,7 @@
 		position: relative;
 		padding: 0 0 13rem;
 
-		@include _screen-690 {
+		@include screen-690 {
 			padding: 0 0 50px;
 		}
 	}

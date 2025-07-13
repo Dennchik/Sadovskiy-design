@@ -1,25 +1,23 @@
-// todo -------------------------- Variables -----------------------------------
-@import 'core/variables';
-//todo ----------------------------- Core --------------------------------------
-@import 'core/mixins';
-@import 'core/extend';
-// todo -------------------------- Sections ------------------------------------
-@import 'components/services';
-@import 'components/about-company';
-@import 'components/company-team';
-@import 'components/brands';
-@import 'components/project';
-@import 'components/order-place';
-// todo -------------------------- Sections ------------------------------------
-@import 'components/portfolio-performance';
-@import 'components/portfolio-about';
-@import 'components/portfolio-section';
-@import 'components/unknown-page';
-@import 'components/portfolio-separator';
-@import 'components/portfolio-order';
-// todo -------------------------- Sections ------------------------------------
-@import 'components/project-page-section';
-@import 'components/performance';
-@import 'components/info-block';
-@import 'components/dev-info';
-@import 'components/order-place';
+// todo - [ Sections - index ] -
+@use 'components/services.scss';
+@use 'components/project';
+@use 'components/about-company';
+@use 'components/schedule';
+@use 'components/services-price';
+@use 'components/order-place';
+@use 'components/seo-block';
+@use 'components/company-team';
+@use 'components/answers';
+@use 'components/brands';
+// todo - [ Sections - Project] -
+@use 'components/performance';
+@use 'components/project-page-section';
+@use 'components/info-block';
+@use 'components/dev-info';
+// todo - [ Sections - Portfolio ] -
+@use 'components/portfolio-performance';
+@use 'components/portfolio-about';
+@use 'components/portfolio-section';
+@use 'components/unknown-page';
+@use 'components/portfolio-separator';
+// @use 'components/portfolio-order';

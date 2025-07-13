@@ -1,3 +1,5 @@
+@use 'core/variables' as *;
+@use 'core/mixins' as *;
 //*  --------------------------- [Greed Card a] --------------------------------
 .answers__content > ._collapse:not(._show) {
 	display: none;
@@ -11,29 +13,30 @@
 //* ---------------------------- [Burger-button] -------------------------------
 .button {
 	cursor: pointer;
-	white-space: nowrap;
 	position: relative;
+	white-space: nowrap;
 	display: inline-flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 4px;
 	border-radius: 30px;
-	width: 268px;
+	width: 100%;
 	max-width: 268px;
 	max-height: 58px;
 	overflow: hidden;
 	border: 1px solid transparent;
 	transition: all 0.2s ease-in-out;
 
-	@include _1440-1920 {
+	@include minmax-1440-1920 {
 		max-width: calc(215px + (266 - 215) * ((100vw - 1440px) / (1920 - 1440)));
 		max-height: calc(46px + (58 - 46) * ((100vw - 1440px) / (1920 - 1440)));
 	}
 
 	.icon {
 		z-index: 2;
-		transition: background 0.2s,
-		transform 0.2s ease-in-out;
+		transition:
+			background 0.2s,
+			transform 0.2s ease-in-out;
 	}
 
 	span {
@@ -46,20 +49,20 @@
 		transition: color 0.2s ease-in-out;
 		z-index: 2;
 
-		@include _1440-1920 {
+		@include minmax-1440-1920 {
 			font-size: calc(15px + (20 - 15) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 
-		@include _320-1440 {
+		@include minmax-320-1440 {
 			font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1140 - 320)));
 		}
 
-		@include _screen-490 {
+		@include screen-490 {
 			font-size: 16px;
 		}
 	}
 
-	@include _screen-490 {
+	@include screen-490 {
 		width: 195px;
 	}
 
@@ -78,8 +81,7 @@
 	}
 
 	&:hover {
-
-		@include _min-960 {
+		@include min-960 {
 			span {
 				color: #fff;
 			}
@@ -98,7 +100,6 @@
 					color: $color;
 				}
 			}
-
 		}
 	}
 }
@@ -113,17 +114,17 @@
 	align-items: center;
 	justify-content: center;
 
-	@include _1440-1920 {
+	@include minmax-1440-1920 {
 		width: calc(36px + (48 - 36) * ((100vw - 1440px) / (1920 - 1440)));
 		height: calc(36px + (48 - 36) * ((100vw - 1440px) / (1920 - 1440)));
 	}
 
-	@include _screen-690 {
+	@include screen-690 {
 		width: 40px;
 		height: 40px;
 	}
 
-	@include _screen-490 {
+	@include screen-490 {
 		width: 28px;
 		height: 28px;
 	}
@@ -192,14 +193,14 @@
 	font-size: 76px;
 	line-height: 100%;
 
-	@include _1440-1920 {
+	@include minmax-1440-1920 {
 		font-size: calc(54px + (76 - 54) * ((100vw - 1440px) / (1920 - 1440)));
 	}
 
-	@include _320-1440 {
+	@include minmax-320-1440 {
 		font-size: calc(28px + (76 - 28) * ((100vw - 320px) / (1440 - 320)));
 	}
-	@include _screen-320 {
+	@include screen-320 {
 		font-size: 28px;
 	}
 }
@@ -208,15 +209,15 @@
 	font-size: 65px;
 	line-height: 100%;
 
-	@include _1440-1920 {
+	@include minmax-1440-1920 {
 		font-size: calc(52px + (65 - 52) * ((100vw - 1440px) / (1920 - 1440)));
 	}
 
-	@include _320-1920 {
+	@include minmax-320-1920 {
 		font-size: calc(24px + (52 - 24) * ((100vw - 320px) / (1440 - 320)));
 	}
 
-	@include _screen-320 {
+	@include screen-320 {
 		font-size: 24px;
 	}
 }
@@ -225,19 +226,19 @@
 	font-size: 35px !important;
 	line-height: 122.857143%; /* 43px/35 */
 
-	@include _1440-1920 {
+	@include minmax-1440-1920 {
 		font-size: calc(
-						20px + (35 - 20) * ((100vw - 1440px) / (1920 - 1440))
+			20px + (35 - 20) * ((100vw - 1440px) / (1920 - 1440))
 		) !important;
 	}
 
-	@include _320-1440 {
+	@include minmax-320-1440 {
 		font-size: calc(
-						20px + (35 - 20) * ((100vw - 320px) / (1920 - 320))
+			20px + (35 - 20) * ((100vw - 320px) / (1920 - 320))
 		) !important;
 	}
 
-	@include _screen-320 {
+	@include screen-320 {
 		font-size: 20px !important;
 	}
 }
@@ -246,74 +247,65 @@
 	font-size: 35px !important;
 	line-height: 122.857143%; /* 43px/35 */
 
-	@include _1440-1920 {
+	@include minmax-1440-1920 {
 		font-size: calc(
-						16px + (35 - 16) * ((100vw - 1440px) / (1920 - 1440))
+			16px + (35 - 16) * ((100vw - 1440px) / (1920 - 1440))
 		) !important;
 	}
 
-	@include _320-1440 {
+	@include minmax-320-1440 {
 		font-size: calc(
-						16px + (35 - 16) * ((100vw - 320px) / (1920 - 320))
+			16px + (35 - 16) * ((100vw - 320px) / (1920 - 320))
 		) !important;
 	}
 
-	@include _screen-320 {
+	@include screen-320 {
 		font-size: 16px !important;
 	}
 }
+
 .t-h5 {
 	font-size: 20px !important;
 	line-height: 122.857143%; /* 43px/35 */
 
-	@include _1440-1920 {
+	@include minmax-320-1920 {
 		font-size: calc(
-						16px + (20 - 14) * ((100vw - 1440px) / (1920 - 1440))
+			12px + (20 - 12) * ((100vw - 320px) / (1920 - 320))
 		) !important;
 	}
 
-	@include _320-1440 {
-		font-size: calc(
-						16px + (20 - 14) * ((100vw - 320px) / (1920 - 320))
-		) !important;
-	}
-
-	@include _screen-320 {
-		font-size: 14px !important;
+	@include screen-320 {
+		font-size: 12px !important;
 	}
 }
+
 .p-text {
 	font-size: 16px;
 	line-height: 125%;
 
-	@include _1440-1920 {
+	@include minmax-1440-1920 {
 		font-size: calc(12px + (16 - 12) * ((100vw - 1440px) / (1920 - 1440)));
 	}
 
-	@include _320-1440 {
+	@include minmax-320-1440 {
 		font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
 	}
 
-	@include _screen-320 {
+	@include screen-320 {
 		font-size: 12px;
 	}
 }
 
-.mlrp-b0101 {
+.pbl-h-lr-5016 {
 	padding-left: 50px;
 	padding-right: 50px;
 
-	@include _1440-1920 {
-		// padding-left: calc(30px + (50 - 30) * ((100vw - 1440px) / (1920 - 1440)));
-		// padding-right: calc(30px + (50 - 30) * ((100vw - 1440px) / (1920 - 1440)));
+	@include screen-1440 {
+		padding-left: 30px;
+		padding-right: 30px;
 	}
 
-	@include _screen-1440 {
-		padding-left: 10px;
-		padding-right: 10px;
-	}
-
-	@include _screen-375 {
+	@include screen-690 {
 		padding-left: 10px;
 		padding-right: 10px;
 	}
@@ -323,16 +315,16 @@
 	max-width: 1280px;
 	margin: 0 auto;
 
-	@include _min-1920 {
+	@include min-1920 {
 	}
 
-	@include _1440-1920 {
+	@include minmax-1440-1920 {
 		max-width: calc(
-						1000px + (1280 - 1000) * ((100vw - 1440px) / (1920 - 1440))
+			1000px + (1280 - 1000) * ((100vw - 1440px) / (1920 - 1440))
 		);
 	}
 
-	@include _screen-1440 {
+	@include screen-1440 {
 		max-width: 1000px;
 	}
 }
@@ -341,14 +333,14 @@
 	max-width: 1165px;
 	margin: 0 auto;
 
-	@include _min-1920 {
+	@include min-1920 {
 	}
 
-	@include _1440-1920 {
+	@include minmax-1440-1920 {
 		max-width: calc(900px + (1165 - 900) * ((100vw - 1440px) / (1920 - 1440)));
 	}
 
-	@include _screen-1440 {
+	@include screen-1440 {
 		max-width: 900px;
 	}
 }
@@ -357,5 +349,4 @@
 	&::before {
 		transform: translateX(-1px);
 	}
-
 }

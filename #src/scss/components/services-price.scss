@@ -1,10 +1,13 @@
+@use 'core/variables' as *;
+@use 'core/mixins' as *;
+
 .services-price {
 	// .services-price__title
 	&__title {
 		text-align: center;
 		margin-bottom: 70px;
 
-		@include _screen-690 {
+		@include screen-690 {
 			margin-bottom: 40px;
 		}
 	}
@@ -17,19 +20,19 @@
 		justify-content: space-between;
 		grid-template-columns: repeat(3, minmax(200px, 1fr));
 
-		@include _1440-1920 {
+		@include minmax-1440-1920 {
 			gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 
-		@include _screen-1440 {
+		@include screen-1440 {
 			gap: 20px;
 		}
 
-		@include _screen-1300 {
+		@include screen-1300 {
 			grid-template-columns: repeat(2, minmax(200px, 51fr));
 		}
 
-		@include _screen-640 {
+		@include screen-640 {
 			gap: 20px;
 			grid-template-columns: repeat(1, minmax(200px, 1fr));
 		}
@@ -40,7 +43,7 @@
 		border-radius: 30px;
 		overflow: hidden;
 
-		@include _screen-768 {
+		@include screen-768 {
 			border-radius: 15px;
 		}
 
@@ -76,7 +79,7 @@
 		padding: 20px;
 		background: url('../img/main/card-item-bg.png') center / cover no-repeat;
 
-		@include _screen-490 {
+		@include screen-490 {
 			padding: 10px 10px 18px;
 		}
 	}
@@ -116,7 +119,7 @@
 	&__content {
 		flex: 1 1 auto;
 
-		@include _screen-490 {
+		@include screen-490 {
 			overflow: hidden;
 			display: grid;
 			grid-template-rows: 0fr;
@@ -161,11 +164,11 @@
 		font-weight: 400;
 		line-height: 125%; /* 20px/16 */
 
-		@include _320-1920 {
+		@include minmax-320-1920 {
 			font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
 		}
 
-		@include _screen-320 {
+		@include screen-320 {
 			font-size: 12px;
 		}
 	}
@@ -177,7 +180,7 @@
 		align-items: center;
 		justify-content: space-between;
 
-		@include _640-1710 {
+		@include minmax-640-1710 {
 			flex-direction: column;
 		}
 	}
@@ -189,15 +192,15 @@
 		line-height: 124%; /* 31px/25 */
 		white-space: nowrap;
 
-		@include _screen-1710 {
+		@include screen-1710 {
 			align-self: start;
 		}
 
-		@include _320-1920 {
+		@include minmax-320-1920 {
 			font-size: calc(20px + (25 - 20) * ((100vw - 320px) / (1920 - 320)));
 		}
 
-		@include _screen-320 {
+		@include screen-320 {
 			font-size: 20px;
 		}
 	}
@@ -218,11 +221,11 @@
 			}
 		}
 
-		@include _490-640 {
+		@include minmax-490-640 {
 			margin-top: 0;
 		}
 
-		@include _screen-490 {
+		@include screen-490 {
 			display: none;
 			align-self: center;
 		}
@@ -241,7 +244,7 @@
 	&__open-btn {
 		color: #fff;
 
-		@include _min-490 {
+		@include min-490 {
 			display: none;
 		}
 	}

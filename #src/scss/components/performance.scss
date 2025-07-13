@@ -1,54 +1,13 @@
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
+
 .performance {
 	position: relative;
 	overflow: hidden;
 	width: 100%;
 	background: #171b1c;
 
-	// .performance__wrapper
-	&__wrapper {
-		background:
-			url('../../img/performance/ellipse-01.png') top -15% left 17% / 50% no-repeat,
-			url('../../img/performance/ellipse-02.png') top -6% right -7% / 25%
-				no-repeat;
-
-		&::before {
-			pointer-events: none;
-			content: '';
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 1;
-			background: radial-gradient(
-				ellipse 120% 50% at 30% 10%,
-				rgba(23, 27, 28, 0.74) 0%,
-				rgba(23, 27, 28, 0.397) 25%,
-				transparent 65%
-			);
-		}
-
-		@include _320-1440 {
-			background:
-				url('../../img/performance/ellipse-01.png') top
-					calc(45% + (-15 - 45) * ((100vw - 690px) / (1440 - 690))) left
-					calc(-235px + (-150 - (-235)) * ((100vw - 690px) / (1440 - 690))) /
-					calc(600px + (850 - 600) * ((100vw - 690px) / (1440 - 690))) no-repeat,
-				url('../../img/performance/ellipse-02.png') top -6% right calc(
-						-150px + (-150 - (-150)) * ((100vw - 690px) / (1440 - 690))
-					) / calc(55% + (-265 - 55) * ((100vw - 690px) / (1440 - 690))) no-repeat;
-		}
-
-		@include _screen-320 {
-			background:
-				url('../../img/performance/ellipse-01.png') top 48% left -290px / 490px no-repeat,
-				url('../../img/performance/ellipse-02.png') top -6% right -150px / 330px
-					no-repeat;
-		}
-	}
-
 	// .performance__g-box
-
 	&__g-box {
 		pointer-events: none;
 		position: absolute;
@@ -97,6 +56,49 @@
 		}
 	}
 
+	// .performance__wrapper
+	&__wrapper {
+		background:
+			url('../../img/performance/ellipse-01.png') top -15% left 17% / 50% no-repeat,
+			url('../../img/performance/ellipse-02.png') top -6% right -7% / 25%
+				no-repeat;
+
+		&::before {
+			pointer-events: none;
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			background: radial-gradient(
+				ellipse 120% 50% at 30% 10%,
+				rgba(23, 27, 28, 0.74) 0%,
+				rgba(23, 27, 28, 0.397) 25%,
+				transparent 65%
+			);
+		}
+
+		@include minmax-320-1440 {
+			background:
+				url('../../img/performance/ellipse-01.png') top
+					calc(45% + (-15 - 45) * ((100vw - 690px) / (1440 - 690))) left
+					calc(-235px + (-150 - (-235)) * ((100vw - 690px) / (1440 - 690))) /
+					calc(600px + (850 - 600) * ((100vw - 690px) / (1440 - 690))) no-repeat,
+				url('../../img/performance/ellipse-02.png') top -6% right calc(
+						-150px + (-150 - (-150)) * ((100vw - 690px) / (1440 - 690))
+					) / calc(55% + (-265 - 55) * ((100vw - 690px) / (1440 - 690))) no-repeat;
+		}
+
+		@include screen-320 {
+			background:
+				url('../../img/performance/ellipse-01.png') top 48% left -290px / 490px no-repeat,
+				url('../../img/performance/ellipse-02.png') top -6% right -150px / 330px
+					no-repeat;
+		}
+	}
+
 	// .performance__body
 	&__body {
 		padding-top: 21.6rem;
@@ -108,20 +110,13 @@
 		width: 100%;
 		overflow: hidden;
 
-		@include _1440-1920 {
+		@include minmax-1440-1920 {
 			column-gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 
-		@include _screen-1440 {
-			padding: 21.6rem 30px 14.7rem;
-		}
-
-		@include _screen-690 {
-			padding: 100px 30px 60px;
-		}
-
-		@include _screen-375 {
-			padding: 100px 10px 60px;
+		@include screen-690 {
+			padding-top: 100px;
+			padding-bottom: 60px;
 		}
 	}
 
@@ -144,22 +139,36 @@
 			align-self: start;
 			max-width: 950px;
 
-			@include _screen-960 {
+			@include screen-960 {
 				margin-left: 0;
 				grid-column: 1/4;
 			}
 
-			@include _screen-690 {
+			@include screen-690 {
 				margin-bottom: 60px;
 			}
 
-			@include _screen-490 {
+			@include screen-490 {
 				transform: translateX(0);
 			}
 		}
 
 		&:nth-child(3) {
 			grid-column: 1/4;
+		}
+
+		.bottom-menu__button {
+			position: relative;
+			&:hover {
+				span {
+					color: #000 !important;
+					opacity: 1;
+				}
+			}
+
+			.bottom-menu__i-button {
+				z-index: 2;
+			}
 		}
 	}
 
@@ -172,7 +181,7 @@
 			margin-bottom: 24px;
 			line-height: 100%;
 
-			@include _screen-690 {
+			@include screen-690 {
 				margin-bottom: 40px;
 				text-align: center;
 			}
@@ -182,20 +191,20 @@
 			font-size: 55px;
 			line-height: 100%;
 
-			@include _320-1920 {
+			@include minmax-320-1920 {
 				font-size: calc(16px + (55 - 16) * ((100vw - 320px) / (1920 - 320)));
 			}
 
-			@include _screen-320 {
+			@include screen-320 {
 				font-size: 16px;
 			}
 		}
 
-		@include _min-1640 {
+		@include min-1640 {
 			position: relative;
 		}
 
-		@include _screen-1640 {
+		@include screen-1640 {
 			display: flex;
 			flex-direction: column;
 		}
@@ -207,10 +216,10 @@
 		align-self: end;
 		margin: 70px 0;
 
-		@include _1440-1920 {
+		@include minmax-1440-1920 {
 			margin: calc(50px + (100 - 50) * ((100vw - 1440px) / (1920 - 1440))) 0;
 		}
-		@include _screen-1440 {
+		@include screen-1440 {
 			margin: 20px 0 70px;
 		}
 
@@ -234,7 +243,7 @@
 			margin-left: 20px;
 			line-height: 150%; /* 24px/16 */
 
-			@include _screen-490 {
+			@include screen-490 {
 				margin-left: 0;
 			}
 		}
@@ -264,7 +273,7 @@
 			}
 		}
 
-		@include _screen-960 {
+		@include screen-960 {
 			align-self: center;
 		}
 	}
@@ -282,16 +291,16 @@
 		grid-template-columns: repeat(3, 1fr);
 		gap: 60px;
 
-		@include _1440-1920 {
+		@include minmax-1440-1920 {
 			gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 
-		@include _screen-1440 {
+		@include screen-1440 {
 			grid-template-columns: repeat(2, 1fr);
 			gap: 20px;
 		}
 
-		@include _screen-890 {
+		@include screen-890 {
 			grid-template-columns: repeat(1, 1fr);
 			justify-items: center;
 		}
@@ -302,10 +311,11 @@
 		background: url('../../img/performance/button-bg.png') center / cover
 			no-repeat;
 		min-height: 94px;
-		width: 100%;
-		max-width: 100%;
+		width: 100% !important;
+		max-width: 100% !important;
 		padding: 0 30px;
 		overflow: hidden;
+		border: none !important;
 
 		&:hover {
 			span {
@@ -323,12 +333,12 @@
 			transition: opacity 0.4s ease-in-out;
 		}
 
-		@include _screen-890 {
+		@include screen-890 {
 			max-width: 480px;
 			padding: 0 15px;
 		}
 
-		@include _screen-690 {
+		@include screen-690 {
 			min-height: 65px;
 		}
 	}

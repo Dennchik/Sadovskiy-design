@@ -1,3 +1,5 @@
+@use 'variables-icon' as *;
+
 @font-face {
   font-family: '#{$icon-font-family}';
   src:
@@ -28,24 +30,9 @@
   //* Better Font Rendering
 }
 
-.icon-chain-broken {
+.icon-youtube-lg {
   &:before {
-    content: $icon-chain-broken;
-  }
-}
-.icon-unlink {
-  &:before {
-    content: $icon-unlink;
-  }
-}
-.icon-chain-broken1 {
-  &:before {
-    content: $icon-chain-broken1;
-  }
-}
-.icon-unlink1 {
-  &:before {
-    content: $icon-unlink1;
+    content: $icon-youtube-lg;
   }
 }
 .icon-youtube-square {
@@ -122,11 +109,6 @@
 .icon-telegram-fly {
   &:before {
     content: $icon-telegram-fly;
-  }
-}
-.icon-youtube-lg {
-  &:before {
-    content: $icon-youtube-lg;
   }
 }
 .icon-dzen {

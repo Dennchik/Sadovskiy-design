@@ -1,3 +1,6 @@
+// @use 'core/variables' as *;
+@use 'core/mixins' as *;
+
 .answers {
 	// .answers__title
 	&__title {
@@ -6,11 +9,11 @@
 		text-align: center;
 		border-bottom: 1px solid #a9a9a9;
 
-		@include _screen-690 {
+		@include screen-690 {
 			padding-bottom: 40px;
 		}
 
-		@include _screen-320 {
+		@include screen-320 {
 			font-size: 24px;
 		}
 	}
@@ -54,7 +57,6 @@
 	&__icon {
 		display: flex;
 		align-items: center;
-
 	}
 
 	// .answers__text
@@ -68,11 +70,11 @@
 			white-space: nowrap;
 		}
 
-		@include _320-1920 {
+		@include minmax-320-1920 {
 			font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
 		}
 
-		@include _screen-320 {
+		@include screen-320 {
 			font-size: 15px;
 		}
 	}

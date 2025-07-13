@@ -207,8 +207,9 @@
 			background: #3c3b51ce;
 			scale: 0;
 			opacity: 0;
-			transition: opacity 0.4s,
-			scale 0.4s ease 0s;
+			transition:
+				opacity 0.4s,
+				scale 0.4s ease 0s;
 
 			span {
 				height: 100%;

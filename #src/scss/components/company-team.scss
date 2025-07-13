@@ -1,13 +1,12 @@
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
+
 .company-team {
 	background: #2b3769;
-	padding: 13rem 50px;
+	padding-block: 12rem 13rem;
 
-	@include _screen-1440 {
-		padding: 13rem 10px;
-	}
-
-	@include _screen-690 {
-		padding: 50px 10px 60px;
+	@include screen-690 {
+		padding-block: 50px 60px;
 	}
 
 	// .company-team__body
@@ -27,7 +26,7 @@
 		color: #fff;
 		text-align: center;
 
-		@include _screen-690 {
+		@include screen-690 {
 			margin-bottom: 40px;
 		}
 	}
@@ -38,19 +37,19 @@
 		gap: 40px;
 		grid-template-columns: repeat(3, 1fr);
 
-		@include _1440-1920 {
+		@include minmax-1440-1920 {
 			gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 
-		@include _screen-1440 {
+		@include screen-1440 {
 			gap: 20px;
 		}
 
-		@include _screen-1164 {
+		@include screen-1164 {
 			grid-template-columns: repeat(2, 1fr);
 		}
 
-		@include _screen-568 {
+		@include screen-568 {
 			grid-template-columns: repeat(1, 1fr);
 		}
 	}
@@ -60,7 +59,7 @@
 		border-radius: 30px;
 		background: #fff;
 
-		@include _screen-690 {
+		@include screen-690 {
 			border-radius: 15px;
 		}
 	}
@@ -71,15 +70,15 @@
 	&__body {
 		padding: 30px;
 
-		@include _screen-768 {
+		@include screen-768 {
 			padding: 20px;
 		}
 
-		@include _screen-690 {
+		@include screen-690 {
 			padding: 15px;
 		}
 
-		@include _screen-490 {
+		@include screen-490 {
 			padding: 10px;
 		}
 	}
@@ -93,7 +92,7 @@
 
 	// .team-card__content
 	.team-card__content {
-		@include _screen-568 {
+		@include screen-568 {
 			margin-top: -12px;
 		}
 	}
@@ -104,11 +103,11 @@
 		border-radius: 20px;
 		overflow: hidden;
 
-		@include _320-1920 {
+		@include minmax-320-1920 {
 			width: calc(117px + (232 - 117) * ((100vw - 320px) / (1920 - 320)));
 		}
 
-		@include _screen-320 {
+		@include screen-320 {
 			width: 117px;
 		}
 
@@ -118,7 +117,7 @@
 			filter: grayscale(0.3);
 		}
 
-		@include _screen-768 {
+		@include screen-768 {
 			border-radius: 10px;
 		}
 	}
@@ -137,11 +136,11 @@
 		line-height: 125%; /* 20px/16 */
 		text-align: right;
 
-		@include _320-1920 {
+		@include minmax-320-1920 {
 			font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
 		}
 
-		@include _screen-320 {
+		@include screen-320 {
 			font-size: 12px;
 		}
 	}
@@ -153,11 +152,11 @@
 		line-height: 122.857143%; /* 43px/35 */
 		text-align: right;
 
-		@include _320-1920 {
+		@include minmax-320-1920 {
 			font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (1920 - 320)));
 		}
 
-		@include _screen-320 {
+		@include screen-320 {
 			font-size: 20px;
 		}
 	}

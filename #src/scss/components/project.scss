@@ -1,5 +1,9 @@
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
+@use '../chunk/tab-content';
+
 .project {
-	@include _screen-1140 {
+	@include screen-1140 {
 		background: #2b3769;
 	}
 
@@ -8,11 +12,11 @@
 		text-align: center;
 		margin-bottom: 50px;
 
-		@include _960-1920 {
+		@include minmax-960-1920 {
 			font-size: calc(24px + (65 - 24) * ((100vw - 960px) / (1920 - 960)));
 		}
 
-		@include _screen-1140 {
+		@include screen-1140 {
 			color: #fff;
 			margin-bottom: 10px;
 			padding-top: 50px;
@@ -26,24 +30,27 @@
 		padding-top: 50px;
 		padding-bottom: 50px;
 
-		background: #2b3769 radial-gradient(
-										circle at 100% 100%,
-										rgba(160, 176, 240, 0.178) 10%,
-										rgb(43, 55, 105) 20%,
-										transparent
-		);
+		background: #2b3769
+			radial-gradient(
+				circle at 100% 100%,
+				rgba(160, 176, 240, 0.178) 10%,
+				rgb(43, 55, 105) 20%,
+				transparent
+			);
 
-		@include _min-960 {
+		@include min-960 {
 			border-radius: 0 30px 10px 30px;
+			padding: 50px 50px 60px;
 		}
 
-		@include _screen-1440 {
-			padding: 0 10px 60px;
+		@include screen-1440 {
+			padding: 0 30px 60px;
 			border-radius: 0;
 		}
 
-		@include _screen-690 {
-			padding: 0 10px 60px;
+		@include screen-1140 {
+			padding: 0 0 60px;
+			border-radius: 0;
 		}
 	}
 
@@ -58,11 +65,10 @@
 		transition: all 0.4s ease-in-out;
 
 		&._responsive {
-			background: #3a4a91;
 			grid-template-rows: 1fr;
 			height: 100%;
 
-			@include _screen-960 {
+			@include screen-960 {
 				.tabs-button__item {
 					position: relative;
 					opacity: 1;
@@ -79,28 +85,32 @@
 			}
 		}
 
-		@include _min-1140 {
+		@include min-1140 {
 			margin-bottom: -31px;
 			height: 145px;
 		}
 
-		@include _1140-1920 {
+		@include minmax-1140-1920 {
 			height: calc(115px + (145 - 115) * ((100vw - 1140px) / (1920 - 1140)));
 		}
 
-		@include _screen-1140 {
+		@include screen-1140 {
 			border-top-left-radius: 0;
 			border-top-right-radius: 0;
 			background: #2b3769;
-			padding: 0 25px 0 30px;
+			padding: 0 30px;
 		}
 
-		@include _screen-960 {
+		@include screen-960 {
 			grid-template-rows: 0fr;
 			overflow: hidden;
 		}
 
-		@include _screen-375 {
+		@include screen-690 {
+			padding: 0 16px;
+		}
+
+		@include screen-375 {
 			padding: 0 5px 0 10px;
 		}
 	}
@@ -118,7 +128,7 @@
 		}
 
 		&:hover {
-			@include _min-960 {
+			@include min-960 {
 				border: 1px solid #fff;
 
 				.icon {
@@ -159,7 +169,7 @@
 		align-items: flex-end;
 		gap: 10px;
 
-		@include _screen-1140 {
+		@include screen-1140 {
 			padding: 20px 0;
 			align-items: center;
 			box-sizing: border-box;
@@ -167,7 +177,7 @@
 			gap: 40px;
 		}
 
-		@include _screen-960 {
+		@include screen-960 {
 			align-items: flex-start;
 			flex-direction: column;
 			padding: 0;
@@ -186,23 +196,17 @@
 		&:hover {
 			box-shadow: 0 -1px 7px #b8b8b8;
 
-			@include _screen-1440 {
+			@include screen-1440 {
 				box-shadow: none;
 			}
 		}
 
 		&:not(.active) {
-			@include _min-1140 {
-				height: 98px;
-				color: #000;
-				background: #f2f2f2;
-			}
-
-			@include _1140-1920 {
+			@include minmax-1140-1920 {
 				height: calc(70px + (98 - 70) * ((100vw - 1140px) / (1920 - 1140)));
 			}
 
-			@include _screen-960 {
+			@include screen-960 {
 				pointer-events: none;
 				transform: translateX(-100%);
 				opacity: 0;
@@ -214,21 +218,23 @@
 			color: #fff;
 			background: #2b3769;
 
-			@include _min-1140 {
+			@include min-1140 {
 				height: 115px;
 				padding-top: 24px;
 			}
 
-			@include _screen-960 {
+			@include screen-960 {
 				background: transparent;
 				position: absolute;
 			}
 
-			@include _1140-1920 {
-				height: calc(85px + (115 - 85) * ((100vw - 1140px) / (1920 - 1140)));
+			@include minmax-1140-1920 {
+				height: calc(
+					85px + (115 - 85) * ((100vw - 1140px) / (1920 - 1140))
+				) !important;
 			}
 
-			@include _screen-1140 {
+			@include screen-1140 {
 				span {
 					&::after {
 						opacity: 0.5;
@@ -239,19 +245,22 @@
 		}
 
 		&:nth-child(1) {
-			@include _min-1140 {
+			@include min-1140 {
 				span {
 					display: inline-flex;
 					text-align: center;
 				}
 			}
 
-			@include _screen-960 {
+			@include screen-960 {
 				max-width: 100%;
 			}
 		}
 
-		@include _min-1140 {
+		@include min-1140 {
+			height: 98px;
+			color: #000;
+			background: #f2f2f2;
 			margin-bottom: 30px;
 			padding-top: 21px;
 			transition: all 0.4s ease-in-out;
@@ -259,12 +268,12 @@
 			border-top-right-radius: 30px;
 		}
 
-		@include _screen-1140 {
+		@include screen-1140 {
 			border-radius: 0;
 		}
 
-		@include _screen-960 {
-			width: 260px;
+		@include screen-960 {
+			// width: 260px;
 			z-index: 1;
 		}
 
@@ -272,13 +281,24 @@
 			position: relative;
 			display: inline-flex;
 			line-height: 122.857143%;
+			padding-left: 50px;
+			padding-right: 50px;
 
-			@include _screen-1440 {
+			@include screen-1440 {
+				padding-left: 30px;
+				padding-right: 30px;
+			}
+			@include screen-690 {
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+			@include screen-1440 {
 				font-size: 20px;
 				padding: 0 30px;
 			}
 
-			@include _screen-1140 {
+			@include screen-1140 {
 				padding: 0;
 				color: #fff;
 
@@ -293,7 +313,7 @@
 				}
 			}
 
-			@include _screen-960 {
+			@include screen-960 {
 				margin: 10px 0;
 				font-size: 20px;
 			}
@@ -302,11 +322,11 @@
 
 	// .tabs-button__button
 	&__button {
-		@include _min-960 {
+		@include min-960 {
 			display: none;
 		}
 
-		@include _screen-960 {
+		@include screen-960 {
 			position: relative;
 			display: block;
 			align-self: start;
@@ -325,5 +345,3 @@
 		}
 	}
 }
-
-@import '../chunk/tab-content';

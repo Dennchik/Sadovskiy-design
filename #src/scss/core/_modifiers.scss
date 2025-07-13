@@ -1,4 +1,7 @@
-@include _min-920 {
+@use 'core/variables' as *;
+@use 'core/mixins' as *;
+
+@include min-920 {
 	/* FLOW: RIGHT */
 	[data-tooltip] {
 		position: relative;

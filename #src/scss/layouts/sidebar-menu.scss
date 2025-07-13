@@ -1,6 +1,6 @@
-/* 3) Если кликнут класс _open — подменю всегда открыто */
-.menu-list__item._open .menu-list__sub-menu {
-}
+@use 'core/variables' as *;
+@use 'core/mixins' as *;
+@use '../core/extend' as *;
 
 .sidebar-menu {
 	position: fixed;
@@ -32,11 +32,11 @@
 		width: 100%;
 		min-width: 300px;
 
-		@include _min-960 {
+		@include min-960 {
 			flex: 0 1 40%;
 		}
 
-		@include _screen-490 {
+		@include screen-490 {
 			width: 100%;
 		}
 
@@ -47,7 +47,7 @@
 			flex: 0 1 auto;
 			overflow: hidden;
 
-			@include _screen-960 {
+			@include screen-960 {
 				display: none;
 			}
 		}
@@ -65,7 +65,7 @@
 		flex-direction: column;
 		justify-content: space-between;
 
-		@include _screen-375 {
+		@include screen-375 {
 			padding: 40px 10px;
 		}
 
@@ -284,7 +284,7 @@
 		padding-top: 30px;
 		width: 100%;
 
-		@include _screen-375 {
+		@include screen-375 {
 			align-items: flex-start;
 			flex-direction: column-reverse;
 			gap: 40px;
@@ -313,12 +313,10 @@
 		.sidebar-menu__order {
 			&::before {
 				opacity: 1;
-				// transition: opacity 0.2s ease-in-out 0.4s;
 			}
 
 			&::after {
 				opacity: 1;
-				// transition: opacity 0.2s ease-in-out 0.4s;
 			}
 		}
 

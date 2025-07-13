@@ -1,3 +1,7 @@
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
+// @use '../chunk/tab-content';
+
 .project-page-section {
 	// .project__title
 	&__title {
@@ -17,7 +21,7 @@
 			white-space: nowrap;
 		}
 
-		@include _screen-690 {
+		@include screen-690 {
 			margin-bottom: 30px;
 		}
 	}
@@ -28,11 +32,11 @@
 		z-index: 2;
 		background: #fff;
 
-		@include _min-960 {
+		@include min-960 {
 			border-radius: 30px;
 		}
 
-		@include _screen-1140 {
+		@include screen-1140 {
 			border-top-right-radius: 0;
 			border-top-left-radius: 0;
 		}
@@ -49,23 +53,23 @@
 		color: #fff;
 
 		&:hover {
-			@include _min-960 {
+			@include min-960 {
 				border: 1px solid $color;
 
 				.icon {
 					transform: rotate(-90deg);
-					background: $color;
+					background: $color !important;
 
 					.icon-arrow-down {
 						&::before {
-							color: #fff;
+							color: #fff !important;
 							font-weight: 500;
 						}
 					}
 				}
 
 				span {
-					color: #000;
+					color: #000 !important;
 				}
 
 				&::before {
@@ -73,7 +77,6 @@
 				}
 			}
 		}
-
 	}
 
 	&__icon {
@@ -89,5 +92,3 @@
 		}
 	}
 }
-
-@import '../chunk/tab-content';

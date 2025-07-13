@@ -1,10 +1,18 @@
+@use 'core/variables' as *;
+@use 'core/mixins' as *;
+
 .portfolio-section {
 	position: relative;
+
+	&__container {
+		position: relative;
+	}
+
 	&._offset-top {
-		@include _min-690 {
+		@include min-690 {
 			margin-top: -13rem;
 		}
-		@include _screen-690 {
+		@include screen-690 {
 			margin-top: -50px;
 		}
 	}
@@ -30,14 +38,22 @@
 
 	// .portfolio-section__body
 	&__body {
-		@include _min-690 {
-			padding-top: 13rem;
-			padding-bottom: 16.2rem;
+		padding-left: 50px;
+		padding-right: 50px;
+
+		@include min-690 {
+			padding-block: 13rem 16.2rem;
 		}
 
-		@include _screen-690 {
-			padding-top: 50px;
-			padding-bottom: 60px;
+		@include screen-1440 {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+		@include screen-690 {
+			padding-block: 50px 60px;
+			padding-left: 10px;
+			padding-right: 10px;
 		}
 	}
 
@@ -71,7 +87,7 @@
 			color: white;
 		}
 
-		@include _min-960 {
+		@include min-960 {
 			grid-template-columns:
 				minmax(
 					calc(190px + (450 - 190) * ((100vw - 320px) / (1920 - 320))),
@@ -80,16 +96,16 @@
 				1fr;
 		}
 
-		@include _screen-1220 {
+		@include screen-1220 {
 			grid-template-columns: 1fr;
 		}
 
-		@include _screen-690 {
+		@include screen-690 {
 			margin-bottom: 20px;
 			gap: 10px;
 		}
 
-		@include _screen-320 {
+		@include screen-320 {
 			gap: 20px;
 			margin-bottom: 20px;
 		}
@@ -131,15 +147,15 @@
 		top: 50%;
 		transform: translateY(-20%);
 
-		@include _min-768 {
+		@include min-768 {
 			left: -200%;
 		}
 
-		@include _screen-768 {
+		@include screen-768 {
 			right: 0;
 		}
 
-		@include _screen-490 {
+		@include screen-490 {
 			top: 77%;
 		}
 	}
@@ -152,13 +168,13 @@
 
 	// .portfolio-section__line-2-col
 	&__line-2-col {
-		@include _min-960 {
+		@include min-960 {
 			display: grid;
 			grid-template-columns: 45% 1fr;
 			gap: 4rem;
 		}
 
-		@include _screen-960 {
+		@include screen-960 {
 			display: flex;
 			flex-direction: column;
 			gap: 20px;
@@ -175,7 +191,7 @@
 			margin-bottom: 20px;
 		}
 
-		@include _screen-960 {
+		@include screen-960 {
 			display: flex;
 			flex-direction: column-reverse;
 		}
@@ -207,13 +223,13 @@
 					margin: 0;
 				}
 
-				@include _320-1920 {
+				@include minmax-320-1920 {
 					margin-bottom: calc(
 						10px + (30 - 10) * ((100vw - 320px) / (1920 - 320))
 					);
 				}
 
-				@include _screen-320 {
+				@include screen-320 {
 					margin-bottom: 10px;
 				}
 
@@ -231,7 +247,7 @@
 				padding-left: 25px;
 			}
 
-			@include _min-960 {
+			@include min-960 {
 				min-width: 415px;
 			}
 		}
@@ -269,18 +285,17 @@
 
 	// .portfolio-section__line-main-col--resize
 	&__line-main-col--resize {
-		// width: 169px;
-		@include _min-1220 {
+		@include min-1220 {
 			height: 7360px;
 			width: 268.6px;
 		}
 
-		@include _320-1220 {
+		@include minmax-320-1220 {
 			// height: calc(1840px + (7360 - 1840) * ((100vw - 320px) / (1220 - 320)));
 			width: calc(67.15px + (268.6 - 67.15) * ((100vw - 320px) / (1220 - 320)));
 		}
 
-		@include _screen-320 {
+		@include screen-320 {
 			// height: 1840px;
 			width: 67.15px;
 		}
@@ -288,20 +303,20 @@
 
 	// .portfolio-section__image--resize
 	&__image--resize {
-		@include _min-1220 {
+		@include min-1220 {
 			img {
 				height: 7360px;
 			}
 		}
 
-		@include _320-1220 {
+		@include minmax-320-1220 {
 			img {
 				width: 100%;
 				height: calc(1840px + (7360 - 1840) * ((100vw - 320px) / (1220 - 320)));
 			}
 		}
 
-		@include _screen-320 {
+		@include screen-320 {
 			img {
 				height: 1840px;
 			}
@@ -339,6 +354,13 @@
 			object-fit: contain;
 		}
 	}
+
+	// .portfolio-section__image--md-width
+	&__image--md-width {
+		img {
+			width: 100%;
+		}
+	}
 }
 
 .tooltip {
@@ -362,7 +384,7 @@
 		width: 100%;
 		display: none;
 
-		@include _screen-960 {
+		@include screen-960 {
 			display: block;
 
 			.tooltip-button {
@@ -388,7 +410,7 @@
 	}
 
 	.tooltip__content {
-		@include _screen-960 {
+		@include screen-960 {
 			opacity: 0;
 		}
 	}
@@ -404,11 +426,11 @@
 		box-shadow: 0 0 19px #000;
 		transition: opacity 0.4s ease-in-out;
 
-		@include _320-1920 {
+		@include minmax-320-1920 {
 			font-size: calc(8px + (16 - 8) * ((100vw - 320px) / (1920 - 320)));
 		}
 
-		@include _screen-320 {
+		@include screen-320 {
 			font-size: 8px;
 		}
 	}

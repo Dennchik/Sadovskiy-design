@@ -1,3 +1,6 @@
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
+
 .tab-content {
 	position: relative;
 	height: 100%;
@@ -8,16 +11,16 @@
 		padding-bottom: 40px;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 40px;
-		@include _min-1140 {
+		@include min-1140 {
 			padding-top: 50px;
 		}
 
-		@include _screen-1440 {
+		@include screen-1440 {
 			grid-template-columns: repeat(2, 1fr);
 			gap: 20px;
 		}
 
-		@include _screen-690 {
+		@include screen-690 {
 			grid-template-columns: repeat(1, 1fr);
 		}
 
@@ -37,7 +40,7 @@
 		display: flex;
 		flex-direction: column;
 
-		@include _min-960 {
+		@include min-960 {
 			&:hover {
 				.tab-content__text {
 					opacity: 1;
@@ -60,17 +63,17 @@
 			background-size: 100% 100%;
 			border: 1px solid $color;
 
-			@include _min-768 {
+			@include min-768 {
 				border-radius: 30px;
 				pointer-events: none;
 			}
 
-			@include _screen-768 {
+			@include screen-768 {
 				border-radius: 15px;
 			}
 		}
 
-		@include _min-960 {
+		@include min-960 {
 			margin-bottom: 0;
 			pointer-events: none;
 		}
@@ -84,12 +87,12 @@
 		gap: 10px;
 		justify-content: space-between;
 
-		@include _1440-1740 {
+		@include minmax-1440-1740 {
 			flex-direction: column;
 			gap: 20px;
 		}
 
-		@include _screen-1164 {
+		@include screen-1164 {
 			flex-direction: column;
 			gap: 20px;
 		}
@@ -105,12 +108,12 @@
 		display: none;
 		border-radius: 30px;
 
-		@include _screen-1164 {
+		@include screen-1164 {
 			max-width: 100%;
 			width: 100%;
 		}
 
-		@include _min-960 {
+		@include min-960 {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -132,11 +135,10 @@
 				height: 100%;
 				display: flex;
 				align-items: center;
-
 			}
 		}
 
-		@include _screen-960 {
+		@include screen-960 {
 			display: block;
 			position: relative;
 			color: #000;
@@ -190,7 +192,7 @@
 			}
 		}
 
-		@include _screen-960 {
+		@include screen-960 {
 			width: 268px;
 		}
 	}
@@ -211,7 +213,7 @@
 		display: grid;
 		grid-template-columns: 1fr;
 
-		@include _screen-960 {
+		@include screen-960 {
 			display: none;
 		}
 

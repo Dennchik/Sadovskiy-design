@@ -1,13 +1,16 @@
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
+
 .about-company {
 	// .about-company__title
 	&__title {
 		margin: 0 auto 69px;
 
-		@include _screen-1440 {
+		@include screen-1440 {
 			text-align: center;
 		}
 
-		@include _screen-690 {
+		@include screen-690 {
 			margin-bottom: 40px;
 		}
 	}
@@ -38,16 +41,16 @@
 			padding-bottom: 0;
 		}
 
-		@include _1440-1920 {
+		@include minmax-1440-1920 {
 			gap: calc(20px + (40 - 20) * ((100vw - 1440px) / (1920 - 1440)));
 		}
 
-		@include _screen-690 {
+		@include screen-690 {
 			flex-direction: column;
 		}
 
 		h3 {
-			@include _screen-690 {
+			@include screen-690 {
 				margin-bottom: 10px;
 			}
 		}
@@ -57,11 +60,11 @@
 			font-weight: 400;
 			line-height: 125%; /* 20px/16 */
 
-			@include _320-1920 {
+			@include minmax-320-1920 {
 				font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
 			}
 
-			@include _screen-320 {
+			@include screen-320 {
 				font-size: 12px;
 			}
 		}

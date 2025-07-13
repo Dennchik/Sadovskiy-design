@@ -1,3 +1,6 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
 html {
 	height: 100%;
 	font: {
@@ -10,7 +13,7 @@ html {
 	counter-reset: heading;
 	color: $font-color-defoult;
 
-	@include _screen-1440 {
+	@include screen-1440 {
 		font-size: 50%;
 	}
 }
@@ -22,7 +25,7 @@ body {
 		weight: $font-weight-defoult;
 	}
 
-	@include _screen-690 {
+	@include screen-690 {
 		&.no-scroll {
 			overflow: hidden;
 		}

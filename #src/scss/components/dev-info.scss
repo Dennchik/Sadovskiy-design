@@ -1,3 +1,6 @@
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
+
 .dev-info {
 	overflow: hidden;
 	position: relative;
@@ -41,11 +44,11 @@
 		position: relative;
 		z-index: 2;
 
-		@include _screen-1440 {
+		@include screen-1440 {
 			margin-bottom: 25px;
 		}
 
-		@include _screen-690 {
+		@include screen-690 {
 			text-align: center;
 		}
 	}
@@ -54,21 +57,13 @@
 	&__content {
 		position: relative;
 		z-index: 2;
-		padding: 12rem 50px 13rem;
+		padding-block: 12rem 13rem;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		column-gap: 40px;
 
-		@include _screen-1440 {
-			padding: 12rem 30px 13rem;
-		}
-
-		@include _screen-960 {
-			padding: 50px 30px 60px;
-		}
-
-		@include _screen-375 {
-			padding: 50px 10px 60px;
+		@include screen-960 {
+			padding-block: 50px 60px;
 		}
 	}
 
@@ -98,7 +93,7 @@
 			grid-column: 1/3;
 		}
 
-		@include _screen-960 {
+		@include screen-960 {
 			&:nth-child(2) {
 				grid-column: 1/3;
 				grid-row: 2/3;
@@ -146,11 +141,11 @@
 		display: flex;
 		gap: 40px;
 
-		@include _screen-960 {
+		@include screen-960 {
 			gap: 20px;
 		}
 
-		@include _screen-690 {
+		@include screen-690 {
 			flex-direction: column;
 			gap: 5px;
 		}
@@ -168,11 +163,11 @@
 			color: #fff;
 		}
 
-		@include _320-1920 {
+		@include minmax-320-1920 {
 			padding-bottom: calc(20px + (83 - 20) * ((100vw - 320px) / (1920 - 320)));
 		}
 
-		@include _screen-320 {
+		@include screen-320 {
 			padding: 10px 0 20px;
 		}
 	}
@@ -186,7 +181,7 @@
 		padding-top: 29px;
 		flex: 0 1 50%;
 
-		@include _screen-690 {
+		@include screen-690 {
 			padding-top: 13px;
 
 			&:not(:first-child) {

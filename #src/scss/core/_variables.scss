@@ -1,6 +1,4 @@
 //* ------------------------------- [Variables] --------------------------------
-$minWidth: 320px;
-$maxWidth: 1900px;
 $maxWidthContainer: 1920px;
 //* ---------------------------- [Font Variables] ------------------------------
 $font-path: '../fonts';
@@ -27,13 +25,7 @@ $text-color-selection: #9b9999;
 
 	--background-thumb: #2b3769;
 	--scrollbar-thumb-bgcolor: #757575;
-	//* -------------------------- [Other colors] --------------------------------
-	// --pos: center;
-	// --size: 0;
-	// --inset-top: 0;
-	// --inset-right: 100%;
-	// --inset-bottom: 100%;
-	// --inset-left: 0;
+
 	// ---------------------------------------------------------------------------
 	--shadow-size: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
 	--stripe-width: 10px;
