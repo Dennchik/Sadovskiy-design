@@ -59,9 +59,8 @@
 	// .performance__wrapper
 	&__wrapper {
 		background:
-			url('../../img/performance/ellipse-01.png') top -15% left 17% / 50% no-repeat,
-			url('../../img/performance/ellipse-02.png') top -6% right -7% / 25%
-				no-repeat;
+			url('../img/performance/ellipse-01.png') top -15% left 17% / 50% no-repeat,
+			url('../img/performance/ellipse-02.png') top -6% right -7% / 25% no-repeat;
 
 		&::before {
 			pointer-events: none;
