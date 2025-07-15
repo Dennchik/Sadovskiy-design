@@ -13,6 +13,11 @@ export function brandsSlide(
 			loop: true,
 			grabCursor: true,
 			slidesPerView: 6,
+			autoplay: {
+				delay: 1,
+				disableOnInteraction: false,
+				waitForTransition: true,
+			},
 			breakpoints: {
 				200: {
 					spaceBetween: 10,
