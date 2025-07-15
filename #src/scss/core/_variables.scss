@@ -36,6 +36,26 @@ $text-color-selection: #9b9999;
 	--button-size: 4rem;
 	--mob-expanded-width: 320px;
 	--mob-collapsed-width: 4rem;
+	--radial-gradient: radial-gradient(
+			ellipse at 17% 15%,
+			#171b1c 25%,
+			#171b1c67 60%,
+			transparent 100%
+		),
+		radial-gradient(circle at 40% 140%, #eeeeee96 0%, #2b3769 30%, transparent),
+		radial-gradient(circle at 100% 100%, #eeeeee4d 0%, #2b3769 20%, transparent),
+		radial-gradient(
+			ellipse at 30% 2%,
+			#171b1c 70%,
+			rgb(43, 55, 105) 100%,
+			transparent
+		),
+		radial-gradient(
+			circle at center left,
+			rgba(238, 238, 238, 0) 10%,
+			rgb(4, 5, 10) 50%,
+			transparent
+		);
 }
 
 $snap: cubic-bezier(1, 0.005, 0.24, 1);

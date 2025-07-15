@@ -2,7 +2,6 @@ extends ../layouts/app_layout
 block title
 	- var text='Sadovskiy-design/Project' 
 
-
 block header 
 	header.page__header-project
 		include ../layouts/header 
@@ -11,31 +10,30 @@ block main-content
 		section.page__performance
 			include ../components/performance
 	block project-page 
-		section.page__project.mlrp-b0101#project
+		section.page__project.pbl-13-16#project
 			include ../components/project-page-section
 	block dev-info
 		section.page__dev-info
 			include ../components/dev-info 
 	block info-block
-		section.page__info-block#about
+		section.page__info-block.pbl-13-16#about
 			include ../components/info-block 
-	block request-audit
-		section.page__request-audit#order
-			//- include ../components/request-audit
-			include ../components/order-place
+	block order-place
+		section.page__order-place.pbl-0-16#order 
+			include ../components/order-place-w
 	block schedule
 		section.page__schedule
 			include ../components/development 
 	block project-services-price
-		section.page__services-price.mlrp-b0101#service
+		section.page__services-price.pbl-13-16#service
 			include ../components/project-services-price 
 	block seo-block
-		section.page__seo-block 
+		section.page__seo-block.pbl-13-16._container
 			include ../components/seo-block
 	block order-place
-		section.page__order-place.mlrp-b0101 
+		section.page__order-place.pbl-16-0
 			include ../components/order-place
 	block answers-project
-		section.page__answers
+		section.page__answers.pbl-13-16
 			include ../components/answers-project
 

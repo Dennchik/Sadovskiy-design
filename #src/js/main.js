@@ -97,4 +97,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			button.disabled = !checkbox.checked;
 		});
 	});
-}); 
+});
+
+const url = window.location.pathname; // вернет часть после домена
+console.log(url); // например: "/index.html" или "/project"
+
+if (url.includes('index')) {
+	console.log('Это index');
+} else if (url.includes('project')) {
+	console.log('Это project');
+} else {
+	console.log('Другой файл');
+}

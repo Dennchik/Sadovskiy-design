@@ -4,14 +4,9 @@
 .page {
 	width: 100vw;
 
-	// .page__portfolio-section
-	&__portfolio-section {
-		position: relative;
-	}
-
 	// .page__content
 	&__content {
-		padding-top: 20px;
+		padding-top: 2rem;
 	}
 
 	// .page__header
@@ -56,49 +51,6 @@
 			}
 		}
 	}
-
-	// .page__header-main
-	// &__header-main {
-	// 	position: sticky;
-	// 	top: 0;
-	// 	left: 0;
-	// 	width: 100%;
-	// 	z-index: 11;
-	// 	height: 8.8rem;
-	// 	display: flex;
-	// 	align-items: center;
-	// 	background: #fff;
-	// 	transition: box-shadow 0.9s ease-in-out;
-
-	// 	&.with-shadow {
-	// 		box-shadow: 0 2px 9px #6c8fac;
-	// 		background: #fff;
-	// 	}
-
-	// 	@include screen-768 {
-	// 		padding: 5px 0;
-	// 	}
-
-	// 	.header__image {
-	// 		background: url('../img/icons/logo-b.png') center no-repeat;
-	// 	}
-
-	// 	.menu-list__link {
-	// 		&:hover {
-	// 			color: #000;
-	// 		}
-
-	// 		@extend .underline;
-	// 	}
-
-	// 	.header__title {
-	// 		transition: opacity 0.4s ease-in-out;
-
-	// 		&:hover {
-	// 			opacity: 0.6;
-	// 		}
-	// 	}
-	// }
 
 	// .page__header-project
 	&__header-project {
@@ -147,6 +99,7 @@
 				color: #fff;
 				ul {
 					background: #fff;
+					color: #000;
 				}
 			}
 
@@ -194,129 +147,99 @@
 		}
 	}
 
-	// page__performance
-	&__performance {
-		margin-top: -20px;
-		padding: 0 0 13rem;
-
-		@include screen-690 {
-			padding: 0 0 50px;
-		}
-	}
+	//* - [ Houme page ] -
 
 	// .page__services
 	&__services {
 		position: relative;
 		z-index: 9;
 		display: flow-root;
-		padding-block: 0 13rem;
-
-		@include screen-690 {
-			padding-block: 0 60px;
-		}
 	}
-
-	// .page__product-card
-	// &__product-card {
-	// 	padding-left: 50px;
-	// 	padding-right: 50px;
-
-	// 	@include screen-1440 {
-	// 		padding-left: 30px;
-	// 		padding-right: 30px;
-	// 	}
-
-	// 	@include screen-375 {
-	// 		padding-left: 10px;
-	// 		padding-right: 10px;
-	// 	}
-	// }
 
 	// .page__project
 	&__project {
 		position: relative;
-		padding-block: 0 13rem;
+	}
 
-		@include screen-1140 {
-			padding-block: 0 50px;
+	// .page__about-company
+	&__about-company {
+		scroll-margin-top: 100px;
+
+		@include screen-768 {
+			scroll-margin-top: 60px;
 		}
 	}
 
 	// .page__schedule
 	&__schedule {
 		overflow: hidden;
-		padding-block: 0 13rem;
-
-		@include screen-690 {
-			padding-block: 0 50px;
-		}
 	}
 
 	// .page__services-price
 	&__services-price {
-		// padding: 0 50px 16.2rem;
-		padding-block: 0 13rem;
 		scroll-margin-top: 100px;
 
 		@include screen-768 {
 			scroll-margin-top: 60px;
 		}
-
-		@include screen-690 {
-			padding-block: 0 60px;
-		}
-	}
-
-	// .page__about-company
-	&__about-company {
-		scroll-margin-top: 100px;
-		padding-block: 0 13rem;
-
-		@include screen-690 {
-			padding-block: 0 60px;
-		}
 	}
 
 	// .page__order-place
 	&__order-place {
-		padding-block: 0 13rem;
-
-		@include screen-690 {
-			padding-block: 0 60px;
-		}
+		position: relative;
 	}
 
 	// .page__seo-block
 	&__seo-block {
 		background: url('../img/main/s-bg.png') center / cover repeat;
-		padding-block: 12rem 13rem;
-
-		@include screen-690 {
-			padding-block: 50px 60px;
-		}
 	}
 
 	// .page__company-team
 	&__company-team {
-		padding-block: 0 13rem;
-
-		@include screen-690 {
-			padding-block: 0 60px;
-		}
+		position: relative;
 	}
 
 	// .page__answers
 	&__answers {
-		padding-block: 0 13rem;
+		position: relative;
+	}
 
-		@include screen-690 {
-			padding-block: 0 60px;
-		}
+	// .page__brands
+	&__brands {
+		height: 100%;
+	}
+
+	//* - [ Project] -
+
+	// page__performance
+	&__performance {
+		margin-top: -2rem;
+	}
+
+	//page__dev-info
+	&__dev-info {
+		position: relative;
+	}
+
+	// .page__info-block
+	&__info-block {
+		position: relative;
+	}
+
+	//* - [ Portfolio ] -
+
+	// .page__portfolio-section
+	&__portfolio-section {
+		position: relative;
 	}
 
 	// .page__order-portfolio
 	&__order-portfolio {
 		background: url('../img/main/fon.png') center / cover no-repeat;
+
+		.order-place__content {
+			background: none !important;
+		}
 	}
 
 	// .page__page-unknown
@@ -332,68 +255,10 @@
 
 	// .page__request-audit
 	&__request-audit {
-		padding: 0 50px 16.2rem;
-
-		@include screen-1440 {
-			padding: 0 30px 16.2rem;
-		}
-		@include screen-690 {
-			padding: 0 30px 60px;
-		}
-
-		@include screen-375 {
-			padding: 0 10px 60px;
-		}
-	}
-
-	// .page__answers-project
-	&__answers-project {
-		padding: 0 50px 16.2rem;
-
-		@include screen-1440 {
-			padding: 0 10px 16.2rem;
-		}
-
-		@include screen-1440 {
-			padding: 0 10px 60px;
-		}
-	}
-
-	// .page__brands
-	&__brands {
-		height: 100%;
-		padding: 0 0 16.2rem;
+		padding: 0 13rem;
 
 		@include screen-690 {
-			padding: 0 0 60px;
-		}
-	}
-
-	// .page__info-block
-	&__info-block {
-		position: relative;
-		padding: 0 50px 16.2rem;
-
-		@include screen-1440 {
-			padding: 0 30px 16.2rem;
-		}
-
-		@include screen-690 {
-			padding: 0 30px 60px;
-		}
-
-		@include screen-375 {
-			padding: 0 10px 60px;
-		}
-	}
-
-	//page__dev-info
-	&__dev-info {
-		position: relative;
-		padding: 0 0 13rem;
-
-		@include screen-690 {
-			padding: 0 0 50px;
+			padding: 0 60px;
 		}
 	}
 }

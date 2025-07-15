@@ -35,8 +35,9 @@
 	.icon {
 		z-index: 2;
 		transition:
-			background 0.2s,
-			transform 0.2s ease-in-out;
+			background 0.3s,
+			transform 0.3s,
+			opacity 0.3s ease-in-out;
 	}
 
 	span {
@@ -77,7 +78,7 @@
 		left: 0;
 
 		clip-path: circle(var(--size) at var(--clip));
-		transition: 0.2s ease-in-out;
+		transition: 0.3s ease-in-out;
 	}
 
 	&:hover {
@@ -296,7 +297,46 @@
 	}
 }
 
-.pbl-h-lr-5016 {
+.pbl-13-16 {
+	padding-block: 13rem 16.2rem;
+
+	@include screen-690 {
+		padding-block: 50px 60px;
+	}
+}
+
+.pbl-0-16 {
+	padding-block: 0 16rem;
+
+	@include screen-690 {
+		padding-block: 0 60px;
+	}
+}
+.pbl-16-0 {
+	padding-block: 16rem 0;
+
+	@include screen-690 {
+		padding-block: 60px 0;
+	}
+}
+
+.pbl-13-0 {
+	padding-block: 13rem 0;
+
+	@include screen-690 {
+		padding-block: 50px 0;
+	}
+}
+
+.pbl-0-13 {
+	padding-block: 0 13rem;
+
+	@include screen-690 {
+		padding-block: 0 50px;
+	}
+}
+
+.pbl-lr-5010 {
 	padding-left: 50px;
 	padding-right: 50px;
 
@@ -326,22 +366,6 @@
 
 	@include screen-1440 {
 		max-width: 1000px;
-	}
-}
-
-.maxw-b0102 {
-	max-width: 1165px;
-	margin: 0 auto;
-
-	@include min-1920 {
-	}
-
-	@include minmax-1440-1920 {
-		max-width: calc(900px + (1165 - 900) * ((100vw - 1440px) / (1920 - 1440)));
-	}
-
-	@include screen-1440 {
-		max-width: 900px;
 	}
 }
 
