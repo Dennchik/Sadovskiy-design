@@ -14,8 +14,8 @@ export function brandsSlide(
 			grabCursor: true,
 			slidesPerView: 6,
 			autoplay: {
-				delay: 1,
-				disableOnInteraction: false,
+				delay: 1500,
+				disableOnInteraction: true,
 				waitForTransition: true,
 			},
 			breakpoints: {
