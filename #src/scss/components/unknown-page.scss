@@ -1,5 +1,5 @@
-@use 'core/variables' as *;
-@use 'core/mixins' as *;
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
 
 .unknown-page {
 	background: rgba(1, 1, 2, 0.8);
