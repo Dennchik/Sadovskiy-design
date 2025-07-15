@@ -81,19 +81,19 @@
 
 		@include minmax-320-1440 {
 			background:
-				url('../../img/performance/ellipse-01.png') top
+				url('../img/performance/ellipse-01.png') top
 					calc(45% + (-15 - 45) * ((100vw - 690px) / (1440 - 690))) left
 					calc(-235px + (-150 - (-235)) * ((100vw - 690px) / (1440 - 690))) /
 					calc(600px + (850 - 600) * ((100vw - 690px) / (1440 - 690))) no-repeat,
-				url('../../img/performance/ellipse-02.png') top -6% right calc(
+				url('../img/performance/ellipse-02.png') top -6% right calc(
 						-150px + (-150 - (-150)) * ((100vw - 690px) / (1440 - 690))
 					) / calc(55% + (-265 - 55) * ((100vw - 690px) / (1440 - 690))) no-repeat;
 		}
 
 		@include screen-320 {
 			background:
-				url('../../img/performance/ellipse-01.png') top 48% left -290px / 490px no-repeat,
-				url('../../img/performance/ellipse-02.png') top -6% right -150px / 330px
+				url('../img/performance/ellipse-01.png') top 48% left -290px / 490px no-repeat,
+				url('../img/performance/ellipse-02.png') top -6% right -150px / 330px
 					no-repeat;
 		}
 	}
@@ -307,8 +307,7 @@
 
 	// .bottom-menu__button
 	&__button {
-		background: url('../../img/performance/button-bg.png') center / cover
-			no-repeat;
+		background: url('../img/performance/button-bg.png') center / cover no-repeat;
 		min-height: 94px;
 		width: 100% !important;
 		max-width: 100% !important;
