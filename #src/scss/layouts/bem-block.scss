@@ -34,10 +34,9 @@
 
 	.icon {
 		z-index: 2;
-		transition:
-			background 0.3s,
-			transform 0.3s,
-			opacity 0.3s ease-in-out;
+		transition: background 0.3s,
+		transform 0.3s,
+		opacity 0.3s ease-in-out;
 	}
 
 	span {
@@ -229,13 +228,13 @@
 
 	@include minmax-1440-1920 {
 		font-size: calc(
-			20px + (35 - 20) * ((100vw - 1440px) / (1920 - 1440))
+						20px + (35 - 20) * ((100vw - 1440px) / (1920 - 1440))
 		) !important;
 	}
 
 	@include minmax-320-1440 {
 		font-size: calc(
-			20px + (35 - 20) * ((100vw - 320px) / (1920 - 320))
+						20px + (35 - 20) * ((100vw - 320px) / (1920 - 320))
 		) !important;
 	}
 
@@ -250,13 +249,13 @@
 
 	@include minmax-1440-1920 {
 		font-size: calc(
-			16px + (35 - 16) * ((100vw - 1440px) / (1920 - 1440))
+						16px + (35 - 16) * ((100vw - 1440px) / (1920 - 1440))
 		) !important;
 	}
 
 	@include minmax-320-1440 {
 		font-size: calc(
-			16px + (35 - 16) * ((100vw - 320px) / (1920 - 320))
+						16px + (35 - 16) * ((100vw - 320px) / (1920 - 320))
 		) !important;
 	}
 
@@ -271,7 +270,7 @@
 
 	@include minmax-320-1920 {
 		font-size: calc(
-			12px + (20 - 12) * ((100vw - 320px) / (1920 - 320))
+						12px + (20 - 12) * ((100vw - 320px) / (1920 - 320))
 		) !important;
 	}
 
@@ -297,11 +296,37 @@
 	}
 }
 
+//* ----------------------------------------------------------------------------
+
+.pbl-16-16 {
+	padding-block: 16.2rem;
+
+	@include screen-690 {
+		padding-block: 60px;
+	}
+}
+
+.pbl-13-13 {
+	padding-block: 13rem;
+
+	@include screen-690 {
+		padding-block: 50px;
+	}
+}
+
 .pbl-13-16 {
 	padding-block: 13rem 16.2rem;
 
 	@include screen-690 {
 		padding-block: 50px 60px;
+	}
+}
+
+.pbl-16-13 {
+	padding-block: 16.2rem 13rem;
+
+	@include screen-690 {
+		padding-block: 60px 50px;
 	}
 }
 
@@ -312,6 +337,7 @@
 		padding-block: 0 60px;
 	}
 }
+
 .pbl-16-0 {
 	padding-block: 16rem 0;
 
@@ -336,21 +362,8 @@
 	}
 }
 
-.pbl-13-0 {
-	padding-block:  13rem 0;
-
-	@include screen-690 {
-		padding-block: 50px 0;
-	}
-}
-// Сверху Большой: pbl-16-0
-// Снизу Большой: pbl-0-16
-// Сверху Маленький: pbl-13-0
-// Снизу Маленький: pbl-0-13
-// Сверху и Снизу Большой: pbl-16-16
-// Сверху и Снизу маленький: pbl-13-13
-// Сверху Маленький и Снизу Большой: pbl-13-16
-// Сверху Большойи и Снизу Маленький : pbl-16-13
+//* ----------------------------------------------------------------------------
+ 
 .pbl-lr-5010 {
 	padding-left: 50px;
 	padding-right: 50px;
@@ -375,7 +388,7 @@
 
 	@include minmax-1440-1920 {
 		max-width: calc(
-			1000px + (1280 - 1000) * ((100vw - 1440px) / (1920 - 1440))
+						1000px + (1280 - 1000) * ((100vw - 1440px) / (1920 - 1440))
 		);
 	}
 
