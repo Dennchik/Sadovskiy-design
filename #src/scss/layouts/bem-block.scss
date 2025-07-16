@@ -247,13 +247,13 @@
 	font-size: 35px !important;
 	line-height: 122.857143%; /* 43px/35 */
 
-	@include minmax-1440-1920 {
-		font-size: calc(
-						16px + (35 - 16) * ((100vw - 1440px) / (1920 - 1440))
-		) !important;
-	}
+	// @include minmax-1440-1920 {
+	// 	font-size: calc(
+	// 					24px + (35 - 24) * ((100vw - 1440px) / (1920 - 1440))
+	// 	) !important;
+	// }
 
-	@include minmax-320-1440 {
+	@include minmax-320-1920 {
 		font-size: calc(
 						16px + (35 - 16) * ((100vw - 320px) / (1920 - 320))
 		) !important;
@@ -363,7 +363,7 @@
 }
 
 //* ----------------------------------------------------------------------------
- 
+
 .pbl-lr-5010 {
 	padding-left: 50px;
 	padding-right: 50px;
