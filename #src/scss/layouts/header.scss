@@ -219,9 +219,9 @@
 
 	// .menu-list__sub-menu
 	&__sub-menu {
+		position: absolute;
 		margin: 8.8rem 0 0 -50%;
 		pointer-events: none;
-		position: absolute;
 		top: 0;
 		box-shadow: 0 0 4px #6c8fac;
 		transform: rotateX(-90deg);
@@ -230,6 +230,10 @@
 		transition: 0.3s linear;
 		border-radius: 10px;
 		overflow: hidden;
+
+		@include screen-1440{
+			margin: 7.4rem 0 0 -50%;
+		}
 
 		.menu-list__link {
 			margin-bottom: 0.5rem;

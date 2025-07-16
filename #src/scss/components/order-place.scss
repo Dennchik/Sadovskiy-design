@@ -28,6 +28,10 @@
 	&__body--txt-color-w {
 		color: #fff;
 
+		 .order-place__content  {
+			background-image: var(--radial-gradient);
+
+		}
 		.order-form__column {
 			&:not(:last-child) {
 				border: 1px solid #fff;
@@ -127,74 +131,7 @@
 		}
 	}
 
-	// .order-place__content--bg-img
-	&__content--bg-lg {
-		background-image: var(--radial-gradient);
-		// @include min-490 {
-		// 	background-image: radial-gradient(
-		// 			ellipse at 17% 15%,
-		// 			#171b1c 25%,
-		// 			#171b1c67 60%,
-		// 			transparent 100%
-		// 		),
-		// 		radial-gradient(
-		// 			circle at 40% 140%,
-		// 			#eeeeee96 0%,
-		// 			#2b3769 30%,
-		// 			transparent
-		// 		),
-		// 		radial-gradient(
-		// 			circle at 100% 100%,
-		// 			#eeeeee4d 0%,
-		// 			#2b3769 20%,
-		// 			transparent
-		// 		),
-		// 		radial-gradient(
-		// 			ellipse at 30% 2%,
-		// 			#171b1c 70%,
-		// 			rgb(43, 55, 105) 100%,
-		// 			transparent
-		// 		),
-		// 		radial-gradient(
-		// 			circle at center left,
-		// 			rgba(238, 238, 238, 0) 10%,
-		// 			rgb(4, 5, 10) 50%,
-		// 			transparent
-		// 		);
-		// }
 
-		// @include screen-490 {
-		// 	background-image: radial-gradient(
-		// 			ellipse at bottom center,
-		// 			#2b37695b,
-		// 			transparent
-		// 		),
-		// 		radial-gradient(
-		// 			ellipse at 10% 19%,
-		// 			#171b1c 35%,
-		// 			#eeeeee00 70%,
-		// 			transparent 100%
-		// 		),
-		// 		radial-gradient(
-		// 			circle at 0% 100%,
-		// 			#eeeeee6a 0%,
-		// 			#2b376964 30%,
-		// 			transparent
-		// 		),
-		// 		radial-gradient(
-		// 			circle at 100% 0%,
-		// 			#eeeeee4d 0%,
-		// 			#2b3769 30%,
-		// 			transparent
-		// 		),
-		// 		radial-gradient(
-		// 			ellipse at 30% 2%,
-		// 			#171b1c 0%,
-		// 			#2b3769 100%,
-		// 			transparent
-		// 		);
-		// }
-	}
 
 	// .order-place__wrapper
 	&__wrapper {
@@ -215,10 +152,7 @@
 		}
 	}
 
-	// .order-place__content--bg-img
-	&__content--bg-img {
-		background: url('../img/main/fon.png') center / cover no-repeat;
-	}
+
 
 	// .order-place__header
 	&__header {
