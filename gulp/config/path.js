@@ -43,6 +43,7 @@ export const path = {
 		],
 		dest: pathDest + '/img/',
 	},
+
 	sprite: {
 		src: pathSrc + '/img/sprites/**/*.svg',
 		watch: pathSrc + '/img/sprites/**/*.svg',

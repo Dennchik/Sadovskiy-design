@@ -1,0 +1,44 @@
+extends ../../layouts/app_layout
+block title
+	- var text='Sadovskiy-design'
+
+block main-content 
+	block portfolio-performance
+		section.page__portfolio-performance
+			include ../../components/portfolio-performance
+	block portfolio-about
+		section.page__portfolio-about
+			include ../../components/portfolio-about
+	block portfolio-section
+		section.page__portfolio-section
+			include ../../components/portfolio-structure
+	block portfolio-section
+		section.page__portfolio-section
+			include ../../components/portfolio-concept
+	block portfolio-section
+		section.page__portfolio-section
+			include ../../components/portfolio-main-section
+	block portfolio-section
+		section.page__portfolio-section
+			include ../../components/portfolio-catalog
+	block portfolio-section
+		section.page__portfolio-section
+			include ../../components/portfolio-card
+	block portfolio-section
+		section.page__portfolio-section
+			include ../../components/portfolio-separator
+	block portfolio-section
+		section.page__portfolio-section
+			include ../../components/portfolio-registration
+	block portfolio-section
+		section.page__portfolio-section
+			include ../../components/portfolio-services
+	block portfolio-section
+		section.page__portfolio-section
+			include ../../components/portfolio-news
+	block unknown-page
+		section.page__page-unknown
+			include ../../components/unknown-page
+	block order-place
+		section.page__order-portfolio#order
+			include ../../components/order-place-w

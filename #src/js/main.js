@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	item.addEventListener('click', () => {
 		item.classList.toggle('_open');
-	});;
+	});
 
 });
 
