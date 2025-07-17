@@ -2,412 +2,408 @@
 @use 'core/mixins' as *;
 //*  --------------------------- [Greed Card a] --------------------------------
 .answers__content > ._collapse:not(._show) {
-	display: none;
+  display: none;
 }
 
 :root {
-	--clip: left center;
-	--size: 0;
+  --clip: left center;
+  --size: 0;
 }
 
 //* ---------------------------- [Burger-button] -------------------------------
 .button {
-	position: relative;
-	display: inline-flex;
-	overflow: hidden;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	max-width: 268px;
-	max-height: 58px;
-	padding: 4px;
-	cursor: pointer;
-	transition: all 0.2s ease-in-out;
-	white-space: nowrap;
-	border: 1px solid transparent;
-	border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 268px;
+  max-height: 58px;
+  padding: 0 4px;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+  border-radius: 30px;
 
-	@include minmax-1440-1920 {
-		max-width: calc(215px + (266 - 215) * ((100vw - 1440px) / (1920 - 1440)));
-		max-height: calc(46px + (58 - 46) * ((100vw - 1440px) / (1920 - 1440)));
-	}
+  .icon {
+    z-index: 2;
+    transition:
+      background 0.3s,
+      transform 0.3s,
+      opacity 0.3s ease-in-out;
+  }
 
-	.icon {
-		z-index: 2;
-		transition: background 0.3s,
-		transform 0.3s,
-		opacity 0.3s ease-in-out;
-	}
+  span {
+    line-height: 100%;
+    z-index: 2;
+    display: block;
+    flex: 0 1 auto;
+    margin: 0 auto;
+    user-select: none;
+    transition: color 0.2s ease-in-out;
+    pointer-events: none;
 
-	span {
-		line-height: 100%;
-		z-index: 2;
-		display: block;
-		flex: 0 1 auto;
-		margin: 0 auto;
-		user-select: none;
-		transition: color 0.2s ease-in-out;
-		pointer-events: none;
+    @include minmax-1440-1920 {
+      font-size: calc(15px + (20 - 15) * ((100vw - 1440px) / (1920 - 1440)));
+    }
 
-		@include minmax-1440-1920 {
-			font-size: calc(15px + (20 - 15) * ((100vw - 1440px) / (1920 - 1440)));
-		}
+    @include minmax-320-1440 {
+      font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1140 - 320)));
+    }
 
-		@include minmax-320-1440 {
-			font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1140 - 320)));
-		}
+    @include screen-490 {
+      font-size: 16px;
+    }
+  }
 
-		@include screen-490 {
-			font-size: 16px;
-		}
-	}
+  @include screen-490 {
+    width: 195px;
+  }
 
-	@include screen-490 {
-		width: 195px;
-	}
+  &::before {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
 
-	&::before {
-		position: absolute;
-		z-index: 1;
-		top: 0;
-		left: 0;
-		display: block;
-		width: 100%;
-		height: 100%;
-		content: '';
+    transition: 0.3s ease-in-out;
+    clip-path: circle(var(--size) at var(--clip));
+  }
 
-		transition: 0.3s ease-in-out;
-		clip-path: circle(var(--size) at var(--clip));
-	}
+  &:hover {
+    @include min-960 {
+      span {
+        color: #fff;
+      }
 
-	&:hover {
-		@include min-960 {
-			span {
-				color: #fff;
-			}
+      &:before {
+        --size: 200%;
+      }
 
-			&:before {
-				--size: 200%;
-			}
+      .icon {
+        background: #fff;
+      }
 
-			.icon {
-				background: #fff;
-			}
-
-			._icon {
-				&::before {
-					font-weight: 600;
-					color: $color;
-				}
-			}
-		}
-	}
+      ._icon {
+        &::before {
+          font-weight: 600;
+          color: $color;
+        }
+      }
+    }
+  }
 }
 
 .icon {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 48px;
-	height: 48px;
-	cursor: pointer;
-	border-radius: 50%;
-	background: #2b3769;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #2b3769;
 
-	@include minmax-1440-1920 {
-		width: calc(36px + (48 - 36) * ((100vw - 1440px) / (1920 - 1440)));
-		height: calc(36px + (48 - 36) * ((100vw - 1440px) / (1920 - 1440)));
-	}
+  @include minmax-1440-1920 {
+    width: calc(36px + (48 - 36) * ((100vw - 1440px) / (1920 - 1440)));
+    height: calc(36px + (48 - 36) * ((100vw - 1440px) / (1920 - 1440)));
+  }
 
-	@include screen-690 {
-		width: 40px;
-		height: 40px;
-	}
+  @include screen-690 {
+    width: 40px;
+    height: 40px;
+  }
 
-	@include screen-490 {
-		width: 28px;
-		height: 28px;
-	}
+  @include screen-490 {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 //* ---------------------------------- [Idj] -----------------------------------
 .burger-button {
-	//.burger-button__wrapper
-	&__wrapper {
-		overflow: hidden;
-		width: 36px;
-		height: 36px;
-		padding: 10px 6px;
-		cursor: pointer;
-		pointer-events: none;
+  //.burger-button__wrapper
+  &__wrapper {
+    overflow: hidden;
+    width: 36px;
+    height: 36px;
+    padding: 10px 6px;
+    cursor: pointer;
+    pointer-events: none;
 
-		backdrop-filter: blur(10px);
-	}
+    backdrop-filter: blur(10px);
+  }
 
-	&__items {
-		position: relative;
-		border-radius: 5px;
+  &__items {
+    position: relative;
+    border-radius: 5px;
 
-		span {
-			position: absolute;
-			left: 0;
-			display: block;
-			width: 100%;
-			height: 2px;
-			transition: 0.7s ease-in-out;
-			transform: rotate(0deg);
-			opacity: 1;
-			border-radius: 2px;
-			background-color: #171b1c;
+    span {
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 2px;
+      transition: 0.7s ease-in-out;
+      transform: rotate(0deg);
+      opacity: 1;
+      border-radius: 2px;
+      background-color: #171b1c;
 
-			&:nth-child(2) {
-				top: 7px;
-			}
+      &:nth-child(2) {
+        top: 7px;
+      }
 
-			&:nth-child(3) {
-				top: 14px;
-			}
-		}
-	}
+      &:nth-child(3) {
+        top: 14px;
+      }
+    }
+  }
 
-	&._open-menu {
-		span {
-			&:nth-child(1) {
-				transform: scale(1.088) translateY(7px) rotate(135deg);
-			}
+  &._open-menu {
+    span {
+      &:nth-child(1) {
+        transform: scale(1.088) translateY(7px) rotate(135deg);
+      }
 
-			&:nth-child(2) {
-				transform: translateX(-60px);
-				opacity: 0;
-			}
+      &:nth-child(2) {
+        transform: translateX(-60px);
+        opacity: 0;
+      }
 
-			&:nth-child(3) {
-				transform: scale(1.088) translateY(-6px) rotate(-135deg);
-			}
-		}
-	}
+      &:nth-child(3) {
+        transform: scale(1.088) translateY(-6px) rotate(-135deg);
+      }
+    }
+  }
 }
 
 // -----------------------------------------------------------------------------
 .t-h1 {
-	font-size: 76px;
-	line-height: 100%;
+  font-size: 76px;
+  line-height: 100%;
 
-	@include minmax-1440-1920 {
-		font-size: calc(54px + (76 - 54) * ((100vw - 1440px) / (1920 - 1440)));
-	}
+  @include minmax-1440-1920 {
+    font-size: calc(54px + (76 - 54) * ((100vw - 1440px) / (1920 - 1440)));
+  }
 
-	@include minmax-320-1440 {
-		font-size: calc(28px + (76 - 28) * ((100vw - 320px) / (1440 - 320)));
-	}
-	@include screen-320 {
-		font-size: 28px;
-	}
+  @include minmax-320-1440 {
+    font-size: calc(28px + (76 - 28) * ((100vw - 320px) / (1440 - 320)));
+  }
+  @include screen-320 {
+    font-size: 28px;
+  }
 }
 
 .t-h2 {
-	font-size: 65px;
-	line-height: 100%;
+  font-size: 65px;
+  line-height: 100%;
 
-	@include minmax-1440-1920 {
-		font-size: calc(52px + (65 - 52) * ((100vw - 1440px) / (1920 - 1440)));
-	}
+  @include minmax-1440-1920 {
+    font-size: calc(52px + (65 - 52) * ((100vw - 1440px) / (1920 - 1440)));
+  }
 
-	@include minmax-320-1920 {
-		font-size: calc(24px + (52 - 24) * ((100vw - 320px) / (1440 - 320)));
-	}
+  @include minmax-320-1920 {
+    font-size: calc(24px + (52 - 24) * ((100vw - 320px) / (1440 - 320)));
+  }
 
-	@include screen-320 {
-		font-size: 24px;
-	}
+  @include screen-320 {
+    font-size: 24px;
+  }
 }
 
 .t-h3 {
-	font-size: 35px !important;
-	line-height: 122.857143%; /* 43px/35 */
+  font-size: 35px !important;
+  line-height: 122.857143%; /* 43px/35 */
 
-	@include minmax-1440-1920 {
-		font-size: calc(
-						20px + (35 - 20) * ((100vw - 1440px) / (1920 - 1440))
-		) !important;
-	}
+  @include minmax-1440-1920 {
+    font-size: calc(
+      20px + (35 - 20) * ((100vw - 1440px) / (1920 - 1440))
+    ) !important;
+  }
 
-	@include minmax-320-1440 {
-		font-size: calc(
-						20px + (35 - 20) * ((100vw - 320px) / (1920 - 320))
-		) !important;
-	}
+  @include minmax-320-1440 {
+    font-size: calc(
+      20px + (35 - 20) * ((100vw - 320px) / (1920 - 320))
+    ) !important;
+  }
 
-	@include screen-320 {
-		font-size: 20px !important;
-	}
+  @include screen-320 {
+    font-size: 20px !important;
+  }
 }
 
 .t-h4 {
-	font-size: 35px !important;
-	line-height: 122.857143%; /* 43px/35 */
+  font-size: 35px !important;
+  line-height: 122.857143%; /* 43px/35 */
 
-	@include minmax-320-1920 {
-		font-size: calc(
-						16px + (35 - 16) * ((100vw - 320px) / (1920 - 320))
-		) !important;
-	}
+  @include minmax-320-1920 {
+    font-size: calc(
+      16px + (35 - 16) * ((100vw - 320px) / (1920 - 320))
+    ) !important;
+  }
 
-	@include screen-320 {
-		font-size: 16px !important;
-	}
+  @include screen-320 {
+    font-size: 16px !important;
+  }
 }
 
 .t-h5 {
-	font-size: 20px !important;
-	line-height: 122.857143%; /* 43px/35 */
+  font-size: 20px !important;
+  line-height: 122.857143%; /* 43px/35 */
 
-	@include minmax-320-1920 {
-		font-size: calc(
-						12px + (20 - 12) * ((100vw - 320px) / (1920 - 320))
-		) !important;
-	}
+  @include minmax-320-1920 {
+    font-size: calc(
+      12px + (20 - 12) * ((100vw - 320px) / (1920 - 320))
+    ) !important;
+  }
 
-	@include screen-320 {
-		font-size: 12px !important;
-	}
+  @include screen-320 {
+    font-size: 12px !important;
+  }
 }
 
 .p-text {
-	font-size: 16px;
-	line-height: 125%;
+  font-size: 16px;
+  line-height: 125%;
 
-	@include minmax-1440-1920 {
-		font-size: calc(12px + (16 - 12) * ((100vw - 1440px) / (1920 - 1440)));
-	}
+  @include minmax-1440-1920 {
+    font-size: calc(12px + (16 - 12) * ((100vw - 1440px) / (1920 - 1440)));
+  }
 
-	@include minmax-320-1440 {
-		font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
-	}
+  @include minmax-320-1440 {
+    font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
+  }
 
-	@include screen-320 {
-		font-size: 12px;
-	}
+  @include screen-320 {
+    font-size: 12px;
+  }
 }
 
 //* ----------------------------------------------------------------------------
 
 .pbl-16-16 {
-	padding-block: 16.2rem;
+  padding-block: 16.2rem;
 
-	@include screen-690 {
-		padding-block: 60px;
-	}
+  @include screen-690 {
+    padding-block: 60px;
+  }
 }
 
 .pbl-13-13 {
-	padding-block: 13rem;
+  padding-block: 13rem;
 
-	@include screen-690 {
-		padding-block: 50px;
-	}
+  @include screen-690 {
+    padding-block: 50px;
+  }
 }
 
 .pbl-13-16 {
-	padding-block: 13rem 16.2rem;
+  padding-block: 13rem 16.2rem;
 
-	@include screen-690 {
-		padding-block: 50px 60px;
-	}
+  @include screen-690 {
+    padding-block: 50px 60px;
+  }
 }
 
 .pbl-16-13 {
-	padding-block: 16.2rem 13rem;
+  padding-block: 16.2rem 13rem;
 
-	@include screen-690 {
-		padding-block: 60px 50px;
-	}
+  @include screen-690 {
+    padding-block: 60px 50px;
+  }
 }
 
 .pbl-0-16 {
-	padding-block: 0 16rem;
+  padding-block: 0 16rem;
 
-	@include screen-690 {
-		padding-block: 0 60px;
-	}
+  @include screen-690 {
+    padding-block: 0 60px;
+  }
 }
 
 .pbl-16-0 {
-	padding-block: 16rem 0;
+  padding-block: 16rem 0;
 
-	@include screen-690 {
-		padding-block: 60px 0;
-	}
+  @include screen-690 {
+    padding-block: 60px 0;
+  }
 }
 
 .pbl-13-0 {
-	padding-block: 13rem 0;
+  padding-block: 13rem 0;
 
-	@include screen-690 {
-		padding-block: 50px 0;
-	}
+  @include screen-690 {
+    padding-block: 50px 0;
+  }
 }
 
 .pbl-0-13 {
-	padding-block: 0 13rem;
+  padding-block: 0 13rem;
 
-	@include screen-690 {
-		padding-block: 0 50px;
-	}
+  @include screen-690 {
+    padding-block: 0 50px;
+  }
 }
 
 //* ----------------------------------------------------------------------------
 ._offset-left-right {
-	width: auto !important;
-	margin-right: -50px;
-	margin-left: -50px;
+  width: auto !important;
+  margin-right: -50px;
+  margin-left: -50px;
 
-	@include screen-1440 {
-		margin-right: -30px;
-		margin-left: -30px;
-	}
+  @include screen-1440 {
+    margin-right: -30px;
+    margin-left: -30px;
+  }
 
-	@include screen-690 {
-		margin-right: -10px;
-		margin-left: -10px;
-	}
+  @include screen-690 {
+    margin-right: -10px;
+    margin-left: -10px;
+  }
 }
 
 .pbl-lr-5010 {
-	padding-right: 50px;
-	padding-left: 50px;
+  padding-right: 50px;
+  padding-left: 50px;
 
-	@include screen-1440 {
-		padding-right: 30px;
-		padding-left: 30px;
-	}
+  @include screen-1440 {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 
-	@include screen-690 {
-		padding-right: 10px;
-		padding-left: 10px;
-	}
+  @include screen-690 {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
 }
 
 .maxw-b0101 {
-	max-width: 1280px;
-	margin: 0 auto;
+  max-width: 1280px;
+  margin: 0 auto;
 
-	@include min-1920 {
-	}
+  @include min-1920 {
+  }
 
-	@include minmax-1440-1920 {
-		max-width: calc(
-						1000px + (1280 - 1000) * ((100vw - 1440px) / (1920 - 1440))
-		);
-	}
+  @include minmax-1440-1920 {
+    max-width: calc(
+      1000px + (1280 - 1000) * ((100vw - 1440px) / (1920 - 1440))
+    );
+  }
 
-	@include screen-1440 {
-		max-width: 1000px;
-	}
+  @include screen-1440 {
+    max-width: 1000px;
+  }
 }
 
 .icon-telegram-fly {
-	&::before {
-		transform: translateX(-1px);
-	}
+  &::before {
+    transform: translateX(-1px);
+  }
 }

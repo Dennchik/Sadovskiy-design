@@ -2,458 +2,451 @@
 @use '../core/mixins' as *;
 
 .order-place {
-	// .order-place__content
-	&__content {
-		// background-image: var(--radial-gradient);
-		position: relative;
-		z-index: 9;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 30px;
-		padding: 13rem 5rem 16.2rem;
+  // .order-place__content
+  &__content {
+    // background-image: var(--radial-gradient);
+    position: relative;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    padding: 13rem 5rem 16.2rem;
 
-		@include screen-690 {
-			border-radius: 15px;
-			padding: 50px 10px 60px;
-		}
-	}
+    @include screen-690 {
+      border-radius: 15px;
+      padding: 50px 10px 60px;
+    }
+  }
 
-	// .order-place__body
-	&__body {
-		position: relative;
-	}
+  // .order-place__body
+  &__body {
+    position: relative;
+  }
 
-	// .order-place__body--txt-color-w
-	&__body--txt-color-w {
-		color: #fff;
+  // .order-place__body--txt-color-w
+  &__body--txt-color-w {
+    color: #fff;
 
-		 .order-place__content  {
-			background-image: var(--radial-gradient);
+    .order-place__content {
+      background-image: var(--radial-gradient);
+    }
+    .order-form__column {
+      &:not(:last-child) {
+        border: 1px solid #fff;
+      }
+    }
 
-		}
-		.order-form__column {
-			&:not(:last-child) {
-				border: 1px solid #fff;
-			}
-		}
+    .checkbox__input:checked + .checkbox__checked .icon-angle-down {
+      color: $color;
+    }
 
-		.checkbox__input:checked + .checkbox__checked .icon-angle-down {
-			color: $color;
-		}
+    .checkbox,
+    .button {
+      height: 100%;
+      background: #fff;
+      span {
+        display: block;
+        color: #000;
+        opacity: 1;
+      }
+    }
 
-		.checkbox,
-		.button {
-			height: 100%;
-			background: #fff;
-			span {
-				display: block;
-				color: #000;
-				opacity: 1;
-			}
-		}
+    .order-form__button {
+      &:hover {
+        @include min-960 {
+          .icon {
+            transform: rotate(-45deg);
+          }
 
-		.order-form__button {
-			&:hover {
-				@include min-960 {
-					.icon {
-						transform: rotate(-45deg);
-					}
+          span {
+            color: #fff;
+          }
 
-					span {
-						color: #fff;
-					}
+          &::before {
+            background: $color;
+          }
+        }
+      }
+    }
+  }
 
-					&::before {
-						background: $color;
-					}
-				}
-			}
-		}
-	}
+  // .order-place__body--txt-color-b
+  &__body--txt-color-b {
+    color: #000;
+    .order-place__content {
+      background: url('../img/main/fon.png') center / cover no-repeat;
+    }
+    .order-form__column {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
 
-	// .order-place__body--txt-color-b
-	&__body--txt-color-b {
-		color: #000;
-		.order-place__content {
-			background: url('../img/main/fon.png') center / cover no-repeat;
-		}
-		.order-form__column {
-			border: 1px solid rgba(0, 0, 0, 0.2);
-		}
+    .checkbox__input:checked + .checkbox__checked .icon-angle-down {
+      color: #fff;
+    }
 
-		.checkbox__input:checked + .checkbox__checked .icon-angle-down {
-			color: #fff;
-		}
+    .checkbox,
+    .button {
+      background: $color;
+      span {
+        display: block;
+        color: #fff;
+        opacity: 1;
+      }
+    }
 
-		.checkbox,
-		.button {
-			background: $color;
-			span {
-				display: block;
-				color: #fff;
-				opacity: 1;
-			}
-		}
+    .order-form__button {
+      .icon {
+        background: #fff;
+      }
+      .icon-arrow-right {
+        &::before {
+          color: $color;
+          font-weight: 500;
+        }
+      }
+      &:hover {
+        @include min-960 {
+          .icon {
+            transform: rotate(-45deg);
+            background: $color;
 
-		.order-form__button {
-			.icon {
-				background: #fff;
-			}
-			.icon-arrow-right {
-				&::before {
-					color: $color;
-					font-weight: 500;
-				}
-			}
-			&:hover {
-				@include min-960 {
-					.icon {
-						transform: rotate(-45deg);
-						background: $color;
+            .icon-arrow-right {
+              &::before {
+                color: #fff;
+              }
+            }
+          }
 
-						.icon-arrow-right {
-							&::before {
-								color: #fff;
-							}
-						}
-					}
+          span {
+            color: #000;
+          }
 
-					span {
-						color: #000;
-					}
+          &::before {
+            background: #fff;
+          }
+        }
+      }
+    }
+  }
 
-					&::before {
-						background: #fff;
-					}
-				}
-			}
-		}
-	}
+  // .order-place__wrapper
+  &__wrapper {
+    max-width: 1165px;
+    margin: 0 auto;
 
+    @include min-1920 {
+    }
 
+    @include minmax-1440-1920 {
+      max-width: calc(
+        900px + (1165 - 900) * ((100vw - 1440px) / (1920 - 1440))
+      );
+    }
 
-	// .order-place__wrapper
-	&__wrapper {
-		max-width: 1165px;
-		margin: 0 auto;
+    @include screen-1440 {
+      max-width: 900px;
+    }
+  }
 
-		@include min-1920 {
-		}
+  // .order-place__header
+  &__header {
+    margin: 0 auto;
+  }
 
-		@include minmax-1440-1920 {
-			max-width: calc(
-				900px + (1165 - 900) * ((100vw - 1440px) / (1920 - 1440))
-			);
-		}
+  // .order-place__title
+  &__title {
+    margin: 0 auto 40px;
+    text-align: center;
 
-		@include screen-1440 {
-			max-width: 900px;
-		}
-	}
+    @include screen-490 {
+      margin-bottom: 20px;
+    }
+  }
 
+  // .audit__text
+  &__text {
+    text-align: center;
+    line-height: 125%; /* 25px/20 */
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 16px;
 
+    @include screen-960 {
+      max-width: 620px;
+    }
 
-	// .order-place__header
-	&__header {
-		margin: 0 auto;
-	}
+    @include minmax-320-490 {
+      font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (490 - 320)));
+    }
 
-	// .order-place__title
-	&__title {
-		margin: 0 auto 40px;
-		text-align: center;
+    @include screen-375 {
+      max-width: 270px;
+    }
 
-		@include screen-490 {
-			margin-bottom: 20px;
-		}
-	}
+    @include screen-320 {
+      font-size: 12px;
+    }
+  }
 
-	// .audit__text
-	&__text {
-		text-align: center;
-		line-height: 125%; /* 25px/20 */
-		max-width: 720px;
-		margin: 0 auto;
-		font-size: 16px;
+  // .audit__form
+  &__form {
+    margin: 0 auto;
+    width: 100%;
 
-		@include screen-960 {
-			max-width: 620px;
-		}
+    @include screen-960 {
+      margin: 2rem auto;
+    }
+  }
 
-		@include minmax-320-490 {
-			font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (490 - 320)));
-		}
+  // .audit__footer
+  &__footer {
+    margin: 0 auto;
+    max-width: 780px;
 
-		@include screen-375 {
-			max-width: 270px;
-		}
+    .request-audit__text {
+      margin-bottom: 17px;
+    }
+  }
 
-		@include screen-320 {
-			font-size: 12px;
-		}
-	}
+  // .audit__phone
+  &__phone {
+    padding-top: 5px;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 100%;
+    text-align: center;
 
-	// .audit__form
-	&__form {
-		margin: 0 auto;
-		width: 100%;
+    @include minmax-320-1920 {
+      font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
+    }
 
-		@include screen-960 {
-			margin: 2rem auto;
-		}
-	}
-
-	// .audit__footer
-	&__footer {
-		margin: 0 auto;
-		max-width: 780px;
-
-		.request-audit__text {
-			margin-bottom: 17px;
-		}
-	}
-
-	// .audit__phone
-	&__phone {
-		padding-top: 5px;
-		font-size: 40px;
-		font-weight: 400;
-		line-height: 100%;
-		text-align: center;
-
-		@include minmax-320-1920 {
-			font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
-		}
-
-		@include screen-320 {
-			font-size: 20px;
-		}
-	}
+    @include screen-320 {
+      font-size: 20px;
+    }
+  }
 }
 .checkbox {
-	border-radius: 5px;
+  border-radius: 5px;
 
-	// .checkbox::before
-	&::before {
-		position: absolute;
-		content: '';
-		width: 20px;
-		height: 20px;
-		opacity: 0;
-		transition: 0.2s;
-	}
+  // .checkbox::before
+  &::before {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    transition: 0.2s;
+  }
 
-	// .checkbox__input
-	&__input {
-		display: none;
+  // .checkbox__input
+  &__input {
+    display: none;
 
-		&:checked + .checkbox__checked .icon-angle-down {
-			scale: 1;
-			opacity: 1;
-		}
-	}
+    &:checked + .checkbox__checked .icon-angle-down {
+      scale: 1;
+      opacity: 1;
+    }
+  }
 
-	// .checkbox__checked
-	&__checked {
-		width: 20px;
-		height: 20px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		position: relative;
+  // .checkbox__checked
+  &__checked {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 
-		.icon-angle-down {
-			font-size: 24px;
-			transition:
-				color 0.3s,
-				scale 0.3s ease;
-			scale: 0;
-			color: transparent;
-		}
-	}
+    .icon-angle-down {
+      font-size: 24px;
+      transition:
+        color 0.3s,
+        scale 0.3s ease;
+      scale: 0;
+      color: transparent;
+    }
+  }
 }
 
 .order-form {
-	// .order-form__row
-	&__row {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 25px;
+  // .order-form__row
+  &__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
 
-		&:nth-child(1) {
-			padding-block: 3.5rem;
+    &:nth-child(1) {
+      padding-block: 3.5rem;
 
-			@include screen-960 {
-				flex-direction: column;
-				gap: 12px;
-				padding-block: 2rem;
-			}
-		}
+      @include screen-960 {
+        flex-direction: column;
+        gap: 12px;
+        padding-block: 2rem;
+      }
+    }
 
-		&:nth-child(2) {
-			gap: 2rem;
-			margin-block: 2rem;
+    &:nth-child(2) {
+      gap: 2rem;
+      margin-block: 2rem;
 
-			@include screen-490 {
-				.order-form__text {
-					max-width: 170px;
-				}
-			}
-		}
-	}
+      @include screen-490 {
+        .order-form__text {
+          max-width: 170px;
+        }
+      }
+    }
+  }
 
-	// .order-form__column
-	&__column {
-		box-sizing: content-box;
-		border-radius: 30px;
-		align-self: center;
-		flex: 0 1 268px;
-		height: 58px;
+  // .order-form__column
+  &__column {
+    box-sizing: content-box;
+    border-radius: 30px;
+    align-self: center;
+    flex: 0 1 268px;
+    height: 58px;
 
-		button {
-			&:disabled {
-				cursor: not-allowed;
-				pointer-events: none;
-				box-shadow: none;
-				background-color: silver;
+    button {
+      &:disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
+        background-color: silver;
 
-				span,
-				.icon {
-					opacity: 0.6;
-				}
-			}
-		}
+        span,
+        .icon {
+          opacity: 0.6;
+        }
+      }
+    }
 
-		&._brd-audit {
-			input {
-				color: #2c2c2c;
-			}
+    &._brd-audit {
+      input {
+        color: #2c2c2c;
+      }
 
-			.order-form__button {
-				background: $color;
-				border: 1px solid $color;
+      .order-form__button {
+        background: $color;
+        border: 1px solid $color;
 
-				.icon-arrow-right {
-					color: $color;
-					font-size: 16px;
+        .icon-arrow-right {
+          color: $color;
+          font-size: 16px;
 
-					&::before {
-						font-weight: 500;
-					}
-				}
+          &::before {
+            font-weight: 500;
+          }
+        }
 
-				.icon {
-					background: #fff;
-				}
+        .icon {
+          background: #fff;
+        }
 
-				span {
-					color: #fff;
-				}
+        span {
+          color: #fff;
+        }
 
-				&:hover {
-					@include min-960 {
-						border: 1px solid rgb(209, 209, 209);
+        &:hover {
+          @include min-960 {
+            border: 1px solid rgb(209, 209, 209);
 
-						.icon {
-							transform: rotate(-45deg);
-							background: $color;
-						}
+            .icon {
+              transform: rotate(-45deg);
+              background: $color;
+            }
 
-						.icon-arrow-right {
-							&::before {
-								color: #fff;
-							}
-						}
+            .icon-arrow-right {
+              &::before {
+                color: #fff;
+              }
+            }
 
-						span {
-							color: #000;
-						}
+            span {
+              color: #000;
+            }
 
-						&::before {
-							background: #fff;
-						}
-					}
-				}
-			}
-		}
+            &::before {
+              background: #fff;
+            }
+          }
+        }
+      }
+    }
 
-		@include minmax-1440-1920 {
-			max-width: calc(215px + (268 - 215) * ((100vw - 1440px) / (1920 - 1440)));
-			max-height: calc(48px + (58 - 48) * ((100vw - 1440px) / (1920 - 1440)));
-		}
+    @include minmax-1440-1920 {
+      max-width: calc(215px + (268 - 215) * ((100vw - 1440px) / (1920 - 1440)));
+      max-height: calc(48px + (58 - 48) * ((100vw - 1440px) / (1920 - 1440)));
+    }
 
-		@include screen-960 {
-			max-width: 268px;
-			width: 100%;
-			max-height: 58px;
-		}
+    @include screen-960 {
+      max-width: 268px;
+      width: 100%;
+      max-height: 58px;
+    }
 
-		@include screen-690 {
-			max-height: 48px;
-			&:not(:last-child) {
-				flex: 1 1 auto;
-			}
-		}
+    @include screen-690 {
+      max-height: 48px;
+      &:not(:last-child) {
+        flex: 1 1 auto;
+      }
+    }
 
-		@include screen-490 {
-			max-width: 195px;
-			max-height: 38px;
-			width: 100%;
-		}
+    @include screen-490 {
+      max-width: 195px;
+      max-height: 38px;
+      width: 100%;
+    }
 
-		&:last-child {
-			// border: none;
+    &:last-child {
+      // border: none;
 
-			@include screen-375 {
-				width: 100%;
-			}
-		}
-	}
+      @include screen-375 {
+        width: 100%;
+      }
+    }
+  }
 
-	// .order-form__line
-	&__line {
-		height: 100%;
-		width: 100%;
-	}
+  // .order-form__line
+  &__line {
+    height: 100%;
+    width: 100%;
+  }
 
-	// .order-form__input
-	&__input {
-		display: flex;
-		align-items: center;
-		height: 100%;
+  // .order-form__input
+  &__input {
+    display: flex;
+    align-items: center;
+    height: 100%;
 
-		input {
-			padding: 8px 3rem 10px;
-			width: 100%;
-			height: 100%;
-			line-height: 170%;
-			font-size: 16px;
+    input {
+      padding: 8px 3rem 10px;
+      width: 100%;
+      height: 100%;
+      line-height: 170%;
+      font-size: 16px;
 
-			@include minmax-490-690 {
-				height: 48px;
-			}
+      @include minmax-490-690 {
+        height: 48px;
+      }
 
-			@include screen-490 {
-				padding: 0 3rem 4px;
-			}
-		}
+      @include screen-490 {
+        padding: 0 3rem 4px;
+      }
+    }
 
-		@include screen-490 {
-			height: 38px;
-		}
-	}
+    @include screen-490 {
+      height: 38px;
+    }
+  }
 
-	// .order-form__button
-	&__button {
-		right: 0;
-		bottom: 0;
-		width: 100%;
-		max-width: 268px;
+  // .order-form__button
+  &__button {
+    right: 0;
+    bottom: 0;
 
-		@include screen-690 {
-			max-height: 48px;
-		}
-	}
+    @include screen-690 {
+      max-height: 48px;
+    }
+  }
 }

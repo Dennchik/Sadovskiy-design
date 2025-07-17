@@ -11,6 +11,7 @@ export function image() {
 				message: error.message
 			}))
 		}))
+
 		// .pipe($.newer($.path.image.dest))
 		// .pipe(webp())
 		// .pipe($.gulp.dest($.path.image.dest))

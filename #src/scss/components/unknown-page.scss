@@ -2,43 +2,43 @@
 @use '../core/mixins' as *;
 
 .unknown-page {
-	background: rgba(1, 1, 2, 0.8);
-	// .unknown-page__body
-	&__body {
-		padding-left: 50px;
-		padding-right: 50px;
-		display: flex;
+  background: rgba(1, 1, 2, 0.8);
+  // .unknown-page__body
+  &__body {
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
 
-		@include min-1920 {
-			padding-top: 160px;
-			padding-bottom: 160px;
-		}
-		@include minmax-320-1920 {
-			padding-top: calc(60px + (160 - 60) * ((100vw - 320px) / (1920 - 320)));
-			padding-bottom: calc(
-				60px + (160 - 60) * ((100vw - 320px) / (1920 - 320))
-			);
-		}
+    @include min-1920 {
+      padding-top: 160px;
+      padding-bottom: 160px;
+    }
+    @include minmax-320-1920 {
+      padding-top: calc(60px + (160 - 60) * ((100vw - 320px) / (1920 - 320)));
+      padding-bottom: calc(
+        60px + (160 - 60) * ((100vw - 320px) / (1920 - 320))
+      );
+    }
 
-		@include screen-960 {
-			padding-left: 30px;
-			padding-right: 30px;
-		}
+    @include screen-960 {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
 
-		@include screen-375 {
-			padding-left: 10px;
-			padding-right: 10px;
-		}
+    @include screen-375 {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
 
-		@include screen-320 {
-			padding: 60px 10px;
-		}
-	}
+    @include screen-320 {
+      padding: 60px 10px;
+    }
+  }
 
-	// .unknown-page__image
-	&__image {
-		width: 100%;
-		max-height: 737;
-		object-fit: contain;
-	}
+  // .unknown-page__image
+  &__image {
+    width: 100%;
+    max-height: 737px;
+    object-fit: contain;
+  }
 }

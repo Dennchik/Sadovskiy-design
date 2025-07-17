@@ -27,10 +27,9 @@ sidebarMenuHandle();
 returnToSavedPosition();
 shadowScrollHeader();
 
-const anchorLink = document.querySelector('.anchor-link');
-if (anchorLink) {
-  anchorsSmoothScrolling();
-}
+anchorsSmoothScrolling();
+// if (anchorLink) {
+// }
 document.addEventListener('DOMContentLoaded', () => {
   maskPhone('.phone');
 });

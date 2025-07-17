@@ -1,22 +1,22 @@
 extends ../layouts/app_layout
 block title
-	- var text='Home Page'
+	- var text = 'Home Page'
 
-block main-content 
+block main-content
 	block services
-		section.page__services 
-			include ../components/services 
-	block project 
-		section.page__project.pbl-13-0#project
-			include ../components/project 
-	block about-company 
+		section.page__services.pbl-0-13
+			include ../components/services
+	block project
+		section.page__project#project
+			include ../components/project
+	block about-company
 		section.page__about-company.pbl-13-16#about
-			include ../components/about-company 
+			include ../components/about-company
 	block schedule
-		section.page__schedule 
+		section.page__schedule
 			include ../components/schedule
 	block services-price
-		section.page__services-price.pbl-13-16#service 
+		section.page__services-price.pbl-13-16#service
 			include ../components/services-price
 	block order-place
 		section.page__order-place#order
@@ -25,14 +25,14 @@ block main-content
 		section.page__seo-block.pbl-13-16._container
 			include ../components/seo-block
 	block company-team
-		section.page__company-team 
+		section.page__company-team
 			include ../components/company-team
 	block answers
-		section.page__answers.pbl-13-16 
+		section.page__answers.pbl-13-16
 			include ../components/answers
 	block brands
 		section.page__brands.pbl-0-16
 			include ../components/brands
 	block order-place
-		section.page__order-place.pbl-0-16 
+		section.page__order-place.pbl-0-16
 			include ../components/order-place

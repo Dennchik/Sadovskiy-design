@@ -1,8 +1,8 @@
 extends ../../layouts/app_layout
 block title
-	- var text='Portfolio'
+	- var text = 'Portfolio'
 
-block main-content 
+block main-content
 	block portfolio-performance
 		section.page__portfolio-performance
 			include ../../components/portfolio-performance
@@ -37,7 +37,7 @@ block main-content
 		section.page__portfolio-section
 			include ../../components/portfolio-news
 	block unknown-page
-		section.page__portfolio-section
+		section.page__portfolio-section.bg-image
 			include ../../components/unknown-page
 	block order-place
 		section.page__order-portfolio#order

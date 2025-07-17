@@ -3,265 +3,266 @@
 @use '../core/extend' as *;
 
 .page {
-	width: 100vw;
+  width: 100vw;
 
-	// .page__content
-	&__content {
-		padding-top: 2rem;
-	}
+  // .page__content
+  &__content {
+    padding-top: 2rem;
+  }
 
-	// .page__header
-	&__header {
-		position: sticky;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: 11;
-		height: 8.8rem;
-		display: flex;
-		align-items: center;
-		background: #fff;
-		transition: box-shadow 0.9s ease-in-out;
+  // .page__header
+  &__header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 11;
+    height: 8.8rem;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    transition: box-shadow 0.9s ease-in-out;
 
-		&.with-shadow {
-			box-shadow: 0 2px 9px #6c8fac;
-			background: #fff;
-		}
+    &.with-shadow {
+      box-shadow: 0 2px 9px #6c8fac;
+      background: #fff;
+    }
 
-		@include screen-768 {
-			padding: 5px 0;
-		}
+    @include screen-768 {
+      padding: 5px 0;
+    }
 
-		.header__image {
-			background: url('../img/icons/logo-b.png') center no-repeat;
-		}
+    .header__image {
+      background: url('../img/icons/logo-b.png') center no-repeat;
+    }
 
-		.menu-list__link {
-			&:hover {
-				color: #000;
-			}
+    .menu-list__link {
+      &:hover {
+        color: #000;
+      }
 
-			@extend .underline;
-		}
+      @extend .underline;
+    }
 
-		.header__title {
-			transition: opacity 0.4s ease-in-out;
+    .header__title {
+      transition: opacity 0.4s ease-in-out;
 
-			&:hover {
-				opacity: 0.6;
-			}
-		}
-	}
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
 
-	// .page__header-project
-	&__header-project {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: 11;
-		height: 8.8rem;
-		display: flex;
-		align-items: center;
-		transition: all 0.3s ease-in-out;
+  // .page__header-project
+  &__header-project {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 11;
+    height: 8.8rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
 
-		.header__body {
-			color: #fff;
-		}
+    .header__body {
+      color: #fff;
+    }
 
-		.burger-button__items span {
-			background: #fff;
-		}
+    .burger-button__items span {
+      background: #fff;
+    }
 
-		&.with-shadow {
-			box-shadow: 0 2px 9px #6c8fac;
-			background: #fff;
-			color: #000;
+    &.with-shadow {
+      box-shadow: 0 2px 9px #6c8fac;
+      background: #fff;
+      color: #000;
 
-			.icon-volume-phone {
-				&::before {
-					color: #000;
-				}
-			}
+      .icon-volume-phone {
+        &::before {
+          color: #000;
+        }
+      }
 
-			.burger-button__items span {
-				background: #000;
-			}
+      .burger-button__items span {
+        background: #000;
+      }
 
-			.header__body {
-				color: #000;
-			}
+      .header__body {
+        color: #000;
+      }
 
-			.header__image {
-				background: url('../img/icons/logo-b.png') center no-repeat;
-			}
+      .header__image {
+        background: url('../img/icons/logo-b.png') center no-repeat;
+      }
 
-			.menu-list__sub-menu {
-				color: #fff;
+      .menu-list__sub-menu {
+        color: #fff;
 
-				ul {
-					background: #fff;
-					color: #000;
-				}
-			}
+        ul {
+          background: #fff;
+          color: #000;
+        }
+      }
 
-			.menu-list__item {
-				color: #000;
-			}
+      .menu-list__item {
+        color: #000;
+      }
 
-			.menu-list__link {
-				@extend .underline;
+      .menu-list__link {
+        @extend .underline;
 
-				&:hover {
-					color: #000;
-				}
-			}
-		}
+        &:hover {
+          color: #000;
+        }
+      }
+    }
 
-		@include screen-768 {
-			padding: 5px 0;
-		}
+    @include screen-768 {
+      padding: 5px 0;
+    }
 
-		.header__image {
-			background: url('../img/icons/logo-w.png') center no-repeat;
-		}
+    .header__image {
+      background: url('../img/icons/logo-w.png') center no-repeat;
+    }
 
-		.menu-list__sub-menu {
-			color: #fff;
+    .menu-list__sub-menu {
+      color: #fff;
 
-			ul {
-				background: $color;
-			}
-		}
+      ul {
+        background: $color;
+      }
+    }
 
-		.menu-list__link {
-			@extend .underline-w;
+    .menu-list__link {
+      @extend .underline-w;
 
-			&:hover {
-				color: #fff;
-			}
-		}
+      &:hover {
+        color: #fff;
+      }
+    }
 
-		.header__title {
-			transition: opacity 0.4s ease-in-out;
+    .header__title {
+      transition: opacity 0.4s ease-in-out;
 
-			&:hover {
-				opacity: 0.6;
-			}
-		}
-	}
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
 
-	//* - [ Home page ] -
+  //* - [ Home page ] -
 
-	// .page__services
-	&__services {
-		position: relative;
-		z-index: 9;
-		display: flow-root;
-	}
+  // .page__services
+  &__services {
+    position: relative;
+    z-index: 9;
+    display: flow-root;
+  }
 
-	// .page__project
-	&__project {
-		position: relative;
-	}
+  // .page__project
+  &__project {
+    position: relative;
+  }
 
-	// .page__about-company
-	&__about-company {
-		scroll-margin-top: 100px;
+  // .page__about-company
+  &__about-company {
+    scroll-margin-top: 100px;
 
-		@include screen-768 {
-			scroll-margin-top: 60px;
-		}
-	}
+    @include screen-768 {
+      scroll-margin-top: 60px;
+    }
+  }
 
-	// .page__schedule
-	&__schedule {
-		overflow: hidden;
-	}
+  // .page__schedule
+  &__schedule {
+    overflow: hidden;
+  }
 
-	// .page__services-price
-	&__services-price {
-		scroll-margin-top: 100px;
+  // .page__services-price
+  &__services-price {
+    scroll-margin-top: 100px;
 
-		@include screen-768 {
-			scroll-margin-top: 60px;
-		}
-	}
+    @include screen-768 {
+      scroll-margin-top: 60px;
+    }
+  }
 
-	// .page__order-place
-	&__order-place {
-		position: relative;
-	}
+  // .page__order-place
+  &__order-place {
+    position: relative;
+  }
 
-	// .page__seo-block
-	&__seo-block {
-		background: url('../img/main/s-bg.png') center / cover repeat;
-	}
+  // .page__seo-block
+  &__seo-block {
+    background: url('../img/main/s-bg.png') center / cover repeat;
+  }
 
-	// .page__company-team
-	&__company-team {
-		position: relative;
-	}
+  // .page__company-team
+  &__company-team {
+    position: relative;
+  }
 
-	// .page__answers
-	&__answers {
-		position: relative;
-	}
+  // .page__answers
+  &__answers {
+    position: relative;
+  }
 
-	// .page__brands
-	&__brands {
-		height: 100%;
-	}
+  // .page__brands
+  &__brands {
+    height: 100%;
+  }
 
-	//* - [ Project] -
+  //* - [ Project] -
 
-	// page__performance
-	&__performance {
-		margin-top: -2rem;
-	}
+  // page__performance
+  &__performance {
+    margin-top: -2rem;
+  }
 
-	//page__dev-info
-	&__dev-info {
-		position: relative;
-	}
+  //page__dev-info
+  &__dev-info {
+    position: relative;
+  }
 
-	// .page__info-block
-	&__info-block {
-		position: relative;
-	}
+  // .page__info-block
+  &__info-block {
+    position: relative;
+  }
 
-	//* - [ Portfolio ] -
+  //* - [ Portfolio ] -
 
-	// .page__portfolio-section
-	&__portfolio-section {
-		position: relative;
-	}
+  // .page__portfolio-section
+  &__portfolio-section {
+    position: relative;
+  }
 
-	// .page__order-portfolio
-	&__order-portfolio {
-		background: url('../img/main/fon.png') center / cover no-repeat;
+  // .page__order-portfolio
+  &__order-portfolio {
+    background: url('../img/main/fon.png') center / cover no-repeat;
 
-		.order-place__content {
-			background: none !important;
-		}
-	}
+    .order-place__content {
+      background: none !important;
+    }
+  }
 
-	// .page__page-unknown
-	&__page-unknown {
-		background: url('../img/portfolio/project-smt/fon.png') center / cover no-repeat;
-	}
+  // .page__page-unknown
+  .bg-image {
+    background: url('../img/portfolio/project-smt/fon.png') center / cover
+      no-repeat;
+  }
 
-	// .page__design-concept
-	&__design-concept {
-		background: rgb(2, 2, 2);
-	}
+  // .page__design-concept
+  &__design-concept {
+    background: rgb(2, 2, 2);
+  }
 
-	// .page__request-audit
-	&__request-audit {
-		padding: 0 13rem;
+  // .page__request-audit
+  &__request-audit {
+    padding: 0 13rem;
 
-		@include screen-690 {
-			padding: 0 60px;
-		}
-	}
+    @include screen-690 {
+      padding: 0 60px;
+    }
+  }
 }

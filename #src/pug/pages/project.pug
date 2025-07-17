@@ -1,10 +1,10 @@
 extends ../layouts/app_layout
 block title
-	- var text='Project Page'
+	- var text = 'Project Page'
 
 block header 
 	header.page__header-project
-		include ../layouts/header 
+		include ../layouts/header
 block main-content
 	block perform 
 		section.page__performance
@@ -14,19 +14,19 @@ block main-content
 			include ../components/project-page-section
 	block dev-info
 		section.page__dev-info
-			include ../components/dev-info 
+			include ../components/dev-info
 	block info-block
 		section.page__info-block.pbl-13-16#about
-			include ../components/info-block 
+			include ../components/info-block
 	block order-place
-		section.page__order-place.pbl-0-16#order 
+		section.page__order-place.pbl-0-16#order
 			include ../components/order-place-w
 	block schedule
 		section.page__schedule
-			include ../components/development 
+			include ../components/development
 	block project-services-price
 		section.page__services-price.pbl-13-16#service
-			include ../components/project-services-price 
+			include ../components/project-services-price
 	block seo-block
 		section.page__seo-block.pbl-13-16._container
 			include ../components/seo-block

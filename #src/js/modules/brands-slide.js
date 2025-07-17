@@ -4,7 +4,6 @@ swiperLayout();
 import Swiper from 'swiper/bundle';
 export function brandsSlide(
 	mainslide = '.brand-slide__body',
-
 ) {
 	if (mainslide) {
 		new Swiper(mainslide, {

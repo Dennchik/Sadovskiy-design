@@ -79,17 +79,20 @@ export function anchorsSmoothScrolling() {
       });
     });
 
-    // При загрузке страницы с якорем в URL (#about и т.д.)
-    if (window.location.hash) {
-      // Извлекаем ID из URL
-      const targetId = window.location.hash.substring(1);
-
-      // Задержка, чтобы дать время полностью отрендерить страницуБ дабы
-      // увидеть анимацию прокрутки
-      setTimeout(() => {
-        // Выполняем прокрутку к якорю
-        scrollToAnchor(targetId);
-      }, 50);
-    }
+    // Внутри DOMContentLoaded
+    // setTimeout(() => {
+    //   if (window.location.hash) {
+    //     const targetId = window.location.hash.substring(1);
+    //     const targetElement = document.getElementById(targetId);
+    //     if (targetElement) {
+    //       // Прокручиваем вверх на чуть-чуть, чтобы скрыть «резкий прыжок»
+    //       window.scrollTo(0, 0);
+    //       // Затем — плавный скролл к нужному месту
+    //       setTimeout(() => {
+    //         scrollToAnchor(targetId);
+    //       }, 50);
+    //     }
+    //   }
+    // }, 0);
   });
 }
