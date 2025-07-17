@@ -1,6 +1,7 @@
 @use '../core/variables' as *;
 @use '../core/mixins' as *;
 @use '../core/extend' as *;
+
 .page {
 	width: 100vw;
 
@@ -97,6 +98,7 @@
 
 			.menu-list__sub-menu {
 				color: #fff;
+
 				ul {
 					background: #fff;
 					color: #000;
@@ -109,6 +111,7 @@
 
 			.menu-list__link {
 				@extend .underline;
+
 				&:hover {
 					color: #000;
 				}
@@ -125,6 +128,7 @@
 
 		.menu-list__sub-menu {
 			color: #fff;
+
 			ul {
 				background: $color;
 			}
@@ -147,7 +151,7 @@
 		}
 	}
 
-	//* - [ Houme page ] -
+	//* - [ Home page ] -
 
 	// .page__services
 	&__services {
@@ -244,8 +248,7 @@
 
 	// .page__page-unknown
 	&__page-unknown {
-		background: url('../img/portfolio/project-smt/fon.png') center / cover
-			no-repeat;
+		background: url('../img/portfolio/project-smt/fon.png') center / cover no-repeat;
 	}
 
 	// .page__design-concept

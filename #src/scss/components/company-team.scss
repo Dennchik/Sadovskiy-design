@@ -23,8 +23,8 @@
 	// .company-team__title
 	&__title {
 		margin-bottom: 70px;
-		color: #fff;
 		text-align: center;
+		color: #fff;
 
 		@include screen-690 {
 			margin-bottom: 40px;
@@ -59,7 +59,7 @@
 		border-radius: 30px;
 		background: #fff;
 
-		@include screen-690 {
+		@include screen-1140 {
 			border-radius: 15px;
 		}
 	}
@@ -86,8 +86,8 @@
 	// .team-card__header
 	&__header {
 		display: flex;
-		gap: 10px;
 		justify-content: space-between;
+		gap: 10px;
 	}
 
 	// .team-card__content
@@ -99,9 +99,9 @@
 
 	// .team-card__image
 	&__image {
+		overflow: hidden;
 		width: 232px;
 		border-radius: 20px;
-		overflow: hidden;
 
 		@include minmax-320-1920 {
 			width: calc(117px + (232 - 117) * ((100vw - 320px) / (1920 - 320)));
@@ -130,10 +130,10 @@
 
 	// .team-card__post
 	&__post {
-		margin-bottom: 5px;
 		font-size: 16px;
 		font-weight: 400;
 		line-height: 125%; /* 20px/16 */
+		margin-bottom: 5px;
 		text-align: right;
 
 		@include minmax-320-1920 {
@@ -164,25 +164,25 @@
 
 .elipsis-cont {
 	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	z-index: 1;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
 	width: 100%;
 
 	&__elipse-10 {
 		position: absolute;
+		right: -10%;
+		bottom: 0;
 		width: 1195px;
+		// transform: rotate(-45deg);
 		height: 852px;
 		border-radius: 30%;
-		// transform: rotate(-45deg);
-		bottom: 0;
-		right: -10%;
-		filter: blur(241.65px);
 		background: rgba(172, 186, 189, 0.379);
+		filter: blur(241.65px);
 	}
 }

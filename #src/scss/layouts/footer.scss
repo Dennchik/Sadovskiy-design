@@ -4,63 +4,63 @@
 .footer {
 	@include min-490 {
 		background-image: radial-gradient(
-				ellipse at 17% 15%,
-				#171b1c 25%,
-				#171b1c67 60%,
-				transparent 100%
-			),
-			radial-gradient(
-				circle at 40% 140%,
-				#eeeeee6a 0%,
-				#2b3769 25%,
-				transparent
-			),
-			radial-gradient(
-				circle at 100% 100%,
-				#eeeeee4d 0%,
-				#2b3769 20%,
-				transparent
-			),
-			radial-gradient(
-				ellipse at 30% 2%,
-				#171b1c 70%,
-				rgb(43, 55, 105) 100%,
-				transparent
-			),
-			radial-gradient(
-				circle at center left,
-				rgba(238, 238, 238, 0) 10%,
-				rgb(4, 5, 10) 50%,
-				transparent
-			);
+										ellipse at 17% 15%,
+										#171b1c 25%,
+										#171b1c67 60%,
+										transparent 100%
+		),
+		radial-gradient(
+										circle at 40% 140%,
+										#eeeeee6a 0%,
+										#2b3769 25%,
+										transparent
+		),
+		radial-gradient(
+										circle at 100% 100%,
+										#eeeeee4d 0%,
+										#2b3769 20%,
+										transparent
+		),
+		radial-gradient(
+										ellipse at 30% 2%,
+										#171b1c 70%,
+										rgb(43, 55, 105) 100%,
+										transparent
+		),
+		radial-gradient(
+										circle at center left,
+										rgba(238, 238, 238, 0) 10%,
+										rgb(4, 5, 10) 50%,
+										transparent
+		);
 	}
 
 	@include screen-490 {
 		background-image: radial-gradient(
-				ellipse at bottom center,
-				#2b37695b,
-				transparent
-			),
-			radial-gradient(
-				ellipse at 10% 19%,
-				#171b1c 35%,
-				#eeeeee00 70%,
-				transparent 100%
-			),
-			radial-gradient(
-				circle at 0% 100%,
-				#eeeeee25 0%,
-				#2b376964 30%,
-				transparent
-			),
-			radial-gradient(circle at 100% 0%, #eeeeee41 0%, #2b3769 30%, transparent),
-			radial-gradient(ellipse at 30% 2%, #171b1c 0%, #2b3769 100%, transparent);
+										ellipse at bottom center,
+										#2b37695b,
+										transparent
+		),
+		radial-gradient(
+										ellipse at 10% 19%,
+										#171b1c 35%,
+										#eeeeee00 70%,
+										transparent 100%
+		),
+		radial-gradient(
+										circle at 0% 100%,
+										#eeeeee25 0%,
+										#2b376964 30%,
+										transparent
+		),
+		radial-gradient(circle at 100% 0%, #eeeeee41 0%, #2b3769 30%, transparent),
+		radial-gradient(ellipse at 30% 2%, #171b1c 0%, #2b3769 100%, transparent);
 	}
 	// .footer__body
 	&__body {
 		position: relative;
-		padding-block: 70px 120px;
 		overflow: hidden;
+		padding-block: 70px 120px;
 
 		@include screen-1440 {
 			padding-block: 50px;
@@ -75,12 +75,12 @@
 
 	// .footer__header
 	&__header {
-		border-bottom: 1.54px solid #bcbcbc8e;
-		padding-bottom: 26px;
 		display: grid;
+		justify-content: space-between;
+		padding-bottom: 26px;
+		border-bottom: 1.54px solid #bcbcbc8e;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 60px;
-		justify-content: space-between;
 
 		@include screen-1440 {
 			gap: 20px;
@@ -99,14 +99,14 @@
 	&__logo {
 		display: flex;
 		align-items: center;
-		margin-left: -5px;
+		margin-left: -4px;
 
 		a {
+			font-size: 19px;
+			line-height: 116.666667%; /* 28px/24 */
 			transition: all 0.4s ease 0s;
 			white-space: nowrap;
 			color: #fff;
-			font-size: 19px;
-			line-height: 116.666667%; /* 28px/24 */
 
 			@include screen-690 {
 				font-size: 15px;
@@ -164,9 +164,9 @@
 			border-radius: 50%;
 
 			&::before {
-				color: #fff;
 				font-size: 2rem;
 				font-weight: 400;
+				color: #fff;
 			}
 		}
 
@@ -179,9 +179,9 @@
 
 	// .footer__link
 	&__link {
-		color: #fff;
-		// line-height: 118.75%; /* 19px/16 */
 		white-space: nowrap;
+		// line-height: 118.75%; /* 19px/16 */
+		color: #fff;
 
 		&:not(:last-child) {
 			margin-right: 10px;
@@ -192,14 +192,14 @@
 	&__content {
 		position: relative;
 		z-index: 9;
-		padding-top: 25px;
 		display: grid;
 		justify-content: space-between;
+		height: 100%;
+		padding-top: 25px;
 		grid-template-columns:
 			minmax(150px, 33.333%) minmax(170px, 180px)
 			minmax(150px, 33.333%);
 		gap: 60px;
-		height: 100%;
 
 		@include minmax-1440-1920 {
 			gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));
@@ -221,9 +221,9 @@
 	// .footer__column
 	&__column {
 		display: flex;
-		gap: 10px;
 		flex-direction: column;
 		padding-bottom: 20px;
+		gap: 10px;
 
 		&:nth-child(3) {
 			@include min-768 {
@@ -271,8 +271,8 @@
 	&__menu {
 		@include screen-768 {
 			display: grid;
-			grid-template-columns: repeat(2, 1fr);
 			justify-content: space-between;
+			grid-template-columns: repeat(2, 1fr);
 			gap: 30px;
 		}
 	}
@@ -280,8 +280,8 @@
 	// .footer__head
 	&__head {
 		font-size: 16px;
-		color: #8d8d8d;
 		text-align: left;
+		color: #8d8d8d;
 
 		@include screen-490 {
 			font-size: 15px;
@@ -312,17 +312,19 @@
 
 	// .footer__privacy-policy
 	&__privacy-policy {
-		color: #fff;
 		line-height: 118.75%; /* 19px/16 */
+		color: #fff;
 	}
 
 	// .footer__item
 	&__item {
 		.footer__link {
 			line-height: initial;
+
 			&:hover {
-				color: #ffffff;
+				color: #fff;
 			}
+
 			@extend .underline-fl;
 		}
 
@@ -344,16 +346,16 @@
 
 	// .footer__phone
 	&__phone {
-		color: #fff;
 		font-size: 16px;
 		font-weight: 400;
-		text-align: left;
-		margin-bottom: 10px;
+		line-height: 125%;
 		display: flex;
 		flex-direction: column;
-		gap: 10px;
 		flex-wrap: wrap;
-		line-height: 125%;
+		margin-bottom: 10px;
+		text-align: left;
+		color: #fff;
+		gap: 10px;
 
 		span {
 			white-space: nowrap;
@@ -374,16 +376,16 @@
 
 	// .footer__mail
 	&__mail {
-		color: #fff;
 		line-height: 118.75%; /* 19px/16 */
 		text-align: left;
+		color: #fff;
 	}
 
 	// .footer__address
 	&__address {
-		color: #fff;
-		max-width: 350px;
 		line-height: 150.923077%; /* 23/13 */
+		max-width: 350px;
+		color: #fff;
 
 		@include min-768 {
 			text-align: right;
@@ -392,11 +394,11 @@
 }
 
 .link-transform {
-	height: 100%;
 	position: relative;
 	display: inline-block;
-	transition: all 0.2s ease;
 	overflow: hidden;
+	height: 100%;
+	transition: all 0.2s ease;
 
 	span {
 		position: relative;
@@ -404,15 +406,15 @@
 		transform: translateY(0);
 
 		&::before {
-			content: attr(data-text);
 			font-weight: 400 !important;
 			position: absolute;
 			top: 100%;
 			left: 0;
+			content: attr(data-text);
+			user-select: none;
 			transition: transform 0.5s ease;
 			transform: translateY(0);
 			pointer-events: none;
-			user-select: none;
 		}
 
 		@include minmax-1440-1920 {
@@ -442,26 +444,26 @@
 	}
 
 	&::before {
-		content: '';
 		position: absolute;
 		right: 0;
 		bottom: 0;
 		width: 0;
 		height: 1px;
-		background-color: #ffffff;
-		opacity: 0.8;
+		content: '';
 		transition: width 0.3s ease-in-out;
+		opacity: 0.8;
+		background-color: #fff;
 	}
 
 	&::after {
-		content: '';
 		position: absolute;
-		left: 0;
 		bottom: 0;
+		left: 0;
 		width: 0;
 		height: 1px;
-		background-color: #ffffff;
-		opacity: 0.8;
+		content: '';
 		transition: width 0.3s ease-in-out;
+		opacity: 0.8;
+		background-color: #fff;
 	}
 }

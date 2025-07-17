@@ -4,33 +4,33 @@
 
 .sidebar-menu {
 	position: fixed;
-	left: 0;
+	z-index: 10;
 	right: 0;
 	bottom: 0;
+	left: 0;
+	display: flex;
 	height: calc(100% - 50px);
-	z-index: 10;
 	transform: translateY(-120%);
 	will-change: transform;
-	display: flex;
 	backdrop-filter: blur(7px);
 
 	&::before {
-		content: '';
 		position: fixed;
 		top: 100%;
 		left: 0;
 		width: 100%;
 		height: 0;
-		transform: translateY(-50%);
+		content: '';
 		transition: height 0.2s ease-out 0.4s;
+		transform: translateY(-50%);
 		background: #171b1c;
 	}
 
 	// .sidebar-menu__column
 	&__column {
-		opacity: 0;
 		width: 100%;
 		min-width: 300px;
+		opacity: 0;
 
 		@include min-960 {
 			flex: 0 1 40%;
@@ -41,11 +41,11 @@
 		}
 
 		&:nth-child(2) {
-			width: 100%;
 			display: flex;
-			justify-content: center;
-			flex: 0 1 auto;
 			overflow: hidden;
+			flex: 0 1 auto;
+			justify-content: center;
+			width: 100%;
 
 			@include screen-960 {
 				display: none;
@@ -55,15 +55,15 @@
 
 	// .sidebar-menu__menu
 	&__menu {
-		overflow-x: hidden;
-		width: 100%;
-		height: 100%;
 		position: relative;
 		z-index: 15;
-		padding: 40px 30px;
 		display: flex;
+		overflow-x: hidden;
 		flex-direction: column;
 		justify-content: space-between;
+		width: 100%;
+		height: 100%;
+		padding: 40px 30px;
 
 		@include screen-375 {
 			padding: 40px 10px;
@@ -77,8 +77,8 @@
 	// .sidebar-menu__menu-list
 	.menu-list {
 		display: inline-flex;
-		flex-direction: column;
 		align-items: start;
+		flex-direction: column;
 		margin-bottom: 30px;
 
 		// .menu-list__item
@@ -106,9 +106,9 @@
 				}
 
 				.menu-list__sub-menu {
-					grid-template-rows: 1fr;
-					opacity: 1;
 					transform: rotateX(0);
+					opacity: 1;
+					grid-template-rows: 1fr;
 				}
 			}
 
@@ -144,6 +144,7 @@
 
 			.menu-list__link {
 				pointer-events: all !important;
+
 				a {
 					-webkit-tap-highlight-color: #00000041;
 				}
@@ -152,16 +153,16 @@
 
 		// .menu-list__link
 		&__link {
+			font-size: 1.6rem;
+
 			position: relative;
 			align-self: start;
-			font-size: 20px;
-			font-weight: 400;
-			white-space: nowrap;
-			opacity: 1;
 			transition: all 0.4s ease-in-out;
-			font-size: 1.6rem;
+			white-space: nowrap;
+
 			span {
-				opacity: 0.8;
+				font-weight: 400;
+				opacity: 1;
 			}
 
 			&:hover {
@@ -173,15 +174,13 @@
 
 		// .menu-list__sub-menu
 		&__sub-menu {
-			min-height: 0;
 			position: relative;
-			margin: 0;
-			box-shadow: none;
-			overflow: hidden;
-			transform: translateY(2rem) !important;
-
 			display: grid;
-			grid-template-rows: 0fr;
+			overflow: hidden;
+			min-height: 0;
+			margin: 0;
+			transform: translateY(2rem) !important;
+			box-shadow: none;
 
 			.menu-list__list {
 				background: transparent;
@@ -194,21 +193,21 @@
 		position: relative;
 
 		&::before {
-			content: '';
-			margin-bottom: 40px;
 			display: block;
-			height: 2px;
 			width: 100%;
+			height: 2px;
+			margin-bottom: 40px;
+			content: '';
 			opacity: 1;
 			background: linear-gradient(to right, #ffffff69, #2b3769);
 		}
 
 		&::after {
-			content: '';
-			margin-top: 40px;
 			display: block;
-			height: 2px;
 			width: 100%;
+			height: 2px;
+			margin-top: 40px;
+			content: '';
 			opacity: 1;
 			background: linear-gradient(to left, #ffffff69, #2b3769);
 		}
@@ -218,25 +217,25 @@
 	&__project-button {
 		font-size: 24px;
 		font-weight: 500;
-		color: #fff;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		transition: opacity 0.2s ease-in-out;
 		opacity: 0;
 
-		transition: opacity 0.2s ease-in-out;
+		color: #fff;
 	}
 
 	// .sidebar-menu__button
 	&__button {
-		cursor: pointer;
 		position: relative;
+		overflow: hidden;
 		width: 7.8rem;
 		height: 7.8rem;
-		border-radius: 50%;
+		cursor: pointer;
 		border: 1px solid #ffffff3b;
+		border-radius: 50%;
 		background: $color;
-		overflow: hidden;
 
 		.icon-arrow-right {
 			position: relative;
@@ -245,22 +244,22 @@
 
 			&::before {
 				font-size: 24px;
-				color: #fff;
 				opacity: 0.6;
+				color: #fff;
 			}
 		}
 
 		&:before {
-			content: '';
 			position: absolute;
 			z-index: 1;
-			left: 0;
 			top: 0;
+			left: 0;
 			width: 100%;
 			height: 100%;
+			content: '';
+			transition: all 0.2s ease-in-out;
 			background-color: #2b3769;
 			clip-path: circle(var(--size) at var(--clip));
-			transition: all 0.2s ease-in-out;
 		}
 
 		&:hover {
@@ -277,12 +276,12 @@
 
 	// .sidebar-menu__row
 	&__row {
-		color: #fff;
 		display: flex;
-		gap: 15px;
 		justify-content: space-between;
-		padding-top: 30px;
 		width: 100%;
+		padding-top: 30px;
+		color: #fff;
+		gap: 15px;
 
 		@include screen-375 {
 			align-items: flex-start;
@@ -295,19 +294,19 @@
 	&__slide {
 		position: relative;
 		z-index: 999;
-		height: 100%;
 		display: flex;
-		gap: 30px;
-		background-size: cover;
+		height: 100%;
 		background-position: center;
+		background-size: cover;
+		gap: 30px;
 	}
 
 	&._open-menu {
 		transform: translateY(0px);
 
 		.sidebar-menu__column {
-			opacity: 1;
 			transition: opacity 0.2s ease-in-out 0.4s;
+			opacity: 1;
 		}
 
 		.sidebar-menu__order {
@@ -327,55 +326,50 @@
 		&::before {
 			height: 200%;
 			background-image: radial-gradient(
-					at 51.219887531528066% 73.75802524063498%,
-					hwb(228 17% 59%) 0%,
-					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0)
-						100%
-				),
-				radial-gradient(
-					at 82.3747128137153% 47.854555124063424%,
-					hsla(192, 9.803921568627452%, 10%, 1) 0%,
-					hsla(192, 9.803921568627452%, 10%, 0) 100%
-				),
-				radial-gradient(
-					at 7.222668315528513% 65.99692412690541%,
-					hsla(192, 9.803921568627452%, 10%, 1) 0%,
-					hsla(192, 9.803921568627452%, 10%, 0) 100%
-				),
-				radial-gradient(
-					at 28.247189370281145% 40.43717988749253%,
-					hsla(192, 9.803921568627452%, 10%, 1) 0%,
-					hsla(192, 9.803921568627452%, 10%, 0) 100%
-				),
-				radial-gradient(
-					at 54.59975191052144% 0.011447407615872152%,
-					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 1)
-						0%,
-					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0)
-						100%
-				),
-				radial-gradient(
-					at 79.74105101791258% 72.89600397390794%,
-					hsla(192, 9.803921568627452%, 10%, 1) 0%,
-					hsla(192, 9.803921568627452%, 10%, 0) 100%
-				),
-				radial-gradient(
-					at 27.353713288329608% 60.00042076869605%,
-					hsla(192, 9.803921568627452%, 10%, 1) 0%,
-					hsla(192, 9.803921568627452%, 10%, 0) 100%
-				),
-				radial-gradient(
-					at 30.871687014459216% 51.91539250189692%,
-					hsla(192, 9.803921568627452%, 10%, 1) 0%,
-					hsla(192, 9.803921568627452%, 10%, 0) 100%
-				),
-				radial-gradient(
-					at 15.415090896688245% 72.75274820343758%,
-					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 1)
-						0%,
-					hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0)
-						100%
-				);
+											at 51.219887531528066% 73.75802524063498%,
+											hwb(228 17% 59%) 0%,
+											hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0) 100%
+			),
+			radial-gradient(
+											at 82.3747128137153% 47.854555124063424%,
+											hsla(192, 9.803921568627452%, 10%, 1) 0%,
+											hsla(192, 9.803921568627452%, 10%, 0) 100%
+			),
+			radial-gradient(
+											at 7.222668315528513% 65.99692412690541%,
+											hsla(192, 9.803921568627452%, 10%, 1) 0%,
+											hsla(192, 9.803921568627452%, 10%, 0) 100%
+			),
+			radial-gradient(
+											at 28.247189370281145% 40.43717988749253%,
+											hsla(192, 9.803921568627452%, 10%, 1) 0%,
+											hsla(192, 9.803921568627452%, 10%, 0) 100%
+			),
+			radial-gradient(
+											at 54.59975191052144% 0.011447407615872152%,
+											hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 1) 0%,
+											hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0) 100%
+			),
+			radial-gradient(
+											at 79.74105101791258% 72.89600397390794%,
+											hsla(192, 9.803921568627452%, 10%, 1) 0%,
+											hsla(192, 9.803921568627452%, 10%, 0) 100%
+			),
+			radial-gradient(
+											at 27.353713288329608% 60.00042076869605%,
+											hsla(192, 9.803921568627452%, 10%, 1) 0%,
+											hsla(192, 9.803921568627452%, 10%, 0) 100%
+			),
+			radial-gradient(
+											at 30.871687014459216% 51.91539250189692%,
+											hsla(192, 9.803921568627452%, 10%, 1) 0%,
+											hsla(192, 9.803921568627452%, 10%, 0) 100%
+			),
+			radial-gradient(
+											at 15.415090896688245% 72.75274820343758%,
+											hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 1) 0%,
+											hsla(228.38709677419354, 41.891891891891895%, 29.01960784313725%, 0) 100%
+			);
 		}
 
 		.menu-list__link {
@@ -393,19 +387,19 @@
 		transition: height 0.1s ease-out 0s;
 
 		.sidebar-menu__column {
-			opacity: 0;
 			transition: opacity 0.4s ease-in-out 0.2s;
+			opacity: 0;
 		}
 
 		.sidebar-menu__order {
 			&::before {
-				opacity: 0;
 				transition: opacity 0.2s ease-in-out 0.4s;
+				opacity: 0;
 			}
 
 			&::after {
-				opacity: 0;
 				transition: opacity 0.2s ease-in-out 0.4s;
+				opacity: 0;
 			}
 		}
 
@@ -423,18 +417,18 @@
 	width: 100%;
 	// .networks__icon
 	&__icon {
-		gap: 10px;
 		font-weight: 600;
 		display: flex;
 		align-items: center;
 		justify-content: start;
+		gap: 10px;
 
 		span {
-			margin-left: 20px;
 			font-size: 16px;
-
-			opacity: 0.9;
 			font-weight: 400;
+
+			margin-left: 20px;
+			opacity: 0.9;
 		}
 
 		&:not(:last-child) {
@@ -475,39 +469,39 @@
 }
 
 .contacts {
-	flex: 0 1 50%;
-	font-weight: 600;
 	font-size: 16px;
+	font-weight: 600;
 	display: flex;
+	flex: 0 1 50%;
 	flex-direction: column;
 	justify-content: space-evenly;
 
 	span {
-		display: block;
 		font-size: 18px;
+		display: block;
 		text-transform: uppercase;
 	}
 
 	&__phone {
-		margin-bottom: 20px;
 		display: flex;
 		flex-direction: column;
 		justify-content: end;
+		margin-bottom: 20px;
 
 		span {
-			margin-bottom: 10px;
-			width: 111px;
 			font-size: 14px;
 			font-weight: 900;
+			width: 111px;
+			margin-bottom: 10px;
 			text-align-last: left;
 			color: #8d8d8d;
 		}
 
 		a {
-			white-space: nowrap;
 			font-size: 15px;
-			opacity: 0.9;
 			font-weight: 400;
+			white-space: nowrap;
+			opacity: 0.9;
 
 			&:not(:last-child) {
 				margin-bottom: 5px;
@@ -520,17 +514,17 @@
 		text-align: start;
 
 		span {
-			margin-bottom: 10px;
-			text-align-last: left;
 			font-size: 14px;
 			font-weight: 700;
+			margin-bottom: 10px;
+			text-align-last: left;
 			color: #8d8d8d;
 		}
 
 		a {
 			font-size: 15px;
-			opacity: 0.9;
 			font-weight: 400;
+			opacity: 0.9;
 		}
 	}
 }

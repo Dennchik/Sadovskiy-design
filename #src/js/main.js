@@ -1,38 +1,38 @@
+//* ----------------------------------------------------------------------------
+import { opacityForEachItems } from './animations/layout-anime.jsx';
+//* ----------------------------------------------------------------------------
+import { dinamicAdaptive } from './assets/move-elements.js';
+//* ----------------------------------------------------------------------------
+import {
+  addToBlock,
+  answersHandler,
+  maskPhone,
+  returnToSavedPosition,
+  shadowScrollHeader,
+  showCard,
+  sidebarMenuHandle,
+  tabsHandler,
+  tooltipHide,
+} from './layouts/layouts.js';
+//* ---------------- Плавная прокрутка страницы до позиции ---------------------
+import { anchorsSmoothScrolling } from './modules/anchors-smooth-scrolling.js';
+import { brandsSlide } from './modules/brands-slide.js';
 import loaded from './modules/preloader.js';
 
 loaded('.preloader');
-//* ----------------------------------------------------------------------------
-import { dinamicAdaptive } from './assets/move-elements.js';
 
 dinamicAdaptive();
-//* ----------------------------------------------------------------------------
-import { opacityForEachItems } from './animations/layout-anime.jsx';
-import { brandsSlide } from './modules/brands-slide.js';
-//* ----------------------------------------------------------------------------
-import {
-	sidebarMenuHandle,
-	returnToSavedPosition,
-	maskPhone,
-	answersHandler,
-	tabsHandler,
-	shadowScrollHeader,
-	addToBlock,
-	showCard,
-	tooltipHide
-} from './layouts/layouts.js';
 
 sidebarMenuHandle();
 returnToSavedPosition();
 shadowScrollHeader();
-//* ---------------- Плавная прокрутка страницы до позиции ---------------------
-import { anchorsSmoothScrolling } from './modules/anchors-smooth-scrolling.js';
 
 const anchorLink = document.querySelector('.anchor-link');
 if (anchorLink) {
-	anchorsSmoothScrolling();
+  anchorsSmoothScrolling();
 }
 document.addEventListener('DOMContentLoaded', () => {
-	maskPhone('.phone');
+  maskPhone('.phone');
 });
 //* ------------ Проверка на присутствие элементов на странице -----------------
 const answersList = document.querySelector('.answers__list');
@@ -45,32 +45,67 @@ const brands = document.querySelector('.brand-slide');
 const cardPrice = document.querySelector('.card-price');
 const tooltip = document.querySelector('.tooltip');
 if (cardPrice) {
-	showCard();
+  showCard();
 }
 if (answersList) {
-	answersHandler();
-	opacityForEachItems('.answers__list', '.answers__content');
+  answersHandler();
+  opacityForEachItems('.answers__list', '.answers__content');
 }
 if (brands) {
-	brandsSlide();
+  brandsSlide();
 }
 if (tabsButton) {
-	tabsHandler();
+  tabsHandler();
 }
 if (seoBlock) {
-	addToBlock();
+  addToBlock();
 }
 if (servicesPrice) {
-	opacityForEachItems('.services-price__content', '.services-price__column');
+  opacityForEachItems('.services-price__content', '.services-price__column');
 }
 if (companyTeam) {
-	opacityForEachItems('.company-team__content', '.company-team__column');
+  opacityForEachItems('.company-team__content', '.company-team__column');
 }
 if (aboutCompany) {
-	opacityForEachItems('.about-company__content', '.about-company__row');
+  opacityForEachItems('.about-company__content', '.about-company__row');
 }
 if (tooltip) {
-	tooltipHide();
+  tooltipHide();
+}
+
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+if (isMobile) {
+  const itemMenu = document.querySelector('.menu-list__item-menu');
+  itemMenu.addEventListener('click', () => {
+    let item = itemMenu.closest('.menu-list__item');
+    item.classList.toggle('_open');
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const forms = document.querySelectorAll('.order-form');
+
+  forms.forEach((form) => {
+    const checkbox = form.querySelector('.checkbox__input');
+    const button = form.querySelector('.order-form__button');
+
+    if (!checkbox || !button) return;
+
+    checkbox.addEventListener('change', () => {
+      button.disabled = !checkbox.checked;
+    });
+  });
+});
+
+const url = window.location.pathname; // вернет часть после домена
+console.log(url); // например: "/index.html" или "/project"
+
+if (url.includes('index')) {
+  console.log('Это index');
+} else if (url.includes('project')) {
+  console.log('Это project');
+} else {
+  console.log('Другой файл');
 }
 
 // document.addEventListener('DOMContentLoaded', () => {
@@ -82,30 +117,3 @@ if (tooltip) {
 // 	});
 //
 // });
-
-
-document.addEventListener('DOMContentLoaded', () => {
-	const forms = document.querySelectorAll('.order-form');
-
-	forms.forEach(form => {
-		const checkbox = form.querySelector('.checkbox__input');
-		const button = form.querySelector('.order-form__button');
-
-		if (!checkbox || !button) return;
-
-		checkbox.addEventListener('change', () => {
-			button.disabled = !checkbox.checked;
-		});
-	});
-});
-
-const url = window.location.pathname; // вернет часть после домена
-console.log(url); // например: "/index.html" или "/project"
-
-if (url.includes('index')) {
-	console.log('Это index');
-} else if (url.includes('project')) {
-	console.log('Это project');
-} else {
-	console.log('Другой файл');
-}

@@ -13,8 +13,10 @@ export function anchorsSmoothScrolling() {
 
     //* Устанавливаем отступ в зависимости от ширины экрана
     // Базовое значение отступа (например, высота фиксированной шапки)
-    let offset = 88; // Отступ
-    if (screenWidth <= 768) {
+    let offset = 98; // Отступ
+    if (screenWidth <= 690) {
+      offset = 50;
+    } else if (screenWidth <= 768) {
       offset = 60;
     } else if (screenWidth <= 1440) {
       offset = 71;
@@ -89,7 +91,7 @@ export function anchorsSmoothScrolling() {
       setTimeout(() => {
         // Выполняем прокрутку к якорю
         scrollToAnchor(targetId);
-      }, 50);
+      }, 500);
     }
   });
 }

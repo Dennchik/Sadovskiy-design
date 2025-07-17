@@ -2,7 +2,6 @@
   "name": "sadovskiy-design",
   "version": "1.0.2",
   "description": "Sadovskiy-design",
-  "main": "index.js",
   "type": "module",
   "scripts": {
     "START": "gulp",
@@ -13,8 +12,16 @@
     "RESET-Fonts": "gulp clearFonts",
     "TASKS": "gulp --tasks"
   },
-  "author": "Dennchik",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dennchik/Sadovskiy-design.git"
+  },
+  "homepage": "https://github.com/Dennchik/Sadovskiy-design",
+  "author": "Sadovskiy-design/Dennchik",
   "license": "ISC",
+  "prettier": {
+    "singleQuote": true
+  },
   "babel": {
     "presets": [
       "@babel/preset-react",

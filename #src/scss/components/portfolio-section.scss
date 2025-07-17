@@ -4,10 +4,6 @@
 .portfolio-section {
 	position: relative;
 
-	&__container {
-		position: relative;
-	}
-
 	&._offset-top {
 		@include min-690 {
 			margin-top: -13rem;
@@ -20,11 +16,11 @@
 	// .portfolio-section__bg-image
 	&__bg-image {
 		position: absolute;
+		z-index: -1;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		z-index: -1;
 
 		img {
 			width: 100%;
@@ -38,30 +34,30 @@
 
 	// .portfolio-section__body
 	&__body {
-		padding-left: 50px;
 		padding-right: 50px;
+		padding-left: 50px;
 
 		@include min-690 {
 			padding-block: 13rem 16.2rem;
 		}
 
 		@include screen-1440 {
-			padding-left: 30px;
 			padding-right: 30px;
+			padding-left: 30px;
 		}
 
 		@include screen-690 {
-			padding-block: 50px 60px;
-			padding-left: 10px;
 			padding-right: 10px;
+			padding-left: 10px;
+			padding-block: 50px 60px;
 		}
 	}
 
 	// .portfolio-section__content
 	&__content {
 		position: relative;
-		width: 100%;
 		display: grid;
+		width: 100%;
 		grid-template-columns:
 			minmax(
 				calc(190px + (450 - 190) * ((100vw - 320px) / (1920 - 320))),
@@ -75,15 +71,14 @@
 		position: relative;
 		z-index: 9;
 		display: grid;
-		gap: 4rem;
+		margin-bottom: 7rem;
 		color: #000;
-		margin-bottom: 70px;
+		gap: 4rem;
 
 		&._text-white {
 			top: 0;
 			left: 0;
 			width: 100%;
-			// height: 100%;
 			color: white;
 		}
 
@@ -106,22 +101,18 @@
 		}
 
 		@include screen-320 {
-			gap: 20px;
 			margin-bottom: 20px;
+			gap: 10px;
 		}
 	}
 
 	&__line-main-col {
 		position: relative;
-		grid-column: -1 / 1;
-		grid-row: -1 /1;
 		top: 0;
 		left: 0;
 		width: auto;
-
-		img {
-			max-width: 100%;
-		}
+		grid-column: -1 / 1;
+		grid-row: -1 /1;
 
 		&:nth-child(1) {
 			position: relative;
@@ -132,19 +123,19 @@
 		}
 
 		&:nth-child(2) {
-			justify-self: end;
 			z-index: 2;
+			justify-self: end;
 		}
 	}
 
 	// .portfolio-section__tooltip
 	&__tooltip {
 		position: absolute;
+		z-index: 11;
+		top: 50%;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
-		z-index: 11;
-		top: 50%;
 		transform: translateY(-20%);
 
 		@include min-768 {
@@ -201,26 +192,26 @@
 	&__info {
 		// height: 100%;
 		display: flex;
-		justify-content: center;
 		flex-direction: column;
+		justify-content: center;
 
 		li {
 			min-width: 300px;
 			max-width: 450px;
 
 			&:first-child {
+				line-height: 122.857143%; /* 43px/35 */
+				margin-bottom: 30px;
 				list-style-position: inside;
 				list-style-type: disc;
+				letter-spacing: 0;
 				color: rgb(7, 7, 7);
 				background-position: 0 0;
 				background-size: 1.6rem 1.6rem;
-				line-height: 122.857143%; /* 43px/35 */
-				letter-spacing: 0;
-				margin-bottom: 30px;
 
 				&::marker {
-					color: $color;
 					margin: 0;
+					color: $color;
 				}
 
 				@include minmax-320-1920 {
@@ -239,12 +230,12 @@
 			}
 
 			&:not(:first-child) {
-				color: rgb(7, 7, 7);
 				font-size: 16px;
 				font-weight: 400;
 				line-height: 125%; /* 20px/16 */
-				letter-spacing: 0;
 				padding-left: 25px;
+				letter-spacing: 0;
+				color: rgb(7, 7, 7);
 			}
 
 			@include min-960 {
@@ -256,15 +247,15 @@
 	//.portfolio-section__order-registration
 	&__order-registration {
 		display: flex;
-		justify-content: center;
 		align-items: center;
+		justify-content: center;
 		gap: 10px;
 	}
 
 	//.portfolio-section__order-registration__button
 	&__order-registration__button {
-		background-color: #000;
 		color: #fff;
+		background-color: #000;
 	}
 
 	//.portfolio-section__order-registration__text
@@ -286,8 +277,8 @@
 	// .portfolio-section__line-main-col--resize
 	&__line-main-col--resize {
 		@include min-1220 {
-			height: 7360px;
 			width: 268.6px;
+			height: 7360px;
 		}
 
 		@include minmax-320-1220 {
@@ -381,8 +372,8 @@
 	// .tooltip__button
 	&__button {
 		position: relative;
-		width: 100%;
 		display: none;
+		width: 100%;
 
 		@include screen-960 {
 			display: block;
@@ -390,17 +381,17 @@
 			.tooltip-button {
 				position: absolute;
 				right: 0;
-				transform: translateY(-110%);
-				height: 30px;
 				width: 30px;
+				height: 30px;
+				transition: opacity 0.4s ease-in-out;
+				transform: translateY(-110%);
 				border-radius: 50%;
 				background: #fff;
 				box-shadow: 0 0 10px #000;
-				transition: opacity 0.4s ease-in-out;
 
 				&::before {
-					color: $color;
 					font-size: 22px;
+					color: $color;
 				}
 			}
 			.icon-minus {
@@ -418,17 +409,17 @@
 	// .tooltip__content
 	&__content {
 		font-size: 16px;
-		max-width: 445px;
 		min-width: 295px;
+		max-width: 445px;
+		padding: 1.5rem 1.5rem;
+		transition: opacity 0.4s ease-in-out;
 		border-radius: 5px;
 		background: #fff;
-		padding: 1.5rem 1.5rem;
 		box-shadow: 0 0 19px #000;
-		transition: opacity 0.4s ease-in-out;
 
 		@include minmax-320-1920 {
-			transform: translateX(65px);
 			font-size: calc(8px + (16 - 8) * ((100vw - 320px) / (1920 - 320)));
+			transform: translateX(65px);
 		}
 
 		@include screen-320 {
@@ -440,6 +431,6 @@
 
 .portfolio-section-background {
 	position: absolute;
-	left: 0;
 	bottom: 0;
+	left: 0;
 }

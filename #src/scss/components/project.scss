@@ -7,19 +7,29 @@
 		background: #2b3769;
 	}
 
+	// .project__body
+	&__body {
+
+		@include screen-1440 {
+			padding-right: 0;
+			padding-left: 0;
+		}
+
+	}
+
 	// .project__title
 	&__title {
-		text-align: center;
 		margin-bottom: 50px;
+		text-align: center;
 
 		@include minmax-960-1920 {
 			font-size: calc(24px + (65 - 24) * ((100vw - 960px) / (1920 - 960)));
 		}
 
 		@include screen-1140 {
-			color: #fff;
 			margin-bottom: 10px;
 			padding-top: 50px;
+			color: #fff;
 		}
 	}
 
@@ -30,17 +40,16 @@
 		padding-top: 50px;
 		padding-bottom: 50px;
 
-		background: #2b3769
-			radial-gradient(
-				circle at 100% 100%,
-				rgba(160, 176, 240, 0.178) 10%,
-				rgb(43, 55, 105) 20%,
-				transparent
-			);
+		background: #2b3769 radial-gradient(
+										circle at 100% 100%,
+										rgba(160, 176, 240, 0.178) 10%,
+										rgb(43, 55, 105) 20%,
+										transparent
+		);
 
 		@include min-960 {
-			border-radius: 0 30px 10px 30px;
 			padding: 50px 50px 60px;
+			border-radius: 0 30px 30px 30px;
 		}
 
 		@include screen-1440 {
@@ -48,33 +57,29 @@
 			border-radius: 0;
 		}
 
-		@include screen-1140 {
-			padding: 0 0 60px;
-			border-radius: 0;
-		}
 	}
 
 	// .project__tabs
 	&__tabs {
 		position: relative;
-		width: 100%;
 		display: grid;
 		align-items: center;
 		justify-content: space-between;
-		grid-template-columns: 1fr min-content;
+		width: 100%;
 		transition: all 0.4s ease-in-out;
+		grid-template-columns: 1fr min-content;
 
 		&._responsive {
-			grid-template-rows: 1fr;
 			height: 100%;
+			grid-template-rows: 1fr;
 
 			@include screen-960 {
 				.tabs-button__item {
 					position: relative;
-					opacity: 1;
 					transition: opacity 0.4s ease-in-out;
-					pointer-events: all;
 					transform: translateX(0);
+					pointer-events: all;
+					opacity: 1;
 				}
 
 				.tabs-button__item {
@@ -86,8 +91,8 @@
 		}
 
 		@include min-1140 {
-			margin-bottom: -31px;
 			height: 145px;
+			margin-bottom: -31px;
 		}
 
 		@include minmax-1140-1920 {
@@ -95,15 +100,15 @@
 		}
 
 		@include screen-1140 {
+			padding: 0 30px;
 			border-top-left-radius: 0;
 			border-top-right-radius: 0;
 			background: #2b3769;
-			padding: 0 30px;
 		}
 
 		@include screen-960 {
-			grid-template-rows: 0fr;
 			overflow: hidden;
+			grid-template-rows: 0fr;
 		}
 
 		@include screen-690 {
@@ -162,18 +167,18 @@
 .tabs-button {
 	// .tabs-button_wrapper
 	&__wrapper {
+		display: flex;
+		align-items: flex-end;
 		width: 100%;
 		height: 100%;
 		min-height: 60px;
-		display: flex;
-		align-items: flex-end;
 		gap: 10px;
 
 		@include screen-1140 {
-			padding: 20px 0;
 			align-items: center;
-			box-sizing: border-box;
 			justify-content: flex-start;
+			box-sizing: border-box;
+			padding: 20px 0;
 			gap: 40px;
 		}
 
@@ -187,11 +192,11 @@
 
 	// .tabs-button__item
 	&__item {
-		cursor: pointer;
 		font-weight: 400;
-		white-space: nowrap;
 		display: flex;
 		align-items: flex-start;
+		cursor: pointer;
+		white-space: nowrap;
 
 		&:hover {
 			box-shadow: 0 -1px 7px #b8b8b8;
@@ -207,16 +212,16 @@
 			}
 
 			@include screen-960 {
-				pointer-events: none;
 				transform: translateX(-100%);
+				pointer-events: none;
 				opacity: 0;
 			}
 		}
 
 		&.active {
-			box-shadow: none;
 			color: #fff;
 			background: #2b3769;
+			box-shadow: none;
 
 			@include min-1140 {
 				height: 115px;
@@ -224,13 +229,13 @@
 			}
 
 			@include screen-960 {
-				background: transparent;
 				position: absolute;
+				background: transparent;
 			}
 
 			@include minmax-1140-1920 {
 				height: calc(
-					85px + (115 - 85) * ((100vw - 1140px) / (1920 - 1140))
+								85px + (115 - 85) * ((100vw - 1140px) / (1920 - 1140))
 				) !important;
 			}
 
@@ -259,13 +264,13 @@
 
 		@include min-1140 {
 			height: 98px;
-			color: #000;
-			background: #f2f2f2;
 			margin-bottom: 30px;
 			padding-top: 21px;
 			transition: all 0.4s ease-in-out;
+			color: #000;
 			border-top-left-radius: 30px;
 			border-top-right-radius: 30px;
+			background: #f2f2f2;
 		}
 
 		@include screen-1140 {
@@ -278,19 +283,19 @@
 		}
 
 		span {
+			line-height: 122.857143%;
 			position: relative;
 			display: inline-flex;
-			line-height: 122.857143%;
-			padding-left: 50px;
 			padding-right: 50px;
+			padding-left: 50px;
 
 			@include screen-1440 {
-				padding-left: 30px;
 				padding-right: 30px;
+				padding-left: 30px;
 			}
 			@include screen-690 {
-				padding-left: 0;
 				padding-right: 0;
+				padding-left: 0;
 			}
 
 			@include screen-1440 {
@@ -303,19 +308,19 @@
 				color: #fff;
 
 				&::after {
-					content: '';
 					position: absolute;
 					bottom: -2px;
 					width: 100%;
 					height: 2px;
-					opacity: 0;
+					content: '';
 					transition: opacity 0.4s ease-in-out;
+					opacity: 0;
 				}
 			}
 
 			@include screen-960 {
-				margin: 10px 0;
 				font-size: 20px;
+				margin: 10px 0;
 			}
 		}
 	}
@@ -328,10 +333,10 @@
 
 		@include screen-960 {
 			position: relative;
+			z-index: 2;
 			display: block;
 			align-self: start;
 			margin: 10px 0;
-			z-index: 2;
 
 			.burger-button__items {
 				span {

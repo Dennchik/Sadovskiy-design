@@ -35,10 +35,10 @@
 
 	// .tab-content__column
 	&__column {
-		cursor: pointer;
 		position: relative;
 		display: flex;
 		flex-direction: column;
+		cursor: pointer;
 
 		@include min-960 {
 			&:hover {
@@ -52,23 +52,23 @@
 
 	// .tab-content__image
 	&__image {
-		cursor: pointer;
 		width: 100%;
 		height: 100%;
 		margin-bottom: 4px;
+		cursor: pointer;
 
 		img {
 			width: 100%;
 			height: 100%;
-			background-size: 100% 100%;
 			border: 1px solid $color;
+			background-size: 100% 100%;
 
-			@include min-768 {
-				border-radius: 30px;
+			@include min-1140 {
 				pointer-events: none;
+				border-radius: 30px;
 			}
 
-			@include screen-768 {
+			@include screen-1140 {
 				border-radius: 15px;
 			}
 		}
@@ -81,11 +81,11 @@
 
 	// .tab-content__footer
 	&__footer {
-		flex: 1 1 auto;
 		display: flex;
 		align-items: center;
-		gap: 10px;
+		flex: 1 1 auto;
 		justify-content: space-between;
+		gap: 10px;
 
 		@include minmax-1440-1740 {
 			flex-direction: column;
@@ -101,46 +101,45 @@
 	// .tab-content__text
 	&__text {
 		// pointer-events: none;
-		color: #fff;
 		line-height: 125%; /* 20px/16 */
-		text-align: left;
-		flex: 0 1 auto;
 		display: none;
+		flex: 0 1 auto;
+		text-align: left;
+		color: #fff;
 		border-radius: 30px;
 
 		@include screen-1164 {
-			max-width: 100%;
 			width: 100%;
+			max-width: 100%;
 		}
 
 		@include min-960 {
 			position: absolute;
 			top: 0;
 			left: 0;
-			height: 100%;
-			width: 100%;
-			padding: 30px;
 			display: flex;
+			align-items: flex-end;
 			flex-direction: column;
 			justify-content: flex-end;
-			align-items: flex-end;
+			width: 100%;
+			height: 100%;
+			padding: 30px;
+			transition: opacity 0.4s,
+			scale 0.4s ease 0s;
+			opacity: 0;
 			background: #3c3b51ce;
 			scale: 0;
-			opacity: 0;
-			transition:
-				opacity 0.4s,
-				scale 0.4s ease 0s;
 
 			span {
-				height: 100%;
 				display: flex;
 				align-items: center;
+				height: 100%;
 			}
 		}
 
 		@include screen-960 {
-			display: block;
 			position: relative;
+			display: block;
 			color: #000;
 		}
 	}
@@ -149,8 +148,8 @@
 	&__button {
 		right: 0;
 		bottom: 0;
-		background: #2b3769;
 		border: 1px solid transparent;
+		background: #2b3769;
 
 		span {
 			color: #fff;
@@ -164,8 +163,8 @@
 
 			._icon {
 				&::before {
-					color: #fff;
 					font-weight: 400;
+					color: #fff;
 				}
 			}
 
@@ -174,8 +173,8 @@
 			}
 
 			&::before {
-				background: #fff;
 				color: #fff;
+				background: #fff;
 			}
 		}
 
@@ -184,8 +183,8 @@
 		}
 
 		._icon {
-			border-radius: 50%;
 			color: #2b3769;
+			border-radius: 50%;
 
 			&::before {
 				font-weight: 600;
@@ -199,18 +198,18 @@
 
 	// .tab-content__icon
 	&__icon {
+		display: grid;
+		overflow: hidden;
+		align-items: center;
 		flex: 0 0 4.8rem;
-		pointer-events: all;
+		flex-direction: column;
+		justify-content: center;
 		width: 4.8rem;
 		height: 4.8rem;
+		transition: all 0.3s ease-in-out;
+		pointer-events: all;
 		border-radius: 50%;
 		background: #fff;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		transition: all 0.3s ease-in-out;
-		overflow: hidden;
-		display: grid;
 		grid-template-columns: 1fr;
 
 		@include screen-960 {
@@ -221,8 +220,8 @@
 			height: 4.8rem;
 
 			&::before {
-				color: #2b3769;
 				font-weight: 700;
+				color: #2b3769;
 			}
 		}
 	}
