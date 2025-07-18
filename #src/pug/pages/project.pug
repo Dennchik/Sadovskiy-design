@@ -2,14 +2,14 @@ extends ../layouts/app_layout
 block title
 	- var text = 'Project Page'
 
-block header 
+block header
 	header.page__header-project
 		include ../layouts/header
 block main-content
-	block perform 
+	block perform
 		section.page__performance
 			include ../components/performance
-	block project-page 
+	block project-page
 		section.page__project.pbl-13-16#project
 			include ../components/project-page-section
 	block dev-info
@@ -36,4 +36,3 @@ block main-content
 	block answers-project
 		section.page__answers.pbl-13-16
 			include ../components/answers-project
-
