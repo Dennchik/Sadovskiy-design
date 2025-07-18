@@ -2,127 +2,131 @@
 @use '../core/mixins' as *;
 
 .seo-block {
-	position: relative;
+  position: relative;
 
-	// .seo-block__body
-	&__body {
-		margin: 0 auto;
-		display: flex;
-		flex-direction: column;
-	}
+  // .seo-block__body
+  &__body {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
 
-	// .seo-block__title
-	&__title {
-		margin-bottom: 49px;
-		font-weight: 400;
+  // .seo-block__title
+  &__title {
+    margin-bottom: 49px;
+    font-weight: 400;
 
-		@include screen-690 {
-			margin-bottom: 20px;
-		}
+    @include screen-690 {
+      margin-bottom: 20px;
+    }
 
-		h2 {
-			margin-bottom: 60px;
-			text-align: center;
+    h2 {
+      margin-bottom: 60px;
+      text-align: center;
 
-			@include screen-690 {
-				margin-bottom: 40px;
-			}
-		}
+      @include screen-690 {
+        margin-bottom: 40px;
+      }
+    }
 
-		h3 {
-			text-align: center;
-		}
-	}
+    h3 {
+      text-align: center;
+    }
+  }
 
-	// .seo-block__content
-	&__content {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 20px;
-		grid-auto-flow: dense;
-		grid-auto-rows: auto;
+  // .seo-block__content
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    grid-auto-flow: dense;
+    grid-auto-rows: auto;
 
-		@include screen-768 {
-			grid-template-columns: repeat(1, 1fr);
-		}
-	}
+    @include screen-768 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 
-	// .seo-block__wrapper
-	&__wrapper {
-		min-height: 0;
-	}
+  // .seo-block__wrapper
+  &__wrapper {
+    min-height: 0;
+  }
 
-	// .seo-block__column
-	&__column {
-		&.hidden {
-			display: none;
-		}
+  // .seo-block__column
+  &__column {
+    &.hidden {
+      display: none;
+    }
 
-		li {
-			text-align: justify;
+    li {
+      text-align: justify;
 
-			&::before {
-				content: '';
-				display: inline-block;
-				width: 13px;
-				height: 13px;
-				margin-right: 10px;
-				background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="%23000000" d="M0 352l64-64 160 160 352-352 64 64-416 416z"></path></svg>');
-				background-size: contain;
-			}
-		}
-	}
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        margin-right: 10px;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="%23000000" d="M0 352l64-64 160 160 352-352 64 64-416 416z"></path></svg>');
+        background-size: contain;
+      }
+    }
+  }
 
-	// .seo-block__text
-	&__text {
-		p {
-			&:not(:last-child) {
-				margin-bottom: 20px;
-			}
-		}
-	}
+  // .seo-block__text
+  &__text {
+    p {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
 
-	// .seo-block__button
-	&__button {
-		align-self: end;
-		background: #fff;
+  // .seo-block__button
+  &__button {
+    align-self: end;
+    background: #fff;
+    &.button {
+      border: 1px solid #b9b9b9 !important;
+    }
 
-		&._rotate-button {
-			.icon {
-				transform: rotate(180deg);
-			}
-		}
+    &._rotate-button {
+      .icon {
+        transform: rotate(180deg);
+      }
+    }
 
-		&::before {
-			background: #2b3769;
-		}
+    &::before {
+      background: #2b3769;
+    }
 
-		@include screen-768 {
-			margin-top: 16px;
-			justify-self: center;
-			grid-column: 1 / 2 !important;
-		}
+    @include screen-768 {
+      justify-self: center;
+    }
 
-		span {
-			white-space: nowrap;
-			font-weight: 400;
-			line-height: 125%; /* 25px/20 */
-			text-align: center;
-		}
-	}
+    span {
+      white-space: nowrap;
+      font-weight: 400;
+      line-height: 125%; /* 25px/20 */
+      text-align: center;
+    }
+  }
 
-	&__button--even {
-		grid-column: -3 / -1;
-		justify-self: center;
-		margin-top: 20px;
-	}
+  &__button--even {
+    justify-self: center;
+    margin-top: 20px;
 
-	// .seo-block__icon-btn
-	&__icon-btn {
-		.icon-arrow-down {
-			&::before {
-				color: #fff;
-			}
-		}
-	}
+    @include min-768 {
+      grid-column: -3 / -1;
+    }
+  }
+
+  // .seo-block__icon-btn
+  &__icon-btn {
+    .icon-arrow-down {
+      &::before {
+        color: #fff;
+      }
+    }
+  }
 }
