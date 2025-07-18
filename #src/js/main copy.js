@@ -82,16 +82,18 @@ if (isMobile) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.order-form').forEach((form, index) => {
+  const forms = document.querySelectorAll('.order-form');
+
+  forms.forEach((form, index) => {
     const name = form.querySelector('.input.name');
     const phone = form.querySelector('.input.phone');
     const checkbox = form.querySelector('.checkbox__input');
-    const button = form.querySelector('.order-form__button');
-    const buttonContainer = form
+    const SendButton = form
       .querySelector('.order-form__button')
       .closest('.order-form__column');
+    const button = form.querySelector('.order-form__button');
 
-    if ([name, phone, checkbox, button, buttonContainer].includes(null)) return;
+    if (!name || !phone || !checkbox || !SendButton) return;
 
     /**
      * @param {HTMLElement} el — элемент или его контейнер для анимации
@@ -105,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
       el,
       { maxSpread = 12, duration = 1000, pulses = 3 } = {},
     ) {
+      if (!el) return;
       const container = el.closest('.order-form__column') || el.parentElement;
       if (!container) return;
 
@@ -114,7 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
       function frame(ts) {
         if (!startTime) startTime = ts;
         const elapsed = ts - startTime;
-        const progress = Math.min(elapsed / totalTime, 1);
+        const progress = Math.min(elapsed / totalTime, 1); // от 0 до 1
+
+        // волна: 0→1→0, повторить pulses раз: |sin(progress * pulses * π)|
         const wave = Math.abs(Math.sin(progress * pulses * Math.PI));
         const spread = maxSpread * wave;
 
@@ -131,21 +136,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function validateFormFields() {
-      const nameVal = name.value.trim();
-      const phoneVal = phone.value.trim();
-      const isValid =
-        nameVal.length >= 3 && phoneVal.length === 18 && checkbox.checked;
+      const nameValid = name.value.trim().length >= 3;
+      const phoneValid = phone.value.trim().length === 18;
+      const checkboxValid = checkbox.checked;
 
-      buttonContainer.classList.toggle('is-disabled', !isValid);
-      button.disabled = !checkbox.checked;
-      return isValid;
-    }
-
-    function showValidationErrors() {
-      if (name.value.trim().length < 3) animateError(name);
-      if (phone.value.trim().length !== 18) animateError(phone);
-      if (!checkbox.checked)
-        animateError(checkbox, { maxSpread: 10, duration: 1000, pulses: 3 });
+      SendButton.classList.toggle(
+        'is-disabled',
+        !(nameValid && phoneValid && checkboxValid),
+      );
     }
 
     name.addEventListener('input', validateFormFields);
@@ -154,22 +152,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     validateFormFields();
 
-    buttonContainer.addEventListener('click', (e) => {
-      if (buttonContainer.classList.contains('is-disabled')) {
+    SendButton.addEventListener('click', (e) => {
+      if (SendButton.classList.contains('is-disabled')) {
         e.preventDefault();
-        console.warn(`⚠️ [Форма ${index + 1}] Невалидная попытка отправки`);
-        showValidationErrors();
+        console.warn(
+          `⚠️ [Форма ${index + 1}] Невалидное нажатие на кнопку отправки`,
+        );
+
+        if (name.value.trim().length < 3) {
+          animateError(name);
+        }
+        if (phone.value.trim().length !== 18) {
+          animateError(phone);
+        }
+        if (!checkbox.checked) {
+          animateError(checkbox, {
+            maxSpread: 10, // размах тени в пикселях
+            duration: 1000, // длительность анимации в мс
+            pulses: 3, // количество «туда‑обратно»
+          });
+        }
+      } else {
+        form.submit(); // когда всё валидно — кинем форму на сервер
       }
     });
 
-    button.addEventListener('click', () => {
-      if (
-        !button.disabled &&
-        !buttonContainer.classList.contains('is-disabled')
-      ) {
-        form.submit();
-        console.log('Форма отправлена');
-      }
+    checkbox.addEventListener('change', () => {
+      button.disabled = !checkbox.checked;
     });
   });
 });
