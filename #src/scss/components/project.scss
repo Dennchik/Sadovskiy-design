@@ -3,350 +3,353 @@
 @use '../chunk/tab-content';
 
 .project {
-	@include screen-1140 {
-		background: #2b3769;
-	}
+  @include screen-1140 {
+    background: #2b3769;
+  }
 
-	// .project__body
-	&__body {
+  // .project__body
+  &__body {
+    @include screen-1440 {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
 
-		@include screen-1440 {
-			padding-right: 0;
-			padding-left: 0;
-		}
+  // .project__title
+  &__title {
+    margin-bottom: 50px;
+    text-align: center;
 
-	}
+    @include minmax-960-1920 {
+      font-size: calc(24px + (65 - 24) * ((100vw - 960px) / (1920 - 960)));
+    }
 
-	// .project__title
-	&__title {
-		margin-bottom: 50px;
-		text-align: center;
+    @include screen-1140 {
+      margin-bottom: 10px;
+      padding-top: 50px;
+      color: #fff;
+    }
+  }
 
-		@include minmax-960-1920 {
-			font-size: calc(24px + (65 - 24) * ((100vw - 960px) / (1920 - 960)));
-		}
+  // .project__content
+  &__content {
+    position: relative;
+    z-index: 2;
+    padding-top: 50px;
+    padding-bottom: 50px;
 
-		@include screen-1140 {
-			margin-bottom: 10px;
-			padding-top: 50px;
-			color: #fff;
-		}
-	}
+    background: #2b3769
+      radial-gradient(
+        circle at 100% 100%,
+        rgba(160, 176, 240, 0.178) 10%,
+        rgb(43, 55, 105) 20%,
+        transparent
+      );
 
-	// .project__content
-	&__content {
-		position: relative;
-		z-index: 2;
-		padding-top: 50px;
-		padding-bottom: 50px;
+    @include min-960 {
+      padding: 50px 50px 60px;
+      border-radius: 0 30px 30px 30px;
+    }
 
-		background: #2b3769 radial-gradient(
-										circle at 100% 100%,
-										rgba(160, 176, 240, 0.178) 10%,
-										rgb(43, 55, 105) 20%,
-										transparent
-		);
+    @include screen-1440 {
+      padding: 0 30px 60px;
+      border-radius: 0;
+    }
 
-		@include min-960 {
-			padding: 50px 50px 60px;
-			border-radius: 0 30px 30px 30px;
-		}
+    @include screen-690 {
+      padding: 0 10px 60px;
+      border-radius: 0;
+    }
+  }
 
-		@include screen-1440 {
-			padding: 0 30px 60px;
-			border-radius: 0;
-		}
+  // .project__tabs
+  &__tabs {
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    transition: all 0.4s ease-in-out;
+    grid-template-columns: 1fr min-content;
 
-	}
+    &._responsive {
+      height: 100%;
+      grid-template-rows: 1fr;
 
-	// .project__tabs
-	&__tabs {
-		position: relative;
-		display: grid;
-		align-items: center;
-		justify-content: space-between;
-		width: 100%;
-		transition: all 0.4s ease-in-out;
-		grid-template-columns: 1fr min-content;
+      @include screen-960 {
+        .tabs-button__item {
+          position: relative;
+          transition: opacity 0.4s ease-in-out;
+          transform: translateX(0);
+          pointer-events: all;
+          opacity: 1;
+        }
 
-		&._responsive {
-			height: 100%;
-			grid-template-rows: 1fr;
+        .tabs-button__item {
+          &:nth-child(4) {
+            padding-bottom: 15px;
+          }
+        }
+      }
+    }
 
-			@include screen-960 {
-				.tabs-button__item {
-					position: relative;
-					transition: opacity 0.4s ease-in-out;
-					transform: translateX(0);
-					pointer-events: all;
-					opacity: 1;
-				}
+    @include min-1140 {
+      height: 145px;
+      margin-bottom: -31px;
+    }
 
-				.tabs-button__item {
-					&:nth-child(4) {
-						padding-bottom: 15px;
-					}
-				}
-			}
-		}
+    @include minmax-1140-1920 {
+      height: calc(115px + (145 - 115) * ((100vw - 1140px) / (1920 - 1140)));
+    }
 
-		@include min-1140 {
-			height: 145px;
-			margin-bottom: -31px;
-		}
+    @include screen-1140 {
+      padding: 0 30px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      background: #2b3769;
+    }
 
-		@include minmax-1140-1920 {
-			height: calc(115px + (145 - 115) * ((100vw - 1140px) / (1920 - 1140)));
-		}
+    @include screen-960 {
+      overflow: hidden;
+      grid-template-rows: 0fr;
+    }
 
-		@include screen-1140 {
-			padding: 0 30px;
-			border-top-left-radius: 0;
-			border-top-right-radius: 0;
-			background: #2b3769;
-		}
+    @include screen-690 {
+      padding: 0 16px;
+    }
 
-		@include screen-960 {
-			overflow: hidden;
-			grid-template-rows: 0fr;
-		}
+    @include screen-375 {
+      padding: 0 5px 0 10px;
+    }
+  }
 
-		@include screen-690 {
-			padding: 0 16px;
-		}
+  &__footer {
+    display: flex;
+    justify-content: center;
+  }
 
-		@include screen-375 {
-			padding: 0 5px 0 10px;
-		}
-	}
+  &__button {
+    background: #fff;
 
-	&__footer {
-		display: flex;
-		justify-content: center;
-	}
+    .icon-arrow-dow {
+      color: #fff;
+    }
 
-	&__button {
-		background: #fff;
+    &:hover {
+      @include min-960 {
+        border: 1px solid #fff;
 
-		.icon-arrow-dow {
-			color: #fff;
-		}
+        .icon {
+          transform: rotate(-90deg);
+        }
 
-		&:hover {
-			@include min-960 {
-				border: 1px solid #fff;
+        span {
+          color: #fff;
+        }
 
-				.icon {
-					transform: rotate(-90deg);
-				}
+        &::before {
+          background: $color;
+        }
+      }
+    }
+  }
 
-				span {
-					color: #fff;
-				}
+  &__icon {
+    .icon-arrow-down {
+      &::before {
+        color: #fff;
+      }
+    }
+  }
 
-				&::before {
-					background: $color;
-				}
-			}
-		}
-	}
-
-	&__icon {
-		.icon-arrow-down {
-			&::before {
-				color: #fff;
-			}
-		}
-	}
-
-	.tab-content__text {
-		color: #fff;
-	}
+  .tab-content__text {
+    color: #fff;
+  }
 }
 
 .tabs-button {
-	// .tabs-button_wrapper
-	&__wrapper {
-		display: flex;
-		align-items: flex-end;
-		width: 100%;
-		height: 100%;
-		min-height: 60px;
-		gap: 10px;
+  // .tabs-button_wrapper
+  &__wrapper {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    min-height: 60px;
+    gap: 10px;
 
-		@include screen-1140 {
-			align-items: center;
-			justify-content: flex-start;
-			box-sizing: border-box;
-			padding: 20px 0;
-			gap: 40px;
-		}
+    @include screen-1140 {
+      align-items: center;
+      justify-content: flex-start;
+      box-sizing: border-box;
+      padding: 20px 0;
+      gap: 40px;
+    }
 
-		@include screen-960 {
-			align-items: flex-start;
-			flex-direction: column;
-			padding: 0;
-			gap: 0;
-		}
-	}
+    @include screen-960 {
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 0;
+      gap: 0;
+    }
+  }
 
-	// .tabs-button__item
-	&__item {
-		font-weight: 400;
-		display: flex;
-		align-items: flex-start;
-		cursor: pointer;
-		white-space: nowrap;
+  // .tabs-button__item
+  &__item {
+    font-weight: 400;
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    white-space: nowrap;
 
-		&:hover {
-			box-shadow: 0 -1px 7px #b8b8b8;
+    &:hover {
+      box-shadow: 0 -1px 7px #b8b8b8;
 
-			@include screen-1440 {
-				box-shadow: none;
-			}
-		}
+      @include screen-1440 {
+        box-shadow: none;
+      }
+    }
 
-		&:not(.active) {
-			@include minmax-1140-1920 {
-				height: calc(70px + (98 - 70) * ((100vw - 1140px) / (1920 - 1140)));
-			}
+    &:not(.active) {
+      @include minmax-1140-1920 {
+        height: calc(70px + (98 - 70) * ((100vw - 1140px) / (1920 - 1140)));
+      }
 
-			@include screen-960 {
-				transform: translateX(-100%);
-				pointer-events: none;
-				opacity: 0;
-			}
-		}
+      @include screen-960 {
+        transform: translateX(-100%);
+        pointer-events: none;
+        opacity: 0;
+      }
+    }
 
-		&.active {
-			color: #fff;
-			background: #2b3769;
-			box-shadow: none;
+    &.active {
+      color: #fff;
+      background: #2b3769;
+      box-shadow: none;
 
-			@include min-1140 {
-				height: 115px;
-				padding-top: 24px;
-			}
+      @include min-1140 {
+        height: 115px;
+        padding-top: 24px;
+      }
 
-			@include screen-960 {
-				position: absolute;
-				background: transparent;
-			}
+      @include screen-960 {
+        position: absolute;
+        background: transparent;
+      }
 
-			@include minmax-1140-1920 {
-				height: calc(
-								85px + (115 - 85) * ((100vw - 1140px) / (1920 - 1140))
-				) !important;
-			}
+      @include minmax-1140-1920 {
+        height: calc(
+          85px + (115 - 85) * ((100vw - 1140px) / (1920 - 1140))
+        ) !important;
+      }
 
-			@include screen-1140 {
-				span {
-					&::after {
-						opacity: 0.5;
-						background: #fff;
-					}
-				}
-			}
-		}
+      @include screen-1140 {
+        span {
+          &::after {
+            opacity: 0.5;
+            background: #fff;
+          }
+        }
+      }
+    }
 
-		&:nth-child(1) {
-			@include min-1140 {
-				span {
-					display: inline-flex;
-					text-align: center;
-				}
-			}
+    &:nth-child(1) {
+      @include min-1140 {
+        span {
+          display: inline-flex;
+          text-align: center;
+        }
+      }
 
-			@include screen-960 {
-				max-width: 100%;
-			}
-		}
+      @include screen-960 {
+        max-width: 100%;
+      }
+    }
 
-		@include min-1140 {
-			height: 98px;
-			margin-bottom: 30px;
-			padding-top: 21px;
-			transition: all 0.4s ease-in-out;
-			color: #000;
-			border-top-left-radius: 30px;
-			border-top-right-radius: 30px;
-			background: #f2f2f2;
-		}
+    @include min-1140 {
+      height: 98px;
+      margin-bottom: 30px;
+      padding-top: 21px;
+      transition: all 0.4s ease-in-out;
+      color: #000;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      background: #f2f2f2;
+    }
 
-		@include screen-1140 {
-			border-radius: 0;
-		}
+    @include screen-1140 {
+      border-radius: 0;
+    }
 
-		@include screen-960 {
-			// width: 260px;
-			z-index: 1;
-		}
+    @include screen-960 {
+      // width: 260px;
+      z-index: 1;
+    }
 
-		span {
-			line-height: 122.857143%;
-			position: relative;
-			display: inline-flex;
-			padding-right: 50px;
-			padding-left: 50px;
+    span {
+      line-height: 122.857143%;
+      position: relative;
+      display: inline-flex;
+      padding-right: 50px;
+      padding-left: 50px;
 
-			@include screen-1440 {
-				padding-right: 30px;
-				padding-left: 30px;
-			}
-			@include screen-690 {
-				padding-right: 0;
-				padding-left: 0;
-			}
+      @include screen-1440 {
+        padding-right: 30px;
+        padding-left: 30px;
+      }
+      @include screen-690 {
+        padding-right: 0;
+        padding-left: 0;
+      }
 
-			@include screen-1440 {
-				font-size: 20px;
-				padding: 0 30px;
-			}
+      @include screen-1440 {
+        font-size: 20px;
+        padding: 0 30px;
+      }
 
-			@include screen-1140 {
-				padding: 0;
-				color: #fff;
+      @include screen-1140 {
+        padding: 0;
+        color: #fff;
 
-				&::after {
-					position: absolute;
-					bottom: -2px;
-					width: 100%;
-					height: 2px;
-					content: '';
-					transition: opacity 0.4s ease-in-out;
-					opacity: 0;
-				}
-			}
+        &::after {
+          position: absolute;
+          bottom: -2px;
+          width: 100%;
+          height: 2px;
+          content: '';
+          transition: opacity 0.4s ease-in-out;
+          opacity: 0;
+        }
+      }
 
-			@include screen-960 {
-				font-size: 20px;
-				margin: 10px 0;
-			}
-		}
-	}
+      @include screen-960 {
+        font-size: 20px;
+        margin: 10px 0;
+      }
+    }
+  }
 
-	// .tabs-button__button
-	&__button {
-		@include min-960 {
-			display: none;
-		}
+  // .tabs-button__button
+  &__button {
+    @include min-960 {
+      display: none;
+    }
 
-		@include screen-960 {
-			position: relative;
-			z-index: 2;
-			display: block;
-			align-self: start;
-			margin: 10px 0;
+    @include screen-960 {
+      position: relative;
+      z-index: 2;
+      display: block;
+      align-self: start;
+      margin: 10px 0;
 
-			.burger-button__items {
-				span {
-					background: #fff;
-				}
+      .burger-button__items {
+        span {
+          background: #fff;
+        }
 
-				&__wrapper {
-					background: transparent;
-				}
-			}
-		}
-	}
+        &__wrapper {
+          background: transparent;
+        }
+      }
+    }
+  }
 }
