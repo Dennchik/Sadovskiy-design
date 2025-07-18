@@ -38,7 +38,7 @@
     padding-left: 50px;
 
     @include min-690 {
-      padding-block: 13rem 16.2rem;
+      padding: 13rem 50px 16.2rem;
     }
 
     @include screen-1440 {
@@ -47,9 +47,7 @@
     }
 
     @include screen-690 {
-      padding-right: 10px;
-      padding-left: 10px;
-      padding-block: 50px 60px;
+      padding: 50px 10px 60px;
     }
   }
 

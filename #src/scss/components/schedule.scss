@@ -2,122 +2,124 @@
 @use '../core/mixins' as *;
 
 .schedule {
-	background: #2b3769;
-	padding-block: 13rem 16.2rem;
+  background: #2b3769;
+  padding-top: 13rem;
+  padding-bottom: 16.2rem;
 
-	@include screen-690 {
-		padding-block: 50px 60px;
-	}
+  @include screen-690 {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
 
-	// .schedule__body
-	&__body {
-		position: relative;
-	}
+  // .schedule__body
+  &__body {
+    position: relative;
+  }
 
-	// .schedule__row
-	&__row {
-		position: relative;
-		z-index: 9;
-	}
+  // .schedule__row
+  &__row {
+    position: relative;
+    z-index: 9;
+  }
 
-	// .schedule__items
-	&__items {
-		display: grid;
-		height: 100%;
-		gap: 80px;
-		justify-content: space-between;
-		grid-template-columns: repeat(3, minmax(200px, 1fr));
+  // .schedule__items
+  &__items {
+    display: grid;
+    height: 100%;
+    gap: 80px;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
 
-		@include minmax-1440-1920 {
-			gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));
-		}
+    @include minmax-1440-1920 {
+      gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+    }
 
-		@include screen-1440 {
-			grid-template-columns: repeat(2, minmax(200px, 1fr));
-			gap: 30px;
-		}
+    @include screen-1440 {
+      grid-template-columns: repeat(2, minmax(200px, 1fr));
+      gap: 30px;
+    }
 
-		@include screen-690 {
-			grid-template-columns: repeat(1, minmax(200px, 1fr));
-		}
-	}
+    @include screen-690 {
+      grid-template-columns: repeat(1, minmax(200px, 1fr));
+    }
+  }
 
-	// .schedule__item
-	&__item {
-		display: flex;
-		flex-direction: column;
-		height: 100%;
+  // .schedule__item
+  &__item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 
-		h2 {
-			color: #fff;
-			font-size: 65px;
-			font-weight: 400;
-			line-height: 100%;
+    h2 {
+      color: #fff;
+      font-size: 65px;
+      font-weight: 400;
+      line-height: 100%;
 
-			@include min-690 {
-				max-width: 300px;
-			}
+      @include min-690 {
+        max-width: 300px;
+      }
 
-			@include minmax-320-1920 {
-				font-size: calc(28px + (65 - 28) * ((100vw - 320px) / (1920 - 320)));
-			}
+      @include minmax-320-1920 {
+        font-size: calc(28px + (65 - 28) * ((100vw - 320px) / (1920 - 320)));
+      }
 
-			@include screen-320 {
-				font-size: 28px;
-			}
+      @include screen-320 {
+        font-size: 28px;
+      }
 
-			@include screen-690 {
-				text-align: center;
-			}
-		}
-	}
+      @include screen-690 {
+        text-align: center;
+      }
+    }
+  }
 
-	// .schedule__title
-	&__title {
-		margin-bottom: 30px;
-		color: #fff;
+  // .schedule__title
+  &__title {
+    margin-bottom: 30px;
+    color: #fff;
 
-		@include screen-768 {
-			white-space: normal;
-		}
+    @include screen-768 {
+      white-space: normal;
+    }
 
-		@include screen-690 {
-			margin-bottom: 10px;
-		}
-	}
+    @include screen-690 {
+      margin-bottom: 10px;
+    }
+  }
 
-	// .schedule__number
-	&__number {
-		margin-bottom: 10px;
-		padding-bottom: 30px;
-		color: #fff;
-		font-size: 96px;
-		font-weight: 400;
-		line-height: 100%; /* 119px/96 */
-		border-bottom: 1px solid #a9a9a9;
+  // .schedule__number
+  &__number {
+    margin-bottom: 10px;
+    padding-bottom: 30px;
+    color: #fff;
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 100%; /* 119px/96 */
+    border-bottom: 1px solid #a9a9a9;
 
-		@include minmax-320-1920 {
-			font-size: calc(40px + (96 - 40) * ((100vw - 320px) / (1920 - 320)));
-		}
+    @include minmax-320-1920 {
+      font-size: calc(40px + (96 - 40) * ((100vw - 320px) / (1920 - 320)));
+    }
 
-		@include screen-320 {
-			font-size: 40px;
-		}
-	}
+    @include screen-320 {
+      font-size: 40px;
+    }
+  }
 
-	// .schedule__text
-	&__text {
-		color: #fff;
-		font-family: $font-defoult;
-		font-size: 16px;
-		font-weight: 400;
-		line-height: 125%; /* 20px/16 */
+  // .schedule__text
+  &__text {
+    color: #fff;
+    font-family: $font-defoult;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 125%; /* 20px/16 */
 
-		@include minmax-320-1920 {
-			font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
-		}
-		@include screen-320 {
-			font-size: 12px;
-		}
-	}
+    @include minmax-320-1920 {
+      font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
+    }
+    @include screen-320 {
+      font-size: 12px;
+    }
+  }
 }

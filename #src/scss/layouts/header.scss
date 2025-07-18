@@ -8,7 +8,8 @@
   margin: 0 auto;
 
   @include screen-1440 {
-    padding-block: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   // .header__body

@@ -290,66 +290,78 @@
 //* ----------------------------------------------------------------------------
 
 .pbl-16-16 {
-  padding-block: 16.2rem;
+  padding-top: 16.2rem;
+  padding-bottom: 16.2rem;
 
   @include screen-690 {
-    padding-block: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }
 
 .pbl-13-13 {
-  padding-block: 13rem;
+  padding-top: 13rem;
+  padding-bottom: 13rem;
 
   @include screen-690 {
-    padding-block: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 }
 
 .pbl-13-16 {
-  padding-block: 13rem 16.2rem;
+  padding-top: 13rem;
+  padding-bottom: 16.2rem;
 
   @include screen-690 {
-    padding-block: 50px 60px;
+    padding-top: 50px;
+    padding-bottom: 60px;
   }
 }
 
 .pbl-16-13 {
-  padding-block: 16.2rem 13rem;
+  padding-top: 16.2rem;
+  padding-bottom: 13rem;
 
   @include screen-690 {
-    padding-block: 60px 50px;
+    padding-top: 60px;
+    padding-bottom: 50px;
   }
 }
 
 .pbl-0-16 {
-  padding-block: 0 16rem;
+  padding-top: 0;
+  padding-bottom: 16rem;
 
   @include screen-690 {
-    padding-block: 0 60px;
+    padding-bottom: 60px;
   }
 }
 
 .pbl-16-0 {
-  padding-block: 16rem 0;
+  padding-top: 16rem;
+  padding-bottom: 0;
 
   @include screen-690 {
-    padding-block: 60px 0;
+    padding-top: 60px;
   }
 }
 
 .pbl-13-0 {
-  padding-block: 13rem 0;
+  padding-top: 13rem;
+  padding-bottom: 0;
 
   @include screen-690 {
-    padding-block: 50px 0;
+    padding-top: 50px;
   }
 }
 
 .pbl-0-13 {
-  padding-block: 0 13rem;
+  padding-top: 0;
+  padding-bottom: 13rem;
 
   @include screen-690 {
-    padding-block: 0 50px;
+    padding-bottom: 50px;
   }
 }
 

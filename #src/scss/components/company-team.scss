@@ -2,187 +2,189 @@
 @use '../core/mixins' as *;
 
 .company-team {
-	background: #2b3769;
-	padding-block: 12rem 13rem;
+  background: #2b3769;
+  padding-top: 12rem;
+  padding-bottom: 13rem;
 
-	@include screen-690 {
-		padding-block: 50px 60px;
-	}
+  @include screen-690 {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
 
-	// .company-team__body
-	&__body {
-		position: relative;
-	}
+  // .company-team__body
+  &__body {
+    position: relative;
+  }
 
-	// .order-place__row
-	&__row {
-		position: relative;
-		z-index: 9;
-	}
+  // .order-place__row
+  &__row {
+    position: relative;
+    z-index: 9;
+  }
 
-	// .company-team__title
-	&__title {
-		margin-bottom: 70px;
-		text-align: center;
-		color: #fff;
+  // .company-team__title
+  &__title {
+    margin-bottom: 70px;
+    text-align: center;
+    color: #fff;
 
-		@include screen-690 {
-			margin-bottom: 40px;
-		}
-	}
+    @include screen-690 {
+      margin-bottom: 40px;
+    }
+  }
 
-	// .company-team__content
-	&__content {
-		display: grid;
-		gap: 40px;
-		grid-template-columns: repeat(3, 1fr);
+  // .company-team__content
+  &__content {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
 
-		@include minmax-1440-1920 {
-			gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));
-		}
+    @include minmax-1440-1920 {
+      gap: calc(20px + (60 - 20) * ((100vw - 1440px) / (1920 - 1440)));
+    }
 
-		@include screen-1440 {
-			gap: 20px;
-		}
+    @include screen-1440 {
+      gap: 20px;
+    }
 
-		@include screen-1164 {
-			grid-template-columns: repeat(2, 1fr);
-		}
+    @include screen-1164 {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-		@include screen-568 {
-			grid-template-columns: repeat(1, 1fr);
-		}
-	}
+    @include screen-568 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 
-	// .company-team__column
-	&__column {
-		border-radius: 30px;
-		background: #fff;
+  // .company-team__column
+  &__column {
+    border-radius: 30px;
+    background: #fff;
 
-		@include screen-1140 {
-			border-radius: 15px;
-		}
-	}
+    @include screen-1140 {
+      border-radius: 15px;
+    }
+  }
 }
 
 .team-card {
-	// .team-card__body
-	&__body {
-		padding: 30px;
+  // .team-card__body
+  &__body {
+    padding: 30px;
 
-		@include screen-768 {
-			padding: 20px;
-		}
+    @include screen-768 {
+      padding: 20px;
+    }
 
-		@include screen-690 {
-			padding: 15px;
-		}
+    @include screen-690 {
+      padding: 15px;
+    }
 
-		@include screen-490 {
-			padding: 10px;
-		}
-	}
+    @include screen-490 {
+      padding: 10px;
+    }
+  }
 
-	// .team-card__header
-	&__header {
-		display: flex;
-		justify-content: space-between;
-		gap: 10px;
-	}
+  // .team-card__header
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
 
-	// .team-card__content
-	.team-card__content {
-		@include screen-568 {
-			margin-top: -12px;
-		}
-	}
+  // .team-card__content
+  .team-card__content {
+    @include screen-568 {
+      margin-top: -12px;
+    }
+  }
 
-	// .team-card__image
-	&__image {
-		overflow: hidden;
-		width: 232px;
-		border-radius: 20px;
+  // .team-card__image
+  &__image {
+    overflow: hidden;
+    width: 232px;
+    border-radius: 20px;
 
-		@include minmax-320-1920 {
-			width: calc(117px + (232 - 117) * ((100vw - 320px) / (1920 - 320)));
-		}
+    @include minmax-320-1920 {
+      width: calc(117px + (232 - 117) * ((100vw - 320px) / (1920 - 320)));
+    }
 
-		@include screen-320 {
-			width: 117px;
-		}
+    @include screen-320 {
+      width: 117px;
+    }
 
-		img {
-			width: 100%;
-			object-fit: contain;
-			filter: grayscale(0.3);
-		}
+    img {
+      width: 100%;
+      object-fit: contain;
+      filter: grayscale(0.3);
+    }
 
-		@include screen-768 {
-			border-radius: 10px;
-		}
-	}
+    @include screen-768 {
+      border-radius: 10px;
+    }
+  }
 
-	// .team-card__logo
-	&__logo {
-		width: 40px;
-		height: 40px;
-	}
+  // .team-card__logo
+  &__logo {
+    width: 40px;
+    height: 40px;
+  }
 
-	// .team-card__post
-	&__post {
-		font-size: 16px;
-		font-weight: 400;
-		line-height: 125%; /* 20px/16 */
-		margin-bottom: 5px;
-		text-align: right;
+  // .team-card__post
+  &__post {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 125%; /* 20px/16 */
+    margin-bottom: 5px;
+    text-align: right;
 
-		@include minmax-320-1920 {
-			font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
-		}
+    @include minmax-320-1920 {
+      font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
+    }
 
-		@include screen-320 {
-			font-size: 12px;
-		}
-	}
+    @include screen-320 {
+      font-size: 12px;
+    }
+  }
 
-	// .team-card__name
-	&__name {
-		font-size: 35px;
-		font-weight: 400;
-		line-height: 122.857143%; /* 43px/35 */
-		text-align: right;
+  // .team-card__name
+  &__name {
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 122.857143%; /* 43px/35 */
+    text-align: right;
 
-		@include minmax-320-1920 {
-			font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (1920 - 320)));
-		}
+    @include minmax-320-1920 {
+      font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (1920 - 320)));
+    }
 
-		@include screen-320 {
-			font-size: 20px;
-		}
-	}
+    @include screen-320 {
+      font-size: 20px;
+    }
+  }
 }
 
 .elipsis-cont {
-	position: absolute;
-	z-index: 1;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 
-	&__elipse-10 {
-		position: absolute;
-		right: -10%;
-		bottom: 0;
-		width: 1195px;
-		// transform: rotate(-45deg);
-		height: 852px;
-		border-radius: 30%;
-		background: rgba(172, 186, 189, 0.379);
-		filter: blur(241.65px);
-	}
+  &__elipse-10 {
+    position: absolute;
+    right: -10%;
+    bottom: 0;
+    width: 1195px;
+    // transform: rotate(-45deg);
+    height: 852px;
+    border-radius: 30%;
+    background: rgba(172, 186, 189, 0.379);
+    filter: blur(241.65px);
+  }
 }
