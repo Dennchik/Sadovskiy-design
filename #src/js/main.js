@@ -83,19 +83,98 @@ if (isMobile) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const forms = document.querySelectorAll('.order-form');
+  forms.forEach((form, index) => {
 
-  forms.forEach((form) => {
+    const name = form.querySelector('.input.name');
+    const phone = form.querySelector('.input.phone');
     const checkbox = form.querySelector('.checkbox__input');
-    const button = form.querySelector('.order-form__button');
+    const SendButton = form.querySelector('.order-form__button');
 
-    if (!checkbox || !button) return;
+    if (!name || !phone || !checkbox || !SendButton) return;
 
-    checkbox.addEventListener('change', () => {
-      button.disabled = !checkbox.checked;
+    /**
+     * @param {HTMLElement} el           — элемент или его контейнер для анимации
+     * @param {Object}      options
+     * @param {number}      options.maxSpread  — максимальный «размах» тени (px)
+     * @param {number}      options.duration   — общее время анимации (ms)
+     * @param {number}      options.pulses     — количество «туда‑обратно» за это время
+     */
+    function animateError(
+        el,
+        {
+          maxSpread = 12,
+          duration = 1000,
+          pulses = 3} = {})
+    {
+      if (!el) return;
+      const container = el.closest('.order-form__column') || el.parentElement;
+      if (!container) return;
+
+      let startTime = null;
+      const totalTime = duration;
+
+      function frame(ts) {
+        if (!startTime) startTime = ts;
+        const elapsed = ts - startTime;
+        const progress = Math.min(elapsed / totalTime, 1); // от 0 до 1
+
+        // волна: 0→1→0, повторить pulses раз: |sin(progress * pulses * π)|
+        const wave = Math.abs(Math.sin(progress * pulses * Math.PI));
+        const spread = maxSpread * wave;
+
+        container.style.boxShadow = `0 0 ${spread}px ${spread / 2}px rgba(255,0,0,0.6)`;
+
+        if (elapsed < totalTime) {
+          requestAnimationFrame(frame);
+        } else {
+          container.style.boxShadow = '';
+        }
+      }
+
+      requestAnimationFrame(frame);
+    }
+
+    function validateFormFields() {
+      const nameValid = name.value.trim().length >= 3;
+      const phoneValid = phone.value.trim().length === 18;
+      const checkboxValid = checkbox.checked;
+
+      SendButton.classList.toggle('is-disabled', !(nameValid && phoneValid && checkboxValid));
+    }
+
+    name.addEventListener('input', validateFormFields);
+    phone.addEventListener('input', validateFormFields);
+    checkbox.addEventListener('change', validateFormFields);
+
+    validateFormFields();
+
+
+    SendButton.addEventListener('click', e => {
+      if (SendButton.classList.contains('is-disabled')) {
+        e.preventDefault();
+        console.warn(`⚠️ [Форма ${index + 1}] Невалидное нажатие на кнопку отправки`);
+
+        if (name.value.trim().length < 3) {
+          animateError(name);
+        }
+        if (phone.value.trim().length !== 18) {
+          animateError(phone);
+        }
+        if (!checkbox.checked) {
+          animateError(checkbox, {
+            maxSpread: 20,   // размах тени в пикселях
+            duration: 1000,  // длительность анимации в мс
+            pulses: 3        // количество «туда‑обратно»
+          });
+        }
+      } else {
+        form.submit(); // когда всё валидно — кинем форму на сервер
+      }
     });
-  });
-});
 
+  });
+
+});
 const url = window.location.pathname; // вернет часть после домена
 console.log(url); // например: "/index.html" или "/project"
 

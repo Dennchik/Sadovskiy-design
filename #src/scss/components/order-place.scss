@@ -289,7 +289,7 @@
 
     &:nth-child(2) {
       gap: 2rem;
-      margin-block: 2rem;
+      margin-block: 0 2rem;
 
       @include screen-490 {
         .order-form__text {
@@ -308,9 +308,7 @@
     height: 58px;
 
     button {
-      &:disabled {
-        cursor: not-allowed;
-        pointer-events: none;
+      &.is-disabled {
         box-shadow: none;
         background-color: silver;
 
