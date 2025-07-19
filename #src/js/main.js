@@ -166,54 +166,53 @@ document.addEventListener('DOMContentLoaded', () => {
         !button.disabled &&
         !buttonContainer.classList.contains('is-disabled')
       ) {
-
         // Получаем название цели для аналитики из кнопки
-        let goalName = "";
+        let goalName = '';
         if (button) {
-          goalName = button.getAttribute("goal-name") || "";
+          goalName = button.getAttribute('goal-name') || '';
         }
 
         // Собираем данные из формы
         const formData = new FormData();
-        formData.append("action", "send_telegram_message");
+        formData.append('action', 'send_telegram_message');
 
         // Получаем номер телефона
         if (phone && phone.value) {
-          formData.append("phone", phone.value.trim());
+          formData.append('phone', phone.value.trim());
         }
 
         // Получаем имя
         if (name && name.value) {
-          formData.append("name", name.value.trim());
+          formData.append('name', name.value.trim());
         }
 
         // Добавляем имя цели (если есть)
-        formData.append("goalName", goalName);
+        formData.append('goalName', goalName);
 
         // Отправляем данные через AJAX
         fetch(localizedVars.ajax_url, {
-          method: "POST",
+          method: 'POST',
           headers: {
-            "X-WP-Nonce": localizedVars.ajax_nonce
+            'X-WP-Nonce': localizedVars.ajax_nonce,
           },
-          body: formData
+          body: formData,
         })
-          .then(response => response.text())
-          .then(responseText => {
-            alert("Ваш запрос отправлен.");
-            console.log("Ответ сервера:", responseText);
+          .then((response) => response.text())
+          .then((responseText) => {
+            alert('Ваш запрос отправлен.');
+            console.log('Ответ сервера:', responseText);
 
             // Очищаем форму
-            if (phone) phone.value = "";
-            if (name) name.value = "";
+            if (phone) phone.value = '';
+            if (name) name.value = '';
             if (checkbox) checkbox.checked = false;
 
             // Делаем форму неактивной
-            button.classList.toggle("is-disabled", true);
+            button.classList.toggle('is-disabled', true);
           })
-          .catch(error => {
-            console.error("Ошибка при отправке:", error);
-            alert("Произошла ошибка при отправке данных.");
+          .catch((error) => {
+            console.error('Ошибка при отправке:', error);
+            alert('Произошла ошибка при отправке данных.');
           });
       }
     });

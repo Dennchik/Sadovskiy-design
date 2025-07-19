@@ -23,9 +23,10 @@ $text-color-selection: #9b9999;
 
   //* ---------------------------- [Scrollbar] ---------------------------------
 
-  --background-thumb: #2b3769;
-  --scrollbar-thumb-bgcolor: #757575;
-
+  --background-thumb: #6980dd;
+  --scrollbar-thumb-bgcolor: #aeb9e791;
+  --border-color: $color;
+  --themes-color: #2b3769;
   // ---------------------------------------------------------------------------
   --shadow-size: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
   --stripe-width: 10px;
@@ -36,7 +37,7 @@ $text-color-selection: #9b9999;
   --button-size: 4rem;
   --mob-expanded-width: 320px;
   --mob-collapsed-width: 4rem;
-  --background-image: background: url(../img/portfolio/project-smt/fon.png)
+  --background-image: background: url('../img/portfolio/project-smt/fon.png')
     center / cover no-repeat;
   --radial-gradient:
     radial-gradient(
