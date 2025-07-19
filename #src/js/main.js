@@ -144,8 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function showValidationErrors() {
       if (name.value.trim().length < 3) animateError(name);
       if (phone.value.trim().length !== 18) animateError(phone);
-      if (!checkbox.checked)
-        animateError(checkbox, { maxSpread: 10, duration: 1000, pulses: 3 });
+      if (!checkbox.checked) animateError(checkbox);
     }
 
     name.addEventListener('input', validateFormFields);
@@ -167,8 +166,55 @@ document.addEventListener('DOMContentLoaded', () => {
         !button.disabled &&
         !buttonContainer.classList.contains('is-disabled')
       ) {
-        form.submit();
-        console.log('Форма отправлена');
+
+        // Получаем название цели для аналитики из кнопки
+        let goalName = "";
+        if (button) {
+          goalName = button.getAttribute("goal-name") || "";
+        }
+
+        // Собираем данные из формы
+        const formData = new FormData();
+        formData.append("action", "send_telegram_message");
+
+        // Получаем номер телефона
+        if (phone && phone.value) {
+          formData.append("phone", phone.value.trim());
+        }
+
+        // Получаем имя
+        if (name && name.value) {
+          formData.append("name", name.value.trim());
+        }
+
+        // Добавляем имя цели (если есть)
+        formData.append("goalName", goalName);
+
+        // Отправляем данные через AJAX
+        fetch(localizedVars.ajax_url, {
+          method: "POST",
+          headers: {
+            "X-WP-Nonce": localizedVars.ajax_nonce
+          },
+          body: formData
+        })
+          .then(response => response.text())
+          .then(responseText => {
+            alert("Ваш запрос отправлен.");
+            console.log("Ответ сервера:", responseText);
+
+            // Очищаем форму
+            if (phone) phone.value = "";
+            if (name) name.value = "";
+            if (checkbox) checkbox.checked = false;
+
+            // Делаем форму неактивной
+            button.classList.toggle("is-disabled", true);
+          })
+          .catch(error => {
+            console.error("Ошибка при отправке:", error);
+            alert("Произошла ошибка при отправке данных.");
+          });
       }
     });
   });
