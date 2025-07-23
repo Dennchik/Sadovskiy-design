@@ -1,27 +1,27 @@
-//* ------------------------------- [Variables] --------------------------------
+//* - [Variables] -
 $maxWidthContainer: 1920px;
-//* ---------------------------- [Font Variables] ------------------------------
+//* - [Font Variables] -
 $font-path: '../fonts';
 $font-defoult: 'averta-regular', sans-serif;
 $font-size: 16px;
 $font-family-third: 'Inter', sans-serif;
 $font-weight-defoult: 400;
-//* ------------------------------ [Font color] --------------------------------
+//* - [Font color] -
 $font-color-defoult: #000;
 $font-color-secondary: #fff;
-//* -------------------------------- [Color] -----------------------------------
+//* - [Color] -
 $color: #2b3769;
 $bg-color: #fff;
 $second-color: #171b1c;
-//* ---------------------------- [Other colors] --------------------------------
+//* - [Other colors] -
 $text-selection: #0054633f;
 $text-color-selection: #9b9999;
-//* ----------------------------------------------------------------------------
+//* -
 :root {
   --clip: left center;
   --size: 0;
 
-  //* ---------------------------- [Scrollbar] ---------------------------------
+  //* - [Scrollbar] -
 
   --background-thumb: #6980dd;
   --scrollbar-thumb-bgcolor: #aeb9e791;
