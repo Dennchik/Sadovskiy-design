@@ -212,13 +212,13 @@
 
     @include screen-1440 {
       gap: 15px;
-      column-gap: 30px;
+      column-gap: 2rem;
     }
 
     @include screen-768 {
       grid-template-columns: repeat(2, 1fr);
     }
-    @include screen-425 {
+    @include screen-490 {
       grid-template-columns: 1fr;
     }
   }
@@ -249,7 +249,7 @@
         border-bottom: 1px solid #4141415b;
       }
     }
-    @include screen-425 {
+    @include screen-490 {
       &:nth-child(1) {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
@@ -299,6 +299,7 @@
     flex: 1 1 auto;
 
     li {
+      white-space: nowrap;
       color: #fff;
 
       &:not(:last-child) {
@@ -368,6 +369,10 @@
 
     li:not(:last-child) {
       margin-bottom: 10px;
+    }
+
+    @include screen-768 {
+      text-align: unset;
     }
 
     @include screen-690 {
