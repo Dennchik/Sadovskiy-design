@@ -185,7 +185,6 @@
   // .footer__link
   &__link {
     white-space: nowrap;
-    // line-height: 118.75%; /* 19px/16 */
     color: #fff;
 
     &:not(:last-child) {
@@ -218,7 +217,8 @@
     @include screen-768 {
       grid-template-columns: repeat(2, 1fr);
     }
-    @include screen-490 {
+
+    @include screen-425 {
       grid-template-columns: 1fr;
     }
   }
@@ -249,7 +249,7 @@
         border-bottom: 1px solid #4141415b;
       }
     }
-    @include screen-490 {
+    @include screen-425 {
       &:nth-child(1) {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
@@ -299,7 +299,6 @@
     flex: 1 1 auto;
 
     li {
-      white-space: nowrap;
       color: #fff;
 
       &:not(:last-child) {
@@ -393,7 +392,6 @@
 
   // .footer__address
   &__address {
-    line-height: 150.923077%; /* 23/13 */
     max-width: 350px;
     color: #fff;
 
