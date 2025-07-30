@@ -54,15 +54,6 @@
 
   // .seo-block__column
   &__column {
-    // transition: grid-template-rows 0.4s ease-in-out;
-    // overflow: hidden;
-    // display: grid;
-    // grid-template-rows: 1fr;
-
-    // &:not(:last-child) {
-    // 	margin-bottom: 20px;
-    // }
-
     &.hidden {
       display: none;
     }
@@ -95,6 +86,9 @@
   &__button {
     align-self: end;
     background: #fff;
+    &.button {
+      border: 1px solid #b9b9b975 !important;
+    }
 
     &._rotate-button {
       .icon {
@@ -107,9 +101,7 @@
     }
 
     @include screen-768 {
-      margin-top: 16px;
       justify-self: center;
-      grid-column: 1 / 2 !important;
     }
 
     span {
@@ -121,9 +113,12 @@
   }
 
   &__button--even {
-    grid-column: -3 / -1;
     justify-self: center;
     margin-top: 20px;
+
+    @include min-768 {
+      grid-column: -3 / -1;
+    }
   }
 
   // .seo-block__icon-btn

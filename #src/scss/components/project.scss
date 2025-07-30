@@ -4,23 +4,30 @@
 
 .project {
   @include screen-1140 {
-    // background: #2b3769;
-    background: blueviolet;
+    background: #2b3769;
+  }
+
+  // .project__body
+  &__body {
+    @include screen-1440 {
+      padding-right: 0;
+      padding-left: 0;
+    }
   }
 
   // .project__title
   &__title {
-    text-align: center;
     margin-bottom: 50px;
+    text-align: center;
 
     @include minmax-960-1920 {
       font-size: calc(24px + (65 - 24) * ((100vw - 960px) / (1920 - 960)));
     }
 
     @include screen-1140 {
-      color: #fff;
       margin-bottom: 10px;
       padding-top: 50px;
+      color: #fff;
     }
   }
 
@@ -40,41 +47,42 @@
       );
 
     @include min-960 {
-      border-radius: 0 30px 10px 30px;
+      padding: 50px 50px 60px;
+      border-radius: 0 30px 30px 30px;
     }
 
     @include screen-1440 {
-      padding: 0 10px 60px;
+      padding: 0 30px 60px;
       border-radius: 0;
     }
 
     @include screen-690 {
       padding: 0 10px 60px;
+      border-radius: 0;
     }
   }
 
   // .project__tabs
   &__tabs {
     position: relative;
-    width: 100%;
     display: grid;
     align-items: center;
     justify-content: space-between;
-    grid-template-columns: 1fr min-content;
+    width: 100%;
     transition: all 0.4s ease-in-out;
+    grid-template-columns: 1fr min-content;
 
     &._responsive {
-      background: #3a4a91;
-      grid-template-rows: 1fr;
       height: 100%;
+      grid-template-rows: 1fr;
 
       @include screen-960 {
         .tabs-button__item {
           position: relative;
-          opacity: 1;
           transition: opacity 0.4s ease-in-out;
-          pointer-events: all;
           transform: translateX(0);
+          pointer-events: all;
+          opacity: 1;
         }
 
         .tabs-button__item {
@@ -86,8 +94,8 @@
     }
 
     @include min-1140 {
-      margin-bottom: -31px;
       height: 145px;
+      margin-bottom: -31px;
     }
 
     @include minmax-1140-1920 {
@@ -95,15 +103,19 @@
     }
 
     @include screen-1140 {
+      padding: 0 30px;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
       background: #2b3769;
-      padding: 0 25px 0 30px;
     }
 
     @include screen-960 {
-      grid-template-rows: 0fr;
       overflow: hidden;
+      grid-template-rows: 0fr;
+    }
+
+    @include screen-690 {
+      padding: 0 16px;
     }
 
     @include screen-375 {
@@ -166,10 +178,10 @@
     gap: 10px;
 
     @include screen-1140 {
-      padding: 20px 0;
       align-items: center;
-      box-sizing: border-box;
       justify-content: flex-start;
+      box-sizing: border-box;
+      padding: 20px 0;
       gap: 40px;
     }
 
@@ -183,11 +195,11 @@
 
   // .tabs-button__item
   &__item {
-    cursor: pointer;
     font-weight: 400;
-    white-space: nowrap;
     display: flex;
     align-items: flex-start;
+    cursor: pointer;
+    white-space: nowrap;
 
     &:hover {
       box-shadow: 0 -1px 7px #b8b8b8;
