@@ -1,8 +1,16 @@
-//* ----------------------------------------------------------------------------
+//* - [ Preloader ] -
+import loaded from './modules/preloader.js';
+loaded('.preloader');
+
+//* - [ Animation ] -
 import { opacityForEachItems } from './animations/layout-anime.jsx';
-//* ----------------------------------------------------------------------------
+import { brandsSlide } from './modules/brands-slide.js';
+
+//* - [ Dinamic Adaptive ] -
 import { dinamicAdaptive } from './assets/move-elements.js';
-//* ----------------------------------------------------------------------------
+dinamicAdaptive();
+
+//* - [ Imports ] -
 import {
   addToBlock,
   answersHandler,
@@ -14,27 +22,21 @@ import {
   tabsHandler,
   tooltipHide,
 } from './layouts/layouts.js';
-//* ---------------- Плавная прокрутка страницы до позиции ---------------------
-import { anchorsSmoothScrolling } from './modules/anchors-smooth-scrolling.js';
-import { brandsSlide } from './modules/brands-slide.js';
-import loaded from './modules/preloader.js';
-
-loaded('.preloader');
-
-dinamicAdaptive();
 
 sidebarMenuHandle();
 returnToSavedPosition();
 shadowScrollHeader();
 
+//* - [ Плавная прокрутка страницы до позиции ] -
+import { anchorsSmoothScrolling } from './modules/anchors-smooth-scrolling.js';
 anchorsSmoothScrolling();
 
+//* - [ Mask Phone ] -
 document.addEventListener('DOMContentLoaded', () => {
   maskPhone('.phone');
 });
 
-const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-//* ------------ Проверка на присутствие элементов на странице -----------------
+//* - [ Проверка на присутствие элементов на странице ] -
 const answersList = document.querySelector('.answers__list');
 const tabsButton = document.querySelector('.tabs-button');
 const seoBlock = document.querySelector('.seo-block');
@@ -44,6 +46,9 @@ const aboutCompany = document.querySelector('.about-company');
 const brands = document.querySelector('.brand-slide');
 const cardPrice = document.querySelector('.card-price');
 const tooltip = document.querySelector('.tooltip');
+
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
 if (!isMobile) {
   if (answersList) {
     opacityForEachItems('.answers__list', '.answers__content');
@@ -58,7 +63,7 @@ if (!isMobile) {
     opacityForEachItems('.about-company__content', '.about-company__row');
   }
 }
-//* ----------------------------------------------------------------------------
+
 if (cardPrice) {
   showCard();
 }
@@ -86,7 +91,7 @@ if (isMobile) {
     item.classList.toggle('_open');
   });
 }
-
+//* - [ Validation Forms ] -
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.order-form').forEach((form, index) => {
     const name = form.querySelector('.input.name');
@@ -224,14 +229,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
-const url = window.location.pathname; // вернет часть после домена
-console.log(url); // например: "/index.html" или "/project"
-
-if (url.includes('index')) {
-  console.log('Это index');
-} else if (url.includes('project')) {
-  console.log('Это project');
-} else {
-  console.log('Другой файл');
-}

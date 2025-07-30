@@ -39,8 +39,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    grid-auto-flow: dense;
-    grid-auto-rows: auto;
 
     @include screen-768 {
       grid-template-columns: repeat(1, 1fr);
@@ -86,9 +84,10 @@
   &__button {
     align-self: end;
     background: #fff;
+
     &.button {
       border: 1px solid #b9b9b975 !important;
-      border: 1px solid rgb(21, 255, 0) !important;
+      border: 1px solid rgb(0, 17, 255) !important;
     }
 
     &._rotate-button {
@@ -102,7 +101,9 @@
     }
 
     @include screen-768 {
+      margin-top: 16px;
       justify-self: center;
+      grid-column: 1 / 2 !important;
     }
 
     span {

@@ -3,12 +3,13 @@
 
 .company-team {
   background: #2b3769;
-  padding-top: 12rem;
-  padding-bottom: 13rem;
+  padding: 12rem 50px 13rem;
 
+  @include screen-1440 {
+    padding: 50px 30px 60px;
+  }
   @include screen-690 {
-    padding-top: 50px;
-    padding-bottom: 60px;
+    padding: 50px 10px 60px;
   }
 
   // .company-team__body
