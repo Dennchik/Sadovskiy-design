@@ -28,11 +28,12 @@ returnToSavedPosition();
 shadowScrollHeader();
 
 anchorsSmoothScrolling();
-// if (anchorLink) {
-// }
+
 document.addEventListener('DOMContentLoaded', () => {
   maskPhone('.phone');
 });
+
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 //* ------------ Проверка на присутствие элементов на странице -----------------
 const answersList = document.querySelector('.answers__list');
 const tabsButton = document.querySelector('.tabs-button');
@@ -43,12 +44,26 @@ const aboutCompany = document.querySelector('.about-company');
 const brands = document.querySelector('.brand-slide');
 const cardPrice = document.querySelector('.card-price');
 const tooltip = document.querySelector('.tooltip');
+if (!isMobile) {
+  if (answersList) {
+    opacityForEachItems('.answers__list', '.answers__content');
+  }
+  if (servicesPrice) {
+    opacityForEachItems('.services-price__content', '.services-price__column');
+  }
+  if (companyTeam) {
+    opacityForEachItems('.company-team__content', '.company-team__column');
+  }
+  if (aboutCompany) {
+    opacityForEachItems('.about-company__content', '.about-company__row');
+  }
+}
+//* ----------------------------------------------------------------------------
 if (cardPrice) {
   showCard();
 }
 if (answersList) {
   answersHandler();
-  opacityForEachItems('.answers__list', '.answers__content');
 }
 if (brands) {
   brandsSlide();
@@ -59,20 +74,11 @@ if (tabsButton) {
 if (seoBlock) {
   addToBlock();
 }
-if (servicesPrice) {
-  opacityForEachItems('.services-price__content', '.services-price__column');
-}
-if (companyTeam) {
-  opacityForEachItems('.company-team__content', '.company-team__column');
-}
-if (aboutCompany) {
-  opacityForEachItems('.about-company__content', '.about-company__row');
-}
+
 if (tooltip) {
   tooltipHide();
 }
 
-const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 if (isMobile) {
   const itemMenu = document.querySelector('.menu-list__item-menu');
   itemMenu.addEventListener('click', () => {
@@ -229,13 +235,3 @@ if (url.includes('index')) {
 } else {
   console.log('Другой файл');
 }
-
-// document.addEventListener('DOMContentLoaded', () => {
-// 	const itemMenu = document.querySelector('.menu-list__item-menu');
-// 	let item = itemMenu.closest('.menu-list__item');
-//
-// 	item.addEventListener('click', () => {
-// 		item.classList.toggle('_open');
-// 	});
-//
-// });
