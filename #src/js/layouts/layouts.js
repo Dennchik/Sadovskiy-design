@@ -34,6 +34,13 @@ export function sidebarMenuHandle() {
         tabsItem.classList.toggle('_responsive');
       }
     });
+    window.addEventListener('resize', () => {
+      if (sidebarMenu.classList.contains('_open-menu')) {
+        document.body.classList.remove('no-scroll');
+        sidebarMenu.classList.remove('_open-menu');
+        buttonItem.classList.remove('_open-menu');
+      }
+    });
   });
 }
 

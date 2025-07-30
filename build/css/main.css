@@ -1743,7 +1743,7 @@ button.swiper-pagination-bullet {
   position: relative;
 }
 .page__seo-block {
-  background: #ffad9e;
+  background: url("../img/main/s-bg.png") center/cover repeat;
 }
 .page__company-team {
   position: relative;
