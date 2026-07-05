@@ -14,7 +14,7 @@
   will-change: transform;
   backdrop-filter: blur(7px);
 
-  @include min-768 {
+  @include min-960 {
     display: none;
   }
 
@@ -451,6 +451,11 @@
 
     .icon-whatsapp {
       background: #4caf50;
+    }
+
+    .icon-max-logo {
+      padding: 5px;
+      background: linear-gradient(135deg, #4cf, #53e, #93d);
     }
 
     ._icon {

@@ -22,14 +22,19 @@
 						._icon.icon 
 							+iconfont('arrow-right', '_icon')
 		._item.el-item
-			.card
-				._header  
-					h3 Мы на связи
-					._icons
-						a(href="" target="_blank")._icon.icon 
-							+iconfont('telegram-fly', '_icon') 
-						a(href="" target="_blank")._icon.icon 
-							+iconfont('whatsapp', '_icon')  
+			a(href="").card
+				._header
+					h3 Заголовок
+					._icon.icon 
+						+iconfont('arrow-up', '_icon') 
+				._content 
+					ul._list 
+						li._item Логотип
+						li._item Фирменный стиль
+						li._item Дизайн упаковки
+						li._item Дизайн печатной продукции
+						li._item Дизайн презентаций
+		._item.el-item
 			a(href="").card
 				._header
 					h3 Графический дизайн

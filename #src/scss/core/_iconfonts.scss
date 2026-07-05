@@ -30,9 +30,24 @@
   //* Better Font Rendering
 }
 
-.icon-youtube-lg {
+.icon-max-logo {
   &:before {
-    content: $icon-youtube-lg;
+    content: $icon-max-logo;
+  }
+}
+.icon-hand-shake {
+  &:before {
+    content: $icon-hand-shake;
+  }
+}
+.icon-financial-system {
+  &:before {
+    content: $icon-financial-system;
+  }
+}
+.icon-management {
+  &:before {
+    content: $icon-management;
   }
 }
 .icon-youtube-square {
@@ -111,9 +126,9 @@
     content: $icon-telegram-fly;
   }
 }
-.icon-dzen {
+.icon-published-changes {
   &:before {
-    content: $icon-dzen;
+    content: $icon-published-changes;
   }
 }
 .icon-minus {
@@ -124,6 +139,16 @@
 .icon-plus {
   &:before {
     content: $icon-plus;
+  }
+}
+.icon-youtube-lg {
+  &:before {
+    content: $icon-youtube-lg;
+  }
+}
+.icon-dzen {
+  &:before {
+    content: $icon-dzen;
   }
 }
 .icon-arrow-down {
