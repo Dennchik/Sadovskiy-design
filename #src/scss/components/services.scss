@@ -29,18 +29,12 @@
       border-radius: 30px;
       display: flex;
       align-items: center;
-      padding: 0 15px 0 30px;
+      padding: 0 30px;
       overflow: hidden;
       background: $color;
 
       .services__column {
         transform: translateY(-5%);
-      }
-
-      @include minmax-1440-1920 {
-        padding-left: calc(
-          20px + (30 - 20) * ((100vw - 1440px) / (1920 - 1440))
-        );
       }
 
       @include min-690 {
@@ -101,7 +95,7 @@
 
       @include screen-1440 {
         border-radius: 15px;
-        padding: 80px 25px 80px 30px;
+        padding: 80px 3rem;
       }
 
       @include screen-960 {
@@ -146,23 +140,6 @@
 
       @include screen-320 {
         font-size: 20px;
-      }
-    }
-
-    &:nth-child(2) {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-
-      .card {
-        width: 100%;
-
-        @include screen-1440 {
-          height: 100% !important;
-        }
       }
     }
   }
