@@ -2143,7 +2143,7 @@ button.swiper-pagination-bullet {
   -ms-grid-column-span: 1;
   grid-column: 1/2;
 }
-.header__column:nth-child(2) {
+.header__column:nth-child(2), .header__column:nth-child(3) {
   justify-self: flex-end;
 }
 .header__image {
@@ -2212,7 +2212,6 @@ button.swiper-pagination-bullet {
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  width: 100%;
   -ms-grid-column-align: end;
   justify-self: end;
 }

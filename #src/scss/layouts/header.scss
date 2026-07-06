@@ -101,7 +101,8 @@
       grid-column: 1 / 2;
     }
 
-    &:nth-child(2) {
+    &:nth-child(2),
+    &:nth-child(3) {
       justify-self: flex-end;
     }
   }
@@ -164,7 +165,6 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 100%;
     justify-self: end;
   }
 
