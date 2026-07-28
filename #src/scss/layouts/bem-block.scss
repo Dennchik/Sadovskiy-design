@@ -289,78 +289,78 @@
 //* ----------------------------------------------------------------------------
 
 .pbl-16-16 {
-  padding-top: 16.2rem;
-  padding-bottom: 16.2rem;
+  padding-top: 16.2rem !important;
+  padding-bottom: 16.2rem !important;
 
   @include screen-690 {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
   }
 }
 
 .pbl-13-13 {
-  padding-top: 13rem;
-  padding-bottom: 13rem;
+  padding-top: 13rem !important;
+  padding-bottom: 13rem !important;
 
   @include screen-690 {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
   }
 }
 
 .pbl-13-16 {
-  padding-top: 13rem;
-  padding-bottom: 16.2rem;
+  padding-top: 13rem !important;
+  padding-bottom: 16.2rem !important;
 
   @include screen-690 {
-    padding-top: 50px;
-    padding-bottom: 60px;
+    padding-top: 50px !important;
+    padding-bottom: 60px !important;
   }
 }
 
 .pbl-16-13 {
-  padding-top: 16.2rem;
-  padding-bottom: 13rem;
+  padding-top: 16.2rem !important;
+  padding-bottom: 13rem !important;
 
   @include screen-690 {
-    padding-top: 60px;
-    padding-bottom: 50px;
+    padding-top: 60px !important;
+    padding-bottom: 50px !important;
   }
 }
 
 .pbl-0-16 {
-  padding-top: 0;
-  padding-bottom: 16rem;
+  padding-top: 0 !important;
+  padding-bottom: 16rem !important;
 
   @include screen-690 {
-    padding-bottom: 60px;
+    padding-bottom: 60px !important;
   }
 }
 
 .pbl-16-0 {
-  padding-top: 16rem;
-  padding-bottom: 0;
+  padding-top: 16rem !important;
+  padding-bottom: 0 !important;
 
   @include screen-690 {
-    padding-top: 60px;
+    padding-top: 60px !important;
   }
 }
 
 .pbl-13-0 {
-  padding-top: 13rem;
-  padding-bottom: 0;
+  padding-top: 13rem !important;
+  padding-bottom: 0 !important;
 
   @include screen-690 {
-    padding-top: 50px;
+    padding-top: 50px !important;
   }
 }
 
 .pbl-0-13 {
-  padding-top: 0;
-  padding-bottom: 13rem;
+  padding-top: 0 !important;
+  padding-bottom: 13rem !important;
 
   @include screen-690 {
-    padding-bottom: 50px;
+    padding-bottom: 50px !important;
   }
 }
 
