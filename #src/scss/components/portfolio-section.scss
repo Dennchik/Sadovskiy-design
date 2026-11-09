@@ -303,23 +303,23 @@
     position: relative;
     width: 100%;
 
-    &:nth-child(5) {
-      .tooltip {
-        transform: translateY(-200%);
-      }
-    }
-
-    &:nth-child(6) {
-      .tooltip {
-        transform: translateY(-400%);
-      }
-    }
-
-    &:nth-child(10) {
-      .tooltip {
-        transform: translateY(-100%);
-      }
-    }
+    //&:nth-child(5) {
+    //  .tooltip {
+    //    transform: translateY(-200%);
+    //  }
+    //}
+    //
+    //&:nth-child(6) {
+    //  .tooltip {
+    //    transform: translateY(-400%);
+    //  }
+    //}
+    //
+    //&:nth-child(10) {
+    //  .tooltip {
+    //    transform: translateY(-100%);
+    //  }
+    //}
 
     img {
       position: relative;
