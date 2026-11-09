@@ -8,7 +8,6 @@ import { brandsSlide } from './modules/brands-slide.js';
 
 //* - [ Dinamic Adaptive ] -
 import { dinamicAdaptive } from './assets/move-elements.js';
-dinamicAdaptive();
 
 //* - [ Imports ] -
 import {
@@ -23,6 +22,7 @@ import {
   tooltipHide,
 } from './layouts/layouts.js';
 
+dinamicAdaptive();
 sidebarMenuHandle();
 returnToSavedPosition();
 shadowScrollHeader();
